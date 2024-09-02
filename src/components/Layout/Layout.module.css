@@ -1,0 +1,33 @@
+.headerSection {
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 60px;
+}
+.headerLogo {
+  color: #1e1e1e;
+  font-size: 20px;
+  font-family: 'TWK800';
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+
+.headerNav {
+}
+
+.headerLogoImage {
+  display: block;
+  margin-right: 7px;
+}
+.headerTitle {
+  color: #f948b4;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: normal;
+}
+.main {
+}

@@ -1,16 +1,19 @@
-export const App = () => {
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
+import Layout from './Layout/Layout';
+
+// const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+// const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
+// const Cast = lazy(() => import('./Cast/Cast'));
+// const MoviesDetails = lazy(() => import('../pages/MovieDetails/MoviesDetails'));
+// const Reviews = lazy(() => import('./Reviews/Reviews'));
+
+export default function App() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}></Route>
+      </Routes>
+    </>
   );
-};
+}
