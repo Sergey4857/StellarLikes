@@ -1,0 +1,228 @@
+.footerSection {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1180px;
+  margin: 0 auto;
+  height: 1198px;
+  background-image: url('../../images/footer-bcg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0 40px;
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 20px;
+  }
+}
+.footerWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px 50px 0 50px;
+}
+@media screen and (max-width: 768px) {
+  .footerWrap {
+    padding: 0;
+  }
+}
+.footerInfo {
+  display: flex;
+  gap: 45px;
+}
+@media screen and (max-width: 768px) {
+  .footerInfo {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+.footerBlock {
+  display: flex;
+  gap: 90px;
+}
+@media screen and (max-width: 1124px) {
+  .footerBlock {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footerBlock {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footerBlock {
+    gap: 20px;
+  }
+}
+.footerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+@media screen and (max-width: 768px) {
+  .footerNav {
+    text-align: center;
+  }
+}
+
+.footerImage {
+  display: block;
+  width: 58px;
+  height: 58px;
+  margin-right: 12px;
+}
+.footerLogo {
+  color: #1e1e1e;
+  display: flex;
+  align-items: center;
+  font-size: 35px;
+  font-family: 'TWK800';
+  height: fit-content;
+}
+.FooterTitle {
+  color: #f948b4;
+  font-family: 'TWK800';
+  font-size: 34.781px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.footerNavLink {
+}
+.buyBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .buyBlock {
+    width: 100%;
+  }
+}
+
+.buyBlockContent {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .buyBlockContent {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.buyBlockLinkPink {
+  border-radius: 12px;
+  background-color: #f948b4;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  padding: 20px 30px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.25;
+}
+
+@media screen and (max-width: 1124px) {
+  .buyBlockLinkPink {
+    padding: 15px 70px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .buyBlockLinkPink {
+    width: 100%;
+    max-width: 250px;
+    padding: 15px 0;
+  }
+}
+
+.buyBlockLinkGreen {
+  border-radius: 12px;
+  background-color: #00c82f;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  padding: 20px 30px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.25;
+}
+
+@media screen and (max-width: 1124px) {
+  .buyBlockLinkGreen {
+    padding: 15px 70px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .buyBlockLinkGreen {
+    width: 100%;
+    max-width: 250px;
+    padding: 15px 0;
+  }
+}
+.buyBlockLinkOrange {
+  border-radius: 12px;
+  background-color: #fc5d1f;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  padding: 20px 30px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.25;
+}
+
+@media screen and (max-width: 1124px) {
+  .buyBlockLinkOrange {
+    padding: 15px 70px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .buyBlockLinkOrange {
+    width: 100%;
+    max-width: 250px;
+    padding: 15px 0;
+  }
+}
+.buyBlockSpan {
+  color: rgba(22, 22, 22, 0.35);
+  font-size: 18px;
+  line-height: 1.25;
+}
+.footerNavLink {
+  color: #161616;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.footerPrivacy {
+  color: rgba(22, 22, 22, 0.25);
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 120.5%;
+}
+
+@media screen and (max-width: 768px) {
+  .footerPrivacy {
+    text-align: center;
+  }
+}

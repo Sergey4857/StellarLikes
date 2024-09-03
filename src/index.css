@@ -196,4 +196,34 @@ body {
   font-weight: 400;
   color: #161616;
   background-color: #ffffff;
+  color: #161616;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* global styles */
+
+.section-title {
+  color: #161616;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120.5%;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 30px;
+  }
+}
+
+.pinkText {
+  color: #f948b4;
+}
+.greenText {
+  color: #00c82f;
+}
+.orangeColor {
+  color: #fc5d1f;
 }

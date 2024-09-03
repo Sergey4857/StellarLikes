@@ -1,0 +1,24 @@
+.Logo {
+  color: #1e1e1e;
+  font-size: 20px;
+  font-family: 'TWK800';
+  line-height: normal;
+  display: flex;
+  height: fit-content;
+  align-items: center;
+}
+
+.LogoImage {
+  display: block;
+  margin-right: 7px;
+}
+.LogoImage {
+  display: block;
+  width: 31px;
+  height: 31px;
+}
+.Title {
+  color: #f948b4;
+  font-weight: 800;
+  line-height: normal;
+}

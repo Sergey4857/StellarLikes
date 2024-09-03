@@ -1,0 +1,50 @@
+.headerSection {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 60px;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+  }
+}
+
+.headerNav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+}
+.headerLikes {
+  color: #f948b4;
+}
+.headerFollowers {
+  color: #fc5d1f;
+}
+.headerViews {
+  color: #00c82f;
+}
+
+.headerNavLink {
+}
+.decorator {
+  display: block;
+  width: 0.5px;
+  height: 25px;
+  background-color: #ccd0d6;
+}
+
+.headerLogoImage {
+  display: block;
+  margin-right: 7px;
+}
