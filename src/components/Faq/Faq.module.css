@@ -1,0 +1,131 @@
+.faqSection {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 75px 40px 150px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .faqSection {
+    padding: 70px 20px;
+  }
+}
+.faqText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .faqText {
+    display: block;
+  }
+}
+
+.faqLink {
+  color: #f948b4;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120.5%;
+  text-decoration-line: underline;
+}
+.faqWrap {
+}
+.faqBlock {
+  border-radius: 12px;
+  border: 1px #efefef;
+
+  background: #fff;
+
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+}
+.faqContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faqTitle {
+  color: #0e2a30;
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.2;
+}
+.faqImage {
+  display: block;
+  width: 60px;
+  height: 60px;
+  object-fit: none;
+}
+.faqDesc {
+}
+.faqs {
+  width: 100%;
+
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+@media screen and (max-width: 768px) {
+  .faqs {
+    grid-template-columns: 1fr;
+  }
+}
+
+.faqs .faq {
+  border-radius: 12px;
+  border: 1px solid #efefef;
+  background: #fff;
+  padding: 20px 30px;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+@media screen and (max-width: 768px) {
+  .faqs .faq {
+    padding: 20px;
+  }
+}
+
+.faqs .faq .faqContent .faqTitle {
+  transition: all 0.4s ease;
+  color: #0e2a30;
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.21;
+}
+
+.faqs .faq .faqContent .faqAnswer {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.faqs .faq.open .faqContent .faqQuestionWrap {
+  margin-bottom: 15px;
+}
+
+.faqs .faq.open .faqContent .faqAnswer {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.faqContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.faqQuestionWrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+  cursor: pointer;
+  align-items: center;
+}

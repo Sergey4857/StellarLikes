@@ -8,28 +8,50 @@ export default function BurgerMenu({ setOpenedModal, openedModal }) {
 
   return createPortal(
     <div className={css.BurgerNavWrap}>
-      <div className={css.BurgerNav}>
-        <Link className={css.burgerNavLink} to="/">
-          Home
-        </Link>
-        <Link className={css.burgerNavLink} to="/">
-          Reviews
-        </Link>
-        <Link className={css.burgerNavLink} to="/">
-          TikTok Video Downloader
-        </Link>
-        <Link className={css.burgerNavLink} to="/">
-          TikTok Story Viewer
-        </Link>
-        <Link className={css.burgerNavLink} to="/">
-          Live Support
-        </Link>
-        <Link className={css.burgerNavLink} to="/">
-          Privacy Policy
-        </Link>
-        <Link className={css.burgerNavLink} to="/">
-          Terms of Use
-        </Link>
+      <div
+        className={css.BurgerNav}
+        onClick={() => {
+          setOpenedModal(false);
+        }}
+      >
+        <div className={css.burgerFirstBlock}>
+          <Link className={css.burgerNavLink} to="/">
+            Buy TikTok Likes
+          </Link>
+          <Link className={css.burgerNavLink} to="/">
+            Buy TikTok Followers
+          </Link>
+          <Link className={css.burgerNavLink} to="/">
+            Buy TikTok Views
+          </Link>
+        </div>
+        <div className={css.divider}></div>
+        <div className={css.burgerSecondBlock}>
+          <Link className={css.burgerNavLink} to="/">
+            Free TikTok Video Downloader
+          </Link>
+          <Link className={css.burgerNavLink} to="/">
+            Free TIkTok Likes
+          </Link>
+          <Link className={css.burgerNavLink} to="/">
+            Free TikTok Views
+          </Link>
+          <Link className={css.burgerNavLink} to="/">
+            Free TikTok Followers
+          </Link>
+        </div>
+        <div className={css.divider}></div>
+        <div className={css.burgerThirdBlock}>
+          <Link className={css.burgerNavLink} to="/">
+            Privacy Policy
+          </Link>
+          <Link className={css.burgerNavLink} to="/">
+            Terms of Use
+          </Link>
+          <Link className={css.burgerNavLink} to="/">
+            Live Support
+          </Link>
+        </div>
       </div>
     </div>,
     burgerRoot

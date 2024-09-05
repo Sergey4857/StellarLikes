@@ -1,0 +1,129 @@
+.buyLikes {
+  max-width: 490px;
+  padding: 25px 20px 0px 20px;
+  margin: 0 auto;
+}
+
+.buyLikesTitle {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+  flex-wrap: wrap;
+  color: #161616;
+  text-align: center;
+  font-family: 'TWK700';
+  font-size: 45px;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+.buyLikesImg {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+.buyLikesText {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.buyLikesBenefits {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 25px;
+}
+
+.supportBlock,
+.deliveryBlock,
+.passwordBlock {
+  color: #161616;
+  font-family: 'TWK500';
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+.supportBlock {
+}
+.deliveryBlock {
+}
+.passwordBlock {
+}
+.buyLikesCustomLink {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 15px;
+  border-radius: 100px;
+  border: 2px solid #4c01d5;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  color: #4c01d5;
+  font-family: 'TWK500';
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.buyLikesQuantityBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 17px;
+  margin-bottom: 25px;
+}
+.buyLikesQuantity {
+  display: block;
+  width: 100%;
+}
+.quantity {
+  width: 100%;
+  padding: 10px 0px;
+  border-radius: 15px 15px 0px 0px;
+  background: #decdff;
+  text-align: center;
+  color: #4c01d5;
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.25;
+}
+.discount {
+  width: 100%;
+  padding: 14px 0px;
+  border-radius: 0px 0px 15px 15px;
+  background: #fafbff;
+  text-align: center;
+  color: #4c01d5;
+
+  font-family: 'TWK500';
+  font-size: 18px;
+  line-height: 1.25;
+}
+.data {
+  display: flex;
+  max-width: 100px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  background: #fafbff;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+}
+.active .buyLikesQuantity {
+  outline: 2px solid #4c01d5;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+.active .buyLikesQuantity .quantity {
+  outline: 2px solid #4c01d5;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  background-color: #4c01d5;
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.25;
+}
+.active .buyLikesQuantity .discount {
+  color: #161616;
+  font-family: 'TWK500';
+  font-size: 18px;
+  line-height: 1.21;
+}

@@ -41,7 +41,10 @@ const Rating = () => {
                 sourced from real and active users. Delivered in 60 seconds.
               </p>
               <div className={css.ratingLinkContent}>
-                <Link className={`${css.ratingLink} ${css.pinkLink}`} to="/">
+                <Link
+                  className={`${css.ratingLink} ${css.pinkLink}`}
+                  to="/tikTokLikes"
+                >
                   Buy Likes
                 </Link>
                 <div className={css.ratingStarsText}>
@@ -73,7 +76,10 @@ const Rating = () => {
                 sourced from real and active users. Delivered in 60 seconds.
               </p>
               <div className={css.ratingLinkContent}>
-                <Link className={`${css.ratingLink} ${css.greenLink}`} to="/">
+                <Link
+                  className={`${css.ratingLink} ${css.greenLink}`}
+                  to="/tikTokViews"
+                >
                   Buy Views
                 </Link>
                 <div className={css.ratingStarsText}>Starting at $0.89</div>
@@ -107,7 +113,10 @@ const Rating = () => {
                 sourced from real and active users. Delivered in 60 seconds.
               </p>
               <div className={css.ratingLinkContent}>
-                <Link className={`${css.ratingLink} ${css.orangeLink}`} to="/">
+                <Link
+                  className={`${css.ratingLink} ${css.orangeLink}`}
+                  to="/tikTokLikes"
+                >
                   Buy Followers
                 </Link>
                 <div className={css.ratingStarsText}>Starting at $0.5</div>

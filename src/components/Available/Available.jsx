@@ -1,5 +1,3 @@
-import { createPortal } from 'react-dom';
-
 import css from './Available.module.css';
 import { Link } from 'react-router-dom';
 import tikTokLikes from '../../icons/tiktokLikes.svg';
@@ -20,15 +18,24 @@ export default function Available() {
       </p>
 
       <div className={css.availableLinkBlock}>
-        <Link className={`${css.availableLink} ${css.violetBorder}`} to="/">
+        <Link
+          className={`${css.availableLink} ${css.violetBorder}`}
+          to="/tikTokLikes"
+        >
           <img className={css.availableImg} src={tikTokLikes} alt="Likes" />
           TikTok <span className={css.pink}>Likes</span>
         </Link>
-        <Link className={`${css.availableLink} ${css.greenBorder}`} to="/">
+        <Link
+          className={`${css.availableLink} ${css.greenBorder}`}
+          to="/tikTokViews"
+        >
           <img className={css.availableImg} src={TikTokViews} alt="Reviews" />
           TikTok <span className={css.green}>Views</span>
         </Link>
-        <Link className={`${css.availableLink} ${css.orangeBorder}`} to="/">
+        <Link
+          className={`${css.availableLink} ${css.orangeBorder}`}
+          to="/tikTokFollowers"
+        >
           <img
             className={css.availableImg}
             src={TikTokFollowers}

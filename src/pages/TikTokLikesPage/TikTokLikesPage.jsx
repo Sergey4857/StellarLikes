@@ -1,0 +1,145 @@
+import Available from 'components/Available/Available';
+import Benefits from 'components/Benefits/Benefits';
+import Rating from 'components/Rating/Rating';
+import Features from 'components/Features/Features';
+import Customers from 'components/Customers/Customers';
+import FaqBlock from 'components/Faq/FaqBlock';
+import css from './TikTokLikesPage.module.css';
+import tikTokLikes from '../../icons/tiktokLikes.svg';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import TikTokLikes from './TikTokLikes';
+
+const TikTokLikesPage = () => {
+  const [tiktoklikes, setTiktoklikes] = useState([
+    {
+      quantity: 100,
+      percent: '30%',
+      price: 2.99,
+      oldPrice: 4.99,
+      savings: 2.01,
+      active: true,
+    },
+    {
+      quantity: 250,
+      percent: '40%',
+      price: 3.99,
+      oldPrice: 6.99,
+      savings: 2.01,
+      active: false,
+    },
+    {
+      quantity: 500,
+      percent: '50%',
+      price: 4.99,
+      oldPrice: 8.99,
+      savings: 2.01,
+      active: false,
+    },
+    {
+      quantity: 500,
+      percent: '50%',
+      price: 4.99,
+      oldPrice: 8.99,
+      savings: 2.01,
+      active: false,
+    },
+    {
+      quantity: 500,
+      percent: '50%',
+      price: 4.99,
+      oldPrice: 8.99,
+      savings: 2.01,
+      active: false,
+    },
+    {
+      quantity: 500,
+      percent: '50%',
+      price: 4.99,
+      oldPrice: 8.99,
+      savings: 2.01,
+      active: false,
+    },
+    {
+      quantity: 500,
+      percent: '50%',
+      price: 4.99,
+      oldPrice: 8.99,
+      savings: 2.01,
+      active: false,
+    },
+    {
+      quantity: 500,
+      percent: '50%',
+      price: 4.99,
+      oldPrice: 8.99,
+      savings: 2.01,
+      active: false,
+    },
+  ]);
+  const [selectedPrice, setSelectedPrice] = useState(tiktoklikes[0]);
+  const toggleLikes = index => {
+    setTiktoklikes(
+      tiktoklikes.map((likes, i) => {
+        return {
+          ...likes,
+          active: i === index,
+        };
+      })
+    );
+    setSelectedPrice(tiktoklikes[index]);
+  };
+
+  return (
+    <>
+      <section className={css.buyLikes}>
+        <div className={css.buyLikesTitle}>
+          Buy TikTok <span className="pinkText">Likes</span>
+          <img
+            className={css.buyLikesImg}
+            src={tikTokLikes}
+            alt="buyLikesImg"
+          />
+          with Instant Delivery
+        </div>
+        <p className={css.buyLikesText}>
+          We offer top-notch quality TikTok likes at the best prices! Check our
+          deals below, choose best likes package and make an order now!
+        </p>
+        <div className={css.buyLikesBenefits}>
+          <div className={css.supportBlock}>24/7 support</div>
+          <div className={css.deliveryBlock}>Quick Delivery Start</div>
+          <div className={css.passwordBlock}>No password required</div>
+        </div>
+        <Link className={css.buyLikesCustomLink} to="/">
+          Custom Quantity
+        </Link>
+
+        <div className={css.buyLikesQuantityBlock}>
+          {tiktoklikes.map((data, index) => (
+            <TikTokLikes
+              data={data}
+              index={index}
+              key={index}
+              toggleLikes={toggleLikes}
+            />
+          ))}
+        </div>
+        <div className={css.priceBlock}>
+          <div className={css.mainPrice}>${selectedPrice.price}</div>
+          <div className={css.oldPrice}>${selectedPrice.oldPrice}</div>
+          <div className={css.savings}>You save: ${selectedPrice.savings}</div>
+        </div>
+      </section>
+
+      <Available />
+      <Benefits />
+      <Rating />
+      <Features />
+      <Customers />
+      <FaqBlock />
+    </>
+  );
+};
+
+export default TikTokLikesPage;

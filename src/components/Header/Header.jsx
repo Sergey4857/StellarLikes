@@ -28,21 +28,26 @@ const Header = () => {
         <Logo />
         {isDesktop && (
           <nav className={css.headerNav}>
-            <Link className={css.headerNavLink} to="/">
+            <Link className={css.headerNavLink} to="/tikTokLikes">
               Buy TikTok <span className={css.headerLikes}>Likes</span>
             </Link>
             <span className={css.decorator}></span>
-            <Link className={css.headerNavLink} to="/">
+            <Link className={css.headerNavLink} to="/tikTokFollowers">
               Buy TikTok <span className={css.headerFollowers}>Followers</span>
             </Link>
             <span className={css.decorator}></span>
-            <Link className={css.headerNavLink} to="/">
+            <Link className={css.headerNavLink} to="/tikTokViews">
               Buy TikTok <span className={css.headerViews}>Views</span>
             </Link>
           </nav>
         )}
 
-        {!isDesktop && <BurgerBtn setOpenedModal={setOpenedModal} />}
+        {!isDesktop && (
+          <BurgerBtn
+            setOpenedModal={setOpenedModal}
+            openedModal={openedModal}
+          />
+        )}
 
         {openedModal && (
           <BurgerMenu

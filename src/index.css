@@ -171,6 +171,12 @@ select::-ms-expand {
   src: url('../src/fonts/TWKLausanne-500.ttf') format('truetype');
 }
 @font-face {
+  font-family: 'TWK600';
+  font-weight: 600;
+  src: url('../src/fonts/TWKLausanne-600.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'TWK700';
   font-weight: 700;
   src: url('../src/fonts/TWKLausanne-700.ttf') format('truetype');
