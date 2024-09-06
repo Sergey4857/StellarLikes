@@ -10,7 +10,6 @@ import TikTokViewsPage from 'pages/TikTokViewsPage/TikTokViewsPage';
 // const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
 // const Cast = lazy(() => import('./Cast/Cast'));
 // const MoviesDetails = lazy(() => import('../pages/MovieDetails/MoviesDetails'));
-
 export default function App() {
   return (
     <>
