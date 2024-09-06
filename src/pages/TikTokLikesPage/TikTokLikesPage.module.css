@@ -34,17 +34,26 @@
   margin-bottom: 25px;
 }
 
-.supportBlock,
-.deliveryBlock,
-.passwordBlock {
+.buyLikesBenefit {
   color: #161616;
   font-family: 'TWK500';
   font-size: 13px;
-
   font-weight: 500;
+  padding-left: 15px;
+  position: relative;
 }
 
-.supportBlock {
+.buyLikesBenefit::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-image: url('../../icons/checkbox.svg');
+  background-position: center;
 }
 .deliveryBlock {
 }
@@ -126,4 +135,67 @@
   font-family: 'TWK500';
   font-size: 18px;
   line-height: 1.21;
+}
+.priceBlock {
+  display: flex;
+  justify-content: space-between;
+}
+.priceContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.priceWrap {
+  display: flex;
+}
+
+.mainPrice {
+  color: #161616;
+  font-family: 'TWK700';
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.oldPrice {
+  color: rgba(22, 22, 22, 0.25);
+  font-family: 'TWK700';
+  font-size: 18px;
+  position: relative;
+  height: fit-content;
+}
+.oldPrice::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: #c5c5c5;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.savingsPrice {
+  display: inline-flex;
+  border-radius: 100px;
+  background: rgba(162, 236, 0, 0.25);
+  padding: 3px 5px;
+  color: #00c82f;
+  font-family: 'TWK700';
+  font-size: 18px;
+  line-height: 1.21;
+}
+.buyLink {
+  padding: 20px 60px;
+  border-radius: 12px;
+  background: #f948b4;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.21;
+}
+.savings {
+  display: flex;
+  align-items: end;
+  gap: 12px;
 }

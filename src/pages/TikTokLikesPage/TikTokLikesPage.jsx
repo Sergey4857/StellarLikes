@@ -107,9 +107,9 @@ const TikTokLikesPage = () => {
           deals below, choose best likes package and make an order now!
         </p>
         <div className={css.buyLikesBenefits}>
-          <div className={css.supportBlock}>24/7 support</div>
-          <div className={css.deliveryBlock}>Quick Delivery Start</div>
-          <div className={css.passwordBlock}>No password required</div>
+          <div className={css.buyLikesBenefit}>24/7 support</div>
+          <div className={css.buyLikesBenefit}>Quick Delivery Start</div>
+          <div className={css.buyLikesBenefit}>No password required</div>
         </div>
         <Link className={css.buyLikesCustomLink} to="/">
           Custom Quantity
@@ -126,13 +126,22 @@ const TikTokLikesPage = () => {
           ))}
         </div>
         <div className={css.priceBlock}>
-          <div className={css.mainPrice}>${selectedPrice.price}</div>
-          <div className={css.oldPrice}>${selectedPrice.oldPrice}</div>
-          <div className={css.savings}>You save: ${selectedPrice.savings}</div>
+          <div className={css.priceContent}>
+            <div className={css.priceWrap}>
+              <div className={css.mainPrice}>${selectedPrice.price}</div>
+              <div className={css.oldPrice}>${selectedPrice.oldPrice}</div>
+            </div>
+            <div className={css.savings}>
+              You save{' '}
+              <span className={css.savingsPrice}>${selectedPrice.savings}</span>
+            </div>
+          </div>
+          <Link className={css.buyLink} to="/">
+            Buy Now
+          </Link>
         </div>
       </section>
 
-      <Available />
       <Benefits />
       <Rating />
       <Features />
