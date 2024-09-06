@@ -1,7 +1,7 @@
 import css from './TikTokLikesPage.module.css';
 
 export default function TikTokLikes({ data, index, toggleLikes }) {
-  const { quantity, percent, price, oldPrice, savings, active } = data;
+  const { quantity, percent, active } = data;
 
   return (
     <div

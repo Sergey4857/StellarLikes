@@ -1,4 +1,4 @@
-import Layout from 'components/Layout/Layout';
+
 import HeroHome from 'components/HeroHome/HeroHome';
 import Available from 'components/Available/Available';
 import Benefits from 'components/Benefits/Benefits';
