@@ -102,6 +102,7 @@ const TikTokLikesPage = () => {
           />
           with Instant Delivery
         </div>
+
         <p className={css.buyLikesText}>
           We offer top-notch quality TikTok likes at the best prices! Check our
           deals below, choose best likes package and make an order now!
@@ -141,7 +142,6 @@ const TikTokLikesPage = () => {
           </Link>
         </div>
       </section>
-
       <Benefits />
       <Rating />
       <Features />
