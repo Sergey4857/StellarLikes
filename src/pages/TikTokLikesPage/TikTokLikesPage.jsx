@@ -1,4 +1,3 @@
-import Available from 'components/Available/Available';
 import Benefits from 'components/Benefits/Benefits';
 import Rating from 'components/Rating/Rating';
 import Features from 'components/Features/Features';
