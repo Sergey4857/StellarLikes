@@ -1,5 +1,5 @@
-import { Navigate, Route, Routes, Router } from 'react-router-dom';
-import { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+
 import Layout from './Layout/Layout';
 import HomePage from 'pages/HomePage/HomePage';
 import TikTokFollowersPage from 'pages/TikTokFollowersPage/TikTokFollowersPage';

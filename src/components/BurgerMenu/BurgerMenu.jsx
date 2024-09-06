@@ -1,5 +1,4 @@
 import { createPortal } from 'react-dom';
-
 import css from './BurgerMenu.module.css';
 import { Link } from 'react-router-dom';
 

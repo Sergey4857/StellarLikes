@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+
 import css from './Features.module.css';
 
 import features1 from '../../icons/features1.svg';

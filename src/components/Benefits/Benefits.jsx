@@ -1,5 +1,4 @@
 import css from './Benefits.module.css';
-import { Link } from 'react-router-dom';
 import benefit1 from '../../icons/benefit1.svg';
 import benefit2 from '../../icons/benefit2.svg';
 import benefit3 from '../../icons/benefit3.svg';
