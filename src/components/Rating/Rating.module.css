@@ -1,16 +1,25 @@
 .rating {
   width: 100%;
-  max-width: 1180px;
+  max-width: 1800px;
   margin: 0 auto;
-  padding: 0px 40px;
+  background-image: url('../../images/rating-bck.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media screen and (max-width: 768px) {
   .rating {
     padding: 0px 20px;
+    background-image: url('../../images/rating-mob.png');
+
+    background-size: contain;
+    background-position: 0% 63%;
   }
 }
 .ratingWrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0px 40px;
 }
 .ratingTitle {
 }

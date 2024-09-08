@@ -14,13 +14,13 @@ export default function BurgerMenu({ setOpenedModal, openedModal }) {
         }}
       >
         <div className={css.burgerFirstBlock}>
-          <Link className={css.burgerNavLink} to="/">
+          <Link className={css.burgerNavLink} to="/tikTokLikes">
             Buy TikTok Likes
           </Link>
-          <Link className={css.burgerNavLink} to="/">
+          <Link className={css.burgerNavLink} to="/tikTokFollowers">
             Buy TikTok Followers
           </Link>
-          <Link className={css.burgerNavLink} to="/">
+          <Link className={css.burgerNavLink} to="/tikTokViews">
             Buy TikTok Views
           </Link>
         </div>

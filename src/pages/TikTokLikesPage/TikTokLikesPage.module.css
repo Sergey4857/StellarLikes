@@ -16,10 +16,21 @@
   line-height: 1.25;
   margin-bottom: 20px;
 }
+@media screen and (max-width: 768px) {
+  .buyLikesTitle {
+    font-size: 35px;
+  }
+}
 .buyLikesImg {
   display: block;
   width: 50px;
   height: 50px;
+}
+@media screen and (max-width: 768px) {
+  .buyLikesImg {
+    width: 40px;
+    height: 40px;
+  }
 }
 .buyLikesText {
   text-align: center;
@@ -33,6 +44,15 @@
   border: 1px solid #ccc;
   margin-bottom: 25px;
 }
+@media screen and (max-width: 768px) {
+  .buyLikesBenefits {
+    max-width: 355px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
 
 .buyLikesBenefit {
   color: #161616;
@@ -41,6 +61,15 @@
   font-weight: 500;
   padding-left: 15px;
   position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .buyLikesBenefit {
+    color: #0e2a30;
+    font-size: 10px;
+    line-height: 1;
+    padding-left: 11px;
+  }
 }
 
 .buyLikesBenefit::before {
@@ -54,6 +83,13 @@
   height: 10px;
   background-image: url('../../icons/checkbox.svg');
   background-position: center;
+}
+@media screen and (max-width: 768px) {
+  .buyLikesBenefit::before {
+    color: #0e2a30;
+    width: 8px;
+    height: 8px;
+  }
 }
 .deliveryBlock {
 }
@@ -72,6 +108,13 @@
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .buyLikesCustomLink {
+    padding: 9px 10px;
+    color: #4c01d5;
+  }
 }
 .buyLikesQuantityBlock {
   display: grid;
@@ -94,6 +137,15 @@
   font-size: 25px;
   line-height: 1.25;
 }
+
+@media screen and (max-width: 768px) {
+  .quantity {
+    color: #4c01d5;
+    padding: 8px 0px;
+    font-size: 20px;
+    line-height: 1.25;
+  }
+}
 .discount {
   width: 100%;
   padding: 14px 0px;
@@ -105,6 +157,12 @@
   font-family: 'TWK500';
   font-size: 18px;
   line-height: 1.25;
+}
+
+@media screen and (max-width: 768px) {
+  .discount {
+    font-size: 14px;
+  }
 }
 .data {
   display: flex;
@@ -121,6 +179,7 @@
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
 }
+
 .active .buyLikesQuantity .quantity {
   outline: 2px solid #4c01d5;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
@@ -130,11 +189,23 @@
   font-size: 25px;
   line-height: 1.25;
 }
+
+@media screen and (max-width: 768px) {
+  .active .buyLikesQuantity .quantity {
+    font-size: 20px;
+  }
+}
 .active .buyLikesQuantity .discount {
   color: #161616;
   font-family: 'TWK500';
   font-size: 18px;
   line-height: 1.21;
+}
+
+@media screen and (max-width: 768px) {
+  .active .buyLikesQuantity .discount {
+    font-size: 14px;
+  }
 }
 .priceBlock {
   display: flex;
@@ -157,6 +228,11 @@
   font-weight: 700;
   line-height: 1.2;
 }
+@media screen and (max-width: 768px) {
+  .mainPrice {
+    font-size: 25.162px;
+  }
+}
 .oldPrice {
   color: rgba(22, 22, 22, 0.25);
   font-family: 'TWK700';
@@ -164,6 +240,13 @@
   position: relative;
   height: fit-content;
 }
+
+@media screen and (max-width: 768px) {
+  .oldPrice {
+    font-size: 14px;
+  }
+}
+
 .oldPrice::after {
   content: '';
   width: 100%;
@@ -184,6 +267,14 @@
   font-size: 18px;
   line-height: 1.21;
 }
+
+@media screen and (max-width: 768px) {
+  .savingsPrice {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}
 .buyLink {
   padding: 20px 60px;
   border-radius: 12px;
@@ -194,8 +285,24 @@
   font-size: 25px;
   line-height: 1.21;
 }
+@media screen and (max-width: 768px) {
+  .buyLink {
+    padding: 16px 45px;
+    font-size: 20px;
+    text-align: center;
+  }
+}
 .savings {
   display: flex;
   align-items: flex-end;
-  gap: 12px;
+  gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .savings {
+    color: #161616;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
 }

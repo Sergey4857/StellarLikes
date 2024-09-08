@@ -1,8 +1,53 @@
 .heroHome {
   width: 100%;
-  max-width: 1180px;
+  max-width: 1520px;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.heroHome::after {
+  content: '';
+  position: absolute;
+  left: 64%;
+  top: -8px;
+  width: 555px;
+  height: 599px;
+  background-image: url('../../images/galaxy.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+  .heroHome::after {
+    content: '';
+    position: absolute;
+    right: -62px;
+    bottom: 36px;
+    top: unset;
+    left: unset;
+    width: 373px;
+    height: 332px;
+    background-image: url('../../images/galaxy.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+  }
+}
+
+.heroContent {
+  max-width: 1180px;
   padding: 70px 40px 100px 40px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .heroContent {
+    padding: 0px;
+  }
 }
 
 @media screen and (max-width: 768px) {

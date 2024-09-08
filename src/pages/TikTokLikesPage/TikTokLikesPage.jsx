@@ -132,7 +132,7 @@ const TikTokLikesPage = () => {
               <div className={css.oldPrice}>${selectedPrice.oldPrice}</div>
             </div>
             <div className={css.savings}>
-              You save{' '}
+              You’re saving{' '}
               <span className={css.savingsPrice}>${selectedPrice.savings}</span>
             </div>
           </div>
