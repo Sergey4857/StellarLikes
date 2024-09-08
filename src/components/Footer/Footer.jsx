@@ -39,19 +39,19 @@ const Footer = () => {
 
             <div className={css.buyBlock}>
               <div className={css.buyBlockContent}>
-                <Link className={css.buyBlockLinkPink} to="/">
+                <Link className={css.buyBlockLinkPink} to="/tikTokLikes">
                   Buy Likes
                 </Link>
                 <span className={css.buyBlockSpan}>Starting at $0.5</span>
               </div>
               <div className={css.buyBlockContent}>
-                <Link className={css.buyBlockLinkGreen} to="/">
+                <Link className={css.buyBlockLinkGreen} to="/tikTokViews">
                   Buy Views
                 </Link>
                 <span className={css.buyBlockSpan}>Starting at $0.89</span>
               </div>
               <div className={css.buyBlockContent}>
-                <Link className={css.buyBlockLinkOrange} to="/">
+                <Link className={css.buyBlockLinkOrange} to="/tikTokFollowers">
                   Buy Followers
                 </Link>
                 <span className={css.buyBlockSpan}>Starting at $0.5</span>

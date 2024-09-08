@@ -5,6 +5,7 @@ import HomePage from 'pages/HomePage/HomePage';
 import TikTokFollowersPage from 'pages/TikTokFollowersPage/TikTokFollowersPage';
 import TikTokLikesPage from 'pages/TikTokLikesPage/TikTokLikesPage';
 import TikTokViewsPage from 'pages/TikTokViewsPage/TikTokViewsPage';
+import ScrollToTop from './ScrollToTop/ScrollToTop';
 
 // const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 // const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
@@ -13,6 +14,7 @@ import TikTokViewsPage from 'pages/TikTokViewsPage/TikTokViewsPage';
 export default function App() {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
