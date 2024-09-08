@@ -16,7 +16,32 @@
   border-radius: 15px;
   background-size: cover;
   background-position: right;
+  position: relative;
+  overflow: hidden;
 }
+.customers::before {
+  content: '';
+  display: block;
+  background-image: url('../../images/sputnik.png');
+  position: absolute;
+  top: -48px;
+  right: -45px;
+
+  width: 285px;
+  height: 285px;
+  z-index: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .customers::before {
+    width: 150px;
+    height: 150px;
+    top: -40px;
+    right: -79px;
+    background-size: cover;
+  }
+}
+
 @media screen and (max-width: 1280px) {
   .customers {
     padding: 40px;
@@ -81,6 +106,7 @@
   max-width: 177px;
   width: 100%;
   justify-content: center;
+  position: relative;
 }
 
 .mySwiper {

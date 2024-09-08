@@ -5,6 +5,7 @@
   background-image: url('../../images/rating-bck.png');
   background-repeat: no-repeat;
   background-position: center;
+  background-position-y: 102px;
 }
 
 @media screen and (max-width: 768px) {
@@ -13,13 +14,19 @@
     background-image: url('../../images/rating-mob.png');
 
     background-size: contain;
-    background-position: 0% 63%;
+    background-position: 0% 512px;
   }
 }
 .ratingWrap {
   max-width: 1180px;
   margin: 0 auto;
   padding: 0px 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .ratingWrap {
+    padding: 0px;
+  }
 }
 .ratingTitle {
 }
