@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/StellarLikes/static/css/main.5fe18afa.css",
-    "main.js": "/StellarLikes/static/js/main.6043114d.js",
+    "main.css": "/StellarLikes/static/css/main.d0462c2d.css",
+    "main.js": "/StellarLikes/static/js/main.a0a9b236.js",
     "static/media/TWKLausanne-700.ttf": "/StellarLikes/static/media/TWKLausanne-700.c386a7e11bf0ddb59962.ttf",
     "static/media/TWKLausanne-800.ttf": "/StellarLikes/static/media/TWKLausanne-800.d506423bc870f562943c.ttf",
     "static/media/TWKLausanne-500.ttf": "/StellarLikes/static/media/TWKLausanne-500.770f6d578c5362d995f1.ttf",
@@ -37,11 +37,11 @@
     "static/media/rating-star.svg": "/StellarLikes/static/media/rating-star.f97df80c8399a3123bf3ad5d8d5f87fb.svg",
     "static/media/burger.svg": "/StellarLikes/static/media/burger.81229060dd4adce4ce0deb5ec71091dc.svg",
     "static/media/checkbox.svg": "/StellarLikes/static/media/checkbox.a9e959e5c805efa3d39c.svg",
-    "main.5fe18afa.css.map": "/StellarLikes/static/css/main.5fe18afa.css.map",
-    "main.6043114d.js.map": "/StellarLikes/static/js/main.6043114d.js.map"
+    "main.d0462c2d.css.map": "/StellarLikes/static/css/main.d0462c2d.css.map",
+    "main.a0a9b236.js.map": "/StellarLikes/static/js/main.a0a9b236.js.map"
   },
   "entrypoints": [
-    "static/css/main.5fe18afa.css",
-    "static/js/main.6043114d.js"
+    "static/css/main.d0462c2d.css",
+    "static/js/main.a0a9b236.js"
   ]
 }
