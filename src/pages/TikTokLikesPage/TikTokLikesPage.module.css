@@ -95,9 +95,11 @@
 }
 .passwordBlock {
 }
+.buyLikesCustomWrap {
+  display: flex;
+}
 .buyLikesCustomLink {
-  display: block;
-  width: fit-content;
+  display: inline-flex;
   margin: 0 auto;
   padding: 10px 15px;
   border-radius: 100px;
@@ -114,8 +116,10 @@
   .buyLikesCustomLink {
     padding: 9px 10px;
     color: #4c01d5;
+    margin-bottom: 13px;
   }
 }
+
 .buyLikesQuantityBlock {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

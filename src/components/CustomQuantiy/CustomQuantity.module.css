@@ -1,0 +1,108 @@
+.customQuantitySection {
+  display: flex;
+  gap: 17px;
+  margin-bottom: 13px;
+}
+@media screen and (max-width: 425px) {
+  .customQuantitySection {
+    flex-direction: column;
+    gap: 13px;
+  }
+}
+.customAmountBlock {
+  width: 50%;
+  padding: 5px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 12px;
+  background: #4c01d5;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+}
+@media screen and (max-width: 425px) {
+  .customAmountBlock {
+    width: 100%;
+  }
+}
+.customAmountTitle {
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+}
+@media screen and (max-width: 425px) {
+  .customAmountTitle {
+    font-size: 13px;
+  }
+}
+.customAmountInput {
+  color: rgba(255, 255, 255, 0.25);
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.25;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+  .customAmountInput {
+    font-size: 30px;
+  }
+}
+.customDiscountBlock {
+  width: 50%;
+  padding: 5px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 12px;
+  background: #fcfcfc;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+}
+@media screen and (max-width: 425px) {
+  .customDiscountBlock {
+    width: 100%;
+  }
+}
+.customDiscountTitle {
+  color: #4c01d5;
+  text-align: center;
+  font-family: 'TWK700';
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+}
+@media screen and (max-width: 425px) {
+  .customDiscountTitle {
+    font-size: 13px;
+  }
+}
+.customDiscountPercent {
+  color: rgba(76, 1, 213, 0.25);
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.25;
+  text-align: center;
+}
+@media screen and (max-width: 425px) {
+  .customDiscountPercent {
+    font-size: 30px;
+  }
+}
+.customQuntityText {
+  color: #161616;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 25px;
+}
+.customQuntitySpan {
+  color: #161616;
+  font-family: 'TWK700';
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+}

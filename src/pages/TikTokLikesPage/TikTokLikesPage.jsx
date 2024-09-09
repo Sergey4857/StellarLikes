@@ -8,6 +8,7 @@ import tikTokLikes from '../../icons/tiktokLikes.svg';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import TikTokLikes from './TikTokLikes';
+import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
 
 const TikTokLikesPage = () => {
   const [tiktoklikes, setTiktoklikes] = useState([
@@ -76,6 +77,9 @@ const TikTokLikesPage = () => {
       active: false,
     },
   ]);
+  const [showCustomQuantity, setShowCustomQuantity] = useState(false);
+  const [showPackages, setShowPackages] = useState(true);
+
   const [selectedPrice, setSelectedPrice] = useState(tiktoklikes[0]);
   const toggleLikes = index => {
     setTiktoklikes(
@@ -101,7 +105,6 @@ const TikTokLikesPage = () => {
           />
           with Instant Delivery
         </div>
-
         <p className={css.buyLikesText}>
           We offer top-notch quality TikTok likes at the best prices! Check our
           deals below, choose best likes package and make an order now!
@@ -111,20 +114,52 @@ const TikTokLikesPage = () => {
           <div className={css.buyLikesBenefit}>Quick Delivery Start</div>
           <div className={css.buyLikesBenefit}>No password required</div>
         </div>
-        <Link className={css.buyLikesCustomLink} to="/">
-          Custom Quantity
-        </Link>
 
-        <div className={css.buyLikesQuantityBlock}>
-          {tiktoklikes.map((data, index) => (
-            <TikTokLikes
-              data={data}
-              index={index}
-              key={index}
-              toggleLikes={toggleLikes}
-            />
-          ))}
-        </div>
+        {showPackages && (
+          <div className={css.buyLikesCustomWrap}>
+            <div
+              className={css.buyLikesCustomLink}
+              to=""
+              onClick={() => {
+                setShowCustomQuantity(true);
+                setShowPackages(false);
+              }}
+            >
+              Custom Quantity
+            </div>
+          </div>
+        )}
+
+        {showCustomQuantity && (
+          <div className={css.buyLikesCustomWrap}>
+            <div
+              className={css.buyLikesCustomLink}
+              to=""
+              onClick={() => {
+                setShowCustomQuantity(false);
+                setShowPackages(true);
+              }}
+            >
+              Packages
+            </div>
+          </div>
+        )}
+
+        {showPackages && (
+          <div className={css.buyLikesQuantityBlock}>
+            {tiktoklikes.map((data, index) => (
+              <TikTokLikes
+                data={data}
+                index={index}
+                key={index}
+                toggleLikes={toggleLikes}
+                color="violet"
+              />
+            ))}
+          </div>
+        )}
+
+        {showCustomQuantity && <CustomQuantity />}
         <div className={css.priceBlock}>
           <div className={css.priceContent}>
             <div className={css.priceWrap}>
