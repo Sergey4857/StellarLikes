@@ -59,7 +59,10 @@
   font-style: normal;
   font-weight: 700;
   line-height: 1.25;
+  padding-left: 60px;
+  position: relative;
 }
+
 @media screen and (max-width: 910px) {
   .availableLink {
     margin: 0 auto;
@@ -93,16 +96,107 @@
   border: 2px solid #00c82f;
   background: #fff;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+
+  position: relative;
+  transition: all 200ms ease-in-out;
 }
+.greenBorder::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 23px;
+  transform: translateY(-50%);
+  background-image: url('../../icons/tiktokViews.svg');
+}
+
+.greenBorder:hover {
+  background: #00c82f;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+.greenBorder:hover span {
+  color: #fff;
+}
+
+.greenBorder:hover::before {
+  background-image: url('../../icons/tiktokViewsHover.svg');
+}
+
 .orangeBorder {
   border-radius: 12px;
   border: 2px solid #fc5d1f;
   background: #fff;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  transition: all 200ms ease-in-out;
 }
+.orangeBorder::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 23px;
+  transform: translateY(-50%);
+  background-image: url('../../icons/tiktokFolowers.svg');
+}
+
+.orangeBorder:hover {
+  background: #fc5d1f;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+.orangeBorder:hover span {
+  color: #fff;
+}
+
+.orangeBorder:hover::before {
+  background-image: url('../../icons/tiktokFolowersHover.svg');
+}
+
+.orangeBorder::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 23px;
+  transform: translateY(-50%);
+  background-image: url('../../icons/tiktokFolowers.svg');
+}
+
 .violetBorder {
   border-radius: 12px;
   border: 2px solid #4c01d5;
   background: #fff;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  transition: all 200ms ease-in-out;
+}
+.violetBorder:hover {
+  background: #4c01d5;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+.violetBorder:hover span {
+  color: #fff;
+}
+
+.violetBorder:hover::before {
+  background-image: url('../../icons/tiktokLikesHover.svg');
+}
+
+.violetBorder::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 23px;
+  transform: translateY(-50%);
+  background-image: url('../../icons/tiktokLikes.svg');
 }

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import css from './HeroHome.module.css';
 
 const HeroHome = () => {
@@ -17,9 +16,9 @@ const HeroHome = () => {
             and views from real users, delivered instantly. At the lowest
             possible prices.
           </p>
-          <Link className={css.heroLink} to="/">
+          <a className={css.heroLink} href="#my-section">
             Show me how
-          </Link>
+          </a>
         </div>
       </div>
     </section>

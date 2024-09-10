@@ -1,11 +1,10 @@
 .rating {
   width: 100%;
-  max-width: 1800px;
+  max-width: 1360px;
   margin: 0 auto;
   background-image: url('../../images/rating-bck.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-position-y: 102px;
 }
 
 @media screen and (max-width: 768px) {
@@ -186,10 +185,29 @@
 }
 .pinkLink {
   background: #f948b4;
+  transition: all 200ms ease-in-out;
+}
+.pinkLink:hover {
+  outline: 2px solid #f948b4;
+  color: #f948b4;
+  background: #fff;
 }
 .greenLink {
   background: #00c82f;
+  transition: all 200ms ease-in-out;
 }
+.greenLink:hover {
+  outline: 2px solid #00c82f;
+  color: #00c82f;
+  background: #fff;
+}
+
 .orangeLink {
   background: #fc5d1f;
+  transition: all 200ms ease-in-out;
+}
+.orangeLink:hover {
+  outline: 2px solid #fc5d1f;
+  color: #fc5d1f;
+  background: #fff;
 }

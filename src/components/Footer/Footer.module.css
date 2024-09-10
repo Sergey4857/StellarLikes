@@ -144,6 +144,12 @@
   font-family: 'TWK700';
   font-size: 25px;
   line-height: 1.25;
+  transition: all 200ms ease-in-out;
+}
+.buyBlockLinkPink:hover {
+  outline: 2px solid #f948b4;
+  color: #f948b4;
+  background: #fff;
 }
 
 @media screen and (max-width: 1124px) {
@@ -171,6 +177,12 @@
   font-family: 'TWK700';
   font-size: 25px;
   line-height: 1.25;
+  transition: all 200ms ease-in-out;
+}
+.buyBlockLinkGreen:hover {
+  outline: 2px solid #00c82f;
+  color: #00c82f;
+  background: #fff;
 }
 
 @media screen and (max-width: 1124px) {
@@ -197,6 +209,13 @@
   font-family: 'TWK700';
   font-size: 25px;
   line-height: 1.25;
+  transition: all 200ms ease-in-out;
+}
+
+.buyBlockLinkOrange:hover {
+  outline: 2px solid #fc5d1f;
+  color: #fc5d1f;
+  background: #fff;
 }
 
 @media screen and (max-width: 1124px) {

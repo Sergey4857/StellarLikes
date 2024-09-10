@@ -110,6 +110,7 @@
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

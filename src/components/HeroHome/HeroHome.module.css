@@ -94,6 +94,14 @@
   border-radius: 12px;
   background: #f948b4;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  transition: all 200ms ease-in-out;
+}
+.heroLink:hover {
+  outline: 2px solid #f948b4;
+  background: #fff;
+  color: #f948b4;
+
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
 }
 @media screen and (max-width: 768px) {
   .heroLink {
