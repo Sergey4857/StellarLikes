@@ -1,10 +1,10 @@
-.buyLikes {
+.buyViews {
   max-width: 490px;
   padding: 25px 20px 0px 20px;
   margin: 0 auto;
 }
 
-.buyLikesTitle {
+.buyViewsTitle {
   display: flex;
   justify-content: center;
   column-gap: 10px;
@@ -17,32 +17,32 @@
   margin-bottom: 20px;
 }
 @media screen and (max-width: 768px) {
-  .buyLikesTitle {
+  .buyViewsTitle {
     font-size: 35px;
   }
 }
-.buyLikesImg {
+.buyViewsImg {
   display: block;
   width: 50px;
   height: 50px;
 }
 @media screen and (max-width: 768px) {
-  .buyLikesImg {
+  .buyViewsImg {
     width: 40px;
     height: 40px;
   }
 }
-.buyLikesText {
+.buyViewsText {
   text-align: center;
   margin-bottom: 25px;
 }
 
 @media screen and (max-width: 768px) {
-  .buyLikesText {
+  .buyViewsText {
     margin-bottom: 20px;
   }
 }
-.buyLikesBenefits {
+.buyViewsBenefits {
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -51,7 +51,7 @@
   margin-bottom: 25px;
 }
 @media screen and (max-width: 768px) {
-  .buyLikesBenefits {
+  .buyViewsBenefits {
     max-width: 355px;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -60,7 +60,7 @@
   }
 }
 
-.buyLikesBenefit {
+.buyViewsBenefit {
   color: #161616;
   font-family: 'TWK500';
   font-size: 13px;
@@ -70,7 +70,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .buyLikesBenefit {
+  .buyViewsBenefit {
     color: #0e2a30;
     font-size: 10px;
     line-height: 1;
@@ -78,7 +78,7 @@
   }
 }
 
-.buyLikesBenefit::before {
+.buyViewsBenefit::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -91,7 +91,7 @@
   background-position: center;
 }
 @media screen and (max-width: 768px) {
-  .buyLikesBenefit::before {
+  .buyViewsBenefit::before {
     color: #0e2a30;
     width: 8px;
     height: 8px;
@@ -101,17 +101,17 @@
 }
 .passwordBlock {
 }
-.buyLikesCustomWrap {
+.buyViewsCustomWrap {
   display: flex;
 }
-.buyLikesCustomLink {
+.buyViewsCustomLink {
   display: inline-flex;
   margin: 0 auto;
   padding: 10px 15px;
   border-radius: 100px;
-  border: 2px solid #4c01d5;
+  border: 2px solid #00c82f;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
-  color: #4c01d5;
+  color: #00c82f;
   font-family: 'TWK500';
   font-size: 18px;
   font-weight: 500;
@@ -120,20 +120,20 @@
 }
 
 @media screen and (max-width: 768px) {
-  .buyLikesCustomLink {
+  .buyViewsCustomLink {
     padding: 9px 10px;
-    color: #4c01d5;
+    color: #00c82f;
     margin-bottom: 13px;
   }
 }
 
-.buyLikesQuantityBlock {
+.buyViewsQuantityBlock {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 17px;
   margin-bottom: 25px;
 }
-.buyLikesQuantity {
+.buyViewsQuantity {
   display: block;
   width: 100%;
 }
@@ -141,9 +141,9 @@
   width: 100%;
   padding: 10px 0px;
   border-radius: 15px 15px 0px 0px;
-  background: #decdff;
+  background: #e8fabf;
   text-align: center;
-  color: #4c01d5;
+  color: #00c82f;
   font-family: 'TWK700';
   font-size: 25px;
   line-height: 1.25;
@@ -151,7 +151,7 @@
 
 @media screen and (max-width: 768px) {
   .quantity {
-    color: #4c01d5;
+    color: #00c82f;
     padding: 8px 0px;
     font-size: 20px;
     line-height: 1.25;
@@ -163,7 +163,7 @@
   border-radius: 0px 0px 15px 15px;
   background: #fafbff;
   text-align: center;
-  color: #4c01d5;
+  color: #00c82f;
 
   font-family: 'TWK500';
   font-size: 18px;
@@ -185,16 +185,16 @@
   background: #fafbff;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
 }
-.active .buyLikesQuantity {
-  outline: 2px solid #4c01d5;
+.active .buyViewsQuantity {
+  outline: 2px solid #00c82f;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
 }
 
-.active .buyLikesQuantity .quantity {
-  outline: 2px solid #4c01d5;
+.active .buyViewsQuantity .quantity {
+  outline: 2px solid #00c82f;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
-  background-color: #4c01d5;
+  background-color: #00c82f;
   color: #fff;
   font-family: 'TWK700';
   font-size: 25px;
@@ -202,11 +202,11 @@
 }
 
 @media screen and (max-width: 768px) {
-  .active .buyLikesQuantity .quantity {
+  .active .buyViewsQuantity .quantity {
     font-size: 20px;
   }
 }
-.active .buyLikesQuantity .discount {
+.active .buyViewsQuantity .discount {
   color: #161616;
   font-family: 'TWK500';
   font-size: 18px;
@@ -214,7 +214,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .active .buyLikesQuantity .discount {
+  .active .buyViewsQuantity .discount {
     font-size: 14px;
   }
 }
@@ -289,7 +289,7 @@
 .buyLink {
   padding: 20px 60px;
   border-radius: 12px;
-  background: #f948b4;
+  background: #00c82f;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
   color: #fff;
   font-family: 'TWK700';

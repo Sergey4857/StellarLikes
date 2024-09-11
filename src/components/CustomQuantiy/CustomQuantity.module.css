@@ -106,3 +106,38 @@
   font-weight: 700;
   line-height: 1.25;
 }
+
+.purple {
+  background-color: #4c01d5;
+}
+
+.orange {
+  background-color: #fc5d1f;
+}
+
+.green {
+  background-color: #00c82f;
+}
+
+.purpleText {
+  color: #4c01d5;
+}
+
+.orangeText {
+  color: #fc5d1f;
+}
+
+.greenText {
+  color: #00c82f;
+}
+
+.purpleText {
+  color: rgba(76, 1, 213, 0.25);
+}
+
+.orangeDiscount {
+  color: rgba(252, 93, 31, 0.25);
+}
+.greenDiscount {
+  color: rgba(0, 200, 47, 0.25);
+}

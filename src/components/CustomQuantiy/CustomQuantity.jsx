@@ -1,10 +1,10 @@
 import css from './CustomQuantity.module.css';
 
-const CustomQuantity = () => {
+const CustomQuantity = ({ blockColor, textColor, discountColor }) => {
   return (
     <>
       <div className={css.customQuantitySection}>
-        <div className={css.customAmountBlock}>
+        <div className={`${css[blockColor]} ${css.customAmountBlock}`}>
           <div className={css.customAmountTitle}>Your Custom Amount</div>
           <input
             className={css.customAmountInput}
@@ -13,8 +13,12 @@ const CustomQuantity = () => {
           />
         </div>
         <div className={css.customDiscountBlock}>
-          <div className={css.customDiscountTitle}>Your Discount</div>
-          <div className={css.customDiscountPercent}>0% off</div>
+          <div className={`${css[textColor]} ${css.customDiscountTitle}`}>
+            Your Discount
+          </div>
+          <div className={`${css[discountColor]} ${css.customDiscountPercent}`}>
+            0% off
+          </div>
         </div>
       </div>
       <div className={css.customQuntityText}>

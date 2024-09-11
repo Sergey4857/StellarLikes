@@ -159,7 +159,7 @@ const TikTokLikesPage = () => {
           </div>
         )}
 
-        {showCustomQuantity && <CustomQuantity />}
+        {showCustomQuantity && <CustomQuantity color="purple" />}
         <div className={css.priceBlock}>
           <div className={css.priceContent}>
             <div className={css.priceWrap}>

@@ -1,16 +1,188 @@
-import Available from 'components/Available/Available';
 import Benefits from 'components/Benefits/Benefits';
 import Rating from 'components/Rating/Rating';
 import Features from 'components/Features/Features';
 import Customers from 'components/Customers/Customers';
 import FaqBlock from 'components/Faq/FaqBlock';
+import css from './TikTokViews.module.css';
+import tikTokViews from '../../icons/tiktokViews.svg';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import TikTokViews from './TikTokViews';
+import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
 
-export default function TikTokViewsPage() {
+const TikTokViewsPage = () => {
+  const [tiktokViews, setTiktokViews] = useState([
+    {
+      quantity: 100,
+      percent: '30%',
+      price: 2.99,
+      oldPrice: 4.99,
+      savings: 2.01,
+      active: true,
+    },
+    {
+      quantity: 250,
+      percent: '40%',
+      price: 3.99,
+      oldPrice: 6.99,
+      savings: 2.01,
+      active: false,
+    },
+    {
+      quantity: 500,
+      percent: '50%',
+      price: 4.99,
+      oldPrice: 8.99,
+      savings: 2.01,
+      active: false,
+    },
+    {
+      quantity: 500,
+      percent: '50%',
+      price: 4.99,
+      oldPrice: 8.99,
+      savings: 2.01,
+      active: false,
+    },
+    {
+      quantity: 500,
+      percent: '50%',
+      price: 4.99,
+      oldPrice: 8.99,
+      savings: 2.01,
+      active: false,
+    },
+    {
+      quantity: 500,
+      percent: '50%',
+      price: 4.99,
+      oldPrice: 8.99,
+      savings: 2.01,
+      active: false,
+    },
+    {
+      quantity: 500,
+      percent: '50%',
+      price: 4.99,
+      oldPrice: 8.99,
+      savings: 2.01,
+      active: false,
+    },
+    {
+      quantity: 500,
+      percent: '50%',
+      price: 4.99,
+      oldPrice: 8.99,
+      savings: 2.01,
+      active: false,
+    },
+  ]);
+  const [showCustomQuantity, setShowCustomQuantity] = useState(false);
+  const [showPackages, setShowPackages] = useState(true);
+
+  const [selectedPrice, setSelectedPrice] = useState(tiktokViews[0]);
+  const toggleViews = index => {
+    setTiktokViews(
+      tiktokViews.map((Views, i) => {
+        return {
+          ...Views,
+          active: i === index,
+        };
+      })
+    );
+    setSelectedPrice(tiktokViews[index]);
+  };
+
   return (
     <>
-      <h1>TikTokViewsPage</h1>
+      <section className={css.buyViews}>
+        <div className={css.buyViewsTitle}>
+          Buy TikTok <span className="greenText">Views</span>
+          <img
+            className={css.buyViewsImg}
+            src={tikTokViews}
+            alt="buyViewsImg"
+          />
+          with Instant Delivery
+        </div>
+        <p className={css.buyViewsText}>
+          We offer top-notch quality TikTok Views at the best prices! Check our
+          deals below, choose best Views package and make an order now!
+        </p>
+        <div className={css.buyViewsBenefits}>
+          <div className={css.buyViewsBenefit}>24/7 support</div>
+          <div className={css.buyViewsBenefit}>Quick Delivery Start</div>
+          <div className={css.buyViewsBenefit}>No password required</div>
+        </div>
 
-      <Available />
+        {showPackages && (
+          <div className={css.buyViewsCustomWrap}>
+            <div
+              className={css.buyViewsCustomLink}
+              to=""
+              onClick={() => {
+                setShowCustomQuantity(true);
+                setShowPackages(false);
+              }}
+            >
+              Custom Quantity
+            </div>
+          </div>
+        )}
+
+        {showCustomQuantity && (
+          <div className={css.buyViewsCustomWrap}>
+            <div
+              className={css.buyViewsCustomLink}
+              to=""
+              onClick={() => {
+                setShowCustomQuantity(false);
+                setShowPackages(true);
+              }}
+            >
+              Packages
+            </div>
+          </div>
+        )}
+
+        {showPackages && (
+          <div className={css.buyViewsQuantityBlock}>
+            {tiktokViews.map((data, index) => (
+              <TikTokViews
+                data={data}
+                index={index}
+                key={index}
+                toggleViews={toggleViews}
+                color="violet"
+              />
+            ))}
+          </div>
+        )}
+
+        {showCustomQuantity && (
+          <CustomQuantity
+            blockColor="green"
+            textColor="greenText"
+            discountColor="greenDiscount"
+          />
+        )}
+        <div className={css.priceBlock}>
+          <div className={css.priceContent}>
+            <div className={css.priceWrap}>
+              <div className={css.mainPrice}>${selectedPrice.price}</div>
+              <div className={css.oldPrice}>${selectedPrice.oldPrice}</div>
+            </div>
+            <div className={css.savings}>
+              You’re saving{' '}
+              <span className={css.savingsPrice}>${selectedPrice.savings}</span>
+            </div>
+          </div>
+          <Link className={css.buyLink} to="/">
+            Buy Now
+          </Link>
+        </div>
+      </section>
+
       <Benefits />
       <Rating />
       <Features />
@@ -18,4 +190,6 @@ export default function TikTokViewsPage() {
       <FaqBlock />
     </>
   );
-}
+};
+
+export default TikTokViewsPage;
