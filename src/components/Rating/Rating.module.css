@@ -10,10 +10,8 @@
 @media screen and (max-width: 768px) {
   .rating {
     padding: 0px 20px;
-    background-image: url('../../images/rating-mob.png');
-
-    background-size: contain;
-    background-position: 0% 512px;
+    background-image: url('../../icons/rating-mob.svg');
+    background-position-y: 66%;
   }
 }
 .ratingWrap {

@@ -19,14 +19,12 @@ export default function Available() {
           className={`${css.availableLink} ${css.violetBorder}`}
           to="/tikTokLikes"
         >
-          {/* <img className={css.availableImg} src={tikTokLikes} alt="Likes" /> */}
           TikTok <span className={css.pink}>Likes</span>
         </Link>
         <Link
           className={`${css.availableLink} ${css.greenBorder}`}
           to="/tikTokViews"
         >
-          {/* <img className={css.availableImg} src={TikTokViews} alt="Reviews" /> */}
           TikTok <span className={css.green}>Views</span>
         </Link>
         <Link
