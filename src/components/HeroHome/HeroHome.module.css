@@ -12,7 +12,7 @@
   top: -8px;
   width: 555px;
   height: 599px;
-  background-image: url('../../images/galaxy.png');
+  background-image: url('../../icons/galaxy.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -29,7 +29,7 @@
     left: unset;
     width: 373px;
     height: 332px;
-    background-image: url('../../images/galaxy.png');
+    background-image: url('../../icons/galaxy.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;

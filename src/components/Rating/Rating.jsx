@@ -115,7 +115,7 @@ const Rating = () => {
               <div className={css.ratingLinkContent}>
                 <Link
                   className={`${css.ratingLink} ${css.orangeLink}`}
-                  to="/tikTokLikes"
+                  to="/tikTokFollowers"
                 >
                   Buy Followers
                 </Link>

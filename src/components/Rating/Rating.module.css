@@ -1,8 +1,8 @@
 .rating {
   width: 100%;
-  max-width: 1360px;
+  max-width: 1880px;
   margin: 0 auto;
-  background-image: url('../../images/rating-bck.png');
+  background-image: url('../../icons/planrets-bcg.svg');
   background-repeat: no-repeat;
   background-position: center;
 }

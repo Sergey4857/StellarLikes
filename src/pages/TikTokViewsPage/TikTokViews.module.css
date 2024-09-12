@@ -136,6 +136,7 @@
 .buyViewsQuantity {
   display: block;
   width: 100%;
+  cursor: pointer;
 }
 .quantity {
   width: 100%;
