@@ -177,7 +177,7 @@ const TikTokViewsPage = () => {
               <span className={css.savingsPrice}>${selectedPrice.savings}</span>
             </div>
           </div>
-          <Link className={css.buyLink} to="/">
+          <Link className={css.buyLink} to="/tikTokLikes/getStarted">
             Buy Now
           </Link>
         </div>

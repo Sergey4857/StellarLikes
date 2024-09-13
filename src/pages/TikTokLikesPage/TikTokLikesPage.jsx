@@ -5,7 +5,7 @@ import Customers from 'components/Customers/Customers';
 import FaqBlock from 'components/Faq/FaqBlock';
 import css from './TikTokLikesPage.module.css';
 import tikTokLikes from '../../icons/tiktokLikes.svg';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import TikTokLikes from './TikTokLikes';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
@@ -95,6 +95,7 @@ const TikTokLikesPage = () => {
 
   return (
     <>
+      <Outlet />
       <section className={css.buyLikes}>
         <div className={css.buyLikesTitle}>
           Buy TikTok <span className="pinkText">Likes</span>
@@ -171,7 +172,7 @@ const TikTokLikesPage = () => {
               <span className={css.savingsPrice}>${selectedPrice.savings}</span>
             </div>
           </div>
-          <Link className={css.buyLink} to="/">
+          <Link className={css.buyLink} to="/tikTokLikes/getStarted">
             Buy Now
           </Link>
         </div>

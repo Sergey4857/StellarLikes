@@ -182,7 +182,7 @@ const TikTokFollowersPage = () => {
                 </span>
               </div>
             </div>
-            <Link className={css.buyLink} to="/">
+            <Link className={css.buyLink} to="/tikTokFollowers/checkout">
               Buy Now
             </Link>
           </div>
