@@ -152,6 +152,12 @@
   text-align: center;
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  .checkoutButton {
+    padding: 20px 10px;
+  }
+}
+
 .checkoutButton span {
   position: relative;
   padding-left: 22px;
