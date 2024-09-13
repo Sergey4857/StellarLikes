@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/StellarLikes/static/css/main.f38801ef.css",
-    "main.js": "/StellarLikes/static/js/main.28fe60ae.js",
+    "main.css": "/StellarLikes/static/css/main.195417dc.css",
+    "main.js": "/StellarLikes/static/js/main.52b666da.js",
+    "static/media/checkout2.svg": "/StellarLikes/static/media/checkout2.bbd46e85191cab8bf455.svg",
     "static/media/TWKLausanne-700.ttf": "/StellarLikes/static/media/TWKLausanne-700.c386a7e11bf0ddb59962.ttf",
     "static/media/TWKLausanne-800.ttf": "/StellarLikes/static/media/TWKLausanne-800.d506423bc870f562943c.ttf",
     "static/media/TWKLausanne-500.ttf": "/StellarLikes/static/media/TWKLausanne-500.770f6d578c5362d995f1.ttf",
@@ -9,6 +10,7 @@
     "static/media/TWKLausanne-400.ttf": "/StellarLikes/static/media/TWKLausanne-400.81808deb67e77b470790.ttf",
     "static/media/planrets-bcg.svg": "/StellarLikes/static/media/planrets-bcg.bbf9e4ebd754083def1d.svg",
     "static/media/rating-mob.svg": "/StellarLikes/static/media/rating-mob.119b82a180dbe8233904.svg",
+    "static/media/cryptomus.svg": "/StellarLikes/static/media/cryptomus.743edffe3d32c4a86a94.svg",
     "static/media/footer-bcg.png": "/StellarLikes/static/media/footer-bcg.8ac2696b91ef81f2d354.png",
     "static/media/footer-mob.png": "/StellarLikes/static/media/footer-mob.3b26ef9bdc910c0293d6.png",
     "static/media/features4.svg": "/StellarLikes/static/media/features4.890c751fbaeb3faf07349987ee79f5e8.svg",
@@ -31,6 +33,7 @@
     "static/media/stars-orange.svg": "/StellarLikes/static/media/stars-orange.d592a40ce8684cba2cab8822c6a7ba6b.svg",
     "static/media/stars-green.svg": "/StellarLikes/static/media/stars-green.2e0c2ef84bb99cefcbc70180e1a9bea2.svg",
     "static/media/flag-britain.svg": "/StellarLikes/static/media/flag-britain.f20ccbd8dd82553e2ecacbbeade0b281.svg",
+    "static/media/checkout.svg": "/StellarLikes/static/media/checkout.44b8b2407b72e845051c.svg",
     "static/media/arrow-right.svg": "/StellarLikes/static/media/arrow-right.a8a0418cd40a646c728d3704a989f049.svg",
     "static/media/arrow-left.svg": "/StellarLikes/static/media/arrow-left.70df077cc8392fb2381575dda90ae3ae.svg",
     "static/media/flag-germany.svg": "/StellarLikes/static/media/flag-germany.f2f3e497bd4e278eb1cf1480d670a096.svg",
@@ -40,11 +43,11 @@
     "static/media/rating-star.svg": "/StellarLikes/static/media/rating-star.f97df80c8399a3123bf3ad5d8d5f87fb.svg",
     "static/media/burger.svg": "/StellarLikes/static/media/burger.81229060dd4adce4ce0deb5ec71091dc.svg",
     "static/media/checkbox.svg": "/StellarLikes/static/media/checkbox.a9e959e5c805efa3d39c.svg",
-    "main.f38801ef.css.map": "/StellarLikes/static/css/main.f38801ef.css.map",
-    "main.28fe60ae.js.map": "/StellarLikes/static/js/main.28fe60ae.js.map"
+    "main.195417dc.css.map": "/StellarLikes/static/css/main.195417dc.css.map",
+    "main.52b666da.js.map": "/StellarLikes/static/js/main.52b666da.js.map"
   },
   "entrypoints": [
-    "static/css/main.f38801ef.css",
-    "static/js/main.28fe60ae.js"
+    "static/css/main.195417dc.css",
+    "static/js/main.52b666da.js"
   ]
 }
