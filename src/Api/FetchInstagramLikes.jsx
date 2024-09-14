@@ -62,7 +62,6 @@ const FetchInstagramLikes = async (setTiktoklikes, setIsLoading, setError) => {
     return result;
   } catch (error) {
     console.error('Error fetching data:', error); // Выводим ошибку в консоль
-    setError(true); // Устанавливаем флаг ошибки
   }
 };
 
