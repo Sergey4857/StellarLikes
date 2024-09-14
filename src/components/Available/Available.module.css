@@ -184,11 +184,11 @@
 }
 .violetBorder:hover span {
   color: #fff;
-  transform: translateY(-20px);
-  animation: bounce 0.6s;
+  /* transform: translateY(-20px);
+  animation: bounce 0.6s; */
 }
 
-@keyframes bounce {
+/* @keyframes bounce {
   0%,
   100% {
     transform: translateY(-20px);
@@ -196,7 +196,7 @@
   50% {
     transform: translateY(0);
   }
-}
+} */
 
 .violetBorder:hover::before {
   background-image: url('../../icons/tiktokLikesHover.svg');

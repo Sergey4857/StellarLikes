@@ -1,0 +1,226 @@
+.selectPostsWrap {
+  display: flex;
+  gap: 60px;
+  max-width: 1100px;
+  padding: 35px 40px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1100px) {
+  .selectPostsWrap {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .selectPostsWrap {
+    flex-direction: column;
+    padding: 25px 20px;
+  }
+}
+.selectPostsFirst {
+  border-radius: 12px;
+  border: 1px solid #efefef;
+  background: #fff;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.selectTitle {
+  color: #161616;
+  text-align: center;
+  font-family: 'TWK700';
+  font-size: 30px;
+  line-height: 1.25;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.selectPostsSpn {
+  color: #f6159c;
+}
+.selectPostsInfo {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 5px;
+  background: #fadda0;
+  color: #fc5d1f;
+  text-align: center;
+  font-family: 'TWK500';
+  font-size: 15px;
+}
+.selectPostsInfoSpn {
+  font-family: 'TWK700';
+}
+.selectPosts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.radioLabel {
+  width: calc((100% - 48px) / 4);
+}
+
+@media screen and (max-width: 1024px) {
+  .radioLabel {
+    width: calc((100% - 32px) / 3);
+  }
+}
+@media screen and (max-width: 390px) {
+  .radioLabel {
+    width: calc((100% - 16px) / 2);
+  }
+}
+.radioInput {
+}
+.loadMore {
+  border-radius: 100px;
+  border: 1px solid rgba(22, 22, 22, 0.35);
+
+  background: #fff;
+  padding: 20px 0px;
+  color: rgba(22, 22, 22, 0.35);
+  font-family: 'TWK600';
+  font-size: 18px;
+  line-height: 1.25;
+  display: flex;
+  justify-content: center;
+}
+
+.loadMore span {
+  display: block;
+  width: fit-content;
+  position: relative;
+  padding-right: 23px;
+}
+.loadMore span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  background-image: url('../../icons/plus.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translateY(-50%);
+  right: 0px;
+  width: 18px;
+  height: 18px;
+}
+.selectPostsSecond {
+  border-radius: 12px;
+  border: 1px solid #efefef;
+  background: #fff;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  max-width: 450px;
+  width: 100%;
+  height: fit-content;
+}
+@media screen and (max-width: 768px) {
+  .selectPostsSecond {
+    max-width: unset;
+  }
+}
+
+.selectedInfo {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+.selectedImage {
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.selectedName {
+  color: #161616;
+  text-align: center;
+  font-family: 'TWK500';
+  font-size: 20px;
+}
+.selectedLink {
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
+  background: #f948b4;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 20px 0;
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.25;
+}
+
+.radioLabel {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  position: relative;
+}
+
+.radioInput {
+  display: none;
+}
+
+.radioCustom {
+  width: 20px;
+  height: 20px;
+  background-image: url('../../icons/checkout-unactive.svg');
+  background-position: center;
+  background-size: cover;
+
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.radioInput:checked + .radioCustom {
+  background-image: url('../../icons/checkout-active.svg');
+  background-position: center;
+  background-size: cover;
+}
+
+.radioCustom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+}
+
+.radioInput:checked + .radioCustom::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.radioCrypto {
+  position: relative;
+}
+
+.radioCredit {
+  position: relative;
+}
+
+.active {
+  border-color: #00c82f;
+}
+
+.selectedPostImg {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+}

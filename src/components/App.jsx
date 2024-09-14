@@ -8,6 +8,7 @@ import TikTokViewsPage from 'pages/TikTokViewsPage/TikTokViewsPage';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
 import GetStarted from 'pages/GetStarted/GetStartedPage';
 import Checkout from 'pages/Checkout/CheckoutPage';
+import SelectPost from './SelectPost/SelectPost';
 
 // const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 // const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
@@ -28,7 +29,7 @@ export default function App() {
           {/* TikTok Likes */}
           <Route path="tikTokLikes" element={<TikTokLikesPage />} />
           <Route path="tikTokLikes/getStarted" element={<GetStarted />} />
-          <Route path="checkout" element={<Checkout />} />
+          <Route path="selectPost" element={<SelectPost />} />
 
           {/* TikTok Views */}
           <Route path="tikTokViews" element={<TikTokViewsPage />} />

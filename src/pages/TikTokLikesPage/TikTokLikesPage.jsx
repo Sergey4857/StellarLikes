@@ -6,9 +6,10 @@ import FaqBlock from 'components/Faq/FaqBlock';
 import css from './TikTokLikesPage.module.css';
 import tikTokLikes from '../../icons/tiktokLikes.svg';
 import { Link, Outlet } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TikTokLikes from './TikTokLikes';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
+import FetchInstagramLikes from 'Api/FetchInstagramLikes';
 
 const TikTokLikesPage = () => {
   const [tiktoklikes, setTiktoklikes] = useState([
@@ -77,6 +78,15 @@ const TikTokLikesPage = () => {
       active: false,
     },
   ]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await FetchInstagramLikes(setTiktoklikes);
+    };
+
+    fetchData();
+  }, []);
+
   const [showCustomQuantity, setShowCustomQuantity] = useState(false);
   const [showPackages, setShowPackages] = useState(true);
 
