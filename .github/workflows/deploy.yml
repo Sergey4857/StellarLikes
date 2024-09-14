@@ -26,7 +26,6 @@ jobs:
           REACT_APP_INSTAGRAM_DETAILS:
             ${{ secrets.REACT_APP_INSTAGRAM_DETAILS }}
           REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
-
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
