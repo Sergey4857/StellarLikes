@@ -16,6 +16,16 @@ jobs:
           npm install
           npm run lint:js
           npm run build
+        env:
+          REACT_APP_BASE_INSTAGRAM_URL:
+            ${{ secrets.REACT_APP_BASE_INSTAGRAM_URL }}
+          REACT_APP_CONSUMER_KEY: ${{ secrets.REACT_APP_CONSUMER_KEY }}
+          REACT_APP_CONSUMER_SECRET: ${{ secrets.REACT_APP_CONSUMER_SECRET }}
+          REACT_APP_INSTAGRAM_POSTS_URL:
+            ${{ secrets.REACT_APP_INSTAGRAM_POSTS_URL }}
+          REACT_APP_INSTAGRAM_DETAILS:
+            ${{ secrets.REACT_APP_INSTAGRAM_DETAILS }}
+          REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
