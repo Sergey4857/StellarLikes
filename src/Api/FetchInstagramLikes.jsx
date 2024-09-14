@@ -12,43 +12,58 @@ const FetchInstagramLikes = async (setTiktoklikes, setIsLoading, setError) => {
 
     const TikTokLikesData = response.data
       .filter(product => product.name === 'Buy Instagram Likes')
-      .map(product => product.meta_data);
+      .map(product => product.meta_data)
+      .flat();
 
     console.log(TikTokLikesData);
 
-    // let products = [];
-    // let currentProduct = {};
+    const result = [];
+    let currentOptionSet = {};
 
-    // TikTokLikesData.forEach(item => {
-    //   if (
-    //     item.key &&
-    //     item.key.includes('quantity_options_') &&
-    //     item.key.endsWith('_quantity')
-    //   ) {
-    //     currentProduct = { id: item.id };
-    //     currentProduct.quantity = item.value;
-    //   } else if (
-    //     item.key &&
-    //     item.key.includes('quantity_options_') &&
-    //     item.key.endsWith('_price')
-    //   ) {
-    //     currentProduct.price = item.value;
-    //   } else if (
-    //     item.key &&
-    //     item.key.includes('quantity_options_') &&
-    //     item.key.endsWith('_discount')
-    //   ) {
-    //     currentProduct.discount = item.value;
-    //     products.push({ ...currentProduct }); // Заканчиваем сбор данных о продукте и добавляем в массив
-    //   }
-    // });
+    // Проходим по каждому элементу массива
+    TikTokLikesData.forEach(item => {
+      const quantityMatch =
+        item.key && item.key.match(/quantity_options_(\d+)_quantity/);
+      const priceMatch =
+        item.key && item.key.match(/quantity_options_(\d+)_price/);
+      const discountMatch =
+        item.key && item.key.match(/quantity_options_(\d+)_discount/);
 
-    // console.log(products);
-    // setTiktoklikes(products);
+      if (quantityMatch) {
+        const index = quantityMatch[1];
+        if (!currentOptionSet[index]) {
+          currentOptionSet[index] = {};
+        }
+        currentOptionSet[index].quantity = item.value; // Добавляем количество
+      }
 
-    // // setTiktoklikes(response.data.results);
-    // setIsLoading(false);
-  } catch (error) {}
+      if (priceMatch) {
+        const index = priceMatch[1];
+        if (!currentOptionSet[index]) {
+          currentOptionSet[index] = {};
+        }
+        currentOptionSet[index].price = item.value; // Добавляем цену
+      }
+
+      if (discountMatch) {
+        const index = discountMatch[1];
+        if (!currentOptionSet[index]) {
+          currentOptionSet[index] = {};
+        }
+        currentOptionSet[index].discount = item.value; // Добавляем скидку
+      }
+    });
+
+    for (const key in currentOptionSet) {
+      result.push(currentOptionSet[key]);
+    }
+
+    console.log(result); // Выводим результат в консоль
+    return result;
+  } catch (error) {
+    console.error('Error fetching data:', error); // Выводим ошибку в консоль
+    setError(true); // Устанавливаем флаг ошибки
+  }
 };
 
 export default FetchInstagramLikes;
