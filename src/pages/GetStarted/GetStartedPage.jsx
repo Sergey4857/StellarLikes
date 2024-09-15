@@ -1,16 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 import css from './GetStarted.module.css';
-import FetchInstagramDetails from 'Api/InstagramDetails';
 import { useState } from 'react';
+import TikTokUserDetails from 'Api/TikTokUserDetails';
 
 const GetStarted = () => {
   const navigate = useNavigate();
 
-  const handleUserSelect = id => {
-    navigate('/selectPost', { state: { id } });
+  const handleUserSelect = uniqueId => {
+    navigate('/selectPost', { state: { uniqueId } });
   };
-  const [userInfo, setUserInfo] = useState(null);
 
+  const [userInfo, setUserInfo] = useState(null);
+  console.log(userInfo);
   return (
     <>
       <div className={css.getStartedWrap}>
@@ -24,7 +25,7 @@ const GetStarted = () => {
           onSubmit={e => {
             e.preventDefault();
             const username = document.getElementById('userName').value;
-            FetchInstagramDetails(username, setUserInfo);
+            TikTokUserDetails(username, setUserInfo);
           }}
         >
           <div className={css.getStartedFormTitle}>
@@ -49,28 +50,24 @@ const GetStarted = () => {
           <button type="submit" className={css.getStartedSubmit}>
             Continue
           </button>
-          {/* <button
-          className={css.getStartedSubmit}
-          onClick={() => handleProductSelect('TikTok Likes Package')}
-        >
-          Continue
-        </button> */}
-          {userInfo && (
-            <div className={css.findedUserWrap}>
-              <img
-                className={css.findedUserImage}
-                src={userInfo.profile_pic_url}
-                alt="profile"
-              />
-              <div className={css.findedUserName}>{userInfo.full_name}</div>
-              <button
-                className={css.getStartedRedirect}
-                onClick={() => handleUserSelect(userInfo.pk_id)}
-              >
-                Select
-              </button>
-            </div>
-          )}
+
+          {userInfo &&
+            userInfo.map(({ profile_pic_url, full_name, id, uniqueId }) => (
+              <div key={id} className={css.findedUserWrap}>
+                <img
+                  className={css.findedUserImage}
+                  src={profile_pic_url}
+                  alt="profile"
+                />
+                <div className={css.findedUserName}>{full_name}</div>
+                <button
+                  className={css.getStartedRedirect}
+                  onClick={() => handleUserSelect(uniqueId)}
+                >
+                  Select
+                </button>
+              </div>
+            ))}
         </form>
       </div>
     </>

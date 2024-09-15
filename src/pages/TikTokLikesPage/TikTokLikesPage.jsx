@@ -9,7 +9,7 @@ import { Link, Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import TikTokLikes from './TikTokLikes';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
-import FetchInstagramLikes from 'Api/FetchInstagramLikes';
+import FetchTikTokLikes from 'Api/FetchTiktokLikes';
 
 const TikTokLikesPage = () => {
   const [tiktoklikes, setTiktoklikes] = useState([
@@ -81,7 +81,7 @@ const TikTokLikesPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await FetchInstagramLikes(setTiktoklikes);
+      await FetchTikTokLikes(setTiktoklikes);
     };
 
     fetchData();
