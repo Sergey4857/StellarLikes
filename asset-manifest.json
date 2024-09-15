@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/StellarLikes/static/css/main.ea13c32b.css",
-    "main.js": "/StellarLikes/static/js/main.14b72568.js",
+    "main.js": "/StellarLikes/static/js/main.6249fefc.js",
     "static/media/checkout2.svg": "/StellarLikes/static/media/checkout2.bbd46e85191cab8bf455.svg",
     "static/media/TWKLausanne-700.ttf": "/StellarLikes/static/media/TWKLausanne-700.c386a7e11bf0ddb59962.ttf",
     "static/media/TWKLausanne-800.ttf": "/StellarLikes/static/media/TWKLausanne-800.d506423bc870f562943c.ttf",
@@ -48,10 +48,10 @@
     "static/media/checkbox.svg": "/StellarLikes/static/media/checkbox.a9e959e5c805efa3d39c.svg",
     "static/media/checkout-unactive.svg": "/StellarLikes/static/media/checkout-unactive.15debbb0754ecc38e23a.svg",
     "main.ea13c32b.css.map": "/StellarLikes/static/css/main.ea13c32b.css.map",
-    "main.14b72568.js.map": "/StellarLikes/static/js/main.14b72568.js.map"
+    "main.6249fefc.js.map": "/StellarLikes/static/js/main.6249fefc.js.map"
   },
   "entrypoints": [
     "static/css/main.ea13c32b.css",
-    "static/js/main.14b72568.js"
+    "static/js/main.6249fefc.js"
   ]
 }
