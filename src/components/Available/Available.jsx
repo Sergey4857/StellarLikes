@@ -1,9 +1,14 @@
 import css from './Available.module.css';
 import { Link } from 'react-router-dom';
-import tiktokViews from '../../icons/tiktokViews.svg';
-import tiktokHoverViews from '../../icons/tiktokViewsHover.svg';
 import tiktokLikes from '../../icons/tiktokLikes.svg';
 import tiktokHoverLikes from '../../icons/tiktokLikesHover.svg';
+
+import tiktokFolowers from '../../icons/tiktokFolowers.svg';
+import tiktokFolowersHover from '../../icons/tiktokFolowersHover.svg';
+
+import tiktokViews from '../../icons/tiktokViews.svg';
+import tiktokViewsHover from '../../icons/tiktokViewsHover.svg';
+
 export default function Available() {
   return (
     <section id="my-section" className={css.availableSection}>
@@ -46,12 +51,12 @@ export default function Available() {
         >
           <div className={css.availableLinkWrap}>
             <img
-              src={tiktokLikes}
+              src={tiktokViews}
               alt="tiktokViews"
               className={css.mainImage}
             />
             <img
-              src={tiktokHoverLikes}
+              src={tiktokViewsHover}
               alt="tiktokViews"
               className={css.hoverImage}
             />
@@ -68,12 +73,12 @@ export default function Available() {
         >
           <div className={css.availableLinkWrap}>
             <img
-              src={tiktokLikes}
+              src={tiktokFolowers}
               alt="tiktokViews"
               className={css.mainImage}
             />
             <img
-              src={tiktokHoverLikes}
+              src={tiktokFolowersHover}
               alt="tiktokViews"
               className={css.hoverImage}
             />

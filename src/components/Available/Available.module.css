@@ -115,6 +115,16 @@
 .availableLink:hover .availableLinkHoverText {
   transform: translateY(0);
 }
+.hoverImage {
+  display: none;
+}
+
+.availableLink:hover .hoverImage {
+  display: block;
+}
+.availableLink:hover .mainImage {
+  display: none;
+}
 
 .availableLink:hover .availableLinkText {
   transform: translateY(-150%);
@@ -203,18 +213,6 @@
   }
 }
 
-.orangeBorder::before {
-  content: '';
-  width: 30px;
-  height: 30px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 23px;
-  transform: translateY(-50%);
-  background-image: url('../../icons/tiktokFolowers.svg');
-}
-
 .orangeBorder:hover {
   background: #fc5d1f;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
@@ -222,22 +220,6 @@
 }
 .orangeBorder:hover span {
   color: #fff;
-}
-
-.orangeBorder:hover::before {
-  background-image: url('../../icons/tiktokFolowersHover.svg');
-}
-
-.orangeBorder::before {
-  content: '';
-  width: 30px;
-  height: 30px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 23px;
-  transform: translateY(-50%);
-  background-image: url('../../icons/tiktokFolowers.svg');
 }
 
 .violetBorder {

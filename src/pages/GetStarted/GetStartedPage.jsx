@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import css from './GetStarted.module.css';
 import { useState } from 'react';
 import TikTokUserDetails from 'Api/TikTokUserDetails';
+import checkmark from '../../icons/checkmark-getStarted.svg';
 
 const GetStarted = () => {
   const navigate = useNavigate();
@@ -68,7 +69,7 @@ const GetStarted = () => {
                   className={css.getStartedRedirect}
                   onClick={() => handleUserSelect(uniqueId)}
                 >
-                  Select
+                  <img src={checkmark} alt="" />
                 </button>
               </div>
             ))}
