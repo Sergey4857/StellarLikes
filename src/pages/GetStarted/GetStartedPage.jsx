@@ -25,6 +25,10 @@ const GetStarted = () => {
           onSubmit={e => {
             e.preventDefault();
             const username = document.getElementById('userName').value;
+            if (!username) {
+              alert('Please enter a valid TikTok username.');
+              return;
+            }
             TikTokUserDetails(username, setUserInfo);
           }}
         >

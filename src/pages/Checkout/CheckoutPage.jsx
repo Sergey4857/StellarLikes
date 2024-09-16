@@ -1,10 +1,13 @@
 // import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import css from './Checkout.module.css';
 import { useState } from 'react';
 
 const Checkout = () => {
-  // const location = useLocation();
-  // const selectedProduct = location.state?.product;
+  const location = useLocation();
+  // if (location) {
+  //   const { selectedPost } = location?.state;
+  // }
 
   const [selectedOption, setSelectedOption] = useState('1');
 
@@ -13,6 +16,7 @@ const Checkout = () => {
   };
   return (
     <>
+      {/* <p>Selected Post ID: {selectedPost}</p> */}
       <div className={css.checkoutWrap}>
         <div className={css.checkoutFirstBlock}>
           <h1 className={css.checkoutTitle}>Checkout</h1>

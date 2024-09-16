@@ -1,6 +1,9 @@
 import css from './Available.module.css';
 import { Link } from 'react-router-dom';
-
+import tiktokViews from '../../icons/tiktokViews.svg';
+import tiktokHoverViews from '../../icons/tiktokViewsHover.svg';
+import tiktokLikes from '../../icons/tiktokLikes.svg';
+import tiktokHoverLikes from '../../icons/tiktokLikesHover.svg';
 export default function Available() {
   return (
     <section id="my-section" className={css.availableSection}>
@@ -19,24 +22,66 @@ export default function Available() {
           className={`${css.availableLink} ${css.violetBorder}`}
           to="/tikTokLikes"
         >
-          TikTok <span className={css.pink}>Likes</span>
+          <div className={css.availableLinkWrap}>
+            <img
+              src={tiktokLikes}
+              alt="tiktokViews"
+              className={css.mainImage}
+            />
+            <img
+              src={tiktokHoverLikes}
+              alt="tiktokViews"
+              className={css.hoverImage}
+            />
+            <div className={css.availableLinkHoverText}> TikTok Likes</div>
+            <div className={css.availableLinkText}>
+              TikTok <span className={css.pink}>Likes</span>
+            </div>
+          </div>
         </Link>
+
         <Link
           className={`${css.availableLink} ${css.greenBorder}`}
           to="/tikTokViews"
         >
-          TikTok <span className={css.green}>Views</span>
+          <div className={css.availableLinkWrap}>
+            <img
+              src={tiktokLikes}
+              alt="tiktokViews"
+              className={css.mainImage}
+            />
+            <img
+              src={tiktokHoverLikes}
+              alt="tiktokViews"
+              className={css.hoverImage}
+            />
+            <div className={css.availableLinkHoverText}> TikTok Views</div>
+            <div className={css.availableLinkText}>
+              TikTok <span className={css.green}>Views</span>
+            </div>
+          </div>
         </Link>
+
         <Link
           className={`${css.availableLink} ${css.orangeBorder}`}
-          to="/tikTokFollowers"
+          to="/tikTokViews"
         >
-          {/* <img
-            className={css.availableImg}
-            src={TikTokFollowers}
-            alt="Downloader"
-          /> */}
-          TikTok <span className={css.orange}>Followers</span>
+          <div className={css.availableLinkWrap}>
+            <img
+              src={tiktokLikes}
+              alt="tiktokViews"
+              className={css.mainImage}
+            />
+            <img
+              src={tiktokHoverLikes}
+              alt="tiktokViews"
+              className={css.hoverImage}
+            />
+            <div className={css.availableLinkHoverText}> TikTok Followers</div>
+            <div className={css.availableLinkText}>
+              TikTok <span className={css.orange}>Followers</span>
+            </div>
+          </div>
         </Link>
       </div>
     </section>

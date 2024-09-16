@@ -43,14 +43,14 @@ const SelectPost = () => {
               <label
                 key={video_id}
                 className={`${css.radioLabel} ${
-                  selectedOption === '1' ? css.active : ''
+                  selectedOption === video_id ? css.active : ''
                 } ${css.radioCrypto}`}
               >
                 <input
                   type="radio"
                   name="option"
-                  value="1"
-                  checked={selectedOption === '1'}
+                  value={video_id}
+                  checked={selectedOption === video_id}
                   onChange={handleOptionChange}
                   className={css.radioInput}
                 />
@@ -68,7 +68,11 @@ const SelectPost = () => {
           <img className={css.selectedImage} src={avatarImage} alt="avatar" />
           <div className={css.selectedName}>@k_gntv</div>
         </div>
-        <Link className={css.selectedLink} to="/checkout">
+        <Link
+          className={css.selectedLink}
+          to="/checkout"
+          state={{ selectedPost: selectedOption }}
+        >
           Continue to checkout
         </Link>
       </div>
