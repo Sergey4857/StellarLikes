@@ -1,10 +1,10 @@
 // import { useLocation } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import css from './Checkout.module.css';
 import { useState } from 'react';
 
 const Checkout = () => {
-  const location = useLocation();
+  // const location = useLocation();
   // if (location) {
   //   const { selectedPost } = location?.state;
   // }
