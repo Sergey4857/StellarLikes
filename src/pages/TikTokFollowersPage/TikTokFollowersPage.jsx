@@ -5,7 +5,7 @@ import Customers from 'components/Customers/Customers';
 import FaqBlock from 'components/Faq/FaqBlock';
 import css from './TikTokFollowers.module.css';
 import tikTokFollowersIcon from '../../icons/tiktokFolowers.svg';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import TikTokFollowers from './TikTokFollowers';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';

@@ -9,8 +9,6 @@ import ScrollToTop from './ScrollToTop/ScrollToTop';
 import GetStarted from 'pages/GetStarted/GetStartedPage';
 import Checkout from 'pages/Checkout/CheckoutPage';
 import SelectPost from './SelectPost/SelectPost';
-import { useEffect, useState } from 'react';
-import FetchAllProductData from 'Api/FetchTiktokLikes';
 
 // const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 // const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
@@ -18,8 +16,8 @@ import FetchAllProductData from 'Api/FetchTiktokLikes';
 // const MoviesDetails = lazy(() => import('../pages/MovieDetails/MoviesDetails'));
 
 export default function App() {
-  const [tiktokLikesData, setTiktokLikesData] = useState(null);
-  const [tiktokViewsData, setTiktokViewsData] = useState(null);
+  // const [tiktokLikesData, setTiktokLikesData] = useState(null);
+  // const [tiktokViewsData, setTiktokViewsData] = useState(null);
 
   //request 1 times at week
   // const fetchDataIfNeeded = async () => {
@@ -33,12 +31,12 @@ export default function App() {
   // };
   // fetchDataIfNeeded();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      await FetchAllProductData(setTiktokLikesData, setTiktokViewsData);
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     await FetchAllProductData(setTiktokLikesData, setTiktokViewsData);
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <>

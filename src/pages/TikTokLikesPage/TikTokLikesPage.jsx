@@ -5,11 +5,10 @@ import Customers from 'components/Customers/Customers';
 import FaqBlock from 'components/Faq/FaqBlock';
 import css from './TikTokLikesPage.module.css';
 import tikTokLikes from '../../icons/tiktokLikes.svg';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import TikTokLikes from './TikTokLikes';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
-import FetchTikTokLikes from 'Api/FetchTiktokLikes';
 
 const TikTokLikesPage = () => {
   const navigate = useNavigate();
