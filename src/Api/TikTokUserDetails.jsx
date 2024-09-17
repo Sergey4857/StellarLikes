@@ -1,6 +1,6 @@
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-const TikTokUserDetails = async (username, setUserInfo) => {
+const TikTokUserDetails = async username => {
   try {
     const response = await fetch(
       `https://tiktok-scraper7.p.rapidapi.com/user/info?unique_id=${username}`,
@@ -17,31 +17,29 @@ const TikTokUserDetails = async (username, setUserInfo) => {
       const json = await response.json();
 
       if (json.data) {
-        const originalArray = json.data;
-        const newArray = [];
+        const originalData = json.data;
 
         const newItem = {
           pk: username,
-          id: originalArray.user.id,
-          username: originalArray.user.nickname,
-          full_name: originalArray.user.nickname,
-          profile_pic_url: originalArray.user.avatarThumb,
-          local_image_path: originalArray.user.avatarThumb,
-          uniqueId: originalArray.user.uniqueId,
+          id: originalData.user.id,
+          username: originalData.user.nickname,
+          full_name: originalData.user.nickname,
+          profile_pic_url: originalData.user.avatarThumb,
+          local_image_path: originalData.user.avatarThumb,
+          uniqueId: originalData.user.uniqueId,
         };
 
-        newArray.push(newItem);
-        setUserInfo(newArray);
-        return newArray;
+        return [newItem];
       } else {
-        console.error('Ошибка данных TikTok: ', json);
-        return [];
+        throw new Error(
+          'User not found. Please check the correctness of the entered username.'
+        );
       }
     } else {
-      return `Ошибка: ${response.status}`;
+      throw new Error(`Error: ${response.status} ${response.statusText}`);
     }
   } catch (error) {
-    return `Ошибка: ${error.message}`;
+    throw new Error(`Error: ${error.message}`);
   }
 };
 

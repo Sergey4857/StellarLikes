@@ -153,3 +153,7 @@
   padding: 0;
   max-width: 40px;
 }
+.error {
+  padding: 10px;
+  color: #ff4031;
+}

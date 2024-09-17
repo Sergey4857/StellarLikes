@@ -2,9 +2,7 @@ import axios from 'axios';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-const FetchUserTiktokPosts = async (uniqueId, setTikTokPosts) => {
-  console.log(uniqueId);
-
+const FetchUserTiktokPosts = async (uniqueId, cursor) => {
   try {
     const response = await axios.get(
       'https://tiktok-scraper7.p.rapidapi.com/user/posts',
@@ -12,7 +10,7 @@ const FetchUserTiktokPosts = async (uniqueId, setTikTokPosts) => {
         params: {
           unique_id: uniqueId,
           count: 9,
-          cursor: 0,
+          cursor: cursor,
         },
         headers: {
           'x-rapidapi-host': 'tiktok-scraper7.p.rapidapi.com',
@@ -21,8 +19,7 @@ const FetchUserTiktokPosts = async (uniqueId, setTikTokPosts) => {
       }
     );
 
-    console.log(response.data); // у axios данные будут в response.data
-    setTikTokPosts(response.data); // если вам нужно обновить состояние
+    return response.data;
   } catch (error) {
     console.error('Error fetching TikTok posts:', error);
     return 'Error';

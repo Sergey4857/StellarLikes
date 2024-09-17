@@ -1,22 +1,30 @@
 // import { useLocation } from 'react-router-dom';
 // import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import css from './Checkout.module.css';
 import { useState } from 'react';
 
 const Checkout = () => {
-  // const location = useLocation();
-  // if (location) {
-  //   const { selectedPost } = location?.state;
-  // }
+  // const navigate = useNavigate();
+  const location = useLocation();
+
+  const { selectedPrice, uniqueId, selectedPost, userEmail } =
+    location.state || {};
+
+  console.log(selectedPrice);
+  console.log(uniqueId);
+  console.log(selectedPost);
+  console.log(userEmail);
 
   const [selectedOption, setSelectedOption] = useState('1');
+
+  console.log(selectedOption);
 
   const handleOptionChange = event => {
     setSelectedOption(event.target.value);
   };
   return (
     <>
-      {/* <p>Selected Post ID: {selectedPost}</p> */}
       <div className={css.checkoutWrap}>
         <div className={css.checkoutFirstBlock}>
           <h1 className={css.checkoutTitle}>Checkout</h1>

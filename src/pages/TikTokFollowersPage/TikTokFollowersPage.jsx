@@ -5,12 +5,13 @@ import Customers from 'components/Customers/Customers';
 import FaqBlock from 'components/Faq/FaqBlock';
 import css from './TikTokFollowers.module.css';
 import tikTokFollowersIcon from '../../icons/tiktokFolowers.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import TikTokFollowers from './TikTokFollowers';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
 
 const TikTokFollowersPage = () => {
+  const navigate = useNavigate();
   const [tiktokFollowers, setTiktokFollowers] = useState([
     {
       quantity: 100,
@@ -77,6 +78,7 @@ const TikTokFollowersPage = () => {
       active: false,
     },
   ]);
+
   const [showCustomQuantity, setShowCustomQuantity] = useState(false);
   const [showPackages, setShowPackages] = useState(true);
 
@@ -182,9 +184,17 @@ const TikTokFollowersPage = () => {
                 </span>
               </div>
             </div>
-            <Link className={css.buyLink} to="/tikTokFollowers/checkout">
+
+            <button
+              className={css.buyLink}
+              onClick={() =>
+                navigate('getStarted', {
+                  state: { selectedPrice },
+                })
+              }
+            >
               Buy Now
-            </Link>
+            </button>
           </div>
         </div>
       </section>

@@ -5,13 +5,14 @@ import Customers from 'components/Customers/Customers';
 import FaqBlock from 'components/Faq/FaqBlock';
 import css from './TikTokLikesPage.module.css';
 import tikTokLikes from '../../icons/tiktokLikes.svg';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import TikTokLikes from './TikTokLikes';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
 import FetchTikTokLikes from 'Api/FetchTiktokLikes';
 
 const TikTokLikesPage = () => {
+  const navigate = useNavigate();
   const [tiktoklikes, setTiktoklikes] = useState([
     {
       quantity: 100,
@@ -79,14 +80,6 @@ const TikTokLikesPage = () => {
     },
   ]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      await FetchTikTokLikes(setTiktoklikes);
-    };
-
-    fetchData();
-  }, []);
-
   const [showCustomQuantity, setShowCustomQuantity] = useState(false);
   const [showPackages, setShowPackages] = useState(true);
 
@@ -102,6 +95,8 @@ const TikTokLikesPage = () => {
     );
     setSelectedPrice(tiktoklikes[index]);
   };
+
+  console.log(selectedPrice);
 
   return (
     <>
@@ -182,9 +177,17 @@ const TikTokLikesPage = () => {
               <span className={css.savingsPrice}>${selectedPrice.savings}</span>
             </div>
           </div>
-          <Link className={css.buyLink} to="/tikTokLikes/getStarted">
+
+          <button
+            className={css.buyLink}
+            onClick={() =>
+              navigate('getStarted', {
+                state: { selectedPrice },
+              })
+            }
+          >
             Buy Now
-          </Link>
+          </button>
         </div>
       </section>
       <Benefits />

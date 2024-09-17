@@ -1,29 +1,46 @@
-// import { useLocation } from 'react-router-dom';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import css from './SelectPost.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react'; // Import useRef
 
-import avatarImage from '../../images/avatar.png';
 import FetchUserTiktokPosts from 'Api/FetchUserTikTokPosts';
 
 const SelectPost = () => {
   const location = useLocation();
-  const { uniqueId } = location.state;
-  const [tiktokPosts, setTikTokPosts] = useState(null);
+  const { selectedPrice, uniqueId, userInfo } = location.state || {};
+
+  console.log(selectedPrice);
+  console.log(uniqueId);
+  console.log(userInfo);
+
+  const [{ full_name, profile_pic_url }] = userInfo;
+
+  const [tiktokPosts, setTikTokPosts] = useState([]);
+  const cursorRef = useRef('0');
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const loadMorePosts = useCallback(async () => {
+    setLoading(true);
+    const newPosts = await FetchUserTiktokPosts(uniqueId, cursorRef.current);
+    if (newPosts !== 'Error') {
+      setTikTokPosts(prevPosts => [...prevPosts, ...newPosts.data.videos]);
+      cursorRef.current = newPosts.data.cursor;
+    }
+    setLoading(false);
+  }, [uniqueId]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      await FetchUserTiktokPosts(uniqueId, setTikTokPosts);
-    };
-
-    fetchData();
-  }, [uniqueId]);
+    cursorRef.current = '0';
+    setTikTokPosts([]);
+    loadMorePosts();
+  }, [uniqueId, loadMorePosts]);
 
   const [selectedOption, setSelectedOption] = useState('1');
 
   const handleOptionChange = event => {
     setSelectedOption(event.target.value);
   };
+
   return (
     <div className={css.selectPostsWrap}>
       <div className={css.selectPostsFirst}>
@@ -38,43 +55,60 @@ const SelectPost = () => {
         </div>
 
         <div className={css.selectPosts}>
-          {tiktokPosts?.data?.videos &&
-            tiktokPosts?.data?.videos.map(({ cover, video_id, author }) => (
-              <label
-                key={video_id}
-                className={`${css.radioLabel} ${
-                  selectedOption === video_id ? css.active : ''
-                } ${css.radioCrypto}`}
-              >
-                <input
-                  type="radio"
-                  name="option"
-                  value={video_id}
-                  checked={selectedOption === video_id}
-                  onChange={handleOptionChange}
-                  className={css.radioInput}
-                />
-                <span className={css.radioCustom}></span>
-                <img className={css.selectedPostImg} src={cover} alt="" />
-              </label>
-            ))}
+          {tiktokPosts.map(({ cover, video_id, author }) => (
+            <label
+              key={video_id}
+              className={`${css.radioLabel} ${
+                selectedOption === video_id ? css.active : ''
+              } ${css.radioCrypto}`}
+            >
+              <input
+                type="radio"
+                name="option"
+                value={video_id}
+                checked={selectedOption === video_id}
+                onChange={handleOptionChange}
+                className={css.radioInput}
+              />
+              <span className={css.radioCustom}></span>
+              <img className={css.selectedPostImg} src={cover} alt="" />
+            </label>
+          ))}
         </div>
-        <button className={css.loadMore}>
-          <span>Load more posts</span>
+
+        <button
+          className={css.loadMore}
+          onClick={loadMorePosts}
+          disabled={loading}
+        >
+          <span>{loading ? 'Loading...' : 'Load more posts'}</span>
         </button>
       </div>
       <div className={css.selectPostsSecond}>
         <div className={css.selectedInfo}>
-          <img className={css.selectedImage} src={avatarImage} alt="avatar" />
-          <div className={css.selectedName}>@k_gntv</div>
+          <img
+            className={css.selectedImage}
+            src={profile_pic_url}
+            alt="avatar"
+          />
+          <div className={css.selectedName}>{full_name}</div>
         </div>
-        <Link
+
+        <div
           className={css.selectedLink}
-          to="/checkout"
-          state={{ selectedPost: selectedOption }}
+          onClick={() =>
+            navigate('/checkout', {
+              state: {
+                selectedPrice,
+                uniqueId,
+                userInfo,
+                selectedPost: selectedOption,
+              },
+            })
+          }
         >
           Continue to checkout
-        </Link>
+        </div>
       </div>
     </div>
   );

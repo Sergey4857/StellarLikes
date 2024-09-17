@@ -30,12 +30,12 @@ export default function Available() {
           <div className={css.availableLinkWrap}>
             <img
               src={tiktokLikes}
-              alt="tiktokViews"
+              alt="tikTokLikes"
               className={css.mainImage}
             />
             <img
               src={tiktokHoverLikes}
-              alt="tiktokViews"
+              alt="tikTokLikes"
               className={css.hoverImage}
             />
             <div className={css.availableLinkHoverText}> TikTok Likes</div>
@@ -69,17 +69,17 @@ export default function Available() {
 
         <Link
           className={`${css.availableLink} ${css.orangeBorder}`}
-          to="/tikTokViews"
+          to="/tikTokFollowers"
         >
           <div className={css.availableLinkWrap}>
             <img
               src={tiktokFolowers}
-              alt="tiktokViews"
+              alt="tikTokFollowers"
               className={css.mainImage}
             />
             <img
               src={tiktokFolowersHover}
-              alt="tiktokViews"
+              alt="tikTokFollowers"
               className={css.hoverImage}
             />
             <div className={css.availableLinkHoverText}> TikTok Followers</div>
