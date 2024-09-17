@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/StellarLikes/static/css/main.060fd007.css",
-    "main.js": "/StellarLikes/static/js/main.5326d05f.js",
+    "main.css": "/StellarLikes/static/css/main.416d71e3.css",
+    "main.js": "/StellarLikes/static/js/main.12ddcbaa.js",
     "static/media/checkout2.svg": "/StellarLikes/static/media/checkout2.bbd46e85191cab8bf455.svg",
     "static/media/TWKLausanne-700.ttf": "/StellarLikes/static/media/TWKLausanne-700.c386a7e11bf0ddb59962.ttf",
     "static/media/TWKLausanne-800.ttf": "/StellarLikes/static/media/TWKLausanne-800.d506423bc870f562943c.ttf",
@@ -17,7 +17,6 @@
     "static/media/tiktokLikesHover.svg": "/StellarLikes/static/media/tiktokLikesHover.2c245d21f4881221558d4d6862f29023.svg",
     "static/media/tiktokLikes.svg": "/StellarLikes/static/media/tiktokLikes.ca39c71dc3ba6618ace64c0dab1f93fc.svg",
     "static/media/features2.svg": "/StellarLikes/static/media/features2.b6384b250d36f023ccd0e328f4da514f.svg",
-    "static/media/avatar.png": "/StellarLikes/static/media/avatar.00e4e6fde1edfcd2f55e.png",
     "static/media/benefit3.svg": "/StellarLikes/static/media/benefit3.607e2baf27aadd7a3649c31e23e17746.svg",
     "static/media/benefit2.svg": "/StellarLikes/static/media/benefit2.9580a035ff213cca0cd7dd9bf25d9717.svg",
     "static/media/tiktokFolowersHover.svg": "/StellarLikes/static/media/tiktokFolowersHover.a3dcb9a8a53be262a6c6ac003f53fa06.svg",
@@ -48,11 +47,11 @@
     "static/media/burger.svg": "/StellarLikes/static/media/burger.81229060dd4adce4ce0deb5ec71091dc.svg",
     "static/media/checkbox.svg": "/StellarLikes/static/media/checkbox.a9e959e5c805efa3d39c.svg",
     "static/media/checkout-unactive.svg": "/StellarLikes/static/media/checkout-unactive.15debbb0754ecc38e23a.svg",
-    "main.060fd007.css.map": "/StellarLikes/static/css/main.060fd007.css.map",
-    "main.5326d05f.js.map": "/StellarLikes/static/js/main.5326d05f.js.map"
+    "main.416d71e3.css.map": "/StellarLikes/static/css/main.416d71e3.css.map",
+    "main.12ddcbaa.js.map": "/StellarLikes/static/js/main.12ddcbaa.js.map"
   },
   "entrypoints": [
-    "static/css/main.060fd007.css",
-    "static/js/main.5326d05f.js"
+    "static/css/main.416d71e3.css",
+    "static/js/main.12ddcbaa.js"
   ]
 }
