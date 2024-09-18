@@ -45,11 +45,39 @@
     padding: 0px;
   }
 }
-.featuresImg {
-  width: 100px;
-  height: 100px;
+.featuresLinkBlock {
   display: block;
   margin: 0 auto;
+}
+.featuresImgWrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.featuresBackgroung {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  background-image: url('../../images/sky.jpg');
+  background-size: cover;
+
+  border-radius: 50%;
+}
+
+.featuresImg {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .featuresTitle {
   color: #0e2a30;
