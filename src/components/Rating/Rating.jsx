@@ -1,3 +1,4 @@
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import css from './Rating.module.css';
 import tikTokLikes from '../../icons/tiktokLikes.svg';
@@ -6,10 +7,35 @@ import TikTokFollowers from '../../icons/tiktokFolowers.svg';
 import StarsBlue from '../../icons/stars-blue.svg';
 import StarsGreen from '../../icons/stars-green.svg';
 import StarsOrange from '../../icons/stars-orange.svg';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Rating = () => {
+  const sectionRef = useRef(null);
+  const backgroundRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      backgroundRef.current,
+      { yPercent: -15 },
+      {
+        yPercent: 30,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section className={css.rating}>
+    <section ref={sectionRef} className={css.rating}>
+      <div ref={backgroundRef} className={css.backgroundImage}></div>
       <div className={css.ratingWrap}>
         <h1 className="section-title">Grow faster. Without the hassle.</h1>
         <p className={css.ratingText}>

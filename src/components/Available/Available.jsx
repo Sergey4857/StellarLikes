@@ -1,5 +1,9 @@
-import css from './Available.module.css';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import css from './Available.module.css';
+
 import tiktokLikes from '../../icons/tiktokLikes.svg';
 import tiktokHoverLikes from '../../icons/tiktokLikesHover.svg';
 
@@ -9,7 +13,37 @@ import tiktokFolowersHover from '../../icons/tiktokFolowersHover.svg';
 import tiktokViews from '../../icons/tiktokViews.svg';
 import tiktokViewsHover from '../../icons/tiktokViewsHover.svg';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Available() {
+  const linkBlockRef = useRef(null);
+
+  useEffect(() => {
+    const links = linkBlockRef.current.querySelectorAll(
+      `.${css.availableLink}`
+    );
+
+    // Устанавливаем начальное состояние для анимации
+    gsap.set(links, {
+      scale: 0.5,
+      opacity: 0,
+    });
+
+    ScrollTrigger.create({
+      trigger: linkBlockRef.current,
+      start: 'top 75%',
+      onEnter: () => {
+        gsap.to(links, {
+          scale: 1,
+          opacity: 1,
+          duration: 0.5,
+          ease: 'power3.out',
+          overwrite: 'auto',
+        });
+      },
+    });
+  }, []);
+
   return (
     <section id="my-section" className={css.availableSection}>
       <div className="section-title">
@@ -22,7 +56,7 @@ export default function Available() {
         the price tag.
       </p>
 
-      <div className={css.availableLinkBlock}>
+      <div className={css.availableLinkBlock} ref={linkBlockRef}>
         <Link
           className={`${css.availableLink} ${css.violetBorder}`}
           to="/tikTokLikes"
