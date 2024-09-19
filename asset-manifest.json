@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/StellarLikes/static/css/main.a2010ee3.css",
-    "main.js": "/StellarLikes/static/js/main.14c8314c.js",
+    "main.css": "/StellarLikes/static/css/main.3f42f08a.css",
+    "main.js": "/StellarLikes/static/js/main.5020a378.js",
     "static/media/sky.jpg": "/StellarLikes/static/media/sky.49709337dc0afc56a2a0.jpg",
     "static/media/checkout2.svg": "/StellarLikes/static/media/checkout2.bbd46e85191cab8bf455.svg",
     "static/media/TWKLausanne-700.ttf": "/StellarLikes/static/media/TWKLausanne-700.c386a7e11bf0ddb59962.ttf",
@@ -24,16 +24,17 @@
     "static/media/tiktokFolowers.svg": "/StellarLikes/static/media/tiktokFolowers.0ee245c6d97ce59d4695fdfa196ba7ed.svg",
     "static/media/features3.svg": "/StellarLikes/static/media/features3.39ff58ff947602023853ec646fdfe71f.svg",
     "static/media/sputnik.png": "/StellarLikes/static/media/sputnik.d8bd7460ab33afafc88f.png",
+    "static/media/galaxy-stars.svg": "/StellarLikes/static/media/galaxy-stars.9856efa51fc16988ea56.svg",
     "static/media/tiktokViews.svg": "/StellarLikes/static/media/tiktokViews.5bdd16e646903006e2a20021ae174ed0.svg",
     "static/media/tiktokViewsHover.svg": "/StellarLikes/static/media/tiktokViewsHover.1b4712d1196a473192ff93bc37268d41.svg",
     "static/media/features1.svg": "/StellarLikes/static/media/features1.fc2f3d460f562be978125ade717b2ce7.svg",
     "static/media/benefit1.svg": "/StellarLikes/static/media/benefit1.699032499ad11be5f5960dd997ac08d3.svg",
     "static/media/faq-icon.svg": "/StellarLikes/static/media/faq-icon.8f521e1c1c07dbe922f5798c7a4c3583.svg",
-    "static/media/galaxy.svg": "/StellarLikes/static/media/galaxy.12fe40efac5b3335a66b.svg",
     "static/media/stars-blue.svg": "/StellarLikes/static/media/stars-blue.822d92f6701eac57b9e8e4dcb9508ebd.svg",
     "static/media/stars-orange.svg": "/StellarLikes/static/media/stars-orange.d592a40ce8684cba2cab8822c6a7ba6b.svg",
     "static/media/stars-green.svg": "/StellarLikes/static/media/stars-green.2e0c2ef84bb99cefcbc70180e1a9bea2.svg",
     "static/media/flag-britain.svg": "/StellarLikes/static/media/flag-britain.f20ccbd8dd82553e2ecacbbeade0b281.svg",
+    "static/media/galaxy-empty.svg": "/StellarLikes/static/media/galaxy-empty.afe9c1aeb5711a6fe769.svg",
     "static/media/checkout-active.svg": "/StellarLikes/static/media/checkout-active.ad05224a9709b90e010d.svg",
     "static/media/checkout.svg": "/StellarLikes/static/media/checkout.44b8b2407b72e845051c.svg",
     "static/media/plus.svg": "/StellarLikes/static/media/plus.a3798c92e1e6aea21f5e.svg",
@@ -48,11 +49,11 @@
     "static/media/burger.svg": "/StellarLikes/static/media/burger.81229060dd4adce4ce0deb5ec71091dc.svg",
     "static/media/checkbox.svg": "/StellarLikes/static/media/checkbox.a9e959e5c805efa3d39c.svg",
     "static/media/checkout-unactive.svg": "/StellarLikes/static/media/checkout-unactive.15debbb0754ecc38e23a.svg",
-    "main.a2010ee3.css.map": "/StellarLikes/static/css/main.a2010ee3.css.map",
-    "main.14c8314c.js.map": "/StellarLikes/static/js/main.14c8314c.js.map"
+    "main.3f42f08a.css.map": "/StellarLikes/static/css/main.3f42f08a.css.map",
+    "main.5020a378.js.map": "/StellarLikes/static/js/main.5020a378.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2010ee3.css",
-    "static/js/main.14c8314c.js"
+    "static/css/main.3f42f08a.css",
+    "static/js/main.5020a378.js"
   ]
 }
