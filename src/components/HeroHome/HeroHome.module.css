@@ -9,14 +9,37 @@
   content: '';
   position: absolute;
   left: 64%;
-  top: -8px;
+  top: -41px;
   width: 555px;
   height: 599px;
-  background-image: url('../../icons/galaxy.svg');
+  background-image: url('../../icons/galaxy-empty.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   z-index: -1;
+}
+.heroHome::before {
+  content: '';
+  position: absolute;
+  left: 64%;
+  top: -32px;
+  width: 555px;
+  height: 599px;
+  background-image: url('../../icons/galaxy-stars.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+  animation: rotateStars 60s linear infinite;
+}
+
+@keyframes rotateStars {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -29,7 +52,25 @@
     left: unset;
     width: 373px;
     height: 332px;
-    background-image: url('../../icons/galaxy.svg');
+    background-image: url('../../icons/galaxy-empty.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroHome::before {
+    content: '';
+    position: absolute;
+    right: -62px;
+    bottom: 36px;
+    top: unset;
+    left: unset;
+    width: 373px;
+    height: 332px;
+    background-image: url('../../icons/galaxy-stars.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;

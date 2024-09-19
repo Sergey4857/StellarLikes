@@ -7,21 +7,22 @@ const consumer_secret = process.env.REACT_APP_CONSUMER_SECRET;
 const FetchAllProductData = async (setTiktokLikesData, setTiktokViewsData) => {
   try {
     const response = await axios.get(
-      `${baseInstagramUrl}/wp-json/wc/v3/products?consumer_key=${consumer_key}&consumer_secret=${consumer_secret}`
+      `${baseInstagramUrl}/wp-json/wc/v3/products/?consumer_key=${consumer_key}&consumer_secret=${consumer_secret}`
     );
+    console.log(response);
 
-    const tikTokLikesData = response.data
-      .filter(product => product.name === 'Buy TikTok Live Likes')
-      .map(product => product.meta_data)
-      .flat();
+    // const tikTokLikesData = response.data
+    //   .filter(product => product.name === 'Buy TikTok Live Likes')
+    //   .map(product => product.meta_data)
+    //   .flat();
 
-    const tiktokViewsData = response.data
-      .filter(product => product.name === 'Buy TikTok Views')
-      .map(product => product.meta_data)
-      .flat();
+    // const tiktokViewsData = response.data
+    //   .filter(product => product.name === 'Buy TikTok Views')
+    //   .map(product => product.meta_data)
+    //   .flat();
 
-    setTiktokLikesData(tikTokLikesData);
-    setTiktokViewsData(tiktokViewsData);
+    // setTiktokLikesData(tikTokLikesData);
+    // setTiktokViewsData(tiktokViewsData);
 
     // const result = [];
     // let currentOptionSet = {};

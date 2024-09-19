@@ -31,7 +31,7 @@ export default function Available() {
 
     ScrollTrigger.create({
       trigger: linkBlockRef.current,
-      start: 'top 75%',
+      start: 'top 85%',
       onEnter: () => {
         gsap.to(links, {
           scale: 1,

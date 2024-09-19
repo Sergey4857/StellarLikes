@@ -9,6 +9,8 @@ import ScrollToTop from './ScrollToTop/ScrollToTop';
 import GetStarted from 'pages/GetStarted/GetStartedPage';
 import Checkout from 'pages/Checkout/CheckoutPage';
 import SelectPost from './SelectPost/SelectPost';
+// import { useEffect, useState } from 'react';
+// import FetchAllProductData from 'Api/FetchTiktokLikes';
 
 // const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 // const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
