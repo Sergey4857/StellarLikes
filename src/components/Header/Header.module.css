@@ -4,7 +4,7 @@
 }
 .header {
   display: flex;
-  justify-content: space-between;
+
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 40px;
@@ -51,4 +51,19 @@
 .headerLogoImage {
   display: block;
   margin-right: 7px;
+}
+.rating {
+  display: flex;
+  gap: 5px;
+  border-radius: 8px;
+  border: 1px solid #e5e9eb;
+  padding: 8px 10px;
+
+  margin-right: 12px;
+}
+
+.ratingSpan {
+  color: #161616;
+  font-family: 'TWK600';
+  font-size: 13px;
 }

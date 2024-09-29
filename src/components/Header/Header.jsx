@@ -4,6 +4,7 @@ import Logo from '../Logo/Logo';
 import { useEffect, useState } from 'react';
 import BurgerBtn from 'components/BurgerBtn/BurgerBtn';
 import BurgerMenu from 'components/BurgerMenu/BurgerMenu';
+import RatingStars from '../../icons/rating-stars.svg';
 
 const Header = () => {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1440);
@@ -49,6 +50,16 @@ const Header = () => {
               Contact Us
             </Link>
           </nav>
+        )}
+        {!isDesktop && (
+          <div className={css.rating}>
+            <img
+              className={css.ratingImg}
+              src={RatingStars}
+              alt="rating-stars"
+            />
+            <span className={css.ratingSpan}>5.0</span>
+          </div>
         )}
 
         {!isDesktop && (

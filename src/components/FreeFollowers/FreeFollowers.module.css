@@ -1,0 +1,119 @@
+.freeFollowersSection {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  border-radius: 15px;
+  background: rgba(252, 93, 31, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .freeFollowersSection {
+    padding: 25px 25px 150px 25px;
+  }
+}
+
+.freeFollowersSection::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../icons/monkey.svg');
+  width: 260px;
+  height: 302px;
+  background-size: cover;
+  z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+  .freeFollowersSection::after {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.freeFollowersWrap {
+  width: 100%;
+  max-width: 525px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.freeFollowersTitle {
+  color: #161616;
+  text-align: center;
+  font-family: 'TWK700';
+  font-size: 45px;
+  line-height: 1.25;
+}
+
+@media screen and (max-width: 768px) {
+  .freeFollowersTitle {
+    font-size: 25px;
+  }
+}
+.freeFollowersSpan {
+  color: #fc5d1f;
+}
+.freeFollowersText {
+  color: #161616;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.25;
+}
+.freeFollowersText span {
+  color: #fc5d1f;
+}
+.freeFollowersForm {
+  display: block;
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+}
+.freeFollowersFormBlock {
+  position: relative;
+}
+.freeFollowersFormBlock label {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  color: #161616;
+  font-family: 'TWK700';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120.5%; /* 14.46px */
+}
+.freeFollowersForm input {
+  display: flex;
+  width: 100%;
+  padding: 23px 15px 5px 15px;
+  border-radius: 12px;
+  height: 52px;
+  border: 1px solid #efefef;
+  background: #fff;
+  color: rgba(22, 22, 22, 0.25);
+  font-family: 'TWK700';
+  font-size: 20px;
+  line-height: 1.25;
+}
+.freeFollowersButton {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  background: #fc5d1f;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 20px;
+  margin-top: 25px;
+}
+.FirstBlock {
+  margin-bottom: 10px;
+}

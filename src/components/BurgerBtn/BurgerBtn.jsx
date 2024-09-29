@@ -12,6 +12,8 @@ export default function BurgerBtn({ setOpenedModal, openedModal }) {
     ></img>
   ) : (
     <img
+      width={33}
+      height={33}
       src={burger}
       onClick={() => {
         setOpenedModal(true);

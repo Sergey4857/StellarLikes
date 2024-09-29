@@ -3,12 +3,14 @@ import Rating from 'components/Rating/Rating';
 import Features from 'components/Features/Features';
 import Customers from 'components/Customers/Customers';
 import FaqBlock from 'components/Faq/FaqBlock';
-import css from './TikTokFollowers.module.css';
+
 import tikTokFollowersIcon from '../../icons/tiktokFolowers.svg';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import TikTokFollowers from './TikTokFollowers';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
+import FreeFollowers from 'components/FreeFollowers/FreeFollowers';
+import css from './TikTokFollowers.module.css';
 
 const TikTokFollowersPage = () => {
   const navigate = useNavigate();
@@ -198,7 +200,7 @@ const TikTokFollowersPage = () => {
           </div>
         </div>
       </section>
-
+      <FreeFollowers />
       <Benefits />
       <Rating />
       <Features />
