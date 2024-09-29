@@ -1,2 +1,5 @@
 .main {
+  background: linear-gradient(180deg, #c78fe8 -9.04%, #fff 1.32%);
+  position: relative;
+  z-index: 0;
 }

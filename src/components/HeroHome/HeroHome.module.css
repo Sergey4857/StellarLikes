@@ -16,7 +16,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: -1;
+  z-index: 1;
 }
 .heroHome::before {
   content: '';
@@ -29,7 +29,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: -1;
+  z-index: 0;
   animation: rotateStars 60s linear infinite;
 }
 
@@ -80,10 +80,12 @@
 
 .heroContent {
   max-width: 1180px;
-  padding: 70px 40px 100px 40px;
+  padding: 90px 40px 140px 40px;
   width: 100%;
   display: block;
   margin: 0 auto;
+  position: relative;
+  z-index: 3;
 }
 @media screen and (max-width: 768px) {
   .heroContent {
@@ -97,7 +99,7 @@
   }
 }
 .heroWrap {
-  max-width: 530px;
+  max-width: 586px;
   margin-right: auto;
 }
 .heroTitle {
@@ -131,7 +133,7 @@
   font-family: 'TWK700';
   font-size: 25px;
   line-height: 1.2;
-  padding: 20px 43px;
+  padding: 20px 30px;
   border-radius: 12px;
   background: #f948b4;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
@@ -147,5 +149,11 @@
 @media screen and (max-width: 768px) {
   .heroLink {
     padding: 15px 43px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .heroLink {
+    width: 100%;
+    justify-content: center;
   }
 }

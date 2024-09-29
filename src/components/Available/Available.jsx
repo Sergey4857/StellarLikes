@@ -23,7 +23,6 @@ export default function Available() {
       `.${css.availableLink}`
     );
 
-    // Устанавливаем начальное состояние для анимации
     gsap.set(links, {
       scale: 0.5,
       opacity: 0,
@@ -45,7 +44,7 @@ export default function Available() {
   }, []);
 
   return (
-    <section id="my-section" className={css.availableSection}>
+    <section className={css.availableSection}>
       <div className="section-title">
         Available on <span className="pinkText">StellarLikes</span>
       </div>

@@ -9,6 +9,9 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import TikTokLikes from './TikTokLikes';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
+import HeroHome from 'components/HeroHome/HeroHome';
+import FreeLikes from 'components/FreeLikes/FreeLikes';
+import Available from 'components/Available/Available';
 
 const TikTokLikesPage = () => {
   const navigate = useNavigate();
@@ -100,6 +103,8 @@ const TikTokLikesPage = () => {
   return (
     <>
       <Outlet />
+      <HeroHome />
+      <FreeLikes />
       <section className={css.buyLikes}>
         <div className={css.buyLikesTitle}>
           Buy TikTok <span className="pinkText">Likes</span>
@@ -108,7 +113,7 @@ const TikTokLikesPage = () => {
             src={tikTokLikes}
             alt="buyLikesImg"
           />
-          with Instant Delivery
+          starting from <span className="pinkText">$0.99</span>
         </div>
         <p className={css.buyLikesText}>
           We offer top-notch quality TikTok likes at the best prices! Check our
@@ -189,6 +194,7 @@ const TikTokLikesPage = () => {
           </button>
         </div>
       </section>
+      <Available />
       <Benefits />
       <Rating />
       <Features />

@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 import Layout from './Layout/Layout';
-import HomePage from 'pages/HomePage/HomePage';
+
 import TikTokFollowersPage from 'pages/TikTokFollowersPage/TikTokFollowersPage';
 import TikTokLikesPage from 'pages/TikTokLikesPage/TikTokLikesPage';
 import TikTokViewsPage from 'pages/TikTokViewsPage/TikTokViewsPage';
@@ -9,6 +9,8 @@ import ScrollToTop from './ScrollToTop/ScrollToTop';
 import GetStarted from 'pages/GetStarted/GetStartedPage';
 import Checkout from 'pages/Checkout/CheckoutPage';
 import SelectPost from './SelectPost/SelectPost';
+import ContactUs from 'pages/ContactUs/ContactUs';
+import AboutUs from 'pages/AboutUs/AboutUs';
 // import { useEffect, useState } from 'react';
 // import FetchAllProductData from 'Api/FetchTiktokLikes';
 
@@ -45,20 +47,19 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-
-          {/* TikTok Followers*/}
-          <Route path="tikTokFollowers" element={<TikTokFollowersPage />} />
-          <Route path="tikTokFollowers/getStarted" element={<GetStarted />} />
-          <Route path="tikTokFollowers/checkout" element={<Checkout />} />
-
           {/* TikTok Likes */}
+          <Route index element={<TikTokLikesPage />} />
           <Route path="tikTokLikes" element={<TikTokLikesPage />} />
           <Route path="tikTokLikes/getStarted" element={<GetStarted />} />
           <Route
             path="tikTokLikes/getStarted/selectPost"
             element={<SelectPost />}
           />
+
+          {/* TikTok Followers*/}
+          <Route path="tikTokFollowers" element={<TikTokFollowersPage />} />
+          <Route path="tikTokFollowers/getStarted" element={<GetStarted />} />
+          <Route path="tikTokFollowers/checkout" element={<Checkout />} />
 
           {/* TikTok Views */}
           <Route path="tikTokViews" element={<TikTokViewsPage />} />
@@ -69,6 +70,12 @@ export default function App() {
           />
 
           <Route path="/checkout" element={<Checkout />} />
+
+          {/* AboutUs */}
+          <Route path="AboutUs" element={<AboutUs />} />
+
+          {/* AboutUs */}
+          <Route path="ContactUs" element={<ContactUs />} />
         </Route>
       </Routes>
     </>

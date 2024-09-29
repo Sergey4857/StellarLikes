@@ -37,7 +37,7 @@ const Rating = () => {
     <section ref={sectionRef} className={css.rating}>
       <div ref={backgroundRef} className={css.backgroundImage}></div>
       <div className={css.ratingWrap}>
-        <h1 className="section-title">Grow faster. Without the hassle.</h1>
+        <h1 className="section-title">Explore Other Stellar Services</h1>
         <p className={css.ratingText}>
           TikTok promotion made easy. Whether looking for likes, views or
           followers, you've come to the right place. Let StellarLikes do the

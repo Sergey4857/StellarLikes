@@ -28,9 +28,7 @@ const HeroHome = () => {
         <div className={css.heroWrap}>
           <h1 className={css.heroTitle} ref={heroTitleRef}>
             Buy TikTok{' '}
-            <span className="pinkText">
-              Likes, Followers, Views & Live Views
-            </span>
+            <span className="pinkText">Likes, with Instant Delivery</span>
           </h1>
           <p className={css.heroText} ref={heroTextRef}>
             Don't settle for fake users. StellarLikes delivers followers, likes,
@@ -38,7 +36,7 @@ const HeroHome = () => {
             possible prices.
           </p>
           <a className={css.heroLink} href="#my-section" ref={heroLinkRef}>
-            Show me how
+            Get 50 Free Likes
           </a>
         </div>
       </div>

@@ -9,7 +9,7 @@ const Header = () => {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1440);
 
   const handleResize = () => {
-    setIsDesktop(window.innerWidth >= 768);
+    setIsDesktop(window.innerWidth >= 895);
   };
 
   const [openedModal, setOpenedModal] = useState(false);
@@ -36,8 +36,17 @@ const Header = () => {
               Buy TikTok <span className={css.headerFollowers}>Followers</span>
             </Link>
             <span className={css.decorator}></span>
+
             <Link className={css.headerNavLink} to="/tikTokViews">
               Buy TikTok <span className={css.headerViews}>Views</span>
+            </Link>
+            <span className={css.decorator}></span>
+            <Link className={css.headerNavLink} to="/aboutUs">
+              About Us
+            </Link>
+            <span className={css.decorator}></span>
+            <Link className={css.headerNavLink} to="/contactUs">
+              Contact Us
             </Link>
           </nav>
         )}
