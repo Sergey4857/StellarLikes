@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import css from './FreeLikes.module.css';
+import css from './FreeViews.module.css';
 
-const FreeLikes = () => {
+const FreeViews = () => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -22,19 +22,20 @@ const FreeLikes = () => {
   };
 
   return (
-    <section className={css.freeLikesSection} id="my-section">
-      <div className={css.freeLikes}>
-        <div className={css.freeLikesWrap}>
-          <div className={css.freeLikesTitle}>
-            <span className={css.freeLikesSpan}>Get 50 Free</span> TikTok Likes
+    <section className={css.freeViewsSection} id="my-section">
+      <div className={css.freeViews}>
+        <div className={css.freeViewsWrap}>
+          <div className={css.freeViewsTitle}>
+            <span className={css.freeViewsSpan}>Get 50 Free</span> TikTok
+            Followers
           </div>
-          <p className={css.freeLikesText}>
+          <p className={css.freeViewsText}>
             Receive free TikTok views every 24 hours: just submit your 
             <span>username</span> and <span>email</span>, select post, verify
             your valid email, and get likes quickly.
           </p>
-          <form className={css.freeLikesForm} onSubmit={handleSubmit}>
-            <div className={`${css.freeLikesFormBlock} ${css.FirstBlock}`}>
+          <form className={css.freeViewsForm} onSubmit={handleSubmit}>
+            <div className={`${css.freeViewsFormBlock} ${css.FirstBlock}`}>
               <label htmlFor="username">Your TikTok Username</label>
               <input
                 type="text"
@@ -45,7 +46,7 @@ const FreeLikes = () => {
                 placeholder="therock"
               />
             </div>
-            <div className={css.freeLikesFormBlock}>
+            <div className={css.freeViewsFormBlock}>
               <label htmlFor="email">Your Email</label>
               <input
                 type="text"
@@ -56,8 +57,8 @@ const FreeLikes = () => {
                 placeholder="email@example.com"
               />
             </div>
-            <button className={css.freeLikesButton} type="submit">
-              Get Free Likes
+            <button className={css.freeViewsButton} type="submit">
+              Get Free Followers
             </button>
           </form>
         </div>
@@ -66,4 +67,4 @@ const FreeLikes = () => {
   );
 };
 
-export default FreeLikes;
+export default FreeViews;

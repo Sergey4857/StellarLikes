@@ -1,49 +1,49 @@
-.freeLikesSection {
-  padding: 50px 40px;
+.freeViewsSection {
+  padding: 0px 40px;
 }
 @media screen and (max-width: 768px) {
-  .freeLikesSection {
-    padding: 50px 20px;
+  .freeViewsSection {
+    padding: 0px 20px;
   }
 }
 
-.freeLikes {
+.freeViews {
   width: 100%;
   padding: 50px 40px;
   max-width: 1100px;
   margin: 0 auto;
   border-radius: 15px;
-  background: rgba(76, 1, 213, 0.05);
+  background: rgba(162, 236, 0, 0.05);
   position: relative;
   overflow: hidden;
 }
 
 @media screen and (max-width: 768px) {
-  .freeLikes {
+  .freeViews {
     padding: 25px 25px 150px 25px;
   }
 }
 
-.freeLikes::after {
+.freeViews::after {
   content: '';
   position: absolute;
   right: 0;
   bottom: 0;
-  background-image: url('../../icons/robot.svg');
-  width: 300px;
-  height: 300px;
+  background-image: url('../../icons/alien.svg');
+  width: 358px;
+  height: 333px;
   background-size: cover;
   z-index: -1;
 }
 
 @media screen and (max-width: 768px) {
-  .freeLikes::after {
-    width: 150px;
-    height: 150px;
+  .freeViews::after {
+    width: 183px;
+    height: 157px;
   }
 }
 
-.freeLikesWrap {
+.freeViewsWrap {
   width: 100%;
   max-width: 525px;
   margin: 0 auto;
@@ -51,7 +51,7 @@
   flex-direction: column;
   gap: 25px;
 }
-.freeLikesTitle {
+.freeViewsTitle {
   color: #161616;
   text-align: center;
   font-family: 'TWK700';
@@ -60,32 +60,32 @@
 }
 
 @media screen and (max-width: 768px) {
-  .freeLikesTitle {
+  .freeViewsTitle {
     font-size: 25px;
   }
 }
-.freeLikesSpan {
-  color: #4c01d5;
+.freeViewsSpan {
+  color: #00c82f;
 }
-.freeLikesText {
+.freeViewsText {
   color: #161616;
   text-align: center;
   font-size: 18px;
   line-height: 1.25;
 }
-.freeLikesText span {
-  color: #4c01d5;
+.freeViewsText span {
+  color: #00c82f;
 }
-.freeLikesForm {
+.freeViewsForm {
   display: block;
   width: 100%;
   max-width: 390px;
   margin: 0 auto;
 }
-.freeLikesFormBlock {
+.freeViewsFormBlock {
   position: relative;
 }
-.freeLikesFormBlock label {
+.freeViewsFormBlock label {
   position: absolute;
   top: 5px;
   left: 15px;
@@ -96,7 +96,7 @@
   font-weight: 700;
   line-height: 120.5%; /* 14.46px */
 }
-.freeLikesForm input {
+.freeViewsForm input {
   display: flex;
   width: 100%;
   padding: 23px 15px 5px 15px;
@@ -109,11 +109,11 @@
   font-size: 20px;
   line-height: 1.25;
 }
-.freeLikesButton {
+.freeViewsButton {
   display: block;
   width: 100%;
   border-radius: 12px;
-  background: #4c01d5;
+  background: #00c82f;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
   color: #fff;
   font-family: 'TWK700';

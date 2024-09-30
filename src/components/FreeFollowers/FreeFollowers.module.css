@@ -1,34 +1,44 @@
 .freeFollowersSection {
+  padding: 0px 40px;
+}
+@media screen and (max-width: 768px) {
+  .freeFollowersSection {
+    padding: 0px 20px;
+  }
+}
+
+.freeFollowers {
   width: 100%;
+  padding: 50px 40px;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 50px 40px;
   border-radius: 15px;
   background: rgba(252, 93, 31, 0.05);
+
   position: relative;
   overflow: hidden;
 }
 
 @media screen and (max-width: 768px) {
-  .freeFollowersSection {
+  .freeFollowers {
     padding: 25px 25px 150px 25px;
   }
 }
 
-.freeFollowersSection::after {
+.freeFollowers::after {
   content: '';
   position: absolute;
   right: 0;
   bottom: 0;
   background-image: url('../../icons/monkey.svg');
-  width: 260px;
-  height: 302px;
+  width: 288px;
+  height: 322px;
   background-size: cover;
   z-index: -1;
 }
 
 @media screen and (max-width: 768px) {
-  .freeFollowersSection::after {
+  .freeFollowers::after {
     width: 150px;
     height: 150px;
   }

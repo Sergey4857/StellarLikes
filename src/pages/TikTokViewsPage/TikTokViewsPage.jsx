@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import TikTokViews from './TikTokViews';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
+import FreeViews from 'components/FreeViews/FreeViews';
 
 const TikTokViewsPage = () => {
   const navigate = useNavigate();
@@ -190,7 +191,7 @@ const TikTokViewsPage = () => {
           </button>
         </div>
       </section>
-
+      <FreeViews />
       <Benefits />
       <Rating />
       <Features />
