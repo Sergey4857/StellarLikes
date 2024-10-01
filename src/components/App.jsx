@@ -11,6 +11,7 @@ import Checkout from 'pages/Checkout/CheckoutPage';
 import SelectPost from './SelectPost/SelectPost';
 import ContactUs from 'pages/ContactUs/ContactUs';
 import AboutUs from 'pages/AboutUs/AboutUs';
+import ErrorPage from './ErrorPage/ErrorPage';
 
 // import { useEffect, useState } from 'react';
 // import FetchAllProductData from 'Api/FetchTiktokLikes';
@@ -50,12 +51,9 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           {/* TikTok Likes */}
           <Route index element={<TikTokLikesPage />} />
-          <Route path="tikTokLikes" element={<TikTokLikesPage />} />
-          <Route path="tikTokLikes/getStarted" element={<GetStarted />} />
-          <Route
-            path="tikTokLikes/getStarted/selectPost"
-            element={<SelectPost />}
-          />
+
+          <Route path="/getStarted" element={<GetStarted />} />
+          <Route path="/getStarted/selectPost" element={<SelectPost />} />
 
           {/* TikTok Followers*/}
           <Route path="tikTokFollowers" element={<TikTokFollowersPage />} />
@@ -77,6 +75,7 @@ export default function App() {
 
           {/* AboutUs */}
           <Route path="ContactUs" element={<ContactUs />} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
     </>

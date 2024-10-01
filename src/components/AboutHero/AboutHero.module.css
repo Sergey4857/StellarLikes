@@ -3,16 +3,23 @@
   max-width: 1080px;
   margin: 0 auto;
 
-  padding: 25px 40px 75px 40px;
+  padding: 25px 40px 0px 40px;
 }
-
+@media screen and (max-width: 768px) {
+  .heroAbout {
+    padding: 25px 20px 0px 20px;
+  }
+}
 .heroContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 25px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 895px) {
   .heroContent {
+    display: flex;
+    flex-direction: column-reverse;
     padding: 0px;
   }
 }
@@ -26,27 +33,141 @@
   width: 100%;
   max-width: 527px;
 }
+
+@media screen and (max-width: 768px) {
+  .heroWrap {
+    max-width: unset;
+  }
+}
 .heroImageBlock {
   display: block;
-  width: 366px;
-  height: 366px;
+  width: 100%;
+  max-width: 366px;
+  height: auto;
   background: #4c01d5;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
+  aspect-ratio: 1 / 1;
 }
-.heroImageBlock::after {
-  content: '';
+
+.img1 {
+  position: absolute;
+  bottom: 105px;
+  left: 0;
+  background-position: left;
+  width: 196px;
+  height: 196px;
+  background-image: url('../../icons/team-nlo.svg');
+  z-index: 2;
+  background-repeat: no-repeat;
+  animation: img1Animation 1s ease-out forwards;
+}
+
+@keyframes img1Animation {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+.img2 {
+  position: absolute;
+  bottom: -1px;
+  left: -12px;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+  background-image: url('../../icons/team-robot.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: img2Animation 1s ease-out forwards;
+}
+
+@keyframes img2Animation {
+  from {
+    left: -200px;
+    bottom: -200px;
+  }
+  to {
+    left: -12px;
+    bottom: -1px;
+  }
+}
+
+.img3 {
   position: absolute;
   bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 211px;
-  height: 211px;
+  width: 205px;
+  height: 205px;
+  z-index: 4;
   background-image: url('../../icons/alien-team.svg');
   background-position: center;
   background-repeat: no-repeat;
+  animation: img3Animation 1s ease-out forwards;
 }
+
+@keyframes img3Animation {
+  from {
+    bottom: -200px;
+  }
+  to {
+    bottom: -12px;
+  }
+}
+
+.img4 {
+  position: absolute;
+  bottom: -3px;
+  right: -33px;
+  width: 192px;
+  height: 192px;
+  z-index: 1;
+  background-image: url('../../icons/team-monkey-hero.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: img4Animation 1s ease-out forwards;
+}
+
+@keyframes img4Animation {
+  from {
+    right: -200px;
+    bottom: -200px;
+  }
+  to {
+    right: -33px;
+    bottom: -3px;
+  }
+}
+
+.img5 {
+  position: absolute;
+  bottom: 74px;
+  right: -44px;
+  z-index: 2;
+  width: 211px;
+  height: 211px;
+  background-image: url('../../icons/team-astonaut.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: img5Animation 1s ease-out forwards;
+}
+
+@keyframes img5Animation {
+  from {
+    right: -200px;
+    opacity: 0;
+  }
+  to {
+    right: -44px;
+    opacity: 1;
+  }
+}
+
 .heroTitle {
   color: #161616;
   font-family: 'TWK700';
@@ -59,6 +180,7 @@
 @media screen and (max-width: 768px) {
   .heroTitle {
     font-size: 35px;
+    text-align: center;
   }
 }
 .heroSubTitle {

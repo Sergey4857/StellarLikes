@@ -29,7 +29,7 @@ const Header = () => {
         <Logo />
         {isDesktop && (
           <nav className={css.headerNav}>
-            <Link className={css.headerNavLink} to="/tikTokLikes">
+            <Link className={css.headerNavLink} to="/">
               Buy TikTok <span className={css.headerLikes}>Likes</span>
             </Link>
             <span className={css.decorator}></span>

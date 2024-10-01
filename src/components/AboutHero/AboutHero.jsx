@@ -15,7 +15,13 @@ const AboutHero = () => {
           </p>
         </div>
 
-        <div className={css.heroImageBlock}></div>
+        <div className={css.heroImageBlock}>
+          <div className={css.img1}></div>
+          <div className={css.img2}></div>
+          <div className={css.img3}></div>
+          <div className={css.img4}></div>
+          <div className={css.img5}></div>
+        </div>
       </div>
     </section>
   );

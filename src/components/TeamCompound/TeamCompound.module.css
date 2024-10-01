@@ -22,7 +22,6 @@
 
 .teamBox {
   display: block;
-  padding: 0 40px;
   max-width: 1180px;
   width: 100%;
   margin: 0 auto;
@@ -36,7 +35,17 @@
   border: 1px solid #efefef;
   background: #fff;
   box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  gap: 20px;
 }
+
+@media screen and (max-width: 895px) {
+  .teamBoxContent {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
 .teamImage {
   display: block;
   width: 80px;
@@ -46,7 +55,12 @@
   max-width: 460px;
   text-align: left;
 }
-
+@media screen and (max-width: 895px) {
+  .teamDescription {
+    max-width: unset;
+    text-align: center;
+  }
+}
 .teamTitle {
   color: #0e2a30;
   text-align: center;
@@ -58,7 +72,6 @@
 
 .teamList {
   display: block;
-  padding: 0 40px;
   max-width: 1180px;
   width: 100%;
   margin: 0 auto;
@@ -66,12 +79,38 @@
   justify-content: space-between;
   gap: 20px;
 }
+
+@media screen and (max-width: 895px) {
+  .teamList {
+    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 680px) {
+  .teamList {
+    flex-direction: column;
+  }
+}
+
 .teamItem {
   padding: 50px 30px;
   border-radius: 12px;
   border: 1px solid #efefef;
   background: #fff;
   box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 895px) {
+  .teamItem {
+    width: calc((100% - 20px) / 2);
+    padding: 20px 30px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .teamItem {
+    width: 100%;
+  }
 }
 
 .teamBoxImage {
@@ -86,11 +125,47 @@
 .teamImage1 {
   background-color: #17257e;
 }
+.teamImage1::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-image: url('../../icons/teamCompoundAlian.svg');
+  background-position: center;
+  background-size: cover;
+}
+
 .teamImage2 {
   background-color: #17257e;
+  position: relative;
+}
+.teamImage2::after {
+  content: '';
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url('../../icons/teamCompoundRobot.svg');
+  background-position: center;
+  background-size: cover;
 }
 .teamImage3 {
   background-color: #eec706;
+  position: relative;
+}
+.teamImage3::after {
+  content: '';
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url('../../icons/teamCompoundMansvg.svg');
+  background-position: center;
+  background-size: cover;
 }
 .teamName {
   text-align: center;

@@ -14,7 +14,7 @@ export default function BurgerMenu({ setOpenedModal, openedModal }) {
         }}
       >
         <div className={css.burgerFirstBlock}>
-          <Link className={css.burgerNavLink} to="/tikTokLikes">
+          <Link className={css.burgerNavLink} to="/">
             Buy TikTok Likes
           </Link>
           <Link className={css.burgerNavLink} to="/tikTokFollowers">
