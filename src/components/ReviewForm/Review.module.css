@@ -1,0 +1,142 @@
+.ReviewForm {
+  padding: 60px 20px 20px 20px;
+  border-radius: 15px;
+  border: 1px solid #efefef;
+  background: #fff;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  max-width: 430px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.ReviewCloseButton {
+  display: flex;
+  width: 33px;
+  height: 33px;
+  background-color: #f948b4;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-image: url('../../icons/close.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ReviewFormBlock {
+  position: relative;
+}
+.ReviewFormBlock label {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  color: #161616;
+  font-family: 'TWK700';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120.5%; /* 14.46px */
+}
+.ReviewFormBlock input {
+  display: flex;
+  width: 100%;
+  padding: 23px 15px 5px 15px;
+  border-radius: 12px;
+  height: 52px;
+  border: 1px solid #efefef;
+
+  background: #fcfcfc;
+  color: rgba(22, 22, 22, 0.25);
+  font-family: 'TWK700';
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.ReviewFormBlock textarea {
+  display: flex;
+  width: 100%;
+  padding: 23px 15px 5px 15px;
+  border-radius: 12px;
+  height: 200px;
+  border: 1px solid #efefef;
+
+  background: #fcfcfc;
+  color: rgba(22, 22, 22, 0.25);
+  font-family: 'TWK700';
+  font-size: 20px;
+  line-height: 1.25;
+  resize: none;
+}
+
+.reviewSubmit {
+  border-radius: 12px;
+  background: #f948b4;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1),
+    0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 18px;
+  line-height: 1.25;
+  padding: 20px 30px;
+  width: 100%;
+}
+.ratingWrap {
+}
+.ratingSpan {
+  color: #161616;
+  font-family: 'TWK700';
+  font-size: 12px;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+.ratingBlock {
+  display: flex;
+  align-items: center;
+}
+.star {
+  cursor: pointer;
+  font-size: 35px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url('../../icons/star-unactive.svg');
+  background-position: center;
+  background-size: cover;
+}
+
+.filled {
+  background-image: url('../../icons/star-active.svg');
+}
+
+.ratingCounter {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 10px;
+  display: block;
+  padding: 5px;
+  border-radius: 5px;
+  background: #f6f2fd;
+}
+@media screen and (max-width: 768px) {
+  .ratingCounter {
+    font-size: 15px;
+  }
+}
+.reviewThank {
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #efefef;
+  background: rgba(162, 236, 0, 0.25);
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  max-width: 430px;
+  width: 100%;
+  margin: 0 auto;
+  color: #00c82f;
+  text-align: center;
+  margin-bottom: 20px;
+}

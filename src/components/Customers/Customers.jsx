@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Navigation } from 'swiper/modules';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import arrowLeft from '../../icons/arrow-left.svg';
 import arrowRight from '../../icons/arrow-right.svg';
 import flagBritain from '../../icons/flag-britain.svg';
@@ -11,11 +11,15 @@ import flagGermany from '../../icons/flag-germany.svg';
 import flagCanada from '../../icons/customers-flag.svg';
 
 import star from '../../icons/rating-star.svg';
-import { Link } from 'react-router-dom';
+
+import ReviewForm from 'components/ReviewForm/ReviewForm';
 
 export default function Customers() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  const [showReviewForm, setShowReviewForm] = useState(false);
+
   return (
     <section className={css.customersSection}>
       <div className={css.customers}>
@@ -34,10 +38,18 @@ export default function Customers() {
                 <img src={arrowRight} alt="arrowRight" />
               </button>
             </div>
-            <Link to="/" className={css.sliderLink}>
+            <button
+              onClick={() => {
+                setShowReviewForm(!showReviewForm);
+              }}
+              className={css.sliderLink}
+            >
               Leave Review
-            </Link>
+            </button>
           </div>
+          {showReviewForm && (
+            <ReviewForm setShowReviewForm={setShowReviewForm} />
+          )}
           <Swiper
             spaceBetween={10}
             watchSlidesProgress={true}

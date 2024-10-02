@@ -9,7 +9,7 @@
   max-width: 1180px;
   margin: 0 auto;
   height: 1198px;
-  background-image: url('../../images/footer-bcg.png');
+  background-image: url('../../icons/footer-bcg.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -32,7 +32,7 @@
     padding: 0;
     background-color: #fafbff;
     height: 100%;
-    background-image: url('../../images/footer-mob.png');
+    background-image: url('../../icons/footer-mob.svg');
     background-repeat: no-repeat;
     background-size: auto;
     background-position: bottom;
