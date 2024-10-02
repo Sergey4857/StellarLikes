@@ -35,7 +35,7 @@ const HeroHome = () => {
             and views from real users, delivered instantly. At the lowest
             possible prices.
           </p>
-          <a className={css.heroLink} href="#my-section" ref={heroLinkRef}>
+          <a className={css.heroLink} href="#freeLikes" ref={heroLinkRef}>
             Get 50 Free Likes
           </a>
         </div>

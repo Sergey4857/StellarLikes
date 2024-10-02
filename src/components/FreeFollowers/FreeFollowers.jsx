@@ -22,7 +22,7 @@ const FreeFollowers = () => {
   };
 
   return (
-    <section className={css.freeFollowersSection} id="my-section">
+    <section className={css.freeFollowersSection} id="freeFollowers">
       <div className={css.freeFollowers}>
         <div className={css.freeFollowersWrap}>
           <div className={css.freeFollowersTitle}>

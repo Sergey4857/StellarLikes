@@ -22,7 +22,7 @@ const FreeViews = () => {
   };
 
   return (
-    <section className={css.freeViewsSection} id="my-section">
+    <section className={css.freeViewsSection} id="freeViews">
       <div className={css.freeViews}>
         <div className={css.freeViewsWrap}>
           <div className={css.freeViewsTitle}>
