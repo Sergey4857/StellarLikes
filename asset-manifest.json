@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/StellarLikes/static/css/main.7108bf03.css",
-    "main.js": "/StellarLikes/static/js/main.6f689875.js",
+    "main.css": "/StellarLikes/static/css/main.0a6dbb07.css",
+    "main.js": "/StellarLikes/static/js/main.0bb660ae.js",
     "static/media/sky.jpg": "/StellarLikes/static/media/sky.49709337dc0afc56a2a0.jpg",
     "static/media/checkout2.svg": "/StellarLikes/static/media/checkout2.bbd46e85191cab8bf455.svg",
     "static/media/TWKLausanne-700.ttf": "/StellarLikes/static/media/TWKLausanne-700.c386a7e11bf0ddb59962.ttf",
@@ -12,9 +12,9 @@
     "static/media/planrets-bcg.svg": "/StellarLikes/static/media/planrets-bcg.bbf9e4ebd754083def1d.svg",
     "static/media/rating-mob.svg": "/StellarLikes/static/media/rating-mob.119b82a180dbe8233904.svg",
     "static/media/cryptomus.svg": "/StellarLikes/static/media/cryptomus.743edffe3d32c4a86a94.svg",
-    "static/media/footer-bcg.png": "/StellarLikes/static/media/footer-bcg.8ac2696b91ef81f2d354.png",
-    "static/media/footer-mob.png": "/StellarLikes/static/media/footer-mob.3b26ef9bdc910c0293d6.png",
+    "static/media/footer-bcg.svg": "/StellarLikes/static/media/footer-bcg.989d80d35e1b79c089fe.svg",
     "static/media/features4.svg": "/StellarLikes/static/media/features4.32ba46ab8816c1b680ffb7f2767551e9.svg",
+    "static/media/footer-mob.svg": "/StellarLikes/static/media/footer-mob.4aa1af738e77b7e1938c.svg",
     "static/media/tiktokLikesHover.svg": "/StellarLikes/static/media/tiktokLikesHover.2c245d21f4881221558d4d6862f29023.svg",
     "static/media/tiktokLikes.svg": "/StellarLikes/static/media/tiktokLikes.ca39c71dc3ba6618ace64c0dab1f93fc.svg",
     "static/media/features2.svg": "/StellarLikes/static/media/features2.87be453166517b07ed9329b78120d88d.svg",
@@ -24,6 +24,7 @@
     "static/media/team-monkey.svg": "/StellarLikes/static/media/team-monkey.b7f39301d4f2455b1c48e9a34e043d7d.svg",
     "static/media/monkey.svg": "/StellarLikes/static/media/monkey.d67c9992e0d47ca8b607.svg",
     "static/media/teamCompoundMansvg.svg": "/StellarLikes/static/media/teamCompoundMansvg.088496bfa99cc6a34e89.svg",
+    "static/media/spaceship.svg": "/StellarLikes/static/media/spaceship.4f310deb59171288d7bd.svg",
     "static/media/tiktokFolowersHover.svg": "/StellarLikes/static/media/tiktokFolowersHover.a3dcb9a8a53be262a6c6ac003f53fa06.svg",
     "static/media/tiktokFolowers.svg": "/StellarLikes/static/media/tiktokFolowers.0ee245c6d97ce59d4695fdfa196ba7ed.svg",
     "static/media/alien.svg": "/StellarLikes/static/media/alien.056d92e30ff8bbbec42a.svg",
@@ -59,15 +60,18 @@
     "index.html": "/StellarLikes/index.html",
     "static/media/customers-flag.svg": "/StellarLikes/static/media/customers-flag.1008329b09eb23f2598638b529f25eb7.svg",
     "static/media/close-button.svg": "/StellarLikes/static/media/close-button.a014dbd7873abea848b68923a8d03f28.svg",
+    "static/media/star-active.svg": "/StellarLikes/static/media/star-active.d334b4de7af76a4bcac0.svg",
+    "static/media/star-unactive.svg": "/StellarLikes/static/media/star-unactive.e256ef0b2e1a8139e1ed.svg",
     "static/media/rating-star.svg": "/StellarLikes/static/media/rating-star.f97df80c8399a3123bf3ad5d8d5f87fb.svg",
     "static/media/burger.svg": "/StellarLikes/static/media/burger.7bcd4802297b9fcb0350ab8cbc04e774.svg",
+    "static/media/close.svg": "/StellarLikes/static/media/close.50915a1f0670d03077c8.svg",
     "static/media/checkbox.svg": "/StellarLikes/static/media/checkbox.a9e959e5c805efa3d39c.svg",
     "static/media/checkout-unactive.svg": "/StellarLikes/static/media/checkout-unactive.15debbb0754ecc38e23a.svg",
-    "main.7108bf03.css.map": "/StellarLikes/static/css/main.7108bf03.css.map",
-    "main.6f689875.js.map": "/StellarLikes/static/js/main.6f689875.js.map"
+    "main.0a6dbb07.css.map": "/StellarLikes/static/css/main.0a6dbb07.css.map",
+    "main.0bb660ae.js.map": "/StellarLikes/static/js/main.0bb660ae.js.map"
   },
   "entrypoints": [
-    "static/css/main.7108bf03.css",
-    "static/js/main.6f689875.js"
+    "static/css/main.0a6dbb07.css",
+    "static/js/main.0bb660ae.js"
   ]
 }
