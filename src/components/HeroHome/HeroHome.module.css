@@ -128,32 +128,47 @@
   margin-bottom: 25px;
 }
 .heroLink {
-  display: inline-flex;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-decoration: none;
+  padding: 20px 30px;
   color: #fff;
   font-family: 'TWK700';
   font-size: 25px;
-  line-height: 1.2;
-  padding: 20px 30px;
+  line-height: 1.25;
   border-radius: 12px;
   background: #f948b4;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
-  transition: all 200ms ease-in-out;
 }
-.heroLink:hover {
-  outline: 2px solid #f948b4;
-  background: #fff;
-  color: #f948b4;
 
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+.linkText {
+  z-index: 1;
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.25;
 }
-@media screen and (max-width: 768px) {
-  .heroLink {
-    padding: 15px 43px;
-  }
+
+.decor {
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
-@media screen and (max-width: 500px) {
-  .heroLink {
-    width: 100%;
-    justify-content: center;
-  }
+
+.decorItem {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transform: translate(-100%);
+  will-change: transform;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
