@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import css from './HeroHome.module.css'; // Используем CSS-модули
 import { gsap } from 'gsap';
 

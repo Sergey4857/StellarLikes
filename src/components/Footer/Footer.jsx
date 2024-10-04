@@ -16,7 +16,7 @@ const Footer = () => {
                 <Link className={css.footerNavLink} to="/">
                   Home
                 </Link>
-                <Link className={css.footerNavLink} to="/">
+                <Link className={css.footerNavLink} to="/Reviews">
                   Reviews
                 </Link>
                 <Link className={css.footerNavLink} to="/">

@@ -12,6 +12,7 @@ import SelectPost from './SelectPost/SelectPost';
 import ContactUs from 'pages/ContactUs/ContactUs';
 import AboutUs from 'pages/AboutUs/AboutUs';
 import ErrorPage from './ErrorPage/ErrorPage';
+import Reviews from 'pages/Reviews/Reviews';
 
 // import { useEffect, useState } from 'react';
 // import FetchAllProductData from 'Api/FetchTiktokLikes';
@@ -75,6 +76,9 @@ export default function App() {
 
           {/* AboutUs */}
           <Route path="ContactUs" element={<ContactUs />} />
+
+          <Route path="Reviews" element={<Reviews />} />
+
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
