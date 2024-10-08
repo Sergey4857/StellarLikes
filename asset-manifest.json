@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/StellarLikes/static/css/main.86adbc63.css",
-    "main.js": "/StellarLikes/static/js/main.cfaa10da.js",
+    "main.css": "/StellarLikes/static/css/main.d562d121.css",
+    "main.js": "/StellarLikes/static/js/main.4f763913.js",
     "static/media/sky.jpg": "/StellarLikes/static/media/sky.49709337dc0afc56a2a0.jpg",
     "static/media/checkout2.svg": "/StellarLikes/static/media/checkout2.bbd46e85191cab8bf455.svg",
     "static/media/TWKLausanne-700.ttf": "/StellarLikes/static/media/TWKLausanne-700.c386a7e11bf0ddb59962.ttf",
@@ -54,10 +54,10 @@
     "static/media/checkout.svg": "/StellarLikes/static/media/checkout.44b8b2407b72e845051c.svg",
     "static/media/plus.svg": "/StellarLikes/static/media/plus.a3798c92e1e6aea21f5e.svg",
     "static/media/arrow-right.svg": "/StellarLikes/static/media/arrow-right.a8a0418cd40a646c728d3704a989f049.svg",
+    "index.html": "/StellarLikes/index.html",
     "static/media/arrow-left.svg": "/StellarLikes/static/media/arrow-left.70df077cc8392fb2381575dda90ae3ae.svg",
     "static/media/checkmark-getStarted.svg": "/StellarLikes/static/media/checkmark-getStarted.06cdf1a1c1ec8daebf4a6d90d0f47cee.svg",
     "static/media/flag-germany.svg": "/StellarLikes/static/media/flag-germany.f2f3e497bd4e278eb1cf1480d670a096.svg",
-    "index.html": "/StellarLikes/index.html",
     "static/media/customers-flag.svg": "/StellarLikes/static/media/customers-flag.1008329b09eb23f2598638b529f25eb7.svg",
     "static/media/close-button.svg": "/StellarLikes/static/media/close-button.a014dbd7873abea848b68923a8d03f28.svg",
     "static/media/star-active.svg": "/StellarLikes/static/media/star-active.d334b4de7af76a4bcac0.svg",
@@ -68,11 +68,11 @@
     "static/media/close.svg": "/StellarLikes/static/media/close.50915a1f0670d03077c8.svg",
     "static/media/checkbox.svg": "/StellarLikes/static/media/checkbox.a9e959e5c805efa3d39c.svg",
     "static/media/checkout-unactive.svg": "/StellarLikes/static/media/checkout-unactive.15debbb0754ecc38e23a.svg",
-    "main.86adbc63.css.map": "/StellarLikes/static/css/main.86adbc63.css.map",
-    "main.cfaa10da.js.map": "/StellarLikes/static/js/main.cfaa10da.js.map"
+    "main.d562d121.css.map": "/StellarLikes/static/css/main.d562d121.css.map",
+    "main.4f763913.js.map": "/StellarLikes/static/js/main.4f763913.js.map"
   },
   "entrypoints": [
-    "static/css/main.86adbc63.css",
-    "static/js/main.cfaa10da.js"
+    "static/css/main.d562d121.css",
+    "static/js/main.4f763913.js"
   ]
 }
