@@ -6,7 +6,6 @@ import { useEffect, useRef } from 'react';
 
 const Footer = () => {
   const sectionRef = useRef(null);
-  const backgroundRef = useRef(null);
 
   useEffect(() => {
     const links = document.querySelectorAll(`.${css.ratingLink}`);
@@ -64,26 +63,10 @@ const Footer = () => {
     };
   }, []);
 
-  useEffect(() => {
-    gsap.fromTo(
-      backgroundRef.current,
-      { yPercent: -15 },
-      {
-        yPercent: 30,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-        },
-      }
-    );
-  }, []);
   return (
     <footer className={css.footerSection} ref={sectionRef}>
       <div className={css.footer}>
-        <div className={css.footerWrap} ref={backgroundRef}>
+        <div className={css.footerWrap}>
           <div className={css.footerBlock}>
             <div className={css.footerInfo}>
               <div className={css.footerLogo}>
