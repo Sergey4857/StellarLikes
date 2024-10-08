@@ -6,12 +6,13 @@ import FaqBlock from 'components/Faq/FaqBlock';
 import css from './TikTokLikesPage.module.css';
 import tikTokLikes from '../../icons/tiktokLikes.svg';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import TikTokLikes from './TikTokLikes';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
 import HeroHome from 'components/HeroHome/HeroHome';
 import FreeLikes from 'components/FreeLikes/FreeLikes';
 import Available from 'components/Available/Available';
+import { gsap } from 'gsap';
 
 const TikTokLikesPage = () => {
   const navigate = useNavigate();
@@ -81,6 +82,61 @@ const TikTokLikesPage = () => {
       active: false,
     },
   ]);
+
+  const linkRef = useRef(null);
+
+  const decorItemRefs = useRef([]);
+
+  useEffect(() => {
+    const link = linkRef.current;
+    const decorItems = decorItemRefs.current;
+
+    const handleMouseEnter = () => {
+      gsap.to(link, {
+        scaleX: 1.03,
+        scaleY: 0.98,
+        duration: 1,
+        ease: 'elastic.out(1, 0.3)',
+      });
+
+      gsap.fromTo(
+        decorItems,
+        { translateX: '-100%' },
+        {
+          translateX: 0,
+          duration: 0.4,
+          stagger: 0.08,
+        }
+      );
+    };
+
+    const handleMouseLeave = () => {
+      gsap.to(link, {
+        scaleX: 1,
+        scaleY: 1,
+        duration: 1,
+        ease: 'elastic.out(1, 0.3)',
+      });
+
+      gsap.to(decorItems, {
+        translateX: '100%',
+        duration: 0.4,
+        stagger: 0.08,
+      });
+    };
+
+    if (link) {
+      link.addEventListener('mouseenter', handleMouseEnter);
+      link.addEventListener('mouseleave', handleMouseLeave);
+    }
+
+    return () => {
+      if (link) {
+        link.removeEventListener('mouseenter', handleMouseEnter);
+        link.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, []);
 
   const [showCustomQuantity, setShowCustomQuantity] = useState(false);
   const [showPackages, setShowPackages] = useState(true);
@@ -184,13 +240,24 @@ const TikTokLikesPage = () => {
 
           <button
             className={css.buyLink}
+            ref={linkRef}
             onClick={() =>
               navigate('getStarted', {
                 state: { selectedPrice },
               })
             }
           >
-            Buy Now
+            <span className={css.linkText}>Buy Now</span>
+            <span className={css.decor}>
+              <span
+                ref={el => (decorItemRefs.current[0] = el)}
+                className={css.decorItem}
+              ></span>
+              <span
+                ref={el => (decorItemRefs.current[1] = el)}
+                className={css.decorItem}
+              ></span>
+            </span>
           </button>
         </div>
       </section>

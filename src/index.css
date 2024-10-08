@@ -234,3 +234,20 @@ body {
 .orangeText {
   color: #fc5d1f;
 }
+.burger-menu-enter {
+  transform: translateX(-100%);
+}
+
+.burger-menu-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+.burger-menu-exit {
+  transform: translateX(0);
+}
+
+.burger-menu-exit-active {
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
+}

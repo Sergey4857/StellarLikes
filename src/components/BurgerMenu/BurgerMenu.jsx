@@ -41,12 +41,7 @@ export default function BurgerMenu({ setOpenedModal, openedModal }) {
 
   return createPortal(
     <div className={css.BurgerNavWrap}>
-      <div
-        className={css.BurgerNav}
-        // onClick={() => {
-        //   setOpenedModal(false);
-        // }}
-      >
+      <div className={css.BurgerNav}>
         {menuItems.map((item, index) => (
           <div className={css.burgerWrapper} key={index}>
             <div

@@ -6,12 +6,66 @@ import FaqBlock from 'components/Faq/FaqBlock';
 import css from './TikTokViews.module.css';
 import tikTokViews from '../../icons/tiktokViews.svg';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import TikTokViews from './TikTokViews';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
 import FreeViews from 'components/FreeViews/FreeViews';
+import { gsap } from 'gsap';
 
 const TikTokViewsPage = () => {
+  const linkRef = useRef(null);
+  const decorItemRefs = useRef([]);
+
+  useEffect(() => {
+    const link = linkRef.current;
+    const decorItems = decorItemRefs.current;
+
+    const handleMouseEnter = () => {
+      gsap.to(link, {
+        scaleX: 1.03,
+        scaleY: 0.98,
+        duration: 1,
+        ease: 'elastic.out(1, 0.3)',
+      });
+
+      gsap.fromTo(
+        decorItems,
+        { translateX: '-100%' },
+        {
+          translateX: 0,
+          duration: 0.4,
+          stagger: 0.08,
+        }
+      );
+    };
+
+    const handleMouseLeave = () => {
+      gsap.to(link, {
+        scaleX: 1,
+        scaleY: 1,
+        duration: 1,
+        ease: 'elastic.out(1, 0.3)',
+      });
+
+      gsap.to(decorItems, {
+        translateX: '100%',
+        duration: 0.4,
+        stagger: 0.08,
+      });
+    };
+
+    if (link) {
+      link.addEventListener('mouseenter', handleMouseEnter);
+      link.addEventListener('mouseleave', handleMouseLeave);
+    }
+
+    return () => {
+      if (link) {
+        link.removeEventListener('mouseenter', handleMouseEnter);
+        link.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, []);
   const navigate = useNavigate();
   const [tiktokViews, setTiktokViews] = useState([
     {
@@ -180,6 +234,7 @@ const TikTokViewsPage = () => {
             </div>
           </div>
           <button
+            ref={linkRef}
             className={css.buyLink}
             onClick={() =>
               navigate('getStarted', {
@@ -187,7 +242,17 @@ const TikTokViewsPage = () => {
               })
             }
           >
-            Buy Now
+            <span className={css.linkText}> Buy Now</span>
+            <span className={css.decor}>
+              <span
+                ref={el => (decorItemRefs.current[0] = el)}
+                className={css.decorItem}
+              ></span>
+              <span
+                ref={el => (decorItemRefs.current[1] = el)}
+                className={css.decorItem}
+              ></span>
+            </span>
           </button>
         </div>
       </section>

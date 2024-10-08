@@ -13,6 +13,7 @@ import ContactUs from 'pages/ContactUs/ContactUs';
 import AboutUs from 'pages/AboutUs/AboutUs';
 import ErrorPage from './ErrorPage/ErrorPage';
 import Reviews from 'pages/Reviews/Reviews';
+import OrderConfirmation from 'pages/OrderConfirmation/OrderConfirmation';
 
 // import { useEffect, useState } from 'react';
 // import FetchAllProductData from 'Api/FetchTiktokLikes';
@@ -78,6 +79,8 @@ export default function App() {
           <Route path="ContactUs" element={<ContactUs />} />
 
           <Route path="Reviews" element={<Reviews />} />
+
+          <Route path="OrderConfirmation" element={<OrderConfirmation />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Route>

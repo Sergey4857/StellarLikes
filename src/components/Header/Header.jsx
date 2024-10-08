@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import BurgerBtn from 'components/BurgerBtn/BurgerBtn';
 import BurgerMenu from 'components/BurgerMenu/BurgerMenu';
 import RatingStars from '../../icons/rating-stars.svg';
+import { CSSTransition } from 'react-transition-group';
 
 const Header = () => {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1440);
@@ -61,7 +62,6 @@ const Header = () => {
             <span className={css.ratingSpan}>5.0</span>
           </div>
         )}
-
         {!isDesktop && (
           <BurgerBtn
             setOpenedModal={setOpenedModal}
@@ -69,12 +69,14 @@ const Header = () => {
           />
         )}
 
-        {openedModal && (
-          <BurgerMenu
-            setOpenedModal={setOpenedModal}
-            openedModal={openedModal}
-          ></BurgerMenu>
-        )}
+        <CSSTransition
+          in={openedModal}
+          timeout={300}
+          classNames="burger-menu"
+          unmountOnExit
+        >
+          <BurgerMenu setOpenedModal={setOpenedModal}></BurgerMenu>
+        </CSSTransition>
       </div>
     </header>
   );

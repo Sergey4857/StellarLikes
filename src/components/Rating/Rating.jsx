@@ -17,6 +17,56 @@ const Rating = () => {
   const backgroundRef = useRef(null);
 
   useEffect(() => {
+    const links = document.querySelectorAll(`.${css.ratingLink}`);
+
+    links.forEach(link => {
+      const decorItems = link.querySelectorAll(`.${css.decorItem}`);
+
+      const handleMouseEnter = () => {
+        gsap.to(link, {
+          scaleX: 1.03,
+          scaleY: 0.98,
+          duration: 1,
+          ease: 'elastic.out(1, 0.3)',
+        });
+
+        gsap.fromTo(
+          decorItems,
+          { translateX: '-100%' },
+          {
+            translateX: 0,
+            duration: 0.4,
+            stagger: 0.08,
+          }
+        );
+      };
+
+      const handleMouseLeave = () => {
+        gsap.to(link, {
+          scaleX: 1,
+          scaleY: 1,
+          duration: 1,
+          ease: 'elastic.out(1, 0.3)',
+        });
+
+        gsap.to(decorItems, {
+          translateX: '100%',
+          duration: 0.4,
+          stagger: 0.08,
+        });
+      };
+
+      link.addEventListener('mouseenter', handleMouseEnter);
+      link.addEventListener('mouseleave', handleMouseLeave);
+
+      return () => {
+        link.removeEventListener('mouseenter', handleMouseEnter);
+        link.removeEventListener('mouseleave', handleMouseLeave);
+      };
+    });
+  }, []);
+
+  useEffect(() => {
     gsap.fromTo(
       backgroundRef.current,
       { yPercent: -15 },
@@ -67,22 +117,25 @@ const Rating = () => {
                 sourced from real and active users. Delivered in 60 seconds.
               </p>
               <div className={css.ratingLinkContent}>
-                <Link
-                  className={`${css.ratingLink} ${css.pinkLink}`}
-                  to="/tikTokLikes"
-                >
-                  Buy Likes
+                <Link className={`${css.ratingLink} ${css.pinkLink}`} to="/">
+                  <span className={css.linkText}>Buy Likes</span>
+                  <span className={css.decor}>
+                    <span className={css.decorItem}></span>
+                    <span className={css.decorItem}></span>
+                  </span>
                 </Link>
+
                 <div className={css.ratingStarsText}>
                   Rated 4.9 of 5 of intergalactic stars
                 </div>
               </div>
             </div>
           </div>
+
           <div className={`${css.ratingBlock} ${css.greenBorder}`}>
             <div className={css.ratingLinkBlock}>
               <div className={css.ratingContent}>
-                <img className={css.ratingImg} src={TikTokViews} alt="Likes" />
+                <img className={css.ratingImg} src={TikTokViews} alt="Views" />
                 TikTok <span className={css.green}>Views</span>
               </div>
 
@@ -106,21 +159,26 @@ const Rating = () => {
                   className={`${css.ratingLink} ${css.greenLink}`}
                   to="/tikTokViews"
                 >
-                  Buy Views
+                  <span className={css.linkText}>Buy Views</span>
+                  <span className={css.decor}>
+                    <span className={css.decorItem}></span>
+                    <span className={css.decorItem}></span>
+                  </span>
                 </Link>
                 <div className={css.ratingStarsText}>Starting at $0.89</div>
               </div>
             </div>
           </div>
+
           <div className={`${css.ratingBlock} ${css.orangeBorder}`}>
             <div className={css.ratingLinkBlock}>
               <div className={css.ratingContent}>
                 <img
                   className={css.ratingImg}
                   src={TikTokFollowers}
-                  alt="Likes"
+                  alt="Followers"
                 />
-                TikTok <span className={css.orange}>Likes</span>
+                TikTok <span className={css.orange}>Followers</span>
               </div>
 
               <div className={css.ratingStarsBlock}>
@@ -143,7 +201,11 @@ const Rating = () => {
                   className={`${css.ratingLink} ${css.orangeLink}`}
                   to="/tikTokFollowers"
                 >
-                  Buy Followers
+                  <span className={css.linkText}>Buy Followers</span>
+                  <span className={css.decor}>
+                    <span className={css.decorItem}></span>
+                    <span className={css.decorItem}></span>
+                  </span>
                 </Link>
                 <div className={css.ratingStarsText}>Starting at $0.5</div>
               </div>

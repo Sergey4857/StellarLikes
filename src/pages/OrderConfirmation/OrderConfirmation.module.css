@@ -1,0 +1,100 @@
+.orderWrapper {
+  display: flex;
+  gap: 50px;
+  width: 100%;
+  padding: 65px 40px 70px 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .orderWrapper {
+    padding: 25px 20px 70px 20px;
+  }
+}
+
+.order {
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #efefef;
+
+  background: #fff;
+
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .order {
+    padding: 20px;
+  }
+}
+.orderWrap {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .orderWrap {
+    flex-direction: column;
+  }
+}
+.orderFirst {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.orderSecond {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.orderBox {
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #efefef;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: #fcfcfc;
+}
+.orderSubtitle {
+  color: #181818;
+  font-family: 'TWK500';
+  font-size: 10px;
+
+  font-weight: 500;
+}
+.orderTitle {
+  color: #181818;
+  font-family: 'TWK700';
+  font-size: 14px;
+}
+.orderStatus {
+  width: fit-content;
+  border-radius: 8px;
+  background: rgba(246, 21, 156, 0.2);
+  color: #f6159c;
+  font-family: 'TWK600';
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.084px;
+  padding-left: 16px;
+  padding-right: 8px;
+  position: relative;
+}
+.orderStatus::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: #f6159c;
+}
