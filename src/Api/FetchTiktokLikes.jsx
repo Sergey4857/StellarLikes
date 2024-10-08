@@ -68,7 +68,7 @@ const FetchAllProductData = async (setTiktokLikesData, setTiktokViewsData) => {
     // console.log(result);
     // return result;
   } catch (error) {
-    console.error('Error fetching data:', error); // Выводим ошибку в консоль
+    console.error('Error fetching data:', error);
   }
 };
 

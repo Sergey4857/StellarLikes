@@ -305,6 +305,7 @@
   font-family: 'TWK700';
   font-size: 25px;
   line-height: 1.21;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .buyLink {
