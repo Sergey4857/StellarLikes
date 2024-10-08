@@ -3,58 +3,24 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import FAQ from './Faq';
 
-export default function FaqBlock() {
-  const [faqs, setFaqs] = useState([
-    {
-      question: 'What payment methods do you accept?',
-      answer:
-        'On Stormlikes you can pay using all major credit and debit cards. This includes cards issued by VISA, Mastercard, and AMEX. On top of that, if you are using a compatible device you will also get an option to pay using Apple Pay which is a very convenient option. On Stormlikes you can pay using all major credit and debit cards. This includes cards issued by VISA, Mastercard, and AMEX. On top of that, if you are using a compatible device you will also get an option to pay using Apple Pay which is a very convenient option.',
-      open: false,
-    },
-    {
-      question: 'What payment methods do you accept?',
-      answer:
-        'On Stormlikes you can pay using all major credit and debit cards. This includes cards issued by VISA, Mastercard, and AMEX. On top of that, if you are using a compatible device you will also get an option to pay using Apple Pay which is a very convenient option. On Stormlikes you can pay using all major credit and debit cards. This includes cards issued by VISA, Mastercard, and AMEX. On top of that, if you are using a compatible device you will also get an option to pay using Apple Pay which is a very convenient option.',
-      open: false,
-    },
-    {
-      question: 'What payment methods do you accept?',
-      answer:
-        'On Stormlikes you can pay using all major credit and debit cards. This includes cards issued by VISA, Mastercard, and AMEX. On top of that, if you are using a compatible device you will also get an option to pay using Apple Pay which is a very convenient option. On Stormlikes you can pay using all major credit and debit cards. This includes cards issued by VISA, Mastercard, and AMEX. On top of that, if you are using a compatible device you will also get an option to pay using Apple Pay which is a very convenient option.',
-      open: false,
-    },
-    {
-      question: 'What payment methods do you accept?',
-      answer:
-        'On Stormlikes you can pay using all major credit and debit cards. This includes cards issued by VISA, Mastercard, and AMEX. On top of that, if you are using a compatible device you will also get an option to pay using Apple Pay which is a very convenient option. On Stormlikes you can pay using all major credit and debit cards. This includes cards issued by VISA, Mastercard, and AMEX. On top of that, if you are using a compatible device you will also get an option to pay using Apple Pay which is a very convenient option.',
-      open: false,
-    },
-    {
-      question: 'What payment methods do you accept?',
-      answer:
-        'On Stormlikes you can pay using all major credit and debit cards. This includes cards issued by VISA, Mastercard, and AMEX. On top of that, if you are using a compatible device you will also get an option to pay using Apple Pay which is a very convenient option. On Stormlikes you can pay using all major credit and debit cards. This includes cards issued by VISA, Mastercard, and AMEX. On top of that, if you are using a compatible device you will also get an option to pay using Apple Pay which is a very convenient option.',
-      open: false,
-    },
-    {
-      question: 'What payment methods do you accept?',
-      answer:
-        'On Stormlikes you can pay using all major credit and debit cards. This includes cards issued by VISA, Mastercard, and AMEX. On top of that, if you are using a compatible device you will also get an option to pay using Apple Pay which is a very convenient option. On Stormlikes you can pay using all major credit and debit cards. This includes cards issued by VISA, Mastercard, and AMEX. On top of that, if you are using a compatible device you will also get an option to pay using Apple Pay which is a very convenient option.',
-      open: false,
-    },
-  ]);
+export default function FaqBlock({ faqsData }) {
+  const [faqs, setFaqs] = useState(
+    faqsData && faqsData.map(faq => ({ ...faq, open: false }))
+  );
 
   const toggleFAQ = index => {
-    setFaqs(
-      faqs.map((faq, i) => {
-        if (i === index) {
-          faq.open = !faq.open;
-        } else {
-          faq.open = false;
-        }
+    faqsData &&
+      setFaqs(
+        faqs.map((faq, i) => {
+          if (i === index) {
+            faq.open = !faq.open;
+          } else {
+            faq.open = false;
+          }
 
-        return faq;
-      })
-    );
+          return faq;
+        })
+      );
   };
   return (
     <section className={css.faqSection}>
@@ -69,9 +35,10 @@ export default function FaqBlock() {
 
       <div className={css.faqWrap}>
         <div className={css.faqs}>
-          {faqs.map((faq, index) => (
-            <FAQ faq={faq} index={index} key={index} toggleFAQ={toggleFAQ} />
-          ))}
+          {faqs &&
+            faqs.map((faq, index) => (
+              <FAQ faq={faq} index={index} key={index} toggleFAQ={toggleFAQ} />
+            ))}
         </div>
       </div>
     </section>

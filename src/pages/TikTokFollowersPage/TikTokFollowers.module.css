@@ -327,3 +327,34 @@
     line-height: 1.25;
   }
 }
+
+.linkText {
+  z-index: 1;
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.decor {
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.decorItem {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transform: translate(-100%);
+  will-change: transform;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

@@ -15,7 +15,70 @@ import { gsap } from 'gsap';
 const TikTokViewsPage = () => {
   const linkRef = useRef(null);
   const decorItemRefs = useRef([]);
-
+  const faqsData = [
+    {
+      question: 'Is it safe to buy TikTok views?',
+      answer:
+        'Yes, buying TikTok views is safe if you choose trusted providers. Make sure they offer real views. This way, you avoid risks to your account.',
+      open: false,
+    },
+    {
+      question: 'How can purchasing TikTok views increase my engagement?',
+      answer:
+        "Buying TikTok views makes your videos more visible. This leads to more likes, shares, and comments. It's because more people see your content.",
+      open: false,
+    },
+    {
+      question:
+        'What are the benefits of buying real TikTok views compared to fake views?',
+      answer:
+        "Real TikTok views boost your profile's credibility. Fake views can harm your account. TikTok might detect them and penalize you.",
+      open: false,
+    },
+    {
+      question: 'How do I choose the best site to buy TikTok views from?',
+      answer:
+        'Look for sites with good customer reviews and quality views. Check their pricing and support too. Reliable sites have a solid reputation.',
+      open: false,
+    },
+    {
+      question: 'Are there affordable options for buying TikTok views?',
+      answer:
+        'Yes, many sites offer different price plans. Compare these to find the best value for your money. Quality is key.',
+      open: false,
+    },
+    {
+      question: 'Can buying TikTok views help my videos go viral?',
+      answer:
+        "Buying views can make your video more visible. But, creating great content is crucial. It's the best way to go viral on TikTok.",
+      open: false,
+    },
+    {
+      question: 'How does buying views impact the TikTok algorithm?',
+      answer:
+        'Buying views can help your video rank better. It shows TikTok that your content is popular. This can lead to more people seeing your videos.',
+      open: false,
+    },
+    {
+      question: 'What are the steps to buy TikTok views?',
+      answer:
+        'First, find a trusted provider. Then, pick a package and buy it. Finally, watch how your views and engagement change.',
+      open: false,
+    },
+    {
+      question:
+        'What ethical considerations should be taken into account when buying TikTok views?',
+      answer:
+        "There's a debate on buying views. Some see it as unfair. But, it can help grow your account. Just be true to yourself and your audience.",
+      open: false,
+    },
+    {
+      question: 'How can I convert bought views into organic growth?',
+      answer:
+        "To turn bought views into real growth, make great content. Talk to your followers and use TikTok's features. This keeps your momentum going.",
+      open: false,
+    },
+  ];
   useEffect(() => {
     const link = linkRef.current;
     const decorItems = decorItemRefs.current;
@@ -261,7 +324,7 @@ const TikTokViewsPage = () => {
       <Rating />
       <Features />
       <Customers />
-      <FaqBlock />
+      <FaqBlock faqsData={faqsData} />
     </>
   );
 };

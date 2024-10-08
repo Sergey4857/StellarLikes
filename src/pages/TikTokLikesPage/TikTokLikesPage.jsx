@@ -82,6 +82,68 @@ const TikTokLikesPage = () => {
       active: false,
     },
   ]);
+  const faqsData = [
+    {
+      question: 'What are the benefits of buying TikTok likes?',
+      answer:
+        'Buying TikTok likes can make your content more visible. It helps build your credibility and boosts engagement, which can lead to more growth and influence on TikTok.',
+      open: false,
+    },
+    {
+      question: 'How do I choose a reputable service to buy TikTok likes?',
+      answer:
+        'Look for services that offer real likes from real accounts. Check user reviews and testimonials. Ensure they have secure payment methods and protect your data.',
+      open: false,
+    },
+    {
+      question: 'Are there risks involved with buying TikTok likes?',
+      answer:
+        'Yes, buying fake likes can damage your credibility and might even get you banned. Always buy from trusted providers to avoid these problems.',
+      open: false,
+    },
+    {
+      question: 'Can I buy cheap TikTok likes without compromising quality?',
+      answer:
+        'Yes, you can find affordable, authentic TikTok likes. Look for deals that offer real engagement to invest wisely in your TikTok growth.',
+      open: false,
+    },
+    {
+      question: 'How quickly will I see results after buying TikTok likes?',
+      answer:
+        "Buying TikTok likes instantly boosts your engagement. You'll see more likes quickly, increasing the chances of your content appearing on the 'For You' page and growing your reach fast.",
+      open: false,
+    },
+    {
+      question: 'Why should I order TikTok likes to stay ahead of competitors?',
+      answer:
+        "Ordering TikTok likes makes your content more popular, helping you influence trends and establish your presence. It's a way to stay ahead in a crowded market.",
+      open: false,
+    },
+    {
+      question: 'How can I maximize my investment in TikTok likes?',
+      answer:
+        'Mix purchased likes with high-quality content. Also, engage with your audience by responding to comments and joining trends. This builds loyalty and sustained growth.',
+      open: false,
+    },
+    {
+      question: 'Where can I find trusted platforms to buy real TikTok likes?',
+      answer:
+        "Look for platforms with good user reviews and testimonials. These insights help ensure you get real likes that boost your account's credibility.",
+      open: false,
+    },
+    {
+      question: 'What should I consider for a safe TikTok likes purchase?',
+      answer:
+        'Choose a service with secure payments and a clear privacy policy. Ensure they offer real likes from real accounts to protect your account and maintain your integrity on TikTok.',
+      open: false,
+    },
+    {
+      question: 'How can buying TikTok likes enhance my content reach?',
+      answer:
+        "Buying TikTok likes increases your content's chance to be on the 'For You' page. This wider exposure attracts more viewers and boosts your content's visibility.",
+      open: false,
+    },
+  ];
 
   const linkRef = useRef(null);
 
@@ -266,7 +328,7 @@ const TikTokLikesPage = () => {
       <Rating />
       <Features />
       <Customers />
-      <FaqBlock />
+      <FaqBlock faqsData={faqsData} />
     </>
   );
 };
