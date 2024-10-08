@@ -34,16 +34,16 @@ const Header = () => {
               Buy TikTok <span className={css.headerLikes}>Likes</span>
             </Link>
             <span className={css.decorator}></span>
-            <Link className={css.headerNavLink} to="/tikTokFollowers">
+            <Link className={css.headerNavLink} to="/buy-tiktok-followers">
               Buy TikTok <span className={css.headerFollowers}>Followers</span>
             </Link>
             <span className={css.decorator}></span>
 
-            <Link className={css.headerNavLink} to="/tikTokViews">
+            <Link className={css.headerNavLink} to="/buy-tiktok-views">
               Buy TikTok <span className={css.headerViews}>Views</span>
             </Link>
             <span className={css.decorator}></span>
-            <Link className={css.headerNavLink} to="/aboutUs">
+            <Link className={css.headerNavLink} to="/about">
               About Us
             </Link>
             <span className={css.decorator}></span>

@@ -122,6 +122,7 @@
   line-height: 1.2;
   padding: 20px;
   margin-top: 25px;
+  overflow: hidden;
 }
 .FirstBlock {
   margin-bottom: 10px;

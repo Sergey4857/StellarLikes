@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 
 const FreeLikes = () => {
   const linkRef = useRef(null);
+
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -113,7 +114,7 @@ const FreeLikes = () => {
             </div>
 
             <a href="#freeLikes" className={css.freeLikesButton} ref={linkRef}>
-              <span className={css.linkText}>Get Free Likes</span>
+              <span className={css.linkText}>Get 50 Free Likes</span>
               <span className={css.decor}>
                 <span
                   ref={el => (decorItemRefs.current[0] = el)}

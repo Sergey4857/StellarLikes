@@ -6,56 +6,56 @@ const FreeFollowers = () => {
   const linkRef = useRef(null);
   const decorItemRefs = useRef([]);
 
-  useEffect(() => {
-    const link = linkRef.current;
-    const decorItems = decorItemRefs.current;
+   useEffect(() => {
+     const link = linkRef.current;
+     const decorItems = decorItemRefs.current;
 
-    const handleMouseEnter = () => {
-      gsap.to(link, {
-        scaleX: 1.03,
-        scaleY: 0.98,
-        duration: 1,
-        ease: 'elastic.out(1, 0.3)',
-      });
+     const handleMouseEnter = () => {
+       gsap.to(link, {
+         scaleX: 1.03,
+         scaleY: 0.98,
+         duration: 1,
+         ease: 'elastic.out(1, 0.3)',
+       });
 
-      gsap.fromTo(
-        decorItems,
-        { translateX: '-100%' },
-        {
-          translateX: 0,
-          duration: 0.4,
-          stagger: 0.08,
-        }
-      );
-    };
+       gsap.fromTo(
+         decorItems,
+         { translateX: '-100%' },
+         {
+           translateX: 0,
+           duration: 0.4,
+           stagger: 0.08,
+         }
+       );
+     };
 
-    const handleMouseLeave = () => {
-      gsap.to(link, {
-        scaleX: 1,
-        scaleY: 1,
-        duration: 1,
-        ease: 'elastic.out(1, 0.3)',
-      });
+     const handleMouseLeave = () => {
+       gsap.to(link, {
+         scaleX: 1,
+         scaleY: 1,
+         duration: 1,
+         ease: 'elastic.out(1, 0.3)',
+       });
 
-      gsap.to(decorItems, {
-        translateX: '100%',
-        duration: 0.4,
-        stagger: 0.08,
-      });
-    };
+       gsap.to(decorItems, {
+         translateX: '100%',
+         duration: 0.4,
+         stagger: 0.08,
+       });
+     };
 
-    if (link) {
-      link.addEventListener('mouseenter', handleMouseEnter);
-      link.addEventListener('mouseleave', handleMouseLeave);
-    }
+     if (link) {
+       link.addEventListener('mouseenter', handleMouseEnter);
+       link.addEventListener('mouseleave', handleMouseLeave);
+     }
 
-    return () => {
-      if (link) {
-        link.removeEventListener('mouseenter', handleMouseEnter);
-        link.removeEventListener('mouseleave', handleMouseLeave);
-      }
-    };
-  }, []);
+     return () => {
+       if (link) {
+         link.removeEventListener('mouseenter', handleMouseEnter);
+         link.removeEventListener('mouseleave', handleMouseLeave);
+       }
+     };
+   }, []);
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -116,7 +116,7 @@ const FreeFollowers = () => {
               type="submit"
               ref={linkRef}
             >
-              <span className={css.linkText}> Get Free Followers</span>
+              <span className={css.linkText}>Get 50 Free Followers</span>
               <span className={css.decor}>
                 <span
                   ref={el => (decorItemRefs.current[0] = el)}

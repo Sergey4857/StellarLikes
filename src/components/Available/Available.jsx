@@ -80,7 +80,7 @@ export default function Available() {
 
         <Link
           className={`${css.availableLink} ${css.greenBorder}`}
-          to="/tikTokViews"
+          to="/buy-tiktok-views"
         >
           <div className={css.availableLinkWrap}>
             <img
@@ -102,7 +102,7 @@ export default function Available() {
 
         <Link
           className={`${css.availableLink} ${css.orangeBorder}`}
-          to="/tikTokFollowers"
+          to="/buy-tiktok-followers"
         >
           <div className={css.availableLinkWrap}>
             <img

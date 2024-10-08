@@ -1,17 +1,66 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import css from './SelectPost.module.css';
 import { useEffect, useState, useRef, useCallback } from 'react'; // Import useRef
-
+import { gsap } from 'gsap';
 import FetchUserTiktokPosts from 'Api/FetchUserTikTokPosts';
 
 const SelectPost = () => {
   const location = useLocation();
   const { selectedPrice, uniqueId, userInfo } = location.state || {};
 
-  console.log(selectedPrice);
-  console.log(uniqueId);
-  console.log(userInfo);
+  const linkRef = useRef(null);
+  const decorItemRefs = useRef([]);
 
+  useEffect(() => {
+    const link = linkRef.current;
+    const decorItems = decorItemRefs.current;
+
+    const handleMouseEnter = () => {
+      gsap.to(link, {
+        scaleX: 1.03,
+        scaleY: 0.98,
+        duration: 1,
+        ease: 'elastic.out(1, 0.3)',
+      });
+
+      gsap.fromTo(
+        decorItems,
+        { translateX: '-100%' },
+        {
+          translateX: 0,
+          duration: 0.4,
+          stagger: 0.08,
+        }
+      );
+    };
+
+    const handleMouseLeave = () => {
+      gsap.to(link, {
+        scaleX: 1,
+        scaleY: 1,
+        duration: 1,
+        ease: 'elastic.out(1, 0.3)',
+      });
+
+      gsap.to(decorItems, {
+        translateX: '100%',
+        duration: 0.4,
+        stagger: 0.08,
+      });
+    };
+
+    if (link) {
+      link.addEventListener('mouseenter', handleMouseEnter);
+      link.addEventListener('mouseleave', handleMouseLeave);
+    }
+
+    return () => {
+      if (link) {
+        link.removeEventListener('mouseenter', handleMouseEnter);
+        link.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, []);
   const [{ full_name, profile_pic_url }] = userInfo;
 
   const [tiktokPosts, setTikTokPosts] = useState([]);
@@ -94,7 +143,8 @@ const SelectPost = () => {
           <div className={css.selectedName}>{full_name}</div>
         </div>
 
-        <div
+        <button
+          ref={linkRef}
           className={css.selectedLink}
           onClick={() =>
             navigate('/checkout', {
@@ -107,8 +157,18 @@ const SelectPost = () => {
             })
           }
         >
-          Continue to checkout
-        </div>
+          <span className={css.linkText}>Continue to checkout</span>
+          <span className={css.decor}>
+            <span
+              ref={el => (decorItemRefs.current[0] = el)}
+              className={css.decorItem}
+            ></span>
+            <span
+              ref={el => (decorItemRefs.current[1] = el)}
+              className={css.decorItem}
+            ></span>
+          </span>
+        </button>
       </div>
     </div>
   );

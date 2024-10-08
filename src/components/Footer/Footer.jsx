@@ -115,7 +115,7 @@ const Footer = () => {
               <div className={css.buyBlockContent}>
                 <Link
                   className={`${css.ratingLink} ${css.buyBlockLinkGreen}`}
-                  to="/tikTokViews"
+                  to="/buy-tiktok-views"
                 >
                   <span className={css.linkText}>Buy Views</span>
                   <span className={css.decor}>
@@ -129,7 +129,7 @@ const Footer = () => {
               <div className={css.buyBlockContent}>
                 <Link
                   className={`${css.ratingLink} ${css.buyBlockLinkOrange}`}
-                  to="/tikTokFollowers"
+                  to="/buy-tiktok-followers"
                 >
                   <span className={css.linkText}>Buy Followers</span>
                   <span className={css.decor}>

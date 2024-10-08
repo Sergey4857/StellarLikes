@@ -16,8 +16,12 @@ export default function BurgerMenu({ setOpenedModal, openedModal }) {
       title: 'Services',
       links: [
         { to: '/', text: 'Buy TikTok', highlight: 'Likes' },
-        { to: '/tikTokFollowers', text: 'Buy TikTok', highlight: 'Followers' },
-        { to: '/tikTokViews', text: 'Buy TikTok', highlight: 'Views' },
+        {
+          to: '/buy-tiktok-followers',
+          text: 'Buy TikTok',
+          highlight: 'Followers',
+        },
+        { to: '/buy-tiktok-views', text: 'Buy TikTok', highlight: 'Views' },
       ],
     },
     {
@@ -25,8 +29,11 @@ export default function BurgerMenu({ setOpenedModal, openedModal }) {
       links: [
         { to: '/', text: 'Free TikTok Video Downloader' },
         { to: '/', text: 'Free TikTok Likes' },
-        { to: '/tikTokViews', text: 'Free TikTok Views' },
-        { to: '/tikTokFollowers#freeFollowers', text: 'Free TikTok Followers' },
+        { to: '/buy-tiktok-views', text: 'Free TikTok Views' },
+        {
+          to: '/buy-tiktok-followers#freeFollowers',
+          text: 'Free TikTok Followers',
+        },
       ],
     },
     {

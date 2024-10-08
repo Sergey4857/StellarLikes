@@ -80,8 +80,7 @@ const FreeViews = () => {
       <div className={css.freeViews}>
         <div className={css.freeViewsWrap}>
           <div className={css.freeViewsTitle}>
-            <span className={css.freeViewsSpan}>Get 50 Free</span> TikTok
-            Followers
+            <span className={css.freeViewsSpan}>Get 50 Free</span> TikTok Views
           </div>
           <p className={css.freeViewsText}>
             Receive free TikTok views every 24 hours: just submit your 
@@ -111,7 +110,7 @@ const FreeViews = () => {
                 placeholder="email@example.com"
               />
             </div>
-            <button className={css.freeViewsButton} type="submit">
+            <button className={css.freeViewsButton} type="submit" ref={linkRef}>
               <span className={css.linkText}> Get Free Views</span>
               <span className={css.decor}>
                 <span

@@ -14,12 +14,12 @@ const Layout = () => {
         return css['likes-background']; //
       case '/tikTokLikes':
         return css['likes-background'];
-      case '/tikTokFollowers':
+      case '/buy-tiktok-followers':
         return css['followers-background'];
-      case '/tikTokViews':
+      case '/buy-tiktok-views':
         return css['views-background'];
       default:
-        return css['default-background']; // Можно добавить класс для страниц по умолчанию
+        return css['default-background'];
     }
   };
   return (

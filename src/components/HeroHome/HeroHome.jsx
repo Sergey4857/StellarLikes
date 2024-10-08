@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import css from './HeroHome.module.css'; // Используем CSS-модули
+import css from './HeroHome.module.css';
 import { gsap } from 'gsap';
 
 const HeroHome = () => {

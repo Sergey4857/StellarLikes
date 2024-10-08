@@ -58,22 +58,28 @@ export default function App() {
           <Route path="/getStarted/selectPost" element={<SelectPost />} />
 
           {/* TikTok Followers*/}
-          <Route path="tikTokFollowers" element={<TikTokFollowersPage />} />
-          <Route path="tikTokFollowers/getStarted" element={<GetStarted />} />
-          <Route path="tikTokFollowers/checkout" element={<Checkout />} />
+          <Route
+            path="buy-tiktok-followers"
+            element={<TikTokFollowersPage />}
+          />
+          <Route
+            path="buy-tiktok-followers/getStarted"
+            element={<GetStarted />}
+          />
+          <Route path="buy-tiktok-followers/checkout" element={<Checkout />} />
 
           {/* TikTok Views */}
-          <Route path="tikTokViews" element={<TikTokViewsPage />} />
-          <Route path="tikTokViews/getStarted" element={<GetStarted />} />
+          <Route path="buy-tiktok-views" element={<TikTokViewsPage />} />
+          <Route path="buy-tiktok-views/getStarted" element={<GetStarted />} />
           <Route
-            path="tikTokViews/getStarted/selectPost"
+            path="buy-tiktok-views/getStarted/selectPost"
             element={<SelectPost />}
           />
 
           <Route path="/checkout" element={<Checkout />} />
 
           {/* AboutUs */}
-          <Route path="AboutUs" element={<AboutUs />} />
+          <Route path="about" element={<AboutUs />} />
 
           {/* AboutUs */}
           <Route path="ContactUs" element={<ContactUs />} />
