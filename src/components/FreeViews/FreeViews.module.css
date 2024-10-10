@@ -24,22 +24,22 @@
   }
 }
 
-.freeViews::after {
+.freeViews img {
   content: '';
   position: absolute;
   right: 0;
   bottom: 0;
-  background-image: url('../../icons/alien.svg');
-  width: 358px;
-  height: 333px;
-  background-size: cover;
+
+  width: 300px;
+  height: 300px;
+
   z-index: -1;
 }
 
 @media screen and (max-width: 768px) {
-  .freeViews::after {
-    width: 183px;
-    height: 157px;
+  .freeViews img {
+    width: 150px;
+    height: 150px;
   }
 }
 

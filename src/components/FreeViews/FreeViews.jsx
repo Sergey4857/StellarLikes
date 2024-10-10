@@ -1,12 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
 import css from './FreeViews.module.css';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import FreeViewsImage from '../../icons/alien.svg';
 
 const FreeViews = () => {
   const linkRef = useRef(null);
+  const featuresRef = useRef(null);
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+  });
   const decorItemRefs = useRef([]);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     const link = linkRef.current;
     const decorItems = decorItemRefs.current;
 
@@ -56,10 +65,29 @@ const FreeViews = () => {
       }
     };
   }, []);
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-  });
+
+  useEffect(() => {
+    // Animation for images on scroll
+    const images = featuresRef.current.querySelectorAll('[data-animate]');
+
+    images.forEach(image => {
+      gsap.fromTo(
+        image,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: image,
+            start: 'top 70%',
+            end: 'top 30%',
+          },
+        }
+      );
+    });
+  }, []);
 
   const handleInputChange = e => {
     const { name, value } = e.target;
@@ -71,12 +99,11 @@ const FreeViews = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     console.log('Form Data Submitted:', formData);
   };
 
   return (
-    <section className={css.freeViewsSection} id="freeViews">
+    <section className={css.freeViewsSection} id="freeViews" ref={featuresRef}>
       <div className={css.freeViews}>
         <div className={css.freeViewsWrap}>
           <div className={css.freeViewsTitle}>
@@ -124,6 +151,12 @@ const FreeViews = () => {
               </span>
             </button>
           </form>
+          <img
+            data-animate
+            className={css.featuresImg}
+            alt="Views"
+            src={FreeViewsImage}
+          />
         </div>
       </div>
     </section>

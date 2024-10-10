@@ -1,18 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
 import css from './FreeLikes.module.css';
 import { gsap } from 'gsap';
+import FreeLikesImage from '../../icons/robot.svg';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const FreeLikes = () => {
   const linkRef = useRef(null);
-
+  const featuresRef = useRef(null);
   const [formData, setFormData] = useState({
     username: '',
     email: '',
   });
-
   const decorItemRefs = useRef([]);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     const link = linkRef.current;
     const decorItems = decorItemRefs.current;
 
@@ -63,6 +66,29 @@ const FreeLikes = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Animation for images on scroll
+    const images = featuresRef.current.querySelectorAll('[data-animate]');
+
+    images.forEach(image => {
+      gsap.fromTo(
+        image,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: image,
+            start: 'top 70%',
+            end: 'top 30%',
+          },
+        }
+      );
+    });
+  }, []);
+
   const handleInputChange = e => {
     const { name, value } = e.target;
     setFormData({
@@ -73,13 +99,12 @@ const FreeLikes = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     console.log('Form Data Submitted:', formData);
   };
 
   return (
     <section className={css.freeLikesSection} id="freeLikes">
-      <div className={css.freeLikes}>
+      <div className={css.freeLikes} ref={featuresRef}>
         <div className={css.freeLikesWrap}>
           <div className={css.freeLikesTitle}>
             <span className={css.freeLikesSpan}>Get 50 Free</span> TikTok Likes
@@ -127,6 +152,12 @@ const FreeLikes = () => {
               </span>
             </a>
           </form>
+          <img
+            data-animate
+            className={css.featuresImg}
+            alt="Likes"
+            src={FreeLikesImage}
+          />
         </div>
       </div>
     </section>

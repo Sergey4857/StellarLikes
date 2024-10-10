@@ -1,65 +1,92 @@
 import { useEffect, useRef, useState } from 'react';
 import css from './FreeFollowers.module.css';
 import { gsap } from 'gsap';
-
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import FreeFollowersImage from '../../icons/monkey.svg';
 const FreeFollowers = () => {
   const linkRef = useRef(null);
-  const decorItemRefs = useRef([]);
-
-   useEffect(() => {
-     const link = linkRef.current;
-     const decorItems = decorItemRefs.current;
-
-     const handleMouseEnter = () => {
-       gsap.to(link, {
-         scaleX: 1.03,
-         scaleY: 0.98,
-         duration: 1,
-         ease: 'elastic.out(1, 0.3)',
-       });
-
-       gsap.fromTo(
-         decorItems,
-         { translateX: '-100%' },
-         {
-           translateX: 0,
-           duration: 0.4,
-           stagger: 0.08,
-         }
-       );
-     };
-
-     const handleMouseLeave = () => {
-       gsap.to(link, {
-         scaleX: 1,
-         scaleY: 1,
-         duration: 1,
-         ease: 'elastic.out(1, 0.3)',
-       });
-
-       gsap.to(decorItems, {
-         translateX: '100%',
-         duration: 0.4,
-         stagger: 0.08,
-       });
-     };
-
-     if (link) {
-       link.addEventListener('mouseenter', handleMouseEnter);
-       link.addEventListener('mouseleave', handleMouseLeave);
-     }
-
-     return () => {
-       if (link) {
-         link.removeEventListener('mouseenter', handleMouseEnter);
-         link.removeEventListener('mouseleave', handleMouseLeave);
-       }
-     };
-   }, []);
+  const featuresRef = useRef(null);
   const [formData, setFormData] = useState({
     username: '',
     email: '',
   });
+  const decorItemRefs = useRef([]);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const link = linkRef.current;
+    const decorItems = decorItemRefs.current;
+
+    const handleMouseEnter = () => {
+      gsap.to(link, {
+        scaleX: 1.03,
+        scaleY: 0.98,
+        duration: 1,
+        ease: 'elastic.out(1, 0.3)',
+      });
+
+      gsap.fromTo(
+        decorItems,
+        { translateX: '-100%' },
+        {
+          translateX: 0,
+          duration: 0.4,
+          stagger: 0.08,
+        }
+      );
+    };
+
+    const handleMouseLeave = () => {
+      gsap.to(link, {
+        scaleX: 1,
+        scaleY: 1,
+        duration: 1,
+        ease: 'elastic.out(1, 0.3)',
+      });
+
+      gsap.to(decorItems, {
+        translateX: '100%',
+        duration: 0.4,
+        stagger: 0.08,
+      });
+    };
+
+    if (link) {
+      link.addEventListener('mouseenter', handleMouseEnter);
+      link.addEventListener('mouseleave', handleMouseLeave);
+    }
+
+    return () => {
+      if (link) {
+        link.removeEventListener('mouseenter', handleMouseEnter);
+        link.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    // Animation for images on scroll
+    const images = featuresRef.current.querySelectorAll('[data-animate]');
+
+    images.forEach(image => {
+      gsap.fromTo(
+        image,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: image,
+            start: 'top 70%',
+            end: 'top 30%',
+          },
+        }
+      );
+    });
+  }, []);
 
   const handleInputChange = e => {
     const { name, value } = e.target;
@@ -71,12 +98,15 @@ const FreeFollowers = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     console.log('Form Data Submitted:', formData);
   };
 
   return (
-    <section className={css.freeFollowersSection} id="freeFollowers">
+    <section
+      className={css.freeFollowersSection}
+      id="freeFollowers"
+      ref={featuresRef}
+    >
       <div className={css.freeFollowers}>
         <div className={css.freeFollowersWrap}>
           <div className={css.freeFollowersTitle}>
@@ -129,6 +159,12 @@ const FreeFollowers = () => {
               </span>
             </button>
           </form>
+          <img
+            data-animate
+            className={css.featuresImg}
+            alt="Views"
+            src={FreeFollowersImage}
+          />
         </div>
       </div>
     </section>

@@ -25,20 +25,20 @@
   }
 }
 
-.freeFollowers::after {
+.freeFollowers img {
   content: '';
   position: absolute;
-  right: 0;
+  right: -14px;
   bottom: 0;
-  background-image: url('../../icons/monkey.svg');
+
   width: 288px;
   height: 322px;
-  background-size: cover;
+
   z-index: -1;
 }
 
 @media screen and (max-width: 768px) {
-  .freeFollowers::after {
+  .freeFollowers img {
     width: 150px;
     height: 150px;
   }

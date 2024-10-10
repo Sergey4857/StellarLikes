@@ -297,6 +297,7 @@
   font-size: 25px;
   line-height: 1.21;
   overflow: hidden;
+  position: relative;
 }
 @media screen and (max-width: 768px) {
   .buyLink {

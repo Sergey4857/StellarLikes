@@ -71,6 +71,8 @@ const SelectPost = () => {
   const loadMorePosts = useCallback(async () => {
     setLoading(true);
     const newPosts = await FetchUserTiktokPosts(uniqueId, cursorRef.current);
+
+    console.log(newPosts);
     if (newPosts !== 'Error') {
       setTikTokPosts(prevPosts => [...prevPosts, ...newPosts.data.videos]);
       cursorRef.current = newPosts.data.cursor;
