@@ -1,24 +1,18 @@
-// import { useLocation } from 'react-router-dom';
-// import { useLocation } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import css from './Checkout.module.css';
 import { useState } from 'react';
 
 const Checkout = () => {
-  // const navigate = useNavigate();
   const location = useLocation();
 
-  const { selectedPrice, uniqueId, selectedPost, userEmail } =
-    location.state || {};
+  console.log(location.state);
 
-  console.log(selectedPrice);
-  console.log(uniqueId);
-  console.log(selectedPost);
-  console.log(userEmail);
+  const { quantity, productId, userEmail, customLink, shop_name } =
+    location.state || {};
 
   const [selectedOption, setSelectedOption] = useState('1');
 
-  console.log(selectedOption);
+  const navigate = useNavigate();
 
   const handleOptionChange = event => {
     setSelectedOption(event.target.value);
@@ -64,9 +58,24 @@ const Checkout = () => {
               Crypto
             </label>
           </div>
-          <div className={css.checkoutButton}>
+
+          <button
+            className={css.checkoutButton}
+            onClick={() =>
+              navigate('/orderConfirmation', {
+                state: {
+                  quantity,
+                  productId,
+                  userEmail,
+                  customLink,
+                  shop_name,
+                },
+              })
+            }
+          >
             <span>Procceed to secure checkout</span>
-          </div>
+          </button>
+
           <div className={css.checkoutInfo}>
             All transactions are secure and encrypted
           </div>

@@ -6,7 +6,16 @@ import FetchUserTiktokPosts from 'Api/FetchUserTikTokPosts';
 
 const SelectPost = () => {
   const location = useLocation();
-  const { selectedPrice, uniqueId, userInfo } = location.state || {};
+  console.log(location.state);
+  const {
+    quantity,
+    productId,
+    uniqueId,
+    userInfo,
+    userEmail,
+    customLink,
+    shop_name,
+  } = location.state || {};
 
   const linkRef = useRef(null);
   const decorItemRefs = useRef([]);
@@ -73,6 +82,7 @@ const SelectPost = () => {
     const newPosts = await FetchUserTiktokPosts(uniqueId, cursorRef.current);
 
     console.log(newPosts);
+
     if (newPosts !== 'Error') {
       setTikTokPosts(prevPosts => [...prevPosts, ...newPosts.data.videos]);
       cursorRef.current = newPosts.data.cursor;
@@ -151,10 +161,11 @@ const SelectPost = () => {
           onClick={() =>
             navigate('/checkout', {
               state: {
-                selectedPrice,
-                uniqueId,
-                userInfo,
-                selectedPost: selectedOption,
+                quantity,
+                productId,
+                userEmail,
+                customLink: `${customLink}/video/${selectedOption}`,
+                shop_name,
               },
             })
           }

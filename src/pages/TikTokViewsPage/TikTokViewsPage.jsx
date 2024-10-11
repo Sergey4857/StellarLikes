@@ -1,20 +1,41 @@
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useMemo,
+  useCallback,
+} from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { gsap } from 'gsap';
 import Benefits from 'components/Benefits/Benefits';
 import Rating from 'components/Rating/Rating';
 import Features from 'components/Features/Features';
 import Customers from 'components/Customers/Customers';
 import FaqBlock from 'components/Faq/FaqBlock';
-import css from './TikTokViews.module.css';
-import tikTokViews from '../../icons/tiktokViews.svg';
-import { useNavigate } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
 import TikTokViews from './TikTokViews';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
 import FreeViews from 'components/FreeViews/FreeViews';
-import { gsap } from 'gsap';
+import Available from 'components/Available/Available';
+import CalculatePrice from 'components/CalculatePrice/CalculatePrice';
+import css from './TikTokViews.module.css';
+import tikTokViewsIcon from '../../icons/tiktokViews.svg';
 
-const TikTokViewsPage = () => {
+const TikTokViewsPage = ({ tiktokViewsData }) => {
+  const navigate = useNavigate();
   const linkRef = useRef(null);
   const decorItemRefs = useRef([]);
+  const [showCustomQuantity, setShowCustomQuantity] = useState(false);
+  const [showPackages, setShowPackages] = useState(true);
+  const [tiktokviews, setTiktokviews] = useState([]);
+  const [selectedPrice, setSelectedPrice] = useState(null);
+  const [customQuantity, setCustomQuantity] = useState(0);
+  const [priceDetails, setPriceDetails] = useState({
+    oldPrice: 0,
+    newPrice: 0,
+    savings: 0,
+    discountPercent: 0,
+  });
+  console.log(priceDetails);
   const faqsData = [
     {
       question: 'Is it safe to buy TikTok views?',
@@ -79,6 +100,52 @@ const TikTokViewsPage = () => {
       open: false,
     },
   ];
+
+  const basePricePerUnit = tiktokViewsData
+    ? parseFloat(tiktokViewsData.price)
+    : 0;
+  const productId = tiktokViewsData?.id;
+
+  const discountLevels = useMemo(() => {
+    return tiktokViewsData
+      ? tiktokViewsData.discount_levels
+          .slice()
+          .sort((a, b) => a.quantity - b.quantity)
+      : [];
+  }, [tiktokViewsData]);
+
+  useEffect(() => {
+    if (tiktokViewsData && tiktokViewsData.preset_packages.length > 0) {
+      const packages = tiktokViewsData.preset_packages.map((pkg, index) => ({
+        ...pkg,
+        quantity: parseInt(pkg.quantity),
+        discountPercent: parseFloat(pkg.discount.replace('%', '')) / 100,
+        active: index === 0,
+      }));
+      setTiktokviews(packages);
+      setSelectedPrice(packages[0]);
+    }
+  }, [tiktokViewsData]);
+
+  const toggleViews = index => {
+    setTiktokviews(prevViews =>
+      prevViews.map((views, i) => ({
+        ...views,
+        active: i === index,
+      }))
+    );
+    setSelectedPrice(tiktokviews[index]);
+  };
+
+  const handleCustomQuantityChange = useCallback(quantity => {
+    setCustomQuantity(quantity);
+  }, []);
+
+  const handlePriceCalculated = useCallback(calculatedPriceDetails => {
+    setPriceDetails(calculatedPriceDetails);
+  }, []);
+
+  // Animations
   useEffect(() => {
     const link = linkRef.current;
     const decorItems = decorItemRefs.current;
@@ -129,104 +196,24 @@ const TikTokViewsPage = () => {
       }
     };
   }, []);
-  const navigate = useNavigate();
-  const [tiktokViews, setTiktokViews] = useState([
-    {
-      quantity: 100,
-      percent: '30%',
-      price: 2.99,
-      oldPrice: 4.99,
-      savings: 2.01,
-      active: true,
-    },
-    {
-      quantity: 250,
-      percent: '40%',
-      price: 3.99,
-      oldPrice: 6.99,
-      savings: 3.01,
-      active: false,
-    },
-    {
-      quantity: 500,
-      percent: '50%',
-      price: 4.99,
-      oldPrice: 8.99,
-      savings: 2.01,
-      active: false,
-    },
-    {
-      quantity: 1000,
-      percent: '65%',
-      price: 7.99,
-      oldPrice: 8.99,
-      savings: 2.01,
-      active: false,
-    },
-    {
-      quantity: 2500,
-      percent: '70%',
-      price: 15.99,
-      oldPrice: 18.99,
-      savings: 2.01,
-      active: false,
-    },
-    {
-      quantity: 5000,
-      percent: '75%',
-      price: 25.99,
-      oldPrice: 28.99,
-      savings: 2.01,
-      active: false,
-    },
-    {
-      quantity: 10000,
-      percent: '80%',
-      price: 35.99,
-      oldPrice: 38.99,
-      savings: 2.01,
-      active: false,
-    },
-    {
-      quantity: 20000,
-      percent: '85%',
-      price: 45.99,
-      oldPrice: 48.99,
-      savings: 2.01,
-      active: false,
-    },
-  ]);
-  const [showCustomQuantity, setShowCustomQuantity] = useState(false);
-  const [showPackages, setShowPackages] = useState(true);
-
-  const [selectedPrice, setSelectedPrice] = useState(tiktokViews[0]);
-  const toggleViews = index => {
-    setTiktokViews(
-      tiktokViews.map((Views, i) => {
-        return {
-          ...Views,
-          active: i === index,
-        };
-      })
-    );
-    setSelectedPrice(tiktokViews[index]);
-  };
 
   return (
     <>
+      <Outlet />
+
       <section className={css.buyViews}>
         <div className={css.buyViewsTitle}>
-          Buy TikTok <span className="greenText">Views</span>
+          Buy TikTok <span className="pinkText">Views</span>
           <img
             className={css.buyViewsImg}
-            src={tikTokViews}
+            src={tikTokViewsIcon}
             alt="buyViewsImg"
           />
-          with Instant Delivery
+          starting from <span className="pinkText">$0.99</span>
         </div>
         <p className={css.buyViewsText}>
-          We offer top-notch quality TikTok Views at the best prices! Check our
-          deals below, choose best Views package and make an order now!
+          We offer top-notch quality TikTok views at the best prices! Check our
+          deals below, choose the best views package, and make an order now!
         </p>
         <div className={css.buyViewsBenefits}>
           <div className={css.buyViewsBenefit}>24/7 support</div>
@@ -238,7 +225,6 @@ const TikTokViewsPage = () => {
           <div className={css.buyViewsCustomWrap}>
             <div
               className={css.buyViewsCustomLink}
-              to=""
               onClick={() => {
                 setShowCustomQuantity(true);
                 setShowPackages(false);
@@ -253,7 +239,6 @@ const TikTokViewsPage = () => {
           <div className={css.buyViewsCustomWrap}>
             <div
               className={css.buyViewsCustomLink}
-              to=""
               onClick={() => {
                 setShowCustomQuantity(false);
                 setShowPackages(true);
@@ -264,15 +249,15 @@ const TikTokViewsPage = () => {
           </div>
         )}
 
-        {showPackages && (
+        {showPackages && tiktokviews.length > 0 && (
           <div className={css.buyViewsQuantityBlock}>
-            {tiktokViews.map((data, index) => (
+            {tiktokviews.map((data, index) => (
               <TikTokViews
                 data={data}
                 index={index}
                 key={index}
-                toggleViews={toggleViews}
                 color="violet"
+                toggleViews={toggleViews}
               />
             ))}
           </div>
@@ -280,32 +265,48 @@ const TikTokViewsPage = () => {
 
         {showCustomQuantity && (
           <CustomQuantity
+            discountLevels={discountLevels}
+            basePricePerUnit={basePricePerUnit}
+            onQuantityChange={handleCustomQuantityChange}
+            customQuantity={customQuantity}
             blockColor="green"
             textColor="greenText"
             discountColor="greenDiscount"
           />
         )}
+
         <div className={css.priceBlock}>
-          <div className={css.priceContent}>
-            <div className={css.priceWrap}>
-              <div className={css.mainPrice}>${selectedPrice.price}</div>
-              <div className={css.oldPrice}>${selectedPrice.oldPrice}</div>
-            </div>
-            <div className={css.savings}>
-              You’re saving{' '}
-              <span className={css.savingsPrice}>${selectedPrice.savings}</span>
-            </div>
-          </div>
+          {(showPackages && selectedPrice) ||
+          (showCustomQuantity && customQuantity > 0) ? (
+            <CalculatePrice
+              basePricePerUnit={basePricePerUnit}
+              quantity={showPackages ? selectedPrice.quantity : customQuantity}
+              presetDiscountPercent={
+                showPackages ? selectedPrice.discountPercent : null
+              }
+              discountLevels={discountLevels}
+              showPackages={showPackages}
+              showCustomQuantity={showCustomQuantity}
+              customQuantity={customQuantity}
+              onPriceCalculated={handlePriceCalculated}
+            />
+          ) : null}
+
           <button
-            ref={linkRef}
             className={css.buyLink}
+            ref={linkRef}
             onClick={() =>
               navigate('getStarted', {
-                state: { selectedPrice },
+                state: {
+                  quantity: showPackages
+                    ? selectedPrice.quantity
+                    : customQuantity,
+                  productId,
+                },
               })
             }
           >
-            <span className={css.linkText}> Buy Now</span>
+            <span className={css.linkText}>Buy Now</span>
             <span className={css.decor}>
               <span
                 ref={el => (decorItemRefs.current[0] = el)}
@@ -320,6 +321,7 @@ const TikTokViewsPage = () => {
         </div>
       </section>
       <FreeViews />
+      <Available />
       <Benefits />
       <Rating />
       <Features />

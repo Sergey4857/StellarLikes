@@ -1,12 +1,25 @@
 import css from '../OrderConfirmation/OrderConfirmation.module.css';
+import { useState } from 'react';
 
 const OrderConfirmation = () => {
+  const [processing, setProcessing] = useState(false);
   return (
     <div className={css.orderWrapper}>
       <div className={css.order}>
         <div className="section-title">
           Order <span className="pinkText">Confirmation</span>
         </div>
+        {!processing && (
+          <button
+            className={css.orderBtn}
+            onClick={() => {
+              setProcessing(true);
+            }}
+          >
+            <span className={css.orderIcon}></span>
+            Finish Payment
+          </button>
+        )}
         <div className={css.orderWrap}>
           <div className={css.orderFirst}>
             <div className={css.orderBox}>
@@ -33,9 +46,15 @@ const OrderConfirmation = () => {
           <div className={css.orderSecond}>
             <div className={css.orderBox}>
               <div className={css.orderSubtitle}>Status</div>
-              <div className={`${css.orderTitle} ${css.orderStatus}`}>
-                Processing
-              </div>
+              {processing ? (
+                <div className={`${css.orderTitle} ${css.orderStatus}`}>
+                  Processing
+                </div>
+              ) : (
+                <div className={`${css.orderTitle} ${css.pendingStatus}`}>
+                  Pending Payment
+                </div>
+              )}
             </div>
             <div className={css.orderBox}>
               <div className={css.orderSubtitle}>order amount</div>

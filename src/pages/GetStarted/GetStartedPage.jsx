@@ -8,7 +8,9 @@ import { gsap } from 'gsap';
 const GetStarted = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { selectedPrice } = location.state || {};
+  console.log(location.state);
+  const { quantity, productId } = location.state || {};
+
   const [userEmail, setUserEmail] = useState('');
   const [username, setUsername] = useState('');
   const [errors, setErrors] = useState({});
@@ -99,6 +101,8 @@ const GetStarted = () => {
 
     try {
       const userData = await TikTokUserDetails(username);
+      console.log(userData);
+
       setUserInfo(userData);
     } catch (error) {
       setApiError(error.message);
@@ -178,19 +182,23 @@ const GetStarted = () => {
                     if (productPath === 'buy-tiktok-followers') {
                       navigate(`/${productPath}/checkout`, {
                         state: {
-                          selectedPrice,
-                          uniqueId,
-                          userInfo,
+                          quantity,
+                          productId,
                           userEmail,
+                          customLink: `https://www.tiktok.com/${uniqueId}`,
+                          shop_name: 'StellarLikes',
                         },
                       });
                     } else {
                       navigate('selectPost', {
                         state: {
-                          selectedPrice,
+                          quantity,
+                          productId,
                           uniqueId,
                           userInfo,
                           userEmail,
+                          customLink: `https://www.tiktok.com/${uniqueId}`,
+                          shop_name: 'StellarLikes',
                         },
                       });
                     }

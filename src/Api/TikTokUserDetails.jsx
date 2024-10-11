@@ -18,6 +18,7 @@ const TikTokUserDetails = async username => {
 
       if (json.data) {
         const originalData = json.data;
+        console.log(originalData);
 
         const newItem = {
           pk: username,

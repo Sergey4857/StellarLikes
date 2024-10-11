@@ -1,6 +1,80 @@
+import React, { useState, useEffect } from 'react';
 import css from './CustomQuantity.module.css';
 
-const CustomQuantity = ({ blockColor, textColor, discountColor }) => {
+const CustomQuantity = ({
+  discountLevels,
+  basePricePerUnit,
+  onQuantityChange,
+  customPrice,
+  customQuantity,
+  blockColor,
+  textColor,
+  discountColor,
+}) => {
+  const [quantity, setQuantity] = useState(customQuantity || 100);
+  const [inputValue, setInputValue] = useState(customQuantity || 100);
+  const [discountPercent, setDiscountPercent] = useState(0);
+  const [nextDiscountQuantity, setNextDiscountQuantity] = useState(null);
+  const [nextDiscountPercent, setNextDiscountPercent] = useState(null);
+  const [typingTimeout, setTypingTimeout] = useState(null); // Для debounce
+
+  console.log(nextDiscountQuantity);
+
+  console.log(nextDiscountPercent);
+  useEffect(() => {
+    onQuantityChange(quantity);
+
+    let applicableDiscount = 0;
+    for (let i = discountLevels.length - 1; i >= 0; i--) {
+      if (quantity >= discountLevels[i].quantity) {
+        applicableDiscount = discountLevels[i].discount;
+        break;
+      }
+    }
+    setDiscountPercent(Math.round(applicableDiscount));
+
+    let nextLevel = null;
+    for (let i = 0; i < discountLevels.length; i++) {
+      if (quantity < discountLevels[i].quantity) {
+        nextLevel = discountLevels[i];
+        break;
+      }
+    }
+    if (nextLevel) {
+      setNextDiscountQuantity(nextLevel.quantity - quantity);
+      setNextDiscountPercent(nextLevel.discount);
+    } else {
+      setNextDiscountQuantity(null);
+      setNextDiscountPercent(null);
+    }
+  }, [quantity, discountLevels, onQuantityChange]);
+
+  const handleInputChange = e => {
+    let value = e.target.value;
+    setInputValue(value);
+
+    if (typingTimeout) {
+      clearTimeout(typingTimeout);
+    }
+
+    setTypingTimeout(
+      setTimeout(() => {
+        let intValue = parseInt(value, 10);
+        if (!isNaN(intValue) && intValue >= 100 && intValue <= 20000) {
+          setQuantity(intValue);
+        } else if (intValue < 100) {
+          setQuantity(100);
+          setInputValue(100);
+        } else if (intValue > 20000) {
+          setQuantity(20000);
+          setInputValue(20000);
+        } else {
+          setInputValue(quantity);
+        }
+      }, 1000)
+    );
+  };
+
   return (
     <>
       <div className={css.customQuantitySection}>
@@ -10,6 +84,10 @@ const CustomQuantity = ({ blockColor, textColor, discountColor }) => {
             className={css.customAmountInput}
             type="number"
             placeholder="Tap Here"
+            value={inputValue}
+            onChange={handleInputChange}
+            min="100"
+            max="20000"
           />
         </div>
         <div className={css.customDiscountBlock}>
@@ -17,14 +95,9 @@ const CustomQuantity = ({ blockColor, textColor, discountColor }) => {
             Your Discount
           </div>
           <div className={`${css[discountColor]} ${css.customDiscountPercent}`}>
-            0% off
+            {discountPercent}% off
           </div>
         </div>
-      </div>
-      <div className={css.customQuntityText}>
-        You need <span className={css.customQuntitySpan}>473</span> more likes
-        for
-        <span className={css.customQuntitySpan}>15%</span> discount
       </div>
     </>
   );

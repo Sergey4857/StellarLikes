@@ -15,36 +15,36 @@ import ErrorPage from './ErrorPage/ErrorPage';
 import Reviews from 'pages/Reviews/Reviews';
 import OrderConfirmation from 'pages/OrderConfirmation/OrderConfirmation';
 
-// import { useEffect, useState } from 'react';
-// import FetchAllProductData from 'Api/FetchTiktokLikes';
-
-// const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
-// const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
-// const Cast = lazy(() => import('./Cast/Cast'));
-// const MoviesDetails = lazy(() => import('../pages/MovieDetails/MoviesDetails'));
+import { useEffect, useState } from 'react';
+import FetchAllProductData from 'Api/FetchAllProductData';
 
 export default function App() {
-  // const [tiktokLikesData, setTiktokLikesData] = useState(null);
-  // const [tiktokViewsData, setTiktokViewsData] = useState(null);
+  const [tiktokLikesData, setTiktokLikesData] = useState(null);
+  const [tiktokViewsData, setTiktokViewsData] = useState(null);
+  const [tiktokFollowersData, setTiktokFollowersData] = useState(null);
 
-  //request 1 times at week
-  // const fetchDataIfNeeded = async () => {
-  //   const lastFetch = localStorage.getItem('lastFetchDate');
-  //   const now = new Date();
+  // request 1 times at week
+  const fetchDataIfNeeded = async () => {
+    const lastFetch = localStorage.getItem('lastFetchDate');
+    const now = new Date();
 
-  //   if (!lastFetch || now - new Date(lastFetch) > 7 * 24 * 60 * 60 * 1000) {
-  //     await FetchAllProductData(setTiktokLikesData, setTiktokViewsData);
-  //     localStorage.setItem('lastFetchDate', now);
-  //   }
-  // };
-  // fetchDataIfNeeded();
+    if (!lastFetch || now - new Date(lastFetch) > 7 * 24 * 60 * 60 * 1000) {
+      await FetchAllProductData(setTiktokLikesData, setTiktokViewsData);
+      localStorage.setItem('lastFetchDate', now);
+    }
+  };
+  fetchDataIfNeeded();
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     await FetchAllProductData(setTiktokLikesData, setTiktokViewsData);
-  //   };
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      await FetchAllProductData(
+        setTiktokLikesData,
+        setTiktokViewsData,
+        setTiktokFollowersData
+      );
+    };
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -52,7 +52,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           {/* TikTok Likes */}
-          <Route index element={<TikTokLikesPage />} />
+          <Route
+            index
+            element={<TikTokLikesPage tiktokLikesData={tiktokLikesData} />}
+          />
 
           <Route path="/getStarted" element={<GetStarted />} />
           <Route path="/getStarted/selectPost" element={<SelectPost />} />
@@ -60,7 +63,9 @@ export default function App() {
           {/* TikTok Followers*/}
           <Route
             path="buy-tiktok-followers"
-            element={<TikTokFollowersPage />}
+            element={
+              <TikTokFollowersPage tiktokFollowersData={tiktokFollowersData} />
+            }
           />
           <Route
             path="buy-tiktok-followers/getStarted"
@@ -69,7 +74,10 @@ export default function App() {
           <Route path="buy-tiktok-followers/checkout" element={<Checkout />} />
 
           {/* TikTok Views */}
-          <Route path="buy-tiktok-views" element={<TikTokViewsPage />} />
+          <Route
+            path="buy-tiktok-views"
+            element={<TikTokViewsPage tiktokViewsData={tiktokViewsData} />}
+          />
           <Route path="buy-tiktok-views/getStarted" element={<GetStarted />} />
           <Route
             path="buy-tiktok-views/getStarted/selectPost"
@@ -86,7 +94,7 @@ export default function App() {
 
           <Route path="Reviews" element={<Reviews />} />
 
-          <Route path="OrderConfirmation" element={<OrderConfirmation />} />
+          <Route path="orderConfirmation" element={<OrderConfirmation />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Route>
