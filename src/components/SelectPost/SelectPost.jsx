@@ -8,6 +8,8 @@ const SelectPost = () => {
   const location = useLocation();
   console.log(location.state);
   const {
+    price,
+    productService,
     quantity,
     productId,
     uniqueId,
@@ -161,6 +163,8 @@ const SelectPost = () => {
           onClick={() =>
             navigate('/checkout', {
               state: {
+                price,
+                productService,
                 quantity,
                 productId,
                 userEmail,

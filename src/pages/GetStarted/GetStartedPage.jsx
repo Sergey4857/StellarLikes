@@ -9,7 +9,7 @@ const GetStarted = () => {
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location.state);
-  const { quantity, productId } = location.state || {};
+  const { quantity, productId, price, productService } = location.state || {};
 
   const [userEmail, setUserEmail] = useState('');
   const [username, setUsername] = useState('');
@@ -182,23 +182,27 @@ const GetStarted = () => {
                     if (productPath === 'buy-tiktok-followers') {
                       navigate(`/${productPath}/checkout`, {
                         state: {
+                          price,
+                          productService,
                           quantity,
                           productId,
                           userEmail,
                           customLink: `https://www.tiktok.com/${uniqueId}`,
-                          shop_name: 'StellarLikes',
+                          shop_name: 'StellarLikes.com',
                         },
                       });
                     } else {
                       navigate('selectPost', {
                         state: {
+                          price,
+                          productService,
                           quantity,
                           productId,
                           uniqueId,
                           userInfo,
                           userEmail,
                           customLink: `https://www.tiktok.com/${uniqueId}`,
-                          shop_name: 'StellarLikes',
+                          shop_name: 'StellarLikes.com',
                         },
                       });
                     }

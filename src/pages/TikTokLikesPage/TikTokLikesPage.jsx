@@ -25,6 +25,68 @@ const TikTokLikesPage = ({ tiktokLikesData }) => {
   const navigate = useNavigate();
   const linkRef = useRef(null);
   const decorItemRefs = useRef([]);
+  const faqsData = [
+    {
+      question: 'What are the benefits of buying TikTok likes?',
+      answer:
+        'Buying TikTok likes can make your content more visible. It helps build your credibility and boosts engagement, which can lead to more growth and influence on TikTok.',
+      open: false,
+    },
+    {
+      question: 'How do I choose a reputable service to buy TikTok likes?',
+      answer:
+        'Look for services that offer real likes from real accounts. Check user reviews and testimonials. Ensure they have secure payment methods and protect your data.',
+      open: false,
+    },
+    {
+      question: 'Are there risks involved with buying TikTok likes?',
+      answer:
+        'Yes, buying fake likes can damage your credibility and might even get you banned. Always buy from trusted providers to avoid these problems.',
+      open: false,
+    },
+    {
+      question: 'Can I buy cheap TikTok likes without compromising quality?',
+      answer:
+        'Yes, you can find affordable, authentic TikTok likes. Look for deals that offer real engagement to invest wisely in your TikTok growth.',
+      open: false,
+    },
+    {
+      question: 'How quickly will I see results after buying TikTok likes?',
+      answer:
+        "Buying TikTok likes instantly boosts your engagement. You'll see more likes quickly, increasing the chances of your content appearing on the 'For You' page and growing your reach fast.",
+      open: false,
+    },
+    {
+      question: 'Why should I order TikTok likes to stay ahead of competitors?',
+      answer:
+        "Ordering TikTok likes makes your content more popular, helping you influence trends and establish your presence. It's a way to stay ahead in a crowded market.",
+      open: false,
+    },
+    {
+      question: 'How can I maximize my investment in TikTok likes?',
+      answer:
+        'Mix purchased likes with high-quality content. Also, engage with your audience by responding to comments and joining trends. This builds loyalty and sustained growth.',
+      open: false,
+    },
+    {
+      question: 'Where can I find trusted platforms to buy real TikTok likes?',
+      answer:
+        "Look for platforms with good user reviews and testimonials. These insights help ensure you get real likes that boost your account's credibility.",
+      open: false,
+    },
+    {
+      question: 'What should I consider for a safe TikTok likes purchase?',
+      answer:
+        'Choose a service with secure payments and a clear privacy policy. Ensure they offer real likes from real accounts to protect your account and maintain your integrity on TikTok.',
+      open: false,
+    },
+    {
+      question: 'How can buying TikTok likes enhance my content reach?',
+      answer:
+        "Buying TikTok likes increases your content's chance to be on the 'For You' page. This wider exposure attracts more viewers and boosts your content's visibility.",
+      open: false,
+    },
+  ];
   const [showCustomQuantity, setShowCustomQuantity] = useState(false);
   const [showPackages, setShowPackages] = useState(true);
   const [tiktoklikes, setTiktoklikes] = useState([]);
@@ -43,6 +105,7 @@ const TikTokLikesPage = ({ tiktokLikesData }) => {
     ? parseFloat(tiktokLikesData.price)
     : 0;
   const productId = tiktokLikesData?.id;
+  const productService = tiktokLikesData?.name;
 
   const discountLevels = useMemo(() => {
     return tiktokLikesData
@@ -239,6 +302,8 @@ const TikTokLikesPage = ({ tiktokLikesData }) => {
                     ? selectedPrice.quantity
                     : customQuantity,
                   productId,
+                  price: priceDetails.newPrice.toFixed(2),
+                  productService,
                 },
               })
             }
@@ -268,187 +333,3 @@ const TikTokLikesPage = ({ tiktokLikesData }) => {
 };
 
 export default TikTokLikesPage;
-
-const faqsData = [
-  {
-    question: 'What are the benefits of buying TikTok likes?',
-    answer:
-      'Buying TikTok likes can make your content more visible. It helps build your credibility and boosts engagement, which can lead to more growth and influence on TikTok.',
-    open: false,
-  },
-  {
-    question: 'How do I choose a reputable service to buy TikTok likes?',
-    answer:
-      'Look for services that offer real likes from real accounts. Check user reviews and testimonials. Ensure they have secure payment methods and protect your data.',
-    open: false,
-  },
-  {
-    question: 'Are there risks involved with buying TikTok likes?',
-    answer:
-      'Yes, buying fake likes can damage your credibility and might even get you banned. Always buy from trusted providers to avoid these problems.',
-    open: false,
-  },
-  {
-    question: 'Can I buy cheap TikTok likes without compromising quality?',
-    answer:
-      'Yes, you can find affordable, authentic TikTok likes. Look for deals that offer real engagement to invest wisely in your TikTok growth.',
-    open: false,
-  },
-  {
-    question: 'How quickly will I see results after buying TikTok likes?',
-    answer:
-      "Buying TikTok likes instantly boosts your engagement. You'll see more likes quickly, increasing the chances of your content appearing on the 'For You' page and growing your reach fast.",
-    open: false,
-  },
-  {
-    question: 'Why should I order TikTok likes to stay ahead of competitors?',
-    answer:
-      "Ordering TikTok likes makes your content more popular, helping you influence trends and establish your presence. It's a way to stay ahead in a crowded market.",
-    open: false,
-  },
-  {
-    question: 'How can I maximize my investment in TikTok likes?',
-    answer:
-      'Mix purchased likes with high-quality content. Also, engage with your audience by responding to comments and joining trends. This builds loyalty and sustained growth.',
-    open: false,
-  },
-  {
-    question: 'Where can I find trusted platforms to buy real TikTok likes?',
-    answer:
-      "Look for platforms with good user reviews and testimonials. These insights help ensure you get real likes that boost your account's credibility.",
-    open: false,
-  },
-  {
-    question: 'What should I consider for a safe TikTok likes purchase?',
-    answer:
-      'Choose a service with secure payments and a clear privacy policy. Ensure they offer real likes from real accounts to protect your account and maintain your integrity on TikTok.',
-    open: false,
-  },
-  {
-    question: 'How can buying TikTok likes enhance my content reach?',
-    answer:
-      "Buying TikTok likes increases your content's chance to be on the 'For You' page. This wider exposure attracts more viewers and boosts your content's visibility.",
-    open: false,
-  },
-];
-
-/* <>
- <section className={css.buyFollowers}>
-        <div className={css.buyFollowersTitle}>
-          Buy TikTok <span className="orangeText">Followers</span>
-          <img
-            className={css.buyFollowersImg}
-            src={tikTokFollowersIcon}
-            alt="buyFollowersImg"
-          />
-          with Instant Delivery
-        </div>
-        <div className={css.buyFollowersWrapper}>
-          <p className={css.buyFollowersText}>
-            We offer top-notch quality TikTok Followers at the best prices!
-            Check our deals below, choose best Followers package and make an
-            order now!
-          </p>
-
-          <div className={css.buyFollowersBenefits}>
-            <div className={css.buyFollowersBenefit}>24/7 support</div>
-            <div className={css.buyFollowersBenefit}>Quick Delivery Start</div>
-            <div className={css.buyFollowersBenefit}>No password required</div>
-          </div>
-
-          {showPackages && (
-            <div className={css.buyFollowersCustomWrap}>
-              <div
-                className={css.buyFollowersCustomLink}
-                to=""
-                onClick={() => {
-                  setShowCustomQuantity(true);
-                  setShowPackages(false);
-                }}
-              >
-                Custom Quantity
-              </div>
-            </div>
-          )}
-
-          {showCustomQuantity && (
-            <div className={css.buyFollowersCustomWrap}>
-              <div
-                className={css.buyFollowersCustomLink}
-                to=""
-                onClick={() => {
-                  setShowCustomQuantity(false);
-                  setShowPackages(true);
-                }}
-              >
-                Packages
-              </div>
-            </div>
-          )}
-
-          {showPackages && (
-            <div className={css.buyFollowersQuantityBlock}>
-              {tiktokFollowers.map((data, index) => (
-                <TikTokFollowers
-                  data={data}
-                  index={index}
-                  key={index}
-                  toggleFollowers={toggleFollowers}
-                  color="violet"
-                />
-              ))}
-            </div>
-          )}
-
-          {showCustomQuantity && (
-            <CustomQuantity
-              blockColor="orange"
-              textColor="orangeText"
-              discountColor="orangeDiscount"
-            />
-          )}
-          <div className={css.priceBlock}>
-            <div className={css.priceContent}>
-              <div className={css.priceWrap}>
-                <div className={css.mainPrice}>${selectedPrice.price}</div>
-                <div className={css.oldPrice}>${selectedPrice.oldPrice}</div>
-              </div>
-              <div className={css.savings}>
-                You’re saving{' '}
-                <span className={css.savingsPrice}>
-                  ${selectedPrice.savings}
-                </span>
-              </div>
-            </div>
-
-            <button
-              ref={linkRef}
-              className={css.buyLink}
-              onClick={() =>
-                navigate('getStarted', {
-                  state: { selectedPrice },
-                })
-              }
-            >
-              <span className={css.linkText}> Buy Now</span>
-              <span className={css.decor}>
-                <span
-                  ref={el => (decorItemRefs.current[0] = el)}
-                  className={css.decorItem}
-                ></span>
-                <span
-                  ref={el => (decorItemRefs.current[1] = el)}
-                  className={css.decorItem}
-                ></span>
-              </span>
-            </button>
-          </div>
-        </div>
-      </section>
-      <FreeFollowers />
-      <Benefits />
-      <Rating />
-      <Features />
-      <Customers />
-      <FaqBlock faqsData={faqsData} />
-    </> */

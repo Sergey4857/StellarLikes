@@ -101,6 +101,7 @@ const TikTokFollowersPage = ({ tiktokFollowersData }) => {
     : 0;
 
   const productId = tiktokFollowersData?.id;
+  const productService = tiktokFollowersData?.name;
   const discountLevels = useMemo(() => {
     return tiktokFollowersData
       ? tiktokFollowersData.discount_levels
@@ -298,6 +299,8 @@ const TikTokFollowersPage = ({ tiktokFollowersData }) => {
                       ? selectedPrice.quantity
                       : customQuantity,
                     productId,
+                    price: priceDetails.newPrice.toFixed(2),
+                    productService,
                   },
                 })
               }

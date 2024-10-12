@@ -105,6 +105,7 @@ const TikTokViewsPage = ({ tiktokViewsData }) => {
     ? parseFloat(tiktokViewsData.price)
     : 0;
   const productId = tiktokViewsData?.id;
+  const productService = tiktokViewsData?.name;
 
   const discountLevels = useMemo(() => {
     return tiktokViewsData
@@ -302,6 +303,8 @@ const TikTokViewsPage = ({ tiktokViewsData }) => {
                     ? selectedPrice.quantity
                     : customQuantity,
                   productId,
+                  price: priceDetails.newPrice.toFixed(2),
+                  productService,
                 },
               })
             }

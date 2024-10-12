@@ -4,19 +4,49 @@ import { useState } from 'react';
 
 const Checkout = () => {
   const location = useLocation();
-
-  console.log(location.state);
-
-  const { quantity, productId, userEmail, customLink, shop_name } =
-    location.state || {};
-
-  const [selectedOption, setSelectedOption] = useState('1');
-
+  const [selectedOption, setSelectedOption] = useState('Credit / Debit Card');
   const navigate = useNavigate();
+
+  const {
+    price,
+    productService,
+    quantity,
+    productId,
+    userEmail,
+    customLink,
+    shop_name,
+  } = location.state || {};
 
   const handleOptionChange = event => {
     setSelectedOption(event.target.value);
   };
+
+  const handleClick = () => {
+    const now = new Date();
+    const options = {
+      month: 'short', // "Dec"
+      day: 'numeric', // "30"
+      hour: '2-digit', // "09"
+      minute: '2-digit', // "42"
+      hour12: true,
+    };
+
+    const formattedDate = now.toLocaleString('en-US', options);
+
+    navigate('/orderConfirmation', {
+      state: {
+        price,
+        productService,
+        quantity,
+        productId,
+        userEmail,
+        shop_name,
+        paymentMethod: selectedOption,
+        date: formattedDate,
+      },
+    });
+  };
+
   return (
     <>
       <div className={css.checkoutWrap}>
@@ -26,14 +56,14 @@ const Checkout = () => {
           <div className={css.checkoutForm}>
             <label
               className={`${css.radioLabel} ${
-                selectedOption === '1' ? css.active : ''
+                selectedOption === 'Credit / Debit Card' ? css.active : ''
               } ${css.radioCredit}`}
             >
               <input
                 type="radio"
-                name="option"
-                value="1"
-                checked={selectedOption === '1'}
+                name="paymentMethod"
+                value="Credit / Debit Card"
+                checked={selectedOption === 'Credit / Debit Card'}
                 onChange={handleOptionChange}
                 className={css.radioInput}
               />
@@ -43,14 +73,14 @@ const Checkout = () => {
 
             <label
               className={`${css.radioLabel} ${
-                selectedOption === '2' ? css.active : ''
+                selectedOption === 'Crypto' ? css.active : ''
               } ${css.radioCrypto}`}
             >
               <input
                 type="radio"
-                name="option"
-                value="2"
-                checked={selectedOption === '2'}
+                name="paymentMethod"
+                value="Crypto"
+                checked={selectedOption === 'Crypto'}
                 onChange={handleOptionChange}
                 className={css.radioInput}
               />
@@ -59,21 +89,8 @@ const Checkout = () => {
             </label>
           </div>
 
-          <button
-            className={css.checkoutButton}
-            onClick={() =>
-              navigate('/orderConfirmation', {
-                state: {
-                  quantity,
-                  productId,
-                  userEmail,
-                  customLink,
-                  shop_name,
-                },
-              })
-            }
-          >
-            <span>Procceed to secure checkout</span>
+          <button className={css.checkoutButton} onClick={handleClick}>
+            <span>Proceed to secure checkout</span>
           </button>
 
           <div className={css.checkoutInfo}>
@@ -83,19 +100,19 @@ const Checkout = () => {
         <div className={css.checkoutSecondBlock}>
           <div className={css.priceInfo}>
             Total to pay:
-            <span className={css.price}>$7.42</span>
+            <span className={css.price}>${price}</span>
           </div>
 
           <div className={css.productBlock}>
             <div className={css.serviceBlock}>
               <div className={css.serviceTitle}>Service</div>
-              <div className={css.serviceProduct}>1100 TikTok Followers</div>
+              <div className={css.serviceProduct}>
+                {quantity} {productService}
+              </div>
             </div>
             <div className={css.urlBlock}>
               <div className={css.urlTitle}>Target URL</div>
-              <div className={css.url}>
-                https://www.speedtest.net/result/16554258090
-              </div>
+              <div className={css.url}>{customLink}</div>
             </div>
           </div>
 
@@ -121,12 +138,6 @@ const Checkout = () => {
           </div>
         </div>
       </div>
-      {/* 
-      {selectedProduct ? (
-        <p>Proceeding with: {selectedProduct}</p>
-      ) : (
-        <p>No product selected</p>
-      )} */}
     </>
   );
 };
