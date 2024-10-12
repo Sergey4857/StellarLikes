@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = process.env.REACT_APP_BASE_URL;
+const baseUrl = 'https://testgraming.net/';
 const consumer_key = process.env.REACT_APP_CONSUMER_KEY;
 const consumer_secret = process.env.REACT_APP_CONSUMER_SECRET;
 
