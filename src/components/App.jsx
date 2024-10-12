@@ -17,6 +17,7 @@ import OrderConfirmation from 'pages/OrderConfirmation/OrderConfirmation';
 
 import { useEffect, useState } from 'react';
 import FetchAllProductData from 'Api/FetchAllProductData';
+import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 
 export default function App() {
   const [tiktokLikesData, setTiktokLikesData] = useState(null);
@@ -71,20 +72,88 @@ export default function App() {
             path="buy-tiktok-followers/getStarted"
             element={<GetStarted />}
           />
-          <Route path="buy-tiktok-followers/checkout" element={<Checkout />} />
+          <Route
+            path="buy-tiktok-followers/checkout"
+            element={
+              <ProtectedRoute
+                requiredStateKeys={[
+                  'price',
+                  'productService',
+                  'quantity',
+                  'productId',
+                  'userEmail',
+                  'customLink',
+                  'shop_name',
+                ]}
+                redirectTo="/"
+              >
+                <Checkout />
+              </ProtectedRoute>
+            }
+          />
 
           {/* TikTok Views */}
           <Route
             path="buy-tiktok-views"
             element={<TikTokViewsPage tiktokViewsData={tiktokViewsData} />}
           />
-          <Route path="buy-tiktok-views/getStarted" element={<GetStarted />} />
+          <Route
+            path="buy-tiktok-views/getStarted"
+            element={
+              <ProtectedRoute
+                requiredStateKeys={[
+                  'quantity',
+                  'productId',
+                  'price',
+                  'productService',
+                ]}
+                redirectTo="/"
+              >
+                <GetStarted />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="buy-tiktok-views/getStarted/selectPost"
-            element={<SelectPost />}
+            element={
+              <ProtectedRoute
+                requiredStateKeys={[
+                  'price',
+                  'productService',
+                  'quantity',
+                  'productId',
+                  'uniqueId',
+                  'userInfo',
+                  'userEmail',
+                  'customLink',
+                  'shop_name',
+                ]}
+                redirectTo="/"
+              >
+                <SelectPost />
+              </ProtectedRoute>
+            }
           />
 
-          <Route path="/checkout" element={<Checkout />} />
+          <Route
+            path="/checkout"
+            element={
+              <ProtectedRoute
+                requiredStateKeys={[
+                  'price',
+                  'productService',
+                  'quantity',
+                  'productId',
+                  'userEmail',
+                  'customLink',
+                  'shop_name',
+                ]}
+                redirectTo="/"
+              >
+                <Checkout />
+              </ProtectedRoute>
+            }
+          />
 
           {/* AboutUs */}
           <Route path="about" element={<AboutUs />} />

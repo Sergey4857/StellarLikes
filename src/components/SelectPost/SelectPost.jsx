@@ -1,12 +1,13 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import css from './SelectPost.module.css';
-import { useEffect, useState, useRef, useCallback } from 'react'; // Import useRef
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { gsap } from 'gsap';
 import FetchUserTiktokPosts from 'Api/FetchUserTikTokPosts';
 
 const SelectPost = () => {
   const location = useLocation();
-  console.log(location.state);
+  const navigate = useNavigate();
+
   const {
     price,
     productService,
@@ -19,8 +20,46 @@ const SelectPost = () => {
     shop_name,
   } = location.state || {};
 
+  const [{ full_name, profile_pic_url }] = userInfo;
+
   const linkRef = useRef(null);
   const decorItemRefs = useRef([]);
+
+  const [tiktokPosts, setTikTokPosts] = useState([]);
+  const cursorRef = useRef('0');
+  const [loading, setLoading] = useState(false);
+
+  // Initialize selectedOption as null
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const handleOptionChange = event => {
+    setSelectedOption(event.target.value);
+  };
+
+  const loadMorePosts = useCallback(async () => {
+    setLoading(true);
+    const newPosts = await FetchUserTiktokPosts(uniqueId, cursorRef.current);
+
+    console.log('Fetched Posts:', newPosts); // For debugging
+
+    if (
+      newPosts !== 'Error' &&
+      newPosts.data &&
+      Array.isArray(newPosts.data.videos)
+    ) {
+      setTikTokPosts(prevPosts => [...prevPosts, ...newPosts.data.videos]);
+      cursorRef.current = newPosts.data.cursor;
+    } else {
+      console.error('No videos found in the response');
+    }
+    setLoading(false);
+  }, [uniqueId]);
+
+  useEffect(() => {
+    cursorRef.current = '0';
+    setTikTokPosts([]);
+    loadMorePosts();
+  }, [uniqueId, loadMorePosts]);
 
   useEffect(() => {
     const link = linkRef.current;
@@ -72,37 +111,6 @@ const SelectPost = () => {
       }
     };
   }, []);
-  const [{ full_name, profile_pic_url }] = userInfo;
-
-  const [tiktokPosts, setTikTokPosts] = useState([]);
-  const cursorRef = useRef('0');
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
-
-  const loadMorePosts = useCallback(async () => {
-    setLoading(true);
-    const newPosts = await FetchUserTiktokPosts(uniqueId, cursorRef.current);
-
-    console.log(newPosts);
-
-    if (newPosts !== 'Error') {
-      setTikTokPosts(prevPosts => [...prevPosts, ...newPosts.data.videos]);
-      cursorRef.current = newPosts.data.cursor;
-    }
-    setLoading(false);
-  }, [uniqueId]);
-
-  useEffect(() => {
-    cursorRef.current = '0';
-    setTikTokPosts([]);
-    loadMorePosts();
-  }, [uniqueId, loadMorePosts]);
-
-  const [selectedOption, setSelectedOption] = useState('1');
-
-  const handleOptionChange = event => {
-    setSelectedOption(event.target.value);
-  };
 
   return (
     <div className={css.selectPostsWrap}>
@@ -113,30 +121,34 @@ const SelectPost = () => {
         <div className={css.selectPostsInfo}>
           Select{' '}
           <span className={css.selectPostsInfoSpn}>
-            1 Post / 50 likes per post
+            1 Post / 50 likes per post
           </span>
         </div>
 
         <div className={css.selectPosts}>
-          {tiktokPosts.map(({ cover, video_id, author }) => (
-            <label
-              key={video_id}
-              className={`${css.radioLabel} ${
-                selectedOption === video_id ? css.active : ''
-              } ${css.radioCrypto}`}
-            >
-              <input
-                type="radio"
-                name="option"
-                value={video_id}
-                checked={selectedOption === video_id}
-                onChange={handleOptionChange}
-                className={css.radioInput}
-              />
-              <span className={css.radioCustom}></span>
-              <img className={css.selectedPostImg} src={cover} alt="" />
-            </label>
-          ))}
+          {tiktokPosts.length > 0
+            ? tiktokPosts.map(({ cover, video_id }) => (
+                <label
+                  key={video_id}
+                  className={`${css.radioLabel} ${
+                    selectedOption === video_id ? css.active : ''
+                  } ${css.radioCrypto}`}
+                >
+                  <input
+                    type="radio"
+                    name="option"
+                    value={video_id}
+                    checked={selectedOption === video_id}
+                    onChange={handleOptionChange}
+                    className={css.radioInput}
+                  />
+                  <span className={css.radioCustom}></span>
+                  <img className={css.selectedPostImg} src={cover} alt="" />
+                </label>
+              ))
+            : !loading && (
+                <div className={css.noPostsFound}>No posts found</div>
+              )}
         </div>
 
         <button
@@ -173,6 +185,7 @@ const SelectPost = () => {
               },
             })
           }
+          disabled={!selectedOption} // Disable button if no post is selected
         >
           <span className={css.linkText}>Continue to checkout</span>
           <span className={css.decor}>
