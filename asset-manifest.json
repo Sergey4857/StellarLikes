@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/StellarLikes/static/css/main.e0a0442c.css",
-    "main.js": "/StellarLikes/static/js/main.a51a8f50.js",
+    "main.js": "/StellarLikes/static/js/main.c3be540d.js",
     "static/media/sky.jpg": "/StellarLikes/static/media/sky.49709337dc0afc56a2a0.jpg",
     "static/media/checkout2.svg": "/StellarLikes/static/media/checkout2.bbd46e85191cab8bf455.svg",
     "static/media/TWKLausanne-700.ttf": "/StellarLikes/static/media/TWKLausanne-700.c386a7e11bf0ddb59962.ttf",
@@ -70,10 +70,10 @@
     "static/media/checkbox.svg": "/StellarLikes/static/media/checkbox.a9e959e5c805efa3d39c.svg",
     "static/media/checkout-unactive.svg": "/StellarLikes/static/media/checkout-unactive.15debbb0754ecc38e23a.svg",
     "main.e0a0442c.css.map": "/StellarLikes/static/css/main.e0a0442c.css.map",
-    "main.a51a8f50.js.map": "/StellarLikes/static/js/main.a51a8f50.js.map"
+    "main.c3be540d.js.map": "/StellarLikes/static/js/main.c3be540d.js.map"
   },
   "entrypoints": [
     "static/css/main.e0a0442c.css",
-    "static/js/main.a51a8f50.js"
+    "static/js/main.c3be540d.js"
   ]
 }
