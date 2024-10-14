@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/StellarLikes/static/css/main.6703a2b4.css",
-    "main.js": "/StellarLikes/static/js/main.343a4554.js",
+    "main.css": "/StellarLikes/static/css/main.f9ead3e0.css",
+    "main.js": "/StellarLikes/static/js/main.ffb1196f.js",
     "static/media/sky.jpg": "/StellarLikes/static/media/sky.49709337dc0afc56a2a0.jpg",
     "static/media/checkout2.svg": "/StellarLikes/static/media/checkout2.bbd46e85191cab8bf455.svg",
     "static/media/TWKLausanne-700.ttf": "/StellarLikes/static/media/TWKLausanne-700.c386a7e11bf0ddb59962.ttf",
@@ -71,11 +71,11 @@
     "static/media/close.svg": "/StellarLikes/static/media/close.50915a1f0670d03077c8.svg",
     "static/media/checkbox.svg": "/StellarLikes/static/media/checkbox.a9e959e5c805efa3d39c.svg",
     "static/media/checkout-unactive.svg": "/StellarLikes/static/media/checkout-unactive.15debbb0754ecc38e23a.svg",
-    "main.6703a2b4.css.map": "/StellarLikes/static/css/main.6703a2b4.css.map",
-    "main.343a4554.js.map": "/StellarLikes/static/js/main.343a4554.js.map"
+    "main.f9ead3e0.css.map": "/StellarLikes/static/css/main.f9ead3e0.css.map",
+    "main.ffb1196f.js.map": "/StellarLikes/static/js/main.ffb1196f.js.map"
   },
   "entrypoints": [
-    "static/css/main.6703a2b4.css",
-    "static/js/main.343a4554.js"
+    "static/css/main.f9ead3e0.css",
+    "static/js/main.ffb1196f.js"
   ]
 }
