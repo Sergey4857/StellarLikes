@@ -125,9 +125,7 @@ const Rating = () => {
                   </span>
                 </Link>
 
-                <div className={css.ratingStarsText}>
-                  Rated 4.9 of 5 of intergalactic stars
-                </div>
+                <div className={css.ratingStarsText}>Starting at $0.5</div>
               </div>
             </div>
           </div>

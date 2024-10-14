@@ -282,11 +282,7 @@ const TikTokViewsPage = ({ tiktokViewsData }) => {
             <CalculatePrice
               basePricePerUnit={basePricePerUnit}
               quantity={showPackages ? selectedPrice.quantity : customQuantity}
-              presetDiscountPercent={
-                showPackages ? selectedPrice.discountPercent : null
-              }
               discountLevels={discountLevels}
-              showPackages={showPackages}
               showCustomQuantity={showCustomQuantity}
               customQuantity={customQuantity}
               onPriceCalculated={handlePriceCalculated}
