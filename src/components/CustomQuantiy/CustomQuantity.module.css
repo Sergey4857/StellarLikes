@@ -39,13 +39,16 @@
   }
 }
 .customAmountInput {
-  color: rgba(255, 255, 255, 0.25);
+  color: #fff;
   font-family: 'TWK700';
   font-size: 25px;
   line-height: 1.25;
   background-color: transparent;
   border: none;
   text-align: center;
+}
+.contactFormBlock textarea::placeholder {
+  color: rgba(255, 255, 255, 0.25);
 }
 
 @media screen and (max-width: 425px) {
@@ -82,7 +85,7 @@
   }
 }
 .customDiscountPercent {
-  color: rgba(76, 1, 213, 0.25);
+  color: #4c01d5;
   font-family: 'TWK700';
   font-size: 25px;
   line-height: 1.25;
@@ -138,8 +141,8 @@
 }
 
 .orangeDiscount {
-  color: rgba(252, 93, 31, 0.25);
+  color: #fc5d1f;
 }
 .greenDiscount {
-  color: rgba(0, 200, 47, 0.25);
+  color: #00c82f;
 }

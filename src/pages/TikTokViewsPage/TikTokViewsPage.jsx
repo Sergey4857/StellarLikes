@@ -266,6 +266,7 @@ const TikTokViewsPage = ({ tiktokViewsData }) => {
 
         {showCustomQuantity && (
           <CustomQuantity
+            initialQuantity={550}
             discountLevels={discountLevels}
             basePricePerUnit={basePricePerUnit}
             onQuantityChange={handleCustomQuantityChange}

@@ -96,10 +96,13 @@
   border: 1px solid #efefef;
 
   background: #fcfcfc;
-  color: rgba(22, 22, 22, 0.25);
+  color: #161616;
   font-family: 'TWK700';
   font-size: 20px;
   line-height: 1.25;
+}
+.contactFormBlock input::placeholder {
+  color: rgba(22, 22, 22, 0.25);
 }
 
 .contactFormBlock textarea {
@@ -111,11 +114,14 @@
   border: 1px solid #efefef;
 
   background: #fcfcfc;
-  color: rgba(22, 22, 22, 0.25);
+  color: #161616;
   font-family: 'TWK700';
   font-size: 20px;
   line-height: 1.25;
   resize: none;
+}
+.contactFormBlock textarea::placeholder {
+  color: rgba(22, 22, 22, 0.25);
 }
 
 .contactSubmit {

@@ -104,10 +104,13 @@
   height: 52px;
   border: 1px solid #efefef;
   background: #fff;
-  color: rgba(22, 22, 22, 0.25);
+  color: #121212;
   font-family: 'TWK700';
   font-size: 20px;
   line-height: 1.25;
+}
+.freeViewsForm input::placeholder {
+  color: rgba(22, 22, 22, 0.25);
 }
 .freeViewsButton {
   display: block;

@@ -37,7 +37,7 @@ const CalculatePrice = ({
         oldPrice,
         newPrice,
         savings,
-        discountPercent: discountPercent * 100, // Процент для отображения
+        discountPercent: discountPercent * 100,
       };
 
       setPriceDetails(calculatedPriceDetails);

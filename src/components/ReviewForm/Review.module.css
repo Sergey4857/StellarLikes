@@ -50,10 +50,13 @@
   border: 1px solid #efefef;
 
   background: #fcfcfc;
-  color: rgba(22, 22, 22, 0.25);
+  color: #121212;
   font-family: 'TWK700';
   font-size: 20px;
   line-height: 1.25;
+}
+.ReviewFormBlock input::placeholder {
+  color: rgba(22, 22, 22, 0.25);
 }
 
 .ReviewFormBlock textarea {
@@ -65,11 +68,14 @@
   border: 1px solid #efefef;
 
   background: #fcfcfc;
-  color: rgba(22, 22, 22, 0.25);
+  color: #121212;
   font-family: 'TWK700';
   font-size: 20px;
   line-height: 1.25;
   resize: none;
+}
+.ReviewFormBlock textarea::placeholder {
+  color: rgba(22, 22, 22, 0.25);
 }
 
 .reviewSubmit {
@@ -83,6 +89,7 @@
   line-height: 1.25;
   padding: 20px 30px;
   width: 100%;
+  position: relative;
 }
 .ratingWrap {
 }

@@ -10,16 +10,18 @@ const CustomQuantity = ({
   blockColor,
   textColor,
   discountColor,
+  initialQuantity = 100,
 }) => {
-  const [quantity, setQuantity] = useState(customQuantity || 100);
-  const [inputValue, setInputValue] = useState(customQuantity || 100);
+  const [quantity, setQuantity] = useState(customQuantity || initialQuantity);
+  const [inputValue, setInputValue] = useState(
+    customQuantity || initialQuantity
+  );
   const [discountPercent, setDiscountPercent] = useState(0);
   const [nextDiscountQuantity, setNextDiscountQuantity] = useState(null);
   const [nextDiscountPercent, setNextDiscountPercent] = useState(null);
-  const [typingTimeout, setTypingTimeout] = useState(null); // Для debounce
+  const [typingTimeout, setTypingTimeout] = useState(null);
 
   console.log(nextDiscountQuantity);
-
   console.log(nextDiscountPercent);
   useEffect(() => {
     onQuantityChange(quantity);
@@ -60,11 +62,15 @@ const CustomQuantity = ({
     setTypingTimeout(
       setTimeout(() => {
         let intValue = parseInt(value, 10);
-        if (!isNaN(intValue) && intValue >= 100 && intValue <= 20000) {
+        if (
+          !isNaN(intValue) &&
+          intValue >= initialQuantity &&
+          intValue <= 20000
+        ) {
           setQuantity(intValue);
-        } else if (intValue < 100) {
-          setQuantity(100);
-          setInputValue(100);
+        } else if (intValue < initialQuantity) {
+          setQuantity(initialQuantity);
+          setInputValue(initialQuantity);
         } else if (intValue > 20000) {
           setQuantity(20000);
           setInputValue(20000);
@@ -86,7 +92,7 @@ const CustomQuantity = ({
             placeholder="Tap Here"
             value={inputValue}
             onChange={handleInputChange}
-            min="100"
+            min={initialQuantity}
             max="20000"
           />
         </div>

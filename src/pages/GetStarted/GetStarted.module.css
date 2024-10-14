@@ -90,6 +90,9 @@
   border-radius: 12px;
   border: 1px solid #efefef;
   background: #fcfcfc;
+  color: #121212;
+}
+.userBlock input::placeholder {
   color: rgba(22, 22, 22, 0.25);
 }
 
