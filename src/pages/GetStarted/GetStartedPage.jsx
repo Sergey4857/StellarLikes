@@ -168,50 +168,54 @@ const GetStarted = () => {
           </button>
 
           {userInfo &&
-            userInfo.map(({ profile_pic_url, full_name, id, uniqueId }) => (
-              <div key={id} className={css.findedUserWrap}>
-                <img
-                  className={css.findedUserImage}
-                  src={profile_pic_url}
-                  alt="profile"
-                />
-                <div className={css.findedUserName}>{full_name}</div>
-                <button
-                  className={css.getStartedRedirect}
-                  onClick={() => {
-                    if (productPath === 'buy-tiktok-followers') {
-                      navigate(`/${productPath}/checkout`, {
-                        state: {
-                          price,
-                          productService,
-                          quantity,
-                          productId,
-                          userEmail,
-                          customLink: `https://www.tiktok.com/${uniqueId}`,
-                          shop_name: 'StellarLikes.com',
-                        },
-                      });
-                    } else {
-                      navigate('selectPost', {
-                        state: {
-                          price,
-                          productService,
-                          quantity,
-                          productId,
-                          uniqueId,
-                          userInfo,
-                          userEmail,
-                          customLink: `https://www.tiktok.com/${uniqueId}`,
-                          shop_name: 'StellarLikes.com',
-                        },
-                      });
-                    }
-                  }}
-                >
-                  <img src={checkmark} alt="" />
-                </button>
-              </div>
-            ))}
+            userInfo.map(
+              ({ profile_pic_url, full_name, id, uniqueId, country }) => (
+                <div key={id} className={css.findedUserWrap}>
+                  <img
+                    className={css.findedUserImage}
+                    src={profile_pic_url}
+                    alt="profile"
+                  />
+                  <div className={css.findedUserName}>{full_name}</div>
+                  <button
+                    className={css.getStartedRedirect}
+                    onClick={() => {
+                      if (productPath === 'buy-tiktok-followers') {
+                        navigate(`/${productPath}/checkout`, {
+                          state: {
+                            country,
+                            price,
+                            productService,
+                            quantity,
+                            productId,
+                            userEmail,
+                            customLink: `https://www.tiktok.com/${uniqueId}`,
+                            shop_name: 'StellarLikes.com',
+                          },
+                        });
+                      } else {
+                        navigate('selectPost', {
+                          state: {
+                            country,
+                            price,
+                            productService,
+                            quantity,
+                            productId,
+                            uniqueId,
+                            userInfo,
+                            userEmail,
+                            customLink: `https://www.tiktok.com/${uniqueId}`,
+                            shop_name: 'StellarLikes.com',
+                          },
+                        });
+                      }
+                    }}
+                  >
+                    <img src={checkmark} alt="" />
+                  </button>
+                </div>
+              )
+            )}
         </form>
       </div>
     </>

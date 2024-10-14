@@ -7,8 +7,10 @@ import FetchUserTiktokPosts from 'Api/FetchUserTikTokPosts';
 const SelectPost = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  console.log(location.state);
 
   const {
+    country,
     price,
     productService,
     quantity,
@@ -175,6 +177,7 @@ const SelectPost = () => {
           onClick={() =>
             navigate('/checkout', {
               state: {
+                country,
                 price,
                 productService,
                 quantity,
@@ -185,7 +188,7 @@ const SelectPost = () => {
               },
             })
           }
-          disabled={!selectedOption} // Disable button if no post is selected
+          disabled={!selectedOption}
         >
           <span className={css.linkText}>Continue to checkout</span>
           <span className={css.decor}>

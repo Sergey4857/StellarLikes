@@ -118,6 +118,7 @@
   font-size: 25px;
   line-height: 1.25;
   overflow: hidden;
+  position: relative;
 }
 .findedUserWrap {
   display: flex;

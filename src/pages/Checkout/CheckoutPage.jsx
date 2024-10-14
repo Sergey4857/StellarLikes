@@ -1,51 +1,54 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import css from './Checkout.module.css';
 import { useState } from 'react';
 
 const Checkout = () => {
   const location = useLocation();
   const [selectedOption, setSelectedOption] = useState('Credit / Debit Card');
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const {
+    // country,
+    // shop_name,
+    // productId,
+    // userEmail,
     price,
     productService,
     quantity,
-    productId,
-    userEmail,
     customLink,
-    shop_name,
   } = location.state || {};
 
   const handleOptionChange = event => {
     setSelectedOption(event.target.value);
   };
 
-  const handleClick = () => {
-    const now = new Date();
-    const options = {
-      month: 'short', // "Dec"
-      day: 'numeric', // "30"
-      hour: '2-digit', // "09"
-      minute: '2-digit', // "42"
-      hour12: true,
-    };
+  // const handleClick = () => {
+  //   const now = new Date();
+  //   const options = {
+  //     month: 'short',
+  //     day: 'numeric',
+  //     hour: '2-digit',
+  //     minute: '2-digit',
+  //     hour12: true,
+  //   };
 
-    const formattedDate = now.toLocaleString('en-US', options);
+  //   const formattedDate = now.toLocaleString('en-US', options);
 
-    navigate('/orderConfirmation', {
-      state: {
-        price,
-        productService,
-        quantity,
-        productId,
-        userEmail,
-        shop_name,
-        paymentMethod: selectedOption,
-        date: formattedDate,
-      },
-    });
-  };
+  //   navigate('/orderConfirmation', {
+  //     country,
+  //     state: {
+  //       country,
+  //       price,
+  //       productService,
+  //       quantity,
+  //       productId,
+  //       userEmail,
+  //       shop_name,
+  //       paymentMethod: selectedOption,
+  //       date: formattedDate,
+  //     },
+  //   });
+  // };
 
   return (
     <>
@@ -89,7 +92,10 @@ const Checkout = () => {
             </label>
           </div>
 
-          <button className={css.checkoutButton} onClick={handleClick}>
+          <button
+            className={css.checkoutButton}
+            // onClick={handleClick}
+          >
             <span>Proceed to secure checkout</span>
           </button>
 

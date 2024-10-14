@@ -1,7 +1,11 @@
+import getUserIPAndCountry from '../Api/GetUserIpAndCountry';
+
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 const TikTokUserDetails = async username => {
   try {
+    const ipData = await getUserIPAndCountry();
+
     const response = await fetch(
       `https://tiktok-scraper7.p.rapidapi.com/user/info?unique_id=${username}`,
       {
@@ -12,6 +16,7 @@ const TikTokUserDetails = async username => {
         },
       }
     );
+    console.log(response.data);
 
     if (response.status === 200) {
       const json = await response.json();
@@ -28,6 +33,7 @@ const TikTokUserDetails = async username => {
           profile_pic_url: originalData.user.avatarThumb,
           local_image_path: originalData.user.avatarThumb,
           uniqueId: originalData.user.uniqueId,
+          country: ipData ? ipData.country : null,
         };
 
         return [newItem];
