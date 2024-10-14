@@ -1,159 +1,201 @@
-.getStartedWrap {
-  max-width: 490px;
+.contactSection {
+  max-width: 607px;
+  padding: 25px 40px 75px 40px;
   margin: 0 auto;
-  padding: 80px 20px;
 }
 
 @media screen and (max-width: 768px) {
-  .getStartedWrap {
-    padding: 50px 20px;
+  .contactSection {
+    padding: 25px 20px 95px 20px;
   }
 }
-
-.liveBlock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.liveNumber {
-  display: flex;
-  padding: 5px 10px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  background: rgba(0, 200, 47, 0.1);
-  color: #00c82f;
-  font-family: 'TWK700';
-  font-size: 20px;
-  line-height: 1.25;
-}
-.getStartedForm {
-  border-radius: 12px;
-  border: 1px solid #efefef;
-  background: #fff;
-  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
-  padding: 40px 30px 60px 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-@media screen and (max-width: 768px) {
-  .getStartedForm {
-    padding: 40px 30px;
-  }
-}
-.getStartedFormTitle {
+.contactTitle {
   color: #161616;
   text-align: center;
   font-family: 'TWK700';
-  font-size: 30px;
+  font-size: 55px;
   line-height: 1.25;
+  position: relative;
   display: flex;
-  gap: 5px;
+  gap: 15px;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 768px) {
-  .getStartedFormTitle {
-    font-size: 25px;
-    flex-wrap: wrap;
+  .contactTitle {
+    font-size: 35px;
+    line-height: 1.5;
+    margin-bottom: 15px;
   }
 }
-.getStartedSpan {
-  color: #f6159c;
+.contactIcon {
+  display: block;
+  width: 75px;
+  height: 75px;
+  background-image: url('../../icons/contactIcon.svg');
+  background-size: cover;
+  background-position: center;
 }
-.inputsBlock {
+
+@media screen and (max-width: 768px) {
+  .contactIcon {
+    width: 50px;
+    height: 50px;
+  }
+}
+.contactText {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .contactText {
+    margin-bottom: 25px;
+  }
+}
+.contactTitle:after {
+}
+
+.contactForm {
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #efefef;
+  background: #fff;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  max-width: 430px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-.userBlock {
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 10px;
   position: relative;
 }
-.userBlock input {
+
+.contactFormBlock {
+  position: relative;
+}
+.contactFormBlock label {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  color: #161616;
+  font-family: 'TWK700';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120.5%; /* 14.46px */
+}
+.contactFormBlock input {
   display: flex;
-  flex-direction: column;
-  height: 52px;
   width: 100%;
-  display: flex;
-  padding: 23px 15px 10px 15px;
-  gap: 4px;
+  padding: 23px 15px 5px 15px;
+  border-radius: 12px;
+  height: 52px;
+  border: 1px solid #efefef;
+
+  background: #fcfcfc;
+  color: rgba(22, 22, 22, 0.25);
   font-family: 'TWK700';
   font-size: 20px;
   line-height: 1.25;
-  border-radius: 12px;
-  border: 1px solid #efefef;
-  background: #fcfcfc;
-  color: rgba(22, 22, 22, 0.25);
 }
 
-.userBlock label {
+.contactFormBlock textarea {
+  display: flex;
+  width: 100%;
+  padding: 23px 15px 5px 15px;
+  border-radius: 12px;
+  height: 200px;
+  border: 1px solid #efefef;
+
+  background: #fcfcfc;
+  color: rgba(22, 22, 22, 0.25);
+  font-family: 'TWK700';
+  font-size: 20px;
+  line-height: 1.25;
+  resize: none;
+}
+
+.contactSubmit {
+  border-radius: 12px;
+  background: #f948b4;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1),
+    0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 18px;
+  line-height: 1.25;
+  padding: 20px 30px;
+  width: 100%;
+  overflow: hidden;
+}
+.ratingWrap {
+}
+.contactSpan {
   color: #161616;
   font-family: 'TWK700';
   font-size: 12px;
   line-height: 1.25;
-  position: absolute;
-  top: 5px;
-  left: 15px;
+  margin-bottom: 4px;
 }
-.userNameBlock {
+
+.contactThank {
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #efefef;
+  background: rgba(162, 236, 0, 0.25);
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  max-width: 430px;
+  width: 100%;
+  margin: 0 auto;
+  color: #00c82f;
+  text-align: center;
+  margin-bottom: 20px;
 }
-.userName {
-}
-.userEmailBlock {
-}
-.getStartedSubmit {
-  padding: 20px 0;
+.heroLink {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-decoration: none;
+  padding: 20px 30px;
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.25;
   border-radius: 12px;
   background: #f948b4;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+}
+
+.linkText {
+  z-index: 1;
   color: #fff;
   font-family: 'TWK700';
   font-size: 25px;
+  font-weight: 700;
   line-height: 1.25;
 }
-.findedUserWrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+.decor {
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
   width: 100%;
-  padding: 0px 10px 0 0;
-  gap: 4px;
-  align-items: center;
+}
+
+.decorItem {
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  border: 1px solid #efefef;
-  background: #fcfcfc;
-}
-.findedUserImage {
+  transform: translate(-100%);
+  will-change: transform;
   display: block;
-  max-width: 65px;
-  border-radius: 15px;
-}
-.findedUserName {
-  font-family: 'TWK700';
-  font-size: 20px;
-}
-.getStartedRedirect {
-  display: block;
-  margin-left: auto;
-  border-radius: 50%;
-  background: rgba(0, 200, 47, 0.1);
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
-  color: #fff;
-  font-family: 'TWK700';
-  font-size: 25px;
-  line-height: 1.25;
-  color: #00c82f;
-  padding: 0;
-  max-width: 40px;
-}
-.error {
-  padding: 10px;
-  color: #ff4031;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }

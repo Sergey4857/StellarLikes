@@ -24,7 +24,7 @@ export default function FaqBlock({ faqsData }) {
   };
   return (
     <section className={css.faqSection}>
-      <div className="section-title">Questions? Let's answer them!</div>
+      <h2 className="section-title">Questions? Let's answer them!</h2>
 
       <p className={css.faqText}>
         If you need more help, make sure to click to get help from our{' '}

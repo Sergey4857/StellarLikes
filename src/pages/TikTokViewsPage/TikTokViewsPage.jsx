@@ -203,7 +203,7 @@ const TikTokViewsPage = ({ tiktokViewsData }) => {
       <Outlet />
 
       <section className={css.buyViews}>
-        <div className={css.buyViewsTitle}>
+        <h1 className={css.buyViewsTitle}>
           Buy TikTok <span className="pinkText">Views</span>
           <img
             className={css.buyViewsImg}
@@ -211,7 +211,7 @@ const TikTokViewsPage = ({ tiktokViewsData }) => {
             alt="buyViewsImg"
           />
           starting from <span className="pinkText">$0.99</span>
-        </div>
+        </h1>
         <p className={css.buyViewsText}>
           We offer top-notch quality TikTok views at the best prices! Check our
           deals below, choose the best views package, and make an order now!

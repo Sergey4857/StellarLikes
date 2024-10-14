@@ -4,9 +4,7 @@ import css from './CalculatePrice.module.css';
 const CalculatePrice = ({
   basePricePerUnit,
   quantity,
-  presetDiscountPercent = null,
   discountLevels = [],
-  showPackages,
   showCustomQuantity,
   customQuantity,
   onPriceCalculated,
@@ -21,18 +19,14 @@ const CalculatePrice = ({
   useEffect(() => {
     const calculatePrice = () => {
       let discountPercent = 0;
-      let finalQuantity = quantity;
+      let finalQuantity = customQuantity > 0 ? customQuantity : quantity;
 
-      if (showPackages && presetDiscountPercent !== null) {
-        discountPercent = presetDiscountPercent;
-      } else if (showCustomQuantity && customQuantity > 0) {
-        for (let i = discountLevels.length - 1; i >= 0; i--) {
-          if (customQuantity >= discountLevels[i].quantity) {
-            discountPercent = discountLevels[i].discount / 100;
-            break;
-          }
+      // Вычисляем процент скидки из discountLevels
+      for (let i = discountLevels.length - 1; i >= 0; i--) {
+        if (finalQuantity >= discountLevels[i].quantity) {
+          discountPercent = discountLevels[i].discount / 100;
+          break;
         }
-        finalQuantity = customQuantity;
       }
 
       const oldPrice = finalQuantity * basePricePerUnit;
@@ -43,7 +37,7 @@ const CalculatePrice = ({
         oldPrice,
         newPrice,
         savings,
-        discountPercent,
+        discountPercent: discountPercent * 100, // Процент для отображения
       };
 
       setPriceDetails(calculatedPriceDetails);
@@ -57,10 +51,7 @@ const CalculatePrice = ({
   }, [
     basePricePerUnit,
     quantity,
-    presetDiscountPercent,
     discountLevels,
-    showPackages,
-    showCustomQuantity,
     customQuantity,
     onPriceCalculated,
   ]);

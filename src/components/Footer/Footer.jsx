@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import css from './Footer.module.css';
-import logo from '../../images/logo.png';
+import logo from '../../icons/logo.svg';
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
 

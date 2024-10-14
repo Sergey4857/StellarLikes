@@ -41,9 +41,9 @@ export default function Benefits() {
 
   return (
     <section className={css.benefitsSection}>
-      <div className="section-title">
+      <h2 className="section-title">
         So, why <span className="pinkText">StellarLikes</span>
-      </div>
+      </h2>
 
       <p className={css.benefitsText}>
         Besides being the only platform to provide real likes, views and
@@ -53,7 +53,7 @@ export default function Benefits() {
       <div className={css.benefitsWrap}>
         <div className={css.benefitsBlock} ref={addToRefs}>
           <img className={css.benefitsImg} src={benefit1} alt="benefit" />
-          <div className={css.benefitTitle}>Instant delivery</div>
+          <h3 className={css.benefitTitle}>Instant delivery</h3>
           <div className={css.benefitsDescription}>
             Besides being the only platform to provide real likes, views and
             followers, we're customizable and offer prices no one else can
@@ -63,7 +63,7 @@ export default function Benefits() {
 
         <div className={css.benefitsBlock} ref={addToRefs}>
           <img className={css.benefitsImg} src={benefit2} alt="benefit" />
-          <div className={css.benefitTitle}>100% real. Always.</div>
+          <h3 className={css.benefitTitle}>100% real. Always.</h3>
           <div className={css.benefitsDescription}>
             Besides being the only platform to provide real likes, views and
             followers, we're customizable and offer prices no one else can
@@ -73,7 +73,7 @@ export default function Benefits() {
 
         <div className={css.benefitsBlock} ref={addToRefs}>
           <img className={css.benefitsImg} src={benefit3} alt="benefit" />
-          <div className={css.benefitTitle}>Cheapest prices</div>
+          <h3 className={css.benefitTitle}>Cheapest prices</h3>
           <div className={css.benefitsDescription}>
             Besides being the only platform to provide real likes, views and
             followers, we're customizable and offer prices no one else can

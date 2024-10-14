@@ -124,6 +124,7 @@
   padding: 20px;
   margin-top: 25px;
   overflow: hidden;
+  position: relative;
 }
 .FirstBlock {
   margin-bottom: 10px;

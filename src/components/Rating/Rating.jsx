@@ -87,7 +87,7 @@ const Rating = () => {
     <section ref={sectionRef} className={css.rating}>
       <div ref={backgroundRef} className={css.backgroundImage}></div>
       <div className={css.ratingWrap}>
-        <h1 className="section-title">Explore Other Stellar Services</h1>
+        <h2 className="section-title">Explore Other Stellar Services</h2>
         <p className={css.ratingText}>
           TikTok promotion made easy. Whether looking for likes, views or
           followers, you've come to the right place. Let StellarLikes do the
@@ -96,10 +96,10 @@ const Rating = () => {
         <div className={css.ratingWrapper}>
           <div className={`${css.ratingBlock} ${css.violetBorder}`}>
             <div className={css.ratingLinkBlock}>
-              <div className={css.ratingContent}>
+              <h3 className={css.ratingContent}>
                 <img className={css.ratingImg} src={tikTokLikes} alt="Likes" />
                 TikTok <span className={css.pink}>Likes</span>
-              </div>
+              </h3>
 
               <div className={css.ratingStarsBlock}>
                 <img
@@ -134,10 +134,10 @@ const Rating = () => {
 
           <div className={`${css.ratingBlock} ${css.greenBorder}`}>
             <div className={css.ratingLinkBlock}>
-              <div className={css.ratingContent}>
+              <h3 className={css.ratingContent}>
                 <img className={css.ratingImg} src={TikTokViews} alt="Views" />
                 TikTok <span className={css.green}>Views</span>
-              </div>
+              </h3>
 
               <div className={css.ratingStarsBlock}>
                 <img
@@ -172,14 +172,14 @@ const Rating = () => {
 
           <div className={`${css.ratingBlock} ${css.orangeBorder}`}>
             <div className={css.ratingLinkBlock}>
-              <div className={css.ratingContent}>
+              <h3 className={css.ratingContent}>
                 <img
                   className={css.ratingImg}
                   src={TikTokFollowers}
                   alt="Followers"
                 />
                 TikTok <span className={css.orange}>Followers</span>
-              </div>
+              </h3>
 
               <div className={css.ratingStarsBlock}>
                 <img

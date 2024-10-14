@@ -11,7 +11,7 @@ const FAQ = ({ faq, index, toggleFAQ }) => {
     >
       <div className={css.faqContent}>
         <div className={css.faqQuestionWrap}>
-          <div className={css.faqTitle}>{faq.question}</div>
+          <h3 className={css.faqTitle}>{faq.question}</h3>
           <img className={css.faqImage} src={faqIcon} alt="faqIcon" />
         </div>
 

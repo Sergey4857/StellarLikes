@@ -36,9 +36,9 @@ const TeamCompound = () => {
   return (
     <section className={css.team} ref={teamRef}>
       <div className={css.teamWrap}>
-        <h1 className="section-title">
+        <h2 className="section-title">
           So, why trust <span className={css.teamSpan}>StellarLikes?</span>
-        </h1>
+        </h2>
         <p className={css.teamText}>
           The experienced and dedicated StellarLikes team of social media
           professionals has earned the trust of hundreds of thousands of
@@ -67,7 +67,7 @@ const TeamCompound = () => {
         <ul className={css.teamList}>
           <li className={css.teamItem}>
             <div className={`${css.teamImage1} ${css.teamBoxImage}`}></div>
-            <div className={css.teamName}>Victor</div>
+            <h3 className={css.teamName}>Victor</h3>
             <div className={css.teamItemText}>
               Besides being the only platform to provide real likes, views and
               followers, we're customizable and offer prices no one else can
@@ -76,7 +76,7 @@ const TeamCompound = () => {
           </li>
           <li className={css.teamItem}>
             <div className={`${css.teamImage2} ${css.teamBoxImage}`}></div>
-            <div className={css.teamName}>Max</div>
+            <h3 className={css.teamName}>Max</h3>
             <div className={css.teamItemText}>
               Besides being the only platform to provide real likes, views and
               followers, we're customizable and offer prices no one else can
@@ -85,7 +85,7 @@ const TeamCompound = () => {
           </li>
           <li className={css.teamItem}>
             <div className={`${css.teamImage3} ${css.teamBoxImage}`}></div>
-            <div className={css.teamName}>Alex</div>
+            <h3 className={css.teamName}>Alex</h3>
             <div className={css.teamItemText}>
               Besides being the only platform to provide real likes, views and
               followers, we're customizable and offer prices no one else can

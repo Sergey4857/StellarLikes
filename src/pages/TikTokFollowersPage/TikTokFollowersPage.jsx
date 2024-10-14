@@ -200,7 +200,7 @@ const TikTokFollowersPage = ({ tiktokFollowersData }) => {
       <Outlet />
 
       <section className={css.buyFollowers}>
-        <div className={css.buyFollowersTitle}>
+        <h1 className={css.buyFollowersTitle}>
           Buy TikTok <span className="orangeText">Followers</span>
           <img
             className={css.buyFollowersImg}
@@ -208,7 +208,7 @@ const TikTokFollowersPage = ({ tiktokFollowersData }) => {
             alt="buyFollowersImg"
           />{' '}
           with Instant Delivery
-        </div>
+        </h1>
         <div className={css.buyFollowersWrapper}>
           <p className={css.buyFollowersText}>
             We offer top-notch quality TikTok Followers at the best prices!

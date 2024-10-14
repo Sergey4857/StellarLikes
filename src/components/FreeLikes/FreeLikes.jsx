@@ -106,9 +106,9 @@ const FreeLikes = () => {
     <section className={css.freeLikesSection} id="freeLikes">
       <div className={css.freeLikes} ref={featuresRef}>
         <div className={css.freeLikesWrap}>
-          <div className={css.freeLikesTitle}>
+          <h2 className={css.freeLikesTitle}>
             <span className={css.freeLikesSpan}>Get 50 Free</span> TikTok Likes
-          </div>
+          </h2>
           <p className={css.freeLikesText}>
             Receive free TikTok views every 24 hours: just submit your 
             <span>username</span> and <span>email</span>, select post, verify

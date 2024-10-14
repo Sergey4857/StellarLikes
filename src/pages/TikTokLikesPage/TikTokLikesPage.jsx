@@ -106,6 +106,7 @@ const TikTokLikesPage = ({ tiktokLikesData }) => {
     : 0;
   const productId = tiktokLikesData?.id;
   const productService = tiktokLikesData?.name;
+  console.log(tiktokLikesData);
 
   const discountLevels = useMemo(() => {
     return tiktokLikesData
@@ -204,7 +205,7 @@ const TikTokLikesPage = ({ tiktokLikesData }) => {
       <HeroHome />
       <FreeLikes />
       <section className={css.buyLikes}>
-        <div className={css.buyLikesTitle}>
+        <h2 className={css.buyLikesTitle}>
           Buy TikTok <span className="pinkText">Likes</span>
           <img
             className={css.buyLikesImg}
@@ -212,7 +213,7 @@ const TikTokLikesPage = ({ tiktokLikesData }) => {
             alt="buyLikesImg"
           />
           starting from <span className="pinkText">$0.99</span>
-        </div>
+        </h2>
         <p className={css.buyLikesText}>
           We offer top-notch quality TikTok likes at the best prices! Check our
           deals below, choose the best likes package, and make an order now!
@@ -281,11 +282,7 @@ const TikTokLikesPage = ({ tiktokLikesData }) => {
             <CalculatePrice
               basePricePerUnit={basePricePerUnit}
               quantity={showPackages ? selectedPrice.quantity : customQuantity}
-              presetDiscountPercent={
-                showPackages ? selectedPrice.discountPercent : null
-              }
               discountLevels={discountLevels}
-              showPackages={showPackages}
               showCustomQuantity={showCustomQuantity}
               customQuantity={customQuantity}
               onPriceCalculated={handlePriceCalculated}

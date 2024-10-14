@@ -39,7 +39,7 @@ const Features = () => {
   return (
     <section className={css.features} ref={featuresRef}>
       <div className={css.featuresWrap}>
-        <h1 className="section-title">And other features...</h1>
+        <h2 className="section-title">And other features...</h2>
         <p className={css.featuresText}>
           TikTok promotion made easy. Whether looking for likes, views or
           followers, you've come to the right place. Let StellarLikes do the
@@ -57,7 +57,7 @@ const Features = () => {
                   alt="Likes"
                 />
               </div>
-              <div className={css.featuresTitle}>24/7 Live Support</div>
+              <h3 className={css.featuresTitle}>24/7 Live Support</h3>
               <p className={css.featuresDescription}>
                 We provide the best customer support experience around the
                 clock. Our dedicated team is available 24/7, ensuring help is
@@ -77,7 +77,7 @@ const Features = () => {
                 />
               </div>
 
-              <div className={css.featuresTitle}>Refund Guarantee System</div>
+              <h3 className={css.featuresTitle}>Refund Guarantee System</h3>
 
               <p className={css.featuresDescription}>
                 We prioritize customer satisfaction above all else. If you've
@@ -99,7 +99,7 @@ const Features = () => {
                 />
               </div>
 
-              <div className={css.featuresTitle}>Secure Payment Options</div>
+              <h3 className={css.featuresTitle}>Secure Payment Options</h3>
               <p className={css.featuresDescription}>
                 Your security is our priority. StellerLikes offers a variety of
                 secure payment methods, including credit and debits cards, Apple
@@ -121,7 +121,7 @@ const Features = () => {
                 </div>
               </div>
 
-              <div className={css.featuresTitle}>No Password Needed</div>
+              <h3 className={css.featuresTitle}>No Password Needed</h3>
 
               <p className={css.featuresDescription}>
                 We will never ask for your password or any other private

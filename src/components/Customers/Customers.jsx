@@ -23,7 +23,7 @@ export default function Customers() {
   return (
     <section className={css.customersSection}>
       <div className={css.customers}>
-        <div className="section-title">Our customers really love us</div>
+        <h2 className="section-title">Our customers really love us</h2>
         <p className={css.customersText}>
           Their only complaint? Not finding us sooner. See why our customers
           choose StellarLikes for all of their Instagram-related growth needs.

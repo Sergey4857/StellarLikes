@@ -109,10 +109,10 @@ const FreeFollowers = () => {
     >
       <div className={css.freeFollowers}>
         <div className={css.freeFollowersWrap}>
-          <div className={css.freeFollowersTitle}>
+          <h2 className={css.freeFollowersTitle}>
             <span className={css.freeFollowersSpan}>Get 50 Free</span> TikTok
             Followers
-          </div>
+          </h2>
           <p className={css.freeFollowersText}>
             Receive free TikTok views every 24 hours: just submit your 
             <span>username</span> and <span>email</span>, select post, verify

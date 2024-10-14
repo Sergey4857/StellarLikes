@@ -45,9 +45,9 @@ export default function Available() {
 
   return (
     <section className={css.availableSection}>
-      <div className="section-title">
+      <h2 className="section-title">
         Available on <span className="pinkText">StellarLikes</span>
-      </div>
+      </h2>
 
       <p className={css.availableText}>
         Whether you’re looking to get your followers growing, your likes flowing
