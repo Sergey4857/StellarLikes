@@ -89,10 +89,10 @@ const Footer = () => {
                 <Link className={css.footerNavLink} to="/">
                   Live Support
                 </Link>
-                <Link className={css.footerNavLink} to="/">
+                <Link className={css.footerNavLink} to="/PrivacyPolicy">
                   Privacy Policy
                 </Link>
-                <Link className={css.footerNavLink} to="/">
+                <Link className={css.footerNavLink} to="/TermsOfUse">
                   Terms of Use
                 </Link>
               </nav>

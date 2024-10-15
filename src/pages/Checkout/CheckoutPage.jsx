@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import css from './Checkout.module.css';
 import { useState } from 'react';
+import CheckoutButton from 'components/CheckoutBtn/CheckoutBtn';
 
 const Checkout = () => {
   const location = useLocation();
@@ -8,10 +9,10 @@ const Checkout = () => {
   // const navigate = useNavigate();
 
   const {
-    // country,
-    // shop_name,
-    // productId,
-    // userEmail,
+    country,
+    shop_name,
+    productId,
+    userEmail,
     price,
     productService,
     quantity,
@@ -74,7 +75,7 @@ const Checkout = () => {
               Credit / Debit Card
             </label>
 
-            <label
+            {/* <label
               className={`${css.radioLabel} ${
                 selectedOption === 'Crypto' ? css.active : ''
               } ${css.radioCrypto}`}
@@ -89,15 +90,19 @@ const Checkout = () => {
               />
               <span className={css.radioCustom}></span>
               Crypto
-            </label>
+            </label> */}
           </div>
 
-          <button
-            className={css.checkoutButton}
-            // onClick={handleClick}
-          >
-            <span>Proceed to secure checkout</span>
-          </button>
+          <CheckoutButton
+            fields={{
+              country,
+              shop_name,
+              product_id: productId,
+              email: userEmail,
+              quantity,
+              custom_link: customLink,
+            }}
+          />
 
           <div className={css.checkoutInfo}>
             All transactions are secure and encrypted
@@ -122,14 +127,14 @@ const Checkout = () => {
             </div>
           </div>
 
-          <div className={css.discountBlock}>
+          {/* <div className={css.discountBlock}>
             <div className={css.discountName}>Add 100 followers</div>
             <div className={css.discountWrap}>
               <div className={css.oldPrice}>$2.97</div>
               <div className={css.newPrice}>$2.22</div>
               <div className={css.discount}>Save 25%</div>
             </div>
-          </div>
+          </div> */}
 
           <div className={css.couponBlock}>
             <div className={css.couponTitle}>Add a coupon code</div>

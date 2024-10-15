@@ -18,6 +18,8 @@ import OrderConfirmation from 'pages/OrderConfirmation/OrderConfirmation';
 import { useEffect, useState } from 'react';
 import FetchAllProductData from 'Api/FetchAllProductData';
 import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
+import PrivacyPolicy from 'pages/PrivacyPolicy/PrivacyPolicy';
+import TermsOfUse from 'pages/TermsOfUse/TermsOfUse';
 
 export default function App() {
   const [tiktokLikesData, setTiktokLikesData] = useState(null);
@@ -57,10 +59,8 @@ export default function App() {
             index
             element={<TikTokLikesPage tiktokLikesData={tiktokLikesData} />}
           />
-
           <Route path="/getStarted" element={<GetStarted />} />
           <Route path="/getStarted/selectPost" element={<SelectPost />} />
-
           {/* TikTok Followers*/}
           <Route
             path="buy-tiktok-followers"
@@ -91,7 +91,6 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-
           {/* TikTok Views */}
           <Route
             path="buy-tiktok-views"
@@ -134,7 +133,6 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-
           <Route
             path="/checkout"
             element={
@@ -154,16 +152,16 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-
           {/* AboutUs */}
           <Route path="about" element={<AboutUs />} />
-
-          {/* AboutUs */}
           <Route path="ContactUs" element={<ContactUs />} />
-
           <Route path="Reviews" element={<Reviews />} />
-
-          <Route path="orderConfirmation" element={<OrderConfirmation />} />
+          <Route
+            path="/OrderConfirmation/:status/"
+            element={<OrderConfirmation />}
+          />
+          <Route path="PrivacyPolicy" element={<PrivacyPolicy />} />
+          <Route path="TermsOfUse" element={<TermsOfUse />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Route>

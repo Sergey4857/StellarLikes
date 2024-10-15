@@ -1,0 +1,48 @@
+.privacyWrap {
+  max-width: 1180px;
+  padding: 50px 40px;
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .privacyWrap {
+    padding: 25px 20px;
+  }
+}
+.privacyTitle {
+  color: #161616;
+  font-family: 'TWK600';
+  font-size: 45px;
+  line-height: 1.25;
+  margin-bottom: 15px;
+}
+.subTitle {
+  color: #161616;
+  font-family: 'TWK600';
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 15px;
+}
+.privacyData {
+  color: #161616;
+  font-family: 'TWK600';
+  font-size: 18px;
+  line-height: 1.25;
+  margin-bottom: 15px;
+}
+ul {
+  list-style-type: disc !important;
+  padding-left: 20px !important;
+  margin-bottom: 15px !important;
+}
+
+p {
+  margin-bottom: 15px !important;
+}
+.subLastList {
+  margin-bottom: 0 !important;
+}

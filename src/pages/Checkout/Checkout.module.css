@@ -143,46 +143,7 @@
 .active {
   border-color: #00c82f;
 }
-.checkoutButton {
-  padding: 20px;
-  color: #fff;
-  font-family: 'TWK600';
-  font-size: 18px;
-  font-weight: 600;
-  width: 100%;
-  border-radius: 12px;
-  background: #00c82f;
-  box-shadow: 0px 1px 2px 0px rgba(139, 139, 139, 0.25);
-  margin-bottom: 5px;
-  position: relative;
-  text-align: center;
-  cursor: pointer;
-}
-@media screen and (max-width: 768px) {
-  .checkoutButton {
-    padding: 20px 10px;
-  }
-}
 
-.checkoutButton span {
-  position: relative;
-  padding-left: 22px;
-}
-
-.checkoutButton span::after {
-  content: '';
-  width: 16px;
-  height: 20px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 0px;
-  background-image: url('../../icons/checkout.svg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transform: translateY(-50%);
-}
 .checkoutInfo {
   color: #646464;
   text-align: center;
