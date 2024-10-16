@@ -33,7 +33,6 @@ const OrderConfirmation = () => {
     billing: { email: userEmail = 'N/A' } = {},
     line_items: [{ name: productService, quantity } = {}] = [],
     meta_data = [],
-    // payment_url,
   } = orderData;
 
   const targetLink =

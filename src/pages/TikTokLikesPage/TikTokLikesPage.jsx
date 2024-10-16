@@ -338,8 +338,8 @@ const TikTokLikesPage = ({ tiktokLikesData }) => {
       <Rating />
       <Features />
       <Customers />
-      <FaqBlock faqsData={faqsData} />
       <ImportansBlock importansData={importansData} />;
+      <FaqBlock faqsData={faqsData} />
     </>
   );
 };
