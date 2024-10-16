@@ -109,6 +109,33 @@
   border-radius: 50%;
   background-color: #f6159c;
 }
+
+.orderFail {
+  width: fit-content;
+  border-radius: 8px;
+  background: #ffcdd2;
+  color: #c62828;
+  font-family: 'TWK600';
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.084px;
+  padding-left: 16px;
+  padding-right: 8px;
+  position: relative;
+}
+.orderFail::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: #c62828;
+}
+
 .orderPending {
   width: fit-content;
   border-radius: 8px;

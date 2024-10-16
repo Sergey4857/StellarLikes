@@ -19,6 +19,9 @@ import Available from 'components/Available/Available';
 import CalculatePrice from 'components/CalculatePrice/CalculatePrice';
 import css from './TikTokViews.module.css';
 import tikTokViewsIcon from '../../icons/tiktokViews.svg';
+import ImportansBlock from 'components/Importans/ImportansBlock';
+import importansViews1 from '../../icons/importansViews1.svg';
+import importansViews2 from '../../icons/importansViews2.svg';
 
 const TikTokViewsPage = ({ tiktokViewsData }) => {
   const navigate = useNavigate();
@@ -35,7 +38,18 @@ const TikTokViewsPage = ({ tiktokViewsData }) => {
     savings: 0,
     discountPercent: 0,
   });
-  console.log(priceDetails);
+  const importansData = [
+    {
+      title: 'Why Are TikTok Views Important?',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, labore illo porro recusandae, ad doloremque culpa tempore velit magni voluptas cupiditate. Atque officiis magnam aliquid nesciunt blanditiis veritatis quos ipsa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, assumenda odit atque repudiandae nostrum corporis sapiente ea suscipit quibusdam. Sint, temporibus tempora quia aspernatur reiciendis distinctio velit deleniti expedita et!Lorem ipsum dolor sit amet consectetur adipisicing elit.Laudantium, labore illo porro recusandae, ad doloremque culpa tempore velit magni voluptas cupiditate.Atque officiis magnam aliquid nesciunt blanditiis veritatis quos ipsa.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Ipsam, assumenda odit atque repudiandae nostrum corporis sapiente ea suscipit quibusdam.Sint, temporibus tempora quia aspernatur reiciendis distinctio velit deleniti expedita et!Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, labore illo porro recusandae, ad doloremque culpa tempore velit magni voluptas cupiditate. Atque officiis magnam aliquid nesciunt blanditiis veritatis quos ipsa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, assumenda odit atque repudiandae nostrum corporis sapiente ea suscipit quibusdam. Sint, temporibus tempora quia aspernatur reiciendis distinctio velit deleniti expedita et!',
+      image: importansViews1,
+    },
+    {
+      title: "Buy TikTok Views: Boost Your Content's  Reach",
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, labore illo porro recusandae, ad doloremque culpa tempore velit magni voluptas cupiditate. Atque officiis magnam aliquid nesciunt blanditiis veritatis quos ipsa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, assumenda odit atque repudiandae nostrum corporis sapiente ea suscipit quibusdam. Sint, temporibus tempora quia aspernatur reiciendis distinctio velit deleniti expedita et!Lorem ipsum dolor sit amet consectetur adipisicing elit.Laudantium, labore illo porro recusandae, ad doloremque culpa tempore velit magni voluptas cupiditate.Atque officiis magnam aliquid nesciunt blanditiis veritatis quos ipsa.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Ipsam, assumenda odit atque repudiandae nostrum corporis sapiente ea suscipit quibusdam.Sint, temporibus tempora quia aspernatur reiciendis distinctio velit deleniti expedita et!Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, labore illo porro recusandae, ad doloremque culpa tempore velit magni voluptas cupiditate. Atque officiis magnam aliquid nesciunt blanditiis veritatis quos ipsa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, assumenda odit atque repudiandae nostrum corporis sapiente ea suscipit quibusdam. Sint, temporibus tempora quia aspernatur reiciendis distinctio velit deleniti expedita et',
+      image: importansViews2,
+    },
+  ];
   const faqsData = [
     {
       question: 'Is it safe to buy TikTok views?',
@@ -326,6 +340,7 @@ const TikTokViewsPage = ({ tiktokViewsData }) => {
       <Rating />
       <Features />
       <Customers />
+      <ImportansBlock importansData={importansData} />
       <FaqBlock faqsData={faqsData} />
     </>
   );

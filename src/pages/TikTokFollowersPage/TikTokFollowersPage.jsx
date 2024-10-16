@@ -13,6 +13,9 @@ import Available from 'components/Available/Available';
 import CalculatePrice from 'components/CalculatePrice/CalculatePrice';
 import css from './TikTokFollowers.module.css';
 import tikTokFollowersIcon from '../../icons/tiktokFolowers.svg';
+import ImportansBlock from 'components/Importans/ImportansBlock';
+import importansFollowers1 from '../../icons/importansFollowers1.svg';
+import importansFollowers2 from '../../icons/importansFollowers2.svg';
 
 const TikTokFollowersPage = ({ tiktokFollowersData }) => {
   const navigate = useNavigate();
@@ -92,6 +95,18 @@ const TikTokFollowersPage = ({ tiktokFollowersData }) => {
       answer:
         "Buying TikTok followers increases your content's chance to be on the 'For You' page. This wider exposure attracts more viewers and boosts your content's visibility.",
       open: false,
+    },
+  ];
+  const importansData = [
+    {
+      title: 'Why Are TikTok Views Important?',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, labore illo porro recusandae, ad doloremque culpa tempore velit magni voluptas cupiditate. Atque officiis magnam aliquid nesciunt blanditiis veritatis quos ipsa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, assumenda odit atque repudiandae nostrum corporis sapiente ea suscipit quibusdam. Sint, temporibus tempora quia aspernatur reiciendis distinctio velit deleniti expedita et!Lorem ipsum dolor sit amet consectetur adipisicing elit.Laudantium, labore illo porro recusandae, ad doloremque culpa tempore velit magni voluptas cupiditate.Atque officiis magnam aliquid nesciunt blanditiis veritatis quos ipsa.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Ipsam, assumenda odit atque repudiandae nostrum corporis sapiente ea suscipit quibusdam.Sint, temporibus tempora quia aspernatur reiciendis distinctio velit deleniti expedita et!Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, labore illo porro recusandae, ad doloremque culpa tempore velit magni voluptas cupiditate. Atque officiis magnam aliquid nesciunt blanditiis veritatis quos ipsa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, assumenda odit atque repudiandae nostrum corporis sapiente ea suscipit quibusdam. Sint, temporibus tempora quia aspernatur reiciendis distinctio velit deleniti expedita et!',
+      image: importansFollowers1,
+    },
+    {
+      title: "Buy TikTok Views: Boost Your Content's  Reach",
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, labore illo porro recusandae, ad doloremque culpa tempore velit magni voluptas cupiditate. Atque officiis magnam aliquid nesciunt blanditiis veritatis quos ipsa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, assumenda odit atque repudiandae nostrum corporis sapiente ea suscipit quibusdam. Sint, temporibus tempora quia aspernatur reiciendis distinctio velit deleniti expedita et!Lorem ipsum dolor sit amet consectetur adipisicing elit.Laudantium, labore illo porro recusandae, ad doloremque culpa tempore velit magni voluptas cupiditate.Atque officiis magnam aliquid nesciunt blanditiis veritatis quos ipsa.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Ipsam, assumenda odit atque repudiandae nostrum corporis sapiente ea suscipit quibusdam.Sint, temporibus tempora quia aspernatur reiciendis distinctio velit deleniti expedita et!Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, labore illo porro recusandae, ad doloremque culpa tempore velit magni voluptas cupiditate. Atque officiis magnam aliquid nesciunt blanditiis veritatis quos ipsa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, assumenda odit atque repudiandae nostrum corporis sapiente ea suscipit quibusdam. Sint, temporibus tempora quia aspernatur reiciendis distinctio velit deleniti expedita et',
+      image: importansFollowers2,
     },
   ];
 
@@ -322,6 +337,7 @@ const TikTokFollowersPage = ({ tiktokFollowersData }) => {
       <Rating />
       <Features />
       <Customers />
+      <ImportansBlock importansData={importansData} />
       <FaqBlock faqsData={faqsData} />
     </>
   );

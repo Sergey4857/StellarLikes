@@ -1,0 +1,131 @@
+.importantSection {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 70px 40px 0px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .importantSection {
+    padding: 70px 20px 0px 20px;
+  }
+}
+.importantWrap {
+}
+.importans {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+@media screen and (max-width: 768px) {
+  .importans {
+    gap: 20px;
+  }
+}
+.importantContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+@media screen and (max-width: 768px) {
+  .importantContent {
+    gap: 0px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .importantContent {
+    flex-direction: column;
+  }
+}
+.importantImage {
+  max-width: 275px;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .importantImage {
+    max-width: unset;
+    width: 100%;
+  }
+}
+.importantContent:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+@media screen and (max-width: 768px) {
+  .importantContent:nth-child(2n) {
+    flex-direction: column;
+  }
+}
+.importantImage img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: sticky;
+  top: 80px;
+}
+
+.importantDetails {
+  max-width: 675px;
+  width: 100%;
+  padding: 30px 0;
+}
+@media screen and (max-width: 768px) {
+  .importantDetails {
+    padding: 25px 0;
+  }
+}
+
+.importantTitle {
+  color: #161616;
+
+  font-family: 'TWK700';
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.importantText {
+  overflow: hidden;
+  max-height: 160px;
+  transition: max-height 0.3s ease;
+  margin-bottom: 15px;
+  position: relative;
+}
+.importantText::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 88px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) -113.07%,
+    #fff 101.74%
+  );
+}
+
+.importantText.open {
+  max-height: 1000px;
+}
+.importantText.open::after {
+  display: none;
+}
+
+.importantButton {
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 18px;
+  line-height: 1.25;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: #f948b4;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+}
+
+.importantButton:hover {
+}

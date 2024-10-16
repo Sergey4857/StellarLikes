@@ -29,7 +29,6 @@ const OrderConfirmation = () => {
     id,
     total: price,
     date_created: date,
-    status: orderStatus,
     payment_method_title: paymentMethod = 'N/A',
     billing: { email: userEmail = 'N/A' } = {},
     line_items: [{ name: productService, quantity } = {}] = [],
@@ -99,7 +98,7 @@ const OrderConfirmation = () => {
               )}
               {status === 'fail' && (
                 <div className={`${css.orderTitle} ${css.orderFail}`}>
-                  {status}
+                  Failed
                 </div>
               )}
 
