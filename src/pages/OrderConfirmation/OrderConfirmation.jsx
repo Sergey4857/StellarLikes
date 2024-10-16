@@ -1,14 +1,32 @@
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { FetchOrderInfo } from '../../Api/FetchOrderInfo';
 import css from '../OrderConfirmation/OrderConfirmation.module.css';
+import Loader from 'components/Loader/Loader';
 
 const OrderConfirmation = () => {
-  const { status } = useParams();
   const navigate = useNavigate();
   const { search } = useLocation();
   const orderId = new URLSearchParams(search).get('order_id');
+
   const [orderData, setOrderData] = useState(null);
+  const [isButtonActive, setIsButtonActive] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(60);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          setIsButtonActive(true);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (!orderId) return navigate('/');
@@ -23,29 +41,28 @@ const OrderConfirmation = () => {
     fetchOrderData();
   }, [navigate, orderId]);
 
-  if (!orderData) return <p>Loading...</p>;
+  if (!orderData) return <Loader />;
 
   const {
     id,
-    total: price,
-    date_created: date,
-    payment_method_title: paymentMethod = 'N/A',
-    billing: { email: userEmail = 'N/A' } = {},
-    line_items: [{ name: productService, quantity } = {}] = [],
-    meta_data = [],
+    status,
+    total,
+    customer_email,
+    product_name,
+    payment_method,
+    date,
+    start_count,
+    remains,
+    quantity,
+    custom_link,
+    checkout_id,
   } = orderData;
 
-  const targetLink =
-    meta_data.find(({ key }) => key === 'Target Link')?.value || 'N/A';
-
-  const dateObject = new Date(date);
-  const formattedDate = dateObject.toLocaleString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: true,
-  });
+  const formatTime = seconds => {
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+  };
 
   return (
     <div className={css.orderWrapper}>
@@ -55,12 +72,22 @@ const OrderConfirmation = () => {
         </div>
         {status === 'pending' && (
           <button
-            className={css.orderBtn}
-            // onClick={() => {
-            //   window.location.href = payment_url;
-            // }}
+            className={`${css.orderBtn} ${isButtonActive ? '' : css.disabled}`}
+            onClick={() => {
+              if (isButtonActive) {
+                window.location.href = `https://pay.sandbox.checkout.com/page/${checkout_id}`;
+              }
+            }}
+            disabled={!isButtonActive}
           >
-            <span className={css.orderIcon}></span>Finish Payment
+            {isButtonActive ? (
+              <>
+                Finish Payment
+                <span className={css.orderIcon}></span>
+              </>
+            ) : (
+              `Activate in ${formatTime(timeLeft)}`
+            )}
           </button>
         )}
 
@@ -72,19 +99,19 @@ const OrderConfirmation = () => {
             </div>
             <div className={css.orderBox}>
               <div className={css.orderSubtitle}>Service</div>
-              <div className={css.orderTitle}>{productService}</div>
+              <div className={css.orderTitle}>{product_name}</div>
             </div>
             <div className={css.orderBox}>
               <div className={css.orderSubtitle}>Amount</div>
-              <div className={css.orderTitle}>${price}</div>
+              <div className={css.orderTitle}>${total}</div>
             </div>
             <div className={css.orderBox}>
               <div className={css.orderSubtitle}>Date</div>
-              <div className={css.orderTitle}>{formattedDate}</div>
+              <div className={css.orderTitle}>{date}</div>
             </div>
             <div className={css.orderBox}>
               <div className={css.orderSubtitle}>Target URL</div>
-              <div className={css.orderTitle}>{targetLink}</div>
+              <div className={css.orderTitle}>{custom_link}</div>
             </div>
           </div>
           <div className={css.orderSecond}>
@@ -100,7 +127,6 @@ const OrderConfirmation = () => {
                   Failed
                 </div>
               )}
-
               {status === 'cancel' && (
                 <div className={`${css.orderTitle} ${css.orderCancel}`}>
                   Canceled
@@ -113,16 +139,20 @@ const OrderConfirmation = () => {
               )}
             </div>
             <div className={css.orderBox}>
-              <div className={css.orderSubtitle}>Quantity</div>
+              <div className={css.orderSubtitle}>Order amount</div>
               <div className={css.orderTitle}>{quantity}</div>
             </div>
             <div className={css.orderBox}>
+              <div className={css.orderSubtitle}>Order start count</div>
+              <div className={css.orderTitle}>{start_count}</div>
+            </div>
+            <div className={css.orderBox}>
               <div className={css.orderSubtitle}>Method</div>
-              <div className={css.orderTitle}>{paymentMethod}</div>
+              <div className={css.orderTitle}>{payment_method}</div>
             </div>
             <div className={css.orderBox}>
               <div className={css.orderSubtitle}>Email</div>
-              <div className={css.orderTitle}>{userEmail}</div>
+              <div className={css.orderTitle}>{customer_email}</div>
             </div>
           </div>
         </div>

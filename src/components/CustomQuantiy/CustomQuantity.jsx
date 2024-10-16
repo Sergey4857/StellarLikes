@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import css from './CustomQuantity.module.css';
 
 const CustomQuantity = ({
@@ -17,12 +17,9 @@ const CustomQuantity = ({
     customQuantity || initialQuantity
   );
   const [discountPercent, setDiscountPercent] = useState(0);
-  const [nextDiscountQuantity, setNextDiscountQuantity] = useState(null);
-  const [nextDiscountPercent, setNextDiscountPercent] = useState(null);
-  const [typingTimeout, setTypingTimeout] = useState(null);
 
-  console.log(nextDiscountQuantity);
-  console.log(nextDiscountPercent);
+  const typingTimeoutRef = useRef(null);
+
   useEffect(() => {
     onQuantityChange(quantity);
 
@@ -35,50 +32,44 @@ const CustomQuantity = ({
     }
     setDiscountPercent(Math.round(applicableDiscount));
 
-    let nextLevel = null;
-    for (let i = 0; i < discountLevels.length; i++) {
-      if (quantity < discountLevels[i].quantity) {
-        nextLevel = discountLevels[i];
-        break;
-      }
-    }
-    if (nextLevel) {
-      setNextDiscountQuantity(nextLevel.quantity - quantity);
-      setNextDiscountPercent(nextLevel.discount);
-    } else {
-      setNextDiscountQuantity(null);
-      setNextDiscountPercent(null);
-    }
+    // Since nextDiscountQuantity and nextDiscountPercent are not used,
+    // the code related to them has been removed to eliminate warnings.
   }, [quantity, discountLevels, onQuantityChange]);
 
+  useEffect(() => {
+    return () => {
+      if (typingTimeoutRef.current) {
+        clearTimeout(typingTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const handleInputChange = e => {
-    let value = e.target.value;
+    const value = e.target.value;
     setInputValue(value);
 
-    if (typingTimeout) {
-      clearTimeout(typingTimeout);
+    if (typingTimeoutRef.current) {
+      clearTimeout(typingTimeoutRef.current);
     }
 
-    setTypingTimeout(
-      setTimeout(() => {
-        let intValue = parseInt(value, 10);
-        if (
-          !isNaN(intValue) &&
-          intValue >= initialQuantity &&
-          intValue <= 20000
-        ) {
-          setQuantity(intValue);
-        } else if (intValue < initialQuantity) {
-          setQuantity(initialQuantity);
-          setInputValue(initialQuantity);
+    typingTimeoutRef.current = setTimeout(() => {
+      let intValue = parseInt(value, 10);
+
+      if (!isNaN(intValue)) {
+        if (intValue < initialQuantity) {
+          intValue = initialQuantity;
         } else if (intValue > 20000) {
-          setQuantity(20000);
-          setInputValue(20000);
-        } else {
-          setInputValue(quantity);
+          intValue = 20000;
         }
-      }, 1000)
-    );
+        setQuantity(intValue);
+        setInputValue(intValue.toString());
+      } else if (value === '') {
+        setQuantity('');
+        setInputValue('');
+      } else {
+        setInputValue(quantity.toString());
+      }
+    }, 1000);
   };
 
   return (

@@ -12,29 +12,54 @@
   position: relative;
   text-align: center;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
+
 @media screen and (max-width: 768px) {
   .checkoutButton {
     padding: 20px 10px;
   }
 }
 
-.checkoutButton span {
-  position: relative;
-  padding-left: 22px;
+.checkoutButton[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
-.checkoutButton span::after {
+.checkoutButton .checkoutButtonText {
+  position: relative;
+}
+
+.checkoutButton .checkoutButtonText::after {
   content: '';
   width: 16px;
   height: 20px;
   display: block;
   position: absolute;
   top: 50%;
-  left: 0px;
+  left: -22px;
   background-image: url('../../icons/checkout.svg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transform: translateY(-50%);
+}
+
+.loader {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

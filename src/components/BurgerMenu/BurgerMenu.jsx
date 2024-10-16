@@ -39,8 +39,8 @@ export default function BurgerMenu({ setOpenedModal, openedModal }) {
     {
       title: 'About',
       links: [
-        { to: '/', text: 'Privacy Policy' },
-        { to: '/', text: 'Terms of Use' },
+        { to: '/PrivacyPolicy', text: 'Privacy Policy' },
+        { to: '/TermsOfUse', text: 'Terms of Use' },
         { to: '/', text: 'Live Support' },
       ],
     },

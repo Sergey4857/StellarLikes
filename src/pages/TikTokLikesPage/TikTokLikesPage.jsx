@@ -243,8 +243,8 @@ const TikTokLikesPage = ({ tiktokLikesData }) => {
             <div
               className={css.buyLikesCustomLink}
               onClick={() => {
-                setShowCustomQuantity(true);
-                setShowPackages(false);
+                setShowCustomQuantity(!showCustomQuantity);
+                setShowPackages(!showPackages);
               }}
             >
               Custom Quantity
@@ -259,6 +259,7 @@ const TikTokLikesPage = ({ tiktokLikesData }) => {
               onClick={() => {
                 setShowCustomQuantity(false);
                 setShowPackages(true);
+                setCustomQuantity(0);
               }}
             >
               Packages

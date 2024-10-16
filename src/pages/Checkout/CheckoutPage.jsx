@@ -2,11 +2,11 @@ import { useLocation } from 'react-router-dom';
 import css from './Checkout.module.css';
 import { useState } from 'react';
 import CheckoutButton from 'components/CheckoutBtn/CheckoutBtn';
+import CouponButton from 'components/CouponButton/CouponButton';
 
 const Checkout = () => {
   const location = useLocation();
   const [selectedOption, setSelectedOption] = useState('Credit / Debit Card');
-  // const navigate = useNavigate();
 
   const {
     country,
@@ -18,6 +18,8 @@ const Checkout = () => {
     quantity,
     customLink,
   } = location.state || {};
+
+  console.log(location.state);
 
   const handleOptionChange = event => {
     setSelectedOption(event.target.value);
@@ -95,6 +97,7 @@ const Checkout = () => {
 
           <CheckoutButton
             fields={{
+              price,
               country,
               shop_name,
               product_id: productId,
@@ -143,9 +146,7 @@ const Checkout = () => {
               type="text"
               placeholder="Enter code"
             />
-            <button className={css.couponSbmt} type="button">
-              Apply
-            </button>
+            <CouponButton />
           </div>
         </div>
       </div>

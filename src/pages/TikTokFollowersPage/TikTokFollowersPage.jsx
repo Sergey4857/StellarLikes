@@ -255,6 +255,7 @@ const TikTokFollowersPage = ({ tiktokFollowersData }) => {
                 onClick={() => {
                   setShowCustomQuantity(false);
                   setShowPackages(true);
+                  setCustomQuantity(0);
                 }}
               >
                 Packages

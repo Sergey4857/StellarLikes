@@ -19,9 +19,9 @@ const CalculatePrice = ({
   useEffect(() => {
     const calculatePrice = () => {
       let discountPercent = 0;
-      let finalQuantity = customQuantity > 0 ? customQuantity : quantity;
+      let finalQuantity = showCustomQuantity ? customQuantity : quantity;
 
-      // Вычисляем процент скидки из discountLevels
+      // Calculate the discount percent based on finalQuantity
       for (let i = discountLevels.length - 1; i >= 0; i--) {
         if (finalQuantity >= discountLevels[i].quantity) {
           discountPercent = discountLevels[i].discount / 100;
@@ -53,6 +53,7 @@ const CalculatePrice = ({
     quantity,
     discountLevels,
     customQuantity,
+    showCustomQuantity, // Ensure this is included
     onPriceCalculated,
   ]);
 

@@ -20,6 +20,7 @@ import FetchAllProductData from 'Api/FetchAllProductData';
 import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 import PrivacyPolicy from 'pages/PrivacyPolicy/PrivacyPolicy';
 import TermsOfUse from 'pages/TermsOfUse/TermsOfUse';
+import Component from './Intercom/Intercom';
 
 export default function App() {
   const [tiktokLikesData, setTiktokLikesData] = useState(null);
@@ -52,6 +53,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<Layout />}>
           {/* TikTok Likes */}
@@ -59,9 +61,46 @@ export default function App() {
             index
             element={<TikTokLikesPage tiktokLikesData={tiktokLikesData} />}
           />
-          <Route path="/getStarted" element={<GetStarted />} />
-          <Route path="/getStarted/selectPost" element={<SelectPost />} />
-          {/* TikTok Followers*/}
+          <Route
+            path="/getStarted"
+            element={
+              <ProtectedRoute
+                requiredStateKeys={[
+                  'price',
+                  'productService',
+                  'quantity',
+                  'productId',
+                ]}
+                redirectTo="/"
+              >
+                <GetStarted />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/getStarted/selectPost"
+            element={
+              <ProtectedRoute
+                requiredStateKeys={[
+                  'country',
+                  'customLink',
+                  'quantity',
+                  'productId',
+                  'price',
+                  'productService',
+                  'quantity',
+                  'productId',
+                  'uniqueId',
+                  'userEmail',
+                ]}
+                redirectTo="/"
+              >
+                <SelectPost />
+              </ProtectedRoute>
+            }
+          />
+
           <Route
             path="buy-tiktok-followers"
             element={
@@ -70,7 +109,19 @@ export default function App() {
           />
           <Route
             path="buy-tiktok-followers/getStarted"
-            element={<GetStarted />}
+            element={
+              <ProtectedRoute
+                requiredStateKeys={[
+                  'price',
+                  'productService',
+                  'quantity',
+                  'productId',
+                ]}
+                redirectTo="/"
+              >
+                <GetStarted />
+              </ProtectedRoute>
+            }
           />
           <Route
             path="buy-tiktok-followers/checkout"
@@ -96,6 +147,7 @@ export default function App() {
             path="buy-tiktok-views"
             element={<TikTokViewsPage tiktokViewsData={tiktokViewsData} />}
           />
+          <Route path="/chat" element={<Component />} />
           <Route
             path="buy-tiktok-views/getStarted"
             element={
@@ -156,10 +208,7 @@ export default function App() {
           <Route path="about" element={<AboutUs />} />
           <Route path="ContactUs" element={<ContactUs />} />
           <Route path="Reviews" element={<Reviews />} />
-          <Route
-            path="/OrderConfirmation/:status/"
-            element={<OrderConfirmation />}
-          />
+          <Route path="/OrderConfirmation/" element={<OrderConfirmation />} />
           <Route path="PrivacyPolicy" element={<PrivacyPolicy />} />
           <Route path="TermsOfUse" element={<TermsOfUse />} />
 
