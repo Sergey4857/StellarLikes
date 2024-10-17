@@ -1,15 +1,35 @@
 import { useEffect, useRef, useState } from 'react';
 import css from './FreeFollowers.module.css';
 import { gsap } from 'gsap';
+import FreeFollowersImage from '../../icons/robot.svg';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import FreeFollowersImage from '../../icons/monkey.svg';
-const FreeFollowers = () => {
+import { useLocation, useNavigate } from 'react-router-dom';
+import TikTokUserDetails from 'Api/TikTokUserDetails';
+import checkmark from '../../icons/checkmark-getStarted.svg';
+
+const FreeFollowers = ({ data }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location.state);
+  const { quantity, productId, price, productService } = location.state || {};
+
+  const [userEmail, setUserEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [errors, setErrors] = useState({});
+  const [apiError, setApiError] = useState(null);
+  const pathname = location.pathname;
+  const productPath = pathname.split('/')[1];
+  const [userInfo, setUserInfo] = useState(null);
+
+  const validateEmail = email => {
+    return /\S+@\S+\.\S+/.test(email);
+  };
+
   const linkRef = useRef(null);
   const featuresRef = useRef(null);
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-  });
+
+  console.log(data);
+
   const decorItemRefs = useRef([]);
 
   useEffect(() => {
@@ -88,26 +108,42 @@ const FreeFollowers = () => {
     });
   }, []);
 
-  const handleInputChange = e => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    console.log('Form Data Submitted:', formData);
+    const newErrors = {};
+
+    if (!username.trim()) {
+      newErrors.username = 'Please enter your TikTok username.';
+    }
+
+    if (!userEmail.trim()) {
+      newErrors.userEmail = 'Please enter your email';
+    } else if (!validateEmail(userEmail)) {
+      newErrors.userEmail = 'Please enter a valid email address..';
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
+    setApiError(null);
+    setUserInfo(null);
+
+    try {
+      const userData = await TikTokUserDetails(username);
+      console.log(userData);
+
+      setUserInfo(userData);
+    } catch (error) {
+      setApiError(error.message);
+    }
   };
 
   return (
-    <section
-      className={css.freeFollowersSection}
-      id="freeFollowers"
-      ref={featuresRef}
-    >
-      <div className={css.freeFollowers}>
+    <section className={css.freeFollowersSection} id="freeFollowers">
+      <div className={css.freeFollowers} ref={featuresRef}>
         <div className={css.freeFollowersWrap}>
           <h2 className={css.freeFollowersTitle}>
             <span className={css.freeFollowersSpan}>Get 50 Free</span> TikTok
@@ -118,35 +154,44 @@ const FreeFollowers = () => {
             <span>username</span> and <span>email</span>, select post, verify
             your valid email, and get likes quickly.
           </p>
-          <form className={css.freeFollowersForm} onSubmit={handleSubmit}>
-            <div className={`${css.freeFollowersFormBlock} ${css.FirstBlock}`}>
-              <label htmlFor="username">Your TikTok Username</label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                value={formData.username}
-                onChange={handleInputChange}
-                placeholder="therock"
-              />
+          <form className={css.getStartedForm} onSubmit={handleSubmit}>
+            <div className={css.inputsBlock}>
+              <div className={css.userBlock}>
+                <label htmlFor="userName">Your TikTok Username</label>
+                <input
+                  id="userName"
+                  type="text"
+                  placeholder="therock"
+                  value={username}
+                  onChange={e => setUsername(e.target.value)}
+                />
+                {errors.username && (
+                  <div className={css.error}>{errors.username}</div>
+                )}
+                {apiError && <div className={css.error}>{apiError}</div>}
+              </div>
+
+              <div className={css.userBlock}>
+                <label htmlFor="userEmail">Your Email</label>
+                <input
+                  id="userEmail"
+                  type="text"
+                  placeholder="email@example.com"
+                  value={userEmail}
+                  onChange={e => setUserEmail(e.target.value)}
+                />
+                {errors.userEmail && (
+                  <div className={css.error}>{errors.userEmail}</div>
+                )}
+              </div>
             </div>
-            <div className={css.freeFollowersFormBlock}>
-              <label htmlFor="email">Your Email</label>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="email@example.com"
-              />
-            </div>
+
             <button
-              className={css.freeFollowersButton}
               type="submit"
+              className={css.freeFollowersButton}
               ref={linkRef}
             >
-              <span className={css.linkText}>Get 50 Free Followers</span>
+              <span className={css.linkText}>Get Free Followers</span>
               <span className={css.decor}>
                 <span
                   ref={el => (decorItemRefs.current[0] = el)}
@@ -158,11 +203,61 @@ const FreeFollowers = () => {
                 ></span>
               </span>
             </button>
+
+            {userInfo &&
+              userInfo.map(
+                ({ profile_pic_url, full_name, id, uniqueId, country }) => (
+                  <div key={id} className={css.findedUserWrap}>
+                    <img
+                      className={css.findedUserImage}
+                      src={profile_pic_url}
+                      alt="profile"
+                    />
+                    <div className={css.findedUserName}>{full_name}</div>
+                    <button
+                      className={css.getStartedRedirect}
+                      onClick={() => {
+                        if (productPath === 'buy-tiktok-followers') {
+                          navigate(`/${productPath}/checkout`, {
+                            state: {
+                              country,
+                              price,
+                              productService,
+                              quantity,
+                              productId,
+                              userEmail,
+                              customLink: `https://www.tiktok.com/${uniqueId}`,
+                              shop_name: 'StellarFollowers.com',
+                            },
+                          });
+                        } else {
+                          navigate('selectPost', {
+                            state: {
+                              country,
+                              price,
+                              productService,
+                              quantity,
+                              productId,
+                              uniqueId,
+                              userInfo,
+                              userEmail,
+                              customLink: `https://www.tiktok.com/${uniqueId}`,
+                              shop_name: 'StellarFollowers.com',
+                            },
+                          });
+                        }
+                      }}
+                    >
+                      <img src={checkmark} alt="" />
+                    </button>
+                  </div>
+                )
+              )}
           </form>
           <img
             data-animate
-            className={css.featuresImg}
-            alt="Views"
+            alt="Followers"
+            className={css.FreeFollowers}
             src={FreeFollowersImage}
           />
         </div>

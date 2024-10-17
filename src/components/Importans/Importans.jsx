@@ -1,9 +1,14 @@
 import React from 'react';
 import css from './Importans.module.css';
 
-const Importans = ({ important, index, toggleImportans }) => {
-  const { title, text, image, open } = important;
-
+const Importans = ({
+  title,
+  image,
+  open,
+  index,
+  toggleImportans,
+  children,
+}) => {
   return (
     <div className={css.importantContent}>
       <div className={css.importantImage}>
@@ -12,7 +17,7 @@ const Importans = ({ important, index, toggleImportans }) => {
       <div className={css.importantDetails}>
         <div className={css.importantTitle}>{title}</div>
         <div className={`${css.importantText} ${open ? css.open : ''}`}>
-          {text}
+          {children}
         </div>
         <button
           className={css.importantButton}

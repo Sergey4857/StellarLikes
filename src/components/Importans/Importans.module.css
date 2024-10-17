@@ -93,6 +93,9 @@
   transition: max-height 0.3s ease;
   margin-bottom: 15px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .importantText::after {
   content: '';
@@ -109,7 +112,7 @@
 }
 
 .importantText.open {
-  max-height: 1000px;
+  max-height: 100%;
 }
 .importantText.open::after {
   display: none;
@@ -128,4 +131,29 @@
 }
 
 .importantButton:hover {
+}
+
+.importantText h3 {
+  color: #161616;
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1;
+  margin: 5px 0;
+}
+.importantText h4 {
+  color: #161616;
+  font-family: 'TWK700';
+  font-size: 20px;
+  line-height: 1.1;
+  margin: 5px 0;
+}
+
+.importantText ul {
+  margin: 5px 0;
+  list-style-type: disc;
+  padding-left: 30px;
+}
+
+.importantText strong {
+  font-family: 'TWK700';
 }

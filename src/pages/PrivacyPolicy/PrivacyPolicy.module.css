@@ -34,15 +34,7 @@
   line-height: 1.25;
   margin-bottom: 15px;
 }
-ul {
-  list-style-type: disc !important;
-  padding-left: 20px !important;
-  margin-bottom: 15px !important;
-}
 
-p {
-  margin-bottom: 15px !important;
-}
 .subLastList {
   margin-bottom: 0 !important;
 }

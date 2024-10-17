@@ -22,11 +22,15 @@ export default function ImportansBlock({ importansData }) {
         <div className={css.importans}>
           {importans.map((important, index) => (
             <Importans
-              important={important}
-              index={index}
               key={index}
+              title={important.title}
+              image={important.image}
+              open={important.open}
+              index={index}
               toggleImportans={toggleImportans}
-            />
+            >
+              {important.content}
+            </Importans>
           ))}
         </div>
       </div>

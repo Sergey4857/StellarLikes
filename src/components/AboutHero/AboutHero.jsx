@@ -9,9 +9,10 @@ const AboutHero = () => {
             Stellar Likes <span className="pinkText">Team</span>
           </h1>
           <p className={css.heroText}>
-            Don't settle for fake users. StellarLikes delivers followers, likes,
-            and views from real users, delivered instantly. At the lowest
-            possible prices.
+            At StellarLikes, we go beyond numbers. We specialize in delivering
+            genuine followers, likes, and views from real users, instantly, at
+            unmatched prices. Our team is a group of experienced social media
+            professionals who understand the nuances of organic growth.
           </p>
         </div>
 

@@ -14,6 +14,7 @@ const CheckoutButton = ({ fields }) => {
     price,
     quantity,
     custom_link,
+    coupon,
   } = fields;
 
   console.log({
@@ -27,6 +28,7 @@ const CheckoutButton = ({ fields }) => {
     success_url: `http://localhost:3000/StellarLikes/OrderConfirmation`,
     fail_url: `http://localhost:3000/StellarLikes/orderConfirmation`,
     cancel_url: `http://localhost:3000/StellarLikes/orderConfirmation`,
+    coupon,
   });
   const handleClick = async () => {
     setLoading(true);
@@ -39,6 +41,7 @@ const CheckoutButton = ({ fields }) => {
         price,
         quantity,
         custom_link,
+        coupon,
         success_url: `http://localhost:3000/StellarLikes/OrderConfirmation`,
         fail_url: `http://localhost:3000/StellarLikes/orderConfirmation`,
         cancel_url: `http://localhost:3000/StellarLikes/orderConfirmation`,

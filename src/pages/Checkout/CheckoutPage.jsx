@@ -1,6 +1,7 @@
+// Checkout.jsx
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import css from './Checkout.module.css';
-import { useState } from 'react';
 import CheckoutButton from 'components/CheckoutBtn/CheckoutBtn';
 import CouponButton from 'components/CouponButton/CouponButton';
 
@@ -13,45 +14,44 @@ const Checkout = () => {
     shop_name,
     productId,
     userEmail,
-    price,
+    price: priceString,
     productService,
-    quantity,
+    quantity: quantityString,
     customLink,
   } = location.state || {};
 
-  console.log(location.state);
+  // Ensure price and quantity are numbers
+  const price = parseFloat(priceString) || 0;
+  const quantity = parseInt(quantityString, 10) || 1;
+
+  const [couponCode, setCouponCode] = useState('');
+  const [appliedCouponCode, setAppliedCouponCode] = useState('');
+  const [discount, setDiscount] = useState(0);
+  const [discountedPrice, setDiscountedPrice] = useState(price);
+  const [couponError, setCouponError] = useState(null);
+  const [couponApplied, setCouponApplied] = useState(false);
 
   const handleOptionChange = event => {
     setSelectedOption(event.target.value);
   };
 
-  // const handleClick = () => {
-  //   const now = new Date();
-  //   const options = {
-  //     month: 'short',
-  //     day: 'numeric',
-  //     hour: '2-digit',
-  //     minute: '2-digit',
-  //     hour12: true,
-  //   };
+  const handleRemoveCoupon = () => {
+    setDiscount(0);
+    setDiscountedPrice(price);
+    setAppliedCouponCode('');
+    setCouponCode('');
+    setCouponError(null);
+    setCouponApplied(false);
+  };
 
-  //   const formattedDate = now.toLocaleString('en-US', options);
-
-  //   navigate('/orderConfirmation', {
-  //     country,
-  //     state: {
-  //       country,
-  //       price,
-  //       productService,
-  //       quantity,
-  //       productId,
-  //       userEmail,
-  //       shop_name,
-  //       paymentMethod: selectedOption,
-  //       date: formattedDate,
-  //     },
-  //   });
-  // };
+  // Function to handle successful coupon application
+  const handleCouponApplied = (discountAmount, appliedCode) => {
+    setDiscount(discountAmount);
+    setDiscountedPrice(price - discountAmount);
+    setAppliedCouponCode(appliedCode);
+    setCouponApplied(true);
+    setCouponError(null);
+  };
 
   return (
     <>
@@ -76,34 +76,18 @@ const Checkout = () => {
               <span className={css.radioCustom}></span>
               Credit / Debit Card
             </label>
-
-            {/* <label
-              className={`${css.radioLabel} ${
-                selectedOption === 'Crypto' ? css.active : ''
-              } ${css.radioCrypto}`}
-            >
-              <input
-                type="radio"
-                name="paymentMethod"
-                value="Crypto"
-                checked={selectedOption === 'Crypto'}
-                onChange={handleOptionChange}
-                className={css.radioInput}
-              />
-              <span className={css.radioCustom}></span>
-              Crypto
-            </label> */}
           </div>
 
           <CheckoutButton
             fields={{
-              price,
+              price: discountedPrice,
               country,
               shop_name,
               product_id: productId,
               email: userEmail,
               quantity,
               custom_link: customLink,
+              coupon: appliedCouponCode,
             }}
           />
 
@@ -114,7 +98,7 @@ const Checkout = () => {
         <div className={css.checkoutSecondBlock}>
           <div className={css.priceInfo}>
             Total to pay:
-            <span className={css.price}>${price}</span>
+            <span className={css.price}>${discountedPrice.toFixed(2)}</span>
           </div>
 
           <div className={css.productBlock}>
@@ -130,23 +114,50 @@ const Checkout = () => {
             </div>
           </div>
 
-          {/* <div className={css.discountBlock}>
-            <div className={css.discountName}>Add 100 followers</div>
-            <div className={css.discountWrap}>
-              <div className={css.oldPrice}>$2.97</div>
-              <div className={css.newPrice}>$2.22</div>
-              <div className={css.discount}>Save 25%</div>
+          {discount > 0 && (
+            <div className={css.discountBlock}>
+              <div className={css.discountName}>
+                Coupon: <strong>{appliedCouponCode}</strong>
+              </div>
+              <div className={css.discountWrap}>
+                <div className={css.discountAmount}>
+                  -${discount.toFixed(2)}
+                </div>
+              </div>
+              {couponApplied && (
+                <button
+                  className={css.removeCouponButton}
+                  type="button"
+                  onClick={handleRemoveCoupon}
+                >
+                  Remove
+                </button>
+              )}
             </div>
-          </div> */}
+          )}
 
           <div className={css.couponBlock}>
-            <div className={css.couponTitle}>Add a coupon code</div>
-            <input
-              className={css.couponInpt}
-              type="text"
-              placeholder="Enter code"
-            />
-            <CouponButton />
+            {couponError && <p className={css.errorMessage}>{couponError}</p>}
+
+            {!couponApplied && (
+              <>
+                <div className={css.couponTitle}>Add a coupon code</div>
+                <input
+                  className={css.couponInpt}
+                  type="text"
+                  placeholder="Enter code"
+                  value={couponCode}
+                  onChange={e => setCouponCode(e.target.value)}
+                />
+                <CouponButton
+                  couponCode={couponCode}
+                  price={price}
+                  quantity={quantity}
+                  setCouponError={setCouponError}
+                  handleCouponApplied={handleCouponApplied}
+                />
+              </>
+            )}
           </div>
         </div>
       </div>

@@ -36,30 +36,27 @@ const TeamCompound = () => {
   return (
     <section className={css.team} ref={teamRef}>
       <div className={css.teamWrap}>
-        <h2 className="section-title">
-          So, why trust <span className={css.teamSpan}>StellarLikes?</span>
-        </h2>
+        <h2 className="section-title">Why Choose Us?</h2>
         <p className={css.teamText}>
-          The experienced and dedicated StellarLikes team of social media
-          professionals has earned the trust of hundreds of thousands of
-          satisfied customers, by providing them with the most powerful organic
-          account growth available anywhere. We’d love the opportunity to grow
-          your social media presence and earn your trust as well. But we work to
-          earn your trust another way, too.
+          We’re not just another social media growth platform. StellarLikes is
+          built around customization and transparency, providing only authentic
+          interactions that enhance your reach and credibility. Our solutions
+          are tailored to support meaningful growth, helping your content
+          resonate with a genuine audience.
         </p>
         <div className={css.teamBox}>
           <div className={css.teamBoxContent}>
             <img className={css.teamImage} src={teamMonkey} alt="teamMonkey" />
             <p className={css.teamDescription}>
-              Besides being the only platform to provide real likes, views and
-              followers, we're customizable and offer prices no one else can
-              match.
+              With StellarLikes, you gain access to real growth strategies
+              crafted by social media experts, designed to build genuine
+              engagement and a loyal audience.
             </p>
 
             <p className={css.teamDescription}>
-              Besides being the only platform to provide real likes, views and
-              followers, we're customizable and offer prices no one else can
-              match.
+              Our streamlined process ensures that likes, views, and followers
+              reach your profile quickly, giving you the visibility boost you
+              need without delay.
             </p>
           </div>
         </div>
@@ -69,27 +66,27 @@ const TeamCompound = () => {
             <div className={`${css.teamImage1} ${css.teamBoxImage}`}></div>
             <h3 className={css.teamName}>Victor</h3>
             <div className={css.teamItemText}>
-              Besides being the only platform to provide real likes, views and
-              followers, we're customizable and offer prices no one else can
-              match.
+              As the customer success lead, Viktor ensures every purchase is
+              smooth and satisfactory, providing guidance and answering any
+              questions to help customers make informed choices.
             </div>
           </li>
           <li className={css.teamItem}>
             <div className={`${css.teamImage2} ${css.teamBoxImage}`}></div>
             <h3 className={css.teamName}>Max</h3>
             <div className={css.teamItemText}>
-              Besides being the only platform to provide real likes, views and
-              followers, we're customizable and offer prices no one else can
-              match.
+              Max manages the quality and delivery process, overseeing that
+              likes, views, and followers reach customers quickly and accurately
+              for optimal growth impact.
             </div>
           </li>
           <li className={css.teamItem}>
             <div className={`${css.teamImage3} ${css.teamBoxImage}`}></div>
             <h3 className={css.teamName}>Alex</h3>
             <div className={css.teamItemText}>
-              Besides being the only platform to provide real likes, views and
-              followers, we're customizable and offer prices no one else can
-              match.
+              Alex supports customers post-purchase, offering insights and
+              assistance to maximize engagement and make the most out of every
+              StellarLikes service.
             </div>
           </li>
         </ul>

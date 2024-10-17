@@ -25,7 +25,7 @@
   }
 }
 
-.freeFollowers img {
+.FreeFollowers {
   content: '';
   position: absolute;
   right: -14px;
@@ -38,7 +38,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .freeFollowers img {
+  .FreeFollowers {
     width: 150px;
     height: 150px;
   }
@@ -162,4 +162,137 @@
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.FirstBlock {
+  margin-bottom: 10px;
+}
+
+.inputsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.userBlock {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.userBlock input {
+  display: flex;
+  flex-direction: column;
+  height: 52px;
+  width: 100%;
+  display: flex;
+  padding: 23px 15px 10px 15px;
+  gap: 4px;
+  font-family: 'TWK700';
+  font-size: 20px;
+  line-height: 1.25;
+  border-radius: 12px;
+  border: 1px solid #efefef;
+  background: #fcfcfc;
+  color: #121212;
+}
+.userBlock input::placeholder {
+  color: rgba(22, 22, 22, 0.25);
+}
+
+.userBlock label {
+  color: #161616;
+  font-family: 'TWK700';
+  font-size: 12px;
+  line-height: 1.25;
+  position: absolute;
+  top: 5px;
+  left: 15px;
+}
+.userNameBlock {
+}
+.userName {
+}
+.userEmailBlock {
+}
+.getStartedSubmit {
+  padding: 20px 0;
+  border-radius: 12px;
+  background: #f948b4;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.25;
+  overflow: hidden;
+  position: relative;
+}
+
+.findedUserWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0px 10px 0 0;
+  gap: 4px;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid #efefef;
+  background: #fcfcfc;
+  margin-top: 15px;
+}
+.findedUserImage {
+  display: block;
+  max-width: 65px;
+  border-radius: 15px;
+}
+.findedUserName {
+  font-family: 'TWK700';
+  font-size: 20px;
+}
+.getStartedRedirect {
+  display: block;
+  margin-left: auto;
+  border-radius: 50%;
+  background: rgba(0, 200, 47, 0.1);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font-family: 'TWK700';
+  font-size: 25px;
+  line-height: 1.25;
+  color: #00c82f;
+  padding: 0;
+  max-width: 40px;
+}
+.error {
+  padding: 10px;
+  color: #ff4031;
+}
+
+.getStartedForm {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  max-width: 390px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.getStartedFormTitle {
+  color: #161616;
+  text-align: center;
+  font-family: 'TWK700';
+  font-size: 30px;
+  line-height: 1.25;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .getStartedFormTitle {
+    font-size: 25px;
+    flex-wrap: wrap;
+  }
+}
+.getStartedSpan {
+  color: #f6159c;
 }

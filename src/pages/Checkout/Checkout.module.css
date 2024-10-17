@@ -219,20 +219,14 @@
   word-wrap: break-word;
 }
 .discountBlock {
-  border-radius: 12px;
-  border: 1px solid #f948b4;
-  box-shadow: 0px 1px 2px 0px rgba(139, 139, 139, 0.25);
-  padding: 10px;
+  display: flex;
 }
 .discountName {
-  color: #f948b4;
-  font-family: 'TWK500';
-  font-size: 15px;
-  margin-bottom: 4px;
 }
 .discountWrap {
   display: flex;
   gap: 9px;
+  margin-left: auto;
 }
 .oldPrice {
   color: rgba(22, 22, 22, 0.5);
@@ -281,4 +275,30 @@
   padding: 13px 0px;
   width: 100%;
   background-color: transparent;
+}
+.errorMessage {
+  color: #ff0000;
+}
+
+.removeCouponButton {
+  display: block;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background: #d80027;
+  color: #fff;
+  font-family: 'TWK500';
+  font-size: 13px;
+  margin-left: 15px;
+}
+.discountAmount {
+  color: #161616;
+  font-family: 'TWK500';
+  font-size: 16px;
+  font-weight: 500;
+}
+.discountName {
+  color: #161616;
+  font-family: 'TWK500';
+  font-size: 16px;
+  font-weight: 500;
 }
