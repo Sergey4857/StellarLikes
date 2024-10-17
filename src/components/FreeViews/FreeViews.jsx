@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import css from './FreeViews.module.css';
 import { gsap } from 'gsap';
-import FreeViewsImage from '../../icons/robot.svg';
+import FreeViewsImage from '../../icons/alien.svg';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLocation, useNavigate } from 'react-router-dom';
 import TikTokUserDetails from 'Api/TikTokUserDetails';

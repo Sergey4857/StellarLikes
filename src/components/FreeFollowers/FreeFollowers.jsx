@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import css from './FreeFollowers.module.css';
 import { gsap } from 'gsap';
-import FreeFollowersImage from '../../icons/robot.svg';
+import FreeFollowersImage from '../../icons/monkey.svg';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLocation, useNavigate } from 'react-router-dom';
 import TikTokUserDetails from 'Api/TikTokUserDetails';
