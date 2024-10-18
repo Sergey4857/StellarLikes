@@ -215,20 +215,20 @@ const FreeLikes = ({ data }) => {
                         if (productPath === 'buy-tiktok-followers') {
                           navigate(`/${productPath}/checkout`, {
                             state: {
-                              // service_type,
-                              // quantity,
-                              // product_id,
-                              // email,
+                              quantity,
+                              productId,
+                              price,
+                              productService,
                               custom_link: `https://www.tiktok.com/${uniqueId}`,
                             },
                           });
                         } else {
                           navigate('selectPost', {
                             state: {
-                              // service_type,
-                              // quantity,
-                              // product_id,
-                              // email,
+                              quantity,
+                              productId,
+                              price,
+                              productService,
                               customLink: `https://www.tiktok.com/${uniqueId}`,
                               shop_name: 'StellarLikes.com',
                             },
