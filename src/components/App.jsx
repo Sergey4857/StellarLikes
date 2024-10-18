@@ -185,6 +185,30 @@ export default function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route
+            path="/selectPost"
+            element={
+              <ProtectedRoute
+                requiredStateKeys={
+                  [
+                    // 'price',
+                    // 'productService',
+                    // 'quantity',
+                    // 'productId',
+                    // 'uniqueId',
+                    // 'userInfo',
+                    // 'userEmail',
+                    // 'customLink',
+                    // 'shop_name',
+                  ]
+                }
+                redirectTo="/"
+              >
+                <SelectPost />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/checkout"
             element={

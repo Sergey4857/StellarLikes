@@ -52,7 +52,6 @@ const OrderConfirmation = () => {
     payment_method,
     date,
     start_count,
-    remains,
     quantity,
     custom_link,
     checkout_id,
