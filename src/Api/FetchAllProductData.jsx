@@ -2,8 +2,7 @@ import axios from 'axios';
 
 const baseUrl = 'https://graming.com';
 const consumer_key = process.env.REACT_APP_CONSUMER_KEY;
-console.log(process);
-console.log(process.env.REACT_APP_CONSUMER_KEY);
+console.log(consumer_key);
 
 const consumer_secret = process.env.REACT_APP_CONSUMER_SECRET;
 
