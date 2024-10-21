@@ -42,12 +42,12 @@ export default function Benefits() {
   return (
     <section className={css.benefitsSection}>
       <h2 className="section-title">
-        So, why <span className="pinkText">StellarLikes</span>
+        Why Choose <span className="pinkText">StellarLikes</span>
       </h2>
 
       <p className={css.benefitsText}>
-        Besides being the only platform to provide real likes, views and
-        followers, we're customizable and offer prices no one else can match.
+        StellarLikes stands out as the only platform to provide real likes,
+        views, and followers, all customizable and at unbeatable prices.
       </p>
 
       <div className={css.benefitsWrap}>
@@ -55,9 +55,8 @@ export default function Benefits() {
           <img className={css.benefitsImg} src={benefit1} alt="benefit" />
           <h3 className={css.benefitTitle}>Instant delivery</h3>
           <div className={css.benefitsDescription}>
-            Besides being the only platform to provide real likes, views and
-            followers, we're customizable and offer prices no one else can
-            match.
+            Get your likes, views, and followers instantly after purchase. No
+            waiting required.
           </div>
         </div>
 
@@ -65,19 +64,15 @@ export default function Benefits() {
           <img className={css.benefitsImg} src={benefit2} alt="benefit" />
           <h3 className={css.benefitTitle}>100% real. Always.</h3>
           <div className={css.benefitsDescription}>
-            Besides being the only platform to provide real likes, views and
-            followers, we're customizable and offer prices no one else can
-            match.
+            All interactions come from real, active users — no bots or fakes.
           </div>
         </div>
 
         <div className={css.benefitsBlock} ref={addToRefs}>
           <img className={css.benefitsImg} src={benefit3} alt="benefit" />
-          <h3 className={css.benefitTitle}>Cheapest prices</h3>
+          <h3 className={css.benefitTitle}>Lowest Prices</h3>
           <div className={css.benefitsDescription}>
-            Besides being the only platform to provide real likes, views and
-            followers, we're customizable and offer prices no one else can
-            match.
+            We guarantee the best rates, without compromising on quality.
           </div>
         </div>
       </div>

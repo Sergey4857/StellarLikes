@@ -89,9 +89,8 @@ const Rating = () => {
       <div className={css.ratingWrap}>
         <h2 className="section-title">Explore Other Stellar Services</h2>
         <p className={css.ratingText}>
-          TikTok promotion made easy. Whether looking for likes, views or
-          followers, you've come to the right place. Let StellarLikes do the
-          work.
+          TikTok promotion made easy. Whether you're after likes, views, or
+          followers, StellarLikes has you covered.
         </p>
         <div className={css.ratingWrapper}>
           <div className={`${css.ratingBlock} ${css.violetBorder}`}>
@@ -107,14 +106,12 @@ const Rating = () => {
                   src={StarsBlue}
                   alt="StarsBlue"
                 />
-                <div className={css.ratingStarsText}>
-                  Rated 4.9 of 5 of intergalactic stars
-                </div>
+                <div className={css.ratingStarsText}>Rated 4.9/5 Stars</div>
               </div>
 
               <p className={css.ratingStarsDescription}>
-                Our award-winning, instantly-delivered Instagram likes are
-                sourced from real and active users. Delivered in 60 seconds.
+                Our award-winning, instantly-delivered TikTok likes are sourced
+                from real users. Delivered in just 60 seconds.
               </p>
               <div className={css.ratingLinkContent}>
                 <Link className={`${css.ratingLink} ${css.pinkLink}`} to="/">
@@ -143,14 +140,12 @@ const Rating = () => {
                   src={StarsGreen}
                   alt="StarsGreen"
                 />
-                <div className={css.ratingStarsText}>
-                  Rated 4.9 of 5 of intergalactic stars
-                </div>
+                <div className={css.ratingStarsText}>Rated 4.9/5 Stars</div>
               </div>
 
               <p className={css.ratingStarsDescription}>
-                Our award-winning, instantly-delivered Instagram likes are
-                sourced from real and active users. Delivered in 60 seconds.
+                Boost your views with our instantly-delivered TikTok views,
+                sourced from real users. Delivered in just 60 seconds.
               </p>
               <div className={css.ratingLinkContent}>
                 <Link
@@ -185,14 +180,12 @@ const Rating = () => {
                   src={StarsOrange}
                   alt="StarsOrange"
                 />
-                <div className={css.ratingStarsText}>
-                  Rated 4.9 of 5 of intergalactic stars
-                </div>
+                <div className={css.ratingStarsText}>Rated 4.9/5 Stars</div>
               </div>
 
               <p className={css.ratingStarsDescription}>
-                Our award-winning, instantly-delivered Instagram likes are
-                sourced from real and active users. Delivered in 60 seconds.
+                Grow your follower count with real TikTok followers, instantly
+                delivered and guaranteed.
               </p>
               <div className={css.ratingLinkContent}>
                 <Link

@@ -50,9 +50,9 @@ export default function Available() {
       </h2>
 
       <p className={css.availableText}>
-        Whether you’re looking to get your followers growing, your likes flowing
-        or views going — Stormlikes is your #1 option. Premium results, without
-        the price tag.
+        Whether you're looking to grow your followers, boost your likes, or
+        increase your views — StellarLikes is your #1 option. Premium results,
+        without the high price.
       </p>
 
       <div className={css.availableLinkBlock} ref={linkBlockRef}>

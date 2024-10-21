@@ -59,9 +59,8 @@ const Features = () => {
               </div>
               <h3 className={css.featuresTitle}>24/7 Live Support</h3>
               <p className={css.featuresDescription}>
-                We provide the best customer support experience around the
-                clock. Our dedicated team is available 24/7, ensuring help is
-                always just a click away through our on-site chat feature.
+                Our customer support team is available around the clock. Get
+                instant help through our on-site chat.
               </p>
             </div>
           </div>
@@ -80,10 +79,9 @@ const Features = () => {
               <h3 className={css.featuresTitle}>Refund Guarantee System</h3>
 
               <p className={css.featuresDescription}>
-                We prioritize customer satisfaction above all else. If you've
-                mistakenly ordered a service for a private account or used an
-                incorrect link format, our system detects the error and
-                automatically refund.
+                If you've ordered for a private account or provided incorrect
+                details, our system detects the error and issues a refund
+                automatically.
               </p>
             </div>
           </div>
@@ -101,9 +99,8 @@ const Features = () => {
 
               <h3 className={css.featuresTitle}>Secure Payment Options</h3>
               <p className={css.featuresDescription}>
-                Your security is our priority. StellerLikes offers a variety of
-                secure payment methods, including credit and debits cards, Apple
-                Pay, Google Pay, Discover and Crypto.
+                StellarLikes supports various secure payment methods including
+                credit cards, Apple Pay, Google Pay, Discover, and Crypto.
               </p>
             </div>
           </div>
@@ -124,9 +121,9 @@ const Features = () => {
               <h3 className={css.featuresTitle}>No Password Needed</h3>
 
               <p className={css.featuresDescription}>
-                We will never ask for your password or any other private
-                information. After placing your first order, our system
-                automatically creates an account for you.
+                We never ask for your password. Once your first order is placed,
+                an account is automatically created for you, no sensitive
+                information required.
               </p>
             </div>
           </div>

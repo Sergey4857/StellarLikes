@@ -444,8 +444,8 @@ const TikTokLikesPage = ({ tiktokLikesData }) => {
           starting from <span className="pinkText">$0.99</span>
         </h3>
         <p className={css.buyLikesText}>
-          We offer top-notch quality TikTok likes at the best prices! Check our
-          deals below, choose the best likes package, and make an order now!
+          We offer top-quality TikTok likes at the best prices! Check out our
+          deals below, choose the best likes package, and place your order now!
         </p>
         <div className={css.buyLikesBenefits}>
           <div className={css.buyLikesBenefit}>24/7 support</div>
