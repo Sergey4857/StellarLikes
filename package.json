@@ -2,7 +2,7 @@
   "name": "StellarLikes",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://stellarlikes.com/",
   "dependencies": {
     "@intercom/messenger-js-sdk": "^0.0.14",
     "@testing-library/jest-dom": "^5.16.3",
