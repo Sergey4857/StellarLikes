@@ -3,15 +3,8 @@ RewriteEngine On
 # Исключаем api.php из перенаправления
 RewriteCond %{REQUEST_URI} !^/api\.php$
 
-# Исключаем статические файлы из перенаправления
-RewriteCond %{REQUEST_URI} !\.(js|css|ico|png|jpg|jpeg|svg|woff|woff2|ttf|eot|otf|webp|map)$ [NC]
+# Исключаем папку build\ из перенаправления
+RewriteCond %{REQUEST_URI} !^/build/
 
-# Исключаем директорию build из перенаправления
-RewriteCond %{REQUEST_URI} !^/build/ [NC]
-
-# Перенаправляем только те запросы, которые не соответствуют файлам и директориям
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-
-# Перенаправляем все оставшиеся запросы на index.html
-RewriteRule ^.*$ /build/index.html [L]
+# Перенаправляем все остальные запросы в build\
+RewriteRule ^(.*)$ /build/$1 [L]
