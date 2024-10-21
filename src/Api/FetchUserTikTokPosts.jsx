@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const FetchUserTiktokPosts = async (uniqueId, cursor) => {
   try {
-    const response = await axios.get('http://stellarlikes.test/api.php', {
+    const response = await axios.get('http://stellarlikes.com/api.php', {
       params: {
         action: 'FetchUserTiktokPosts',
         unique_id: uniqueId,
