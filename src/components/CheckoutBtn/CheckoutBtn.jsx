@@ -42,9 +42,9 @@ const CheckoutButton = ({ fields }) => {
         quantity,
         custom_link,
         coupon,
-        success_url: `https://stellarlikes.com/OrderConfirmation`,
-        fail_url: `https://stellarlikes.com/orderConfirmation`,
-        cancel_url: `https://stellarlikes.com/orderConfirmation`,
+        success_url: `http://localhost:3000/StellarLikes/OrderConfirmation`,
+        fail_url: `http://localhost:3000/StellarLikes/orderConfirmation`,
+        cancel_url: `http://localhost:3000/StellarLikes/orderConfirmation`,
       });
 
       if (data?.message?.link && data.message?.order_id) {
