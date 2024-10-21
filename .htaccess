@@ -1,10 +1,10 @@
-; RewriteEngine On
+RewriteEngine On
 
-; # Исключаем api.php из перенаправления
-; RewriteCond %{REQUEST_URI} !^/api\.php$
+# Исключаем api.php из перенаправления
+RewriteCond %{REQUEST_URI} !^/api\.php$
 
-; # Исключаем папку build\ из перенаправления
-; RewriteCond %{REQUEST_URI} !^/build/
+# Исключаем папку build\ из перенаправления
+RewriteCond %{REQUEST_URI} !^/build/
 
-; # Перенаправляем все остальные запросы на index.html внутри build
-; RewriteRule ^.*$ /build/index.html [L]
+# Перенаправляем все остальные запросы на index.html внутри build
+RewriteRule ^.*$ /build/index.html [L]
