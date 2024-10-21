@@ -9906,7 +9906,7 @@
         Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
         Object.defineProperty(e, '__esModule', { value: !0 });
     }),
-    (n.p = './'),
+    (n.p = '/'),
     (function () {
       'use strict';
       var e = {};
@@ -34516,11 +34516,11 @@
                               custom_link: g,
                               coupon: y,
                               success_url:
-                                'http://localhost:3000/StellarLikes/OrderConfirmation',
+                                'https://stellarlikes.com/OrderConfirmation',
                               fail_url:
-                                'http://localhost:3000/StellarLikes/orderConfirmation',
+                                'https://stellarlikes.com/OrderConfirmation',
                               cancel_url:
-                                'http://localhost:3000/StellarLikes/orderConfirmation',
+                                'https://stellarlikes.com/OrderConfirmation',
                             })
                           );
                         case 4:
@@ -36843,3 +36843,4 @@
         .render((0, lt.jsx)(Ge, { children: (0, lt.jsx)(Dk, {}) }));
     })();
 })();
+//# sourceMappingURL=main.ec9faca7.js.map
