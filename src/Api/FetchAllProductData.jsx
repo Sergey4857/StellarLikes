@@ -6,7 +6,7 @@ const FetchAllProductData = async (
   setTiktokFollowersData
 ) => {
   try {
-    const response = await axios.get('http://stellarlikes.test/api.php', {
+    const response = await axios.get('http://stellarlikes.com/api.php', {
       params: { action: 'FetchAllProductData' },
     });
 
