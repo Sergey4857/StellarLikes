@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import css from './Checkout.module.css';
 import CheckoutButton from 'components/CheckoutBtn/CheckoutBtn';
 import CouponButton from 'components/CouponButton/CouponButton';
+import { FetchAllCoupons } from 'Api/FetchAllCoupons';
 
 const Checkout = () => {
   const location = useLocation();
@@ -155,6 +156,7 @@ const Checkout = () => {
                   quantity={quantity}
                   setCouponError={setCouponError}
                   handleCouponApplied={handleCouponApplied}
+                  fetchCoupons={FetchAllCoupons}
                 />
               </>
             )}

@@ -1,11 +1,6 @@
 // CouponButton.jsx
 import React, { useState } from 'react';
-import axios from 'axios';
 import css from './CouponButton.module.css';
-
-// Ensure you store your consumer keys securely
-const consumer_key = process.env.REACT_APP_TEST_CHECKOUT_CONSUMER_KEY;
-const consumer_secret = process.env.REACT_APP_TEST_CHECKOUT_CONSUMER_SECRET_KEY;
 
 const CouponButton = ({
   couponCode,
@@ -13,19 +8,20 @@ const CouponButton = ({
   quantity,
   setCouponError,
   handleCouponApplied,
+  fetchCoupons,
 }) => {
   const [loading, setLoading] = useState(false);
 
-  const FetchAllCoupons = async () => {
+  const applyCoupon = async () => {
     try {
       setLoading(true);
       setCouponError(null);
-      const response = await axios.get(
-        `https://testgraming.net/wp-json/wc/v3/coupons?consumer_key=${consumer_key}&consumer_secret=${consumer_secret}`
-      );
-      const coupons = response.data;
 
-      const matchedCoupon = coupons.find(
+      const response = await fetchCoupons(); // Вызываем переданную функцию
+
+      console.log(response);
+
+      const matchedCoupon = response.find(
         coupon => coupon.code.toLowerCase() === couponCode.toLowerCase()
       );
 
@@ -54,15 +50,19 @@ const CouponButton = ({
       let discountAmount = 0;
       const couponAmount = parseFloat(matchedCoupon.amount) || 0;
 
-      if (matchedCoupon.discount_type === 'percent') {
-        discountAmount = price * (couponAmount / 100);
-      } else if (matchedCoupon.discount_type === 'fixed_cart') {
-        discountAmount = couponAmount;
-      } else if (matchedCoupon.discount_type === 'fixed_product') {
-        discountAmount = couponAmount * quantity;
-      } else {
-        setCouponError('Unsupported coupon type.');
-        return;
+      switch (matchedCoupon.discount_type) {
+        case 'percent':
+          discountAmount = price * (couponAmount / 100);
+          break;
+        case 'fixed_cart':
+          discountAmount = couponAmount;
+          break;
+        case 'fixed_product':
+          discountAmount = couponAmount * quantity;
+          break;
+        default:
+          setCouponError('Unsupported coupon type.');
+          return;
       }
 
       discountAmount = Math.min(discountAmount, price);
@@ -77,16 +77,14 @@ const CouponButton = ({
   };
 
   return (
-    <>
-      <button
-        className={css.couponSbmt}
-        type="button"
-        onClick={FetchAllCoupons}
-        disabled={loading || !couponCode}
-      >
-        {loading ? 'Loading...' : 'Apply'}
-      </button>
-    </>
+    <button
+      className={css.couponSbmt}
+      type="button"
+      onClick={applyCoupon}
+      disabled={loading || !couponCode}
+    >
+      {loading ? 'Loading...' : 'Apply'}
+    </button>
   );
 };
 

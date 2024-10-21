@@ -1,6 +1,8 @@
 const GetUserIPAndCountry = async () => {
   try {
-    const response = await fetch('/api_proxy.php?action=GetUserIPAndCountry');
+    const response = await fetch(
+      'http://stellarlikes.test/api.php?action=GetUserIPAndCountry'
+    );
     const data = await response.json();
     return { ip: data.ip, country: data.country_code };
   } catch (error) {

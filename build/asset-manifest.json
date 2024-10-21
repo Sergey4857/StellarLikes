@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.e525f75f.css",
-    "main.js": "./static/js/main.fb071e55.js",
+    "main.css": "./static/css/main.f227bccf.css",
+    "main.js": "./static/js/main.53dc9500.js",
     "static/media/sky.jpg": "./static/media/sky.49709337dc0afc56a2a0.jpg",
     "static/media/checkout2.svg": "./static/media/checkout2.bbd46e85191cab8bf455.svg",
     "static/media/TWKLausanne-700.ttf": "./static/media/TWKLausanne-700.c386a7e11bf0ddb59962.ttf",
@@ -77,11 +77,11 @@
     "static/media/close.svg": "./static/media/close.50915a1f0670d03077c8.svg",
     "static/media/checkbox.svg": "./static/media/checkbox.a9e959e5c805efa3d39c.svg",
     "static/media/checkout-unactive.svg": "./static/media/checkout-unactive.15debbb0754ecc38e23a.svg",
-    "main.e525f75f.css.map": "./static/css/main.e525f75f.css.map",
-    "main.fb071e55.js.map": "./static/js/main.fb071e55.js.map"
+    "main.f227bccf.css.map": "./static/css/main.f227bccf.css.map",
+    "main.53dc9500.js.map": "./static/js/main.53dc9500.js.map"
   },
   "entrypoints": [
-    "static/css/main.e525f75f.css",
-    "static/js/main.fb071e55.js"
+    "static/css/main.f227bccf.css",
+    "static/js/main.53dc9500.js"
   ]
 }

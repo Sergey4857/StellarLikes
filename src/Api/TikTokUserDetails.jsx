@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const TikTokUserDetails = async username => {
   try {
-    const response = await axios.get('/api_proxy.php', {
+    const response = await axios.get('http://stellarlikes.test/api.php', {
       params: {
         action: 'TikTokUserDetails',
         username: username,

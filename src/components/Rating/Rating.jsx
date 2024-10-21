@@ -16,55 +16,55 @@ const Rating = () => {
   const sectionRef = useRef(null);
   const backgroundRef = useRef(null);
 
-  useEffect(() => {
-    const links = document.querySelectorAll(`.${css.ratingLink}`);
+  // useEffect(() => {
+  //   const links = document.querySelectorAll(`.${css.ratingLink}`);
 
-    links.forEach(link => {
-      const decorItems = link.querySelectorAll(`.${css.decorItem}`);
+  //   links.forEach(link => {
+  //     const decorItems = link.querySelectorAll(`.${css.decorItem}`);
 
-      const handleMouseEnter = () => {
-        gsap.to(link, {
-          scaleX: 1.03,
-          scaleY: 0.98,
-          duration: 1,
-          ease: 'elastic.out(1, 0.3)',
-        });
+  //     const handleMouseEnter = () => {
+  //       gsap.to(link, {
+  //         scaleX: 1.03,
+  //         scaleY: 0.98,
+  //         duration: 1,
+  //         ease: 'elastic.out(1, 0.3)',
+  //       });
 
-        gsap.fromTo(
-          decorItems,
-          { translateX: '-100%' },
-          {
-            translateX: 0,
-            duration: 0.4,
-            stagger: 0.08,
-          }
-        );
-      };
+  //       gsap.fromTo(
+  //         decorItems,
+  //         { translateX: '-100%' },
+  //         {
+  //           translateX: 0,
+  //           duration: 0.4,
+  //           stagger: 0.08,
+  //         }
+  //       );
+  //     };
 
-      const handleMouseLeave = () => {
-        gsap.to(link, {
-          scaleX: 1,
-          scaleY: 1,
-          duration: 1,
-          ease: 'elastic.out(1, 0.3)',
-        });
+  //     const handleMouseLeave = () => {
+  //       gsap.to(link, {
+  //         scaleX: 1,
+  //         scaleY: 1,
+  //         duration: 1,
+  //         ease: 'elastic.out(1, 0.3)',
+  //       });
 
-        gsap.to(decorItems, {
-          translateX: '100%',
-          duration: 0.4,
-          stagger: 0.08,
-        });
-      };
+  //       gsap.to(decorItems, {
+  //         translateX: '100%',
+  //         duration: 0.4,
+  //         stagger: 0.08,
+  //       });
+  //     };
 
-      link.addEventListener('mouseenter', handleMouseEnter);
-      link.addEventListener('mouseleave', handleMouseLeave);
+  //     link.addEventListener('mouseenter', handleMouseEnter);
+  //     link.addEventListener('mouseleave', handleMouseLeave);
 
-      return () => {
-        link.removeEventListener('mouseenter', handleMouseEnter);
-        link.removeEventListener('mouseleave', handleMouseLeave);
-      };
-    });
-  }, []);
+  //     return () => {
+  //       link.removeEventListener('mouseenter', handleMouseEnter);
+  //       link.removeEventListener('mouseleave', handleMouseLeave);
+  //     };
+  //   });
+  // }, []);
 
   useEffect(() => {
     gsap.fromTo(

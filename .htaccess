@@ -1,11 +1,10 @@
 RewriteEngine On
-RewriteCond %{REQUEST_URI} !^/build/
-RewriteRule ^(.*)$ /build/$1 [L]
-# Перенаправляем запросы на api_proxy.php для всех API вызовов
-RewriteCond %{REQUEST_URI} ^/api_proxy\.php$
-RewriteRule ^api_proxy\.php$ api_proxy.php [L,QSA]
 
-# Настраиваем React на возврат index.html для любых других путей
-RewriteCond %{REQUEST_URI} !^/api_proxy\.php$
+# Исключаем api.php из перенаправления
+RewriteCond %{REQUEST_URI} !^/api\.php$
+
+# Исключаем папку build\ из перенаправления
 RewriteCond %{REQUEST_URI} !^/build/
-RewriteRule ^.*$ /build/index.html [L]
+
+# Перенаправляем все остальные запросы в build\
+RewriteRule ^(.*)$ /build/$1 [L]
