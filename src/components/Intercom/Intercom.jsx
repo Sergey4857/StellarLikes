@@ -12,14 +12,12 @@ export default function Component() {
   useEffect(() => {
     console.log('Initializing Intercom...');
     Intercom('boot', {
-      app_id: 'lk2bf6cz', // Проверьте правильность app_id
+      app_id: 'lk2bf6cz',
       user_id: user.id,
       name: user.name,
       email: user.email,
       created_at: user.createdAt,
     });
-
-    Intercom('onShow', () => console.log('Intercom widget is shown!'));
 
     return () => {
       console.log('Shutting down Intercom...');
