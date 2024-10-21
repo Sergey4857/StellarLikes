@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const FetchOrderInfo = async id => {
   try {
-    const response = await axios.get('http://stellarlikes.com/api.php', {
+    const response = await axios.get('http://stellarlikes.test/api.php', {
       params: {
         action: 'FetchOrderInfo',
         id: id,
