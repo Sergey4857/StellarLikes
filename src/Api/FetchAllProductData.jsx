@@ -1,20 +1,14 @@
 import axios from 'axios';
 
-const baseUrl = 'https://graming.com';
-const consumer_key = process.env.REACT_APP_CONSUMER_KEY;
-const consumer_secret = process.env.REACT_APP_CONSUMER_SECRET;
-
 const FetchAllProductData = async (
   setTiktokLikesData,
   setTiktokViewsData,
   setTiktokFollowersData
 ) => {
   try {
-    const response = await axios.get(
-      `${baseUrl}/wp-json/wc-graming/products?consumer_key=${consumer_key}&consumer_secret=${consumer_secret}`
-    );
-
-    console.log(response);
+    const response = await axios.get('/api.php', {
+      params: { action: 'FetchAllProductData' },
+    });
 
     const tikTokLikesData = response.data.find(
       product => product.name === 'Buy TikTok Likes'
