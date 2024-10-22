@@ -120,12 +120,12 @@ const OrderConfirmation = () => {
                   Pending Payment
                 </div>
               )}
-              {status === 'fail' && (
+              {status === 'failed' && (
                 <div className={`${css.orderTitle} ${css.orderFail}`}>
                   Failed
                 </div>
               )}
-              {status === 'cancel' && (
+              {status === 'cancelled' && (
                 <div className={`${css.orderTitle} ${css.orderCancel}`}>
                   Canceled
                 </div>
@@ -140,7 +140,7 @@ const OrderConfirmation = () => {
                   Processing
                 </div>
               )}
-              {(status === 'refunded' || status === 'onhold') && (
+              {(status === 'refunded' || status === 'on-hold') && (
                 <div className={`${css.orderTitle} ${css.orderIncorrect}`}>
                   Incorrect order data - Contact Support
                 </div>
