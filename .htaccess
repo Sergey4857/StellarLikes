@@ -6,9 +6,6 @@ RewriteCond %{REQUEST_URI} !^/api\.php$
 # Исключаем папку build\ из перенаправления
 RewriteCond %{REQUEST_URI} !^/build/
 
-# Разрешаем доступ к статическим файлам
-RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf|otf|eot|mp4|webm)$ [NC]
-RewriteRule ^ - [L]
 
 # Перенаправляем все остальные запросы в build\
-RewriteRule ^(.*)$ /build/index.html [L]
+RewriteRule ^(.*)$ /build/$1 [L]
