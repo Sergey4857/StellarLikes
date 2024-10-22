@@ -2,12 +2,13 @@ RewriteEngine On
 RewriteBase /
 
 # Exclude api.php from redirection
-RewriteCond %{REQUEST_URI} !^/api\.php$
+RewriteCond %{REQUEST_URI} ^/api\.php$ [NC]
+RewriteRule ^ - [L]
 
 # Serve existing files and directories directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Redirect all other requests to index.html
-RewriteRule ^ /build/index.html [L]
+# Redirect all other requests to /build/index.html
+RewriteRule ^.*$ /build/index.html [L]
