@@ -3,8 +3,9 @@ RewriteEngine On
 # Исключаем api.php из перенаправления
 RewriteCond %{REQUEST_URI} !^/api\.php$
 
-# Исключаем папку build\ из перенаправления
-RewriteCond %{REQUEST_URI} !^/build/
+RewriteCond %{REQUEST_URI} ^/static/
+RewriteRule ^static/(.*)$ build/static/$1 [L]
 
-# Перенаправляем все остальные запросы в build\
-RewriteRule ^(.*)$ /build/$1 [L]
+# Handle client-side routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ build/index.html [QSA,L]
