@@ -114,10 +114,10 @@ try {
       // Handle checkout payment
       $input = json_decode(file_get_contents('php://input'), true);
 
-      $consumer_key = $_ENV['REACT_APP_CONSUMER_KEY'];
-      $consumer_secret = $_ENV['REACT_APP_CONSUMER_SECRET'];
+      $consumer_key = $_ENV['REACT_APP_TEST_CHECKOUT_CONSUMER_KEY'];
+      $consumer_secret = $_ENV['REACT_APP_TEST_CHECKOUT_CONSUMER_SECRET_KEY'];
 
-      $response = $client->request('POST', 'https://graming.com/wp-json/wc-graming/pay_checkout', [
+      $response = $client->request('POST', 'https://testgraming.net/wp-json/wc-graming/pay_checkout', [
         'query' => [
           'consumer_key' => $consumer_key,
           'consumer_secret' => $consumer_secret,
