@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b514f274.css",
-    "main.js": "/static/js/main.a951f7d3.js",
+    "main.css": "/static/css/main.1da67499.css",
+    "main.js": "/static/js/main.813e41fc.js",
     "static/media/sky.jpg": "/static/media/sky.49709337dc0afc56a2a0.jpg",
     "static/media/checkout2.svg": "/static/media/checkout2.bbd46e85191cab8bf455.svg",
     "static/media/TWKLausanne-700.ttf": "/static/media/TWKLausanne-700.c386a7e11bf0ddb59962.ttf",
@@ -67,6 +67,7 @@
     "index.html": "/index.html",
     "static/media/checkmark-getStarted.svg": "/static/media/checkmark-getStarted.06cdf1a1c1ec8daebf4a6d90d0f47cee.svg",
     "static/media/flag-germany.svg": "/static/media/flag-germany.f2f3e497bd4e278eb1cf1480d670a096.svg",
+    "static/media/greencheck.svg": "/static/media/greencheck.f6ab011f5d9fd2e55f1d.svg",
     "static/media/customers-flag.svg": "/static/media/customers-flag.1008329b09eb23f2598638b529f25eb7.svg",
     "static/media/close-button.svg": "/static/media/close-button.a014dbd7873abea848b68923a8d03f28.svg",
     "static/media/star-active.svg": "/static/media/star-active.d334b4de7af76a4bcac0.svg",
@@ -77,11 +78,11 @@
     "static/media/close.svg": "/static/media/close.50915a1f0670d03077c8.svg",
     "static/media/checkbox.svg": "/static/media/checkbox.a9e959e5c805efa3d39c.svg",
     "static/media/checkout-unactive.svg": "/static/media/checkout-unactive.15debbb0754ecc38e23a.svg",
-    "main.b514f274.css.map": "/static/css/main.b514f274.css.map",
-    "main.a951f7d3.js.map": "/static/js/main.a951f7d3.js.map"
+    "main.1da67499.css.map": "/static/css/main.1da67499.css.map",
+    "main.813e41fc.js.map": "/static/js/main.813e41fc.js.map"
   },
   "entrypoints": [
-    "static/css/main.b514f274.css",
-    "static/js/main.a951f7d3.js"
+    "static/css/main.1da67499.css",
+    "static/js/main.813e41fc.js"
   ]
 }

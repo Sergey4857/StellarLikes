@@ -86,6 +86,57 @@
 }
 .orderSuccess {
   width: fit-content;
+  border-radius: 6px;
+  background: #e8fabf;
+  color: #00c82f;
+  font-family: 'TWK600';
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.084px;
+  padding-left: 32px;
+  padding-right: 8px;
+  position: relative;
+}
+.orderSuccess::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background-image: url('../../icons/greencheck.svg');
+  background-position: center;
+}
+.orderIncorrect {
+  width: fit-content;
+  border-radius: 8px;
+  background: #fff9c4;
+  color: #f57c00;
+  font-family: 'TWK600';
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.084px;
+  padding-left: 16px;
+  padding-right: 8px;
+  position: relative;
+}
+.orderIncorrect::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: #f57c00;
+}
+.orderProcessing {
+  width: fit-content;
   border-radius: 8px;
   background: rgba(246, 21, 156, 0.2);
   color: #f6159c;
@@ -97,7 +148,8 @@
   padding-right: 8px;
   position: relative;
 }
-.orderSuccess::before {
+
+.orderProcessing::before {
   content: '';
   display: block;
   width: 8px;
@@ -109,7 +161,6 @@
   border-radius: 50%;
   background-color: #f6159c;
 }
-
 .orderFail {
   width: fit-content;
   border-radius: 8px;

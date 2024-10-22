@@ -51,7 +51,6 @@ const OrderConfirmation = () => {
     product_name,
     payment_method,
     date,
-    start_count,
     quantity,
     custom_link,
     checkout_id,
@@ -133,17 +132,23 @@ const OrderConfirmation = () => {
               )}
               {status === 'success' && (
                 <div className={`${css.orderTitle} ${css.orderSuccess}`}>
+                  Completed
+                </div>
+              )}
+              {status === 'processing' && (
+                <div className={`${css.orderTitle} ${css.orderProcessing}`}>
                   Processing
+                </div>
+              )}
+              {(status === 'refunded' || status === 'onhold') && (
+                <div className={`${css.orderTitle} ${css.orderIncorrect}`}>
+                  Incorrect order data - Contact Support
                 </div>
               )}
             </div>
             <div className={css.orderBox}>
               <div className={css.orderSubtitle}>Order amount</div>
               <div className={css.orderTitle}>{quantity}</div>
-            </div>
-            <div className={css.orderBox}>
-              <div className={css.orderSubtitle}>Order start count</div>
-              <div className={css.orderTitle}>{start_count}</div>
             </div>
             <div className={css.orderBox}>
               <div className={css.orderSubtitle}>Method</div>
