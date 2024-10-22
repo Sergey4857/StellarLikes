@@ -130,7 +130,7 @@ const OrderConfirmation = () => {
                   Canceled
                 </div>
               )}
-              {status === 'success' && (
+              {status === 'completed' && (
                 <div className={`${css.orderTitle} ${css.orderSuccess}`}>
                   Completed
                 </div>
