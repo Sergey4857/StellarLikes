@@ -1,11 +1,13 @@
 RewriteEngine On
+RewriteBase /
 
-# Исключаем api.php из перенаправления
+# Exclude api.php from redirection
 RewriteCond %{REQUEST_URI} !^/api\.php$
 
-# Исключаем папку build\ из перенаправления
-RewriteCond %{REQUEST_URI} !^/build/
+# Serve existing files and directories directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
 
-
-# Перенаправляем все остальные запросы в build\
-RewriteRule ^(.*)$ /build/$1 [L]
+# Redirect all other requests to index.html
+RewriteRule ^ /build/index.html [L]
