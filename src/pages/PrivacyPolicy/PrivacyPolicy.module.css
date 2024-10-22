@@ -38,3 +38,9 @@
 .subLastList {
   margin-bottom: 0 !important;
 }
+.privacyWrap p {
+  margin-bottom: 15px;
+}
+.privacyWrap ul {
+  margin-bottom: 15px;
+}

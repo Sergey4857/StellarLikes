@@ -132,6 +132,12 @@ const PrivacyPolicy = () => {
         outlined in this Privacy Policy. We may update this policy without prior
         notice, and it is your responsibility to review any changes.
       </p>
+      <h2 className={css.subTitle}>Company Details</h2>
+      <ul>
+        <li> KING & QUEEN MEDIA UG (haftungsbeschränkt) </li>
+        <li> Hirtenwiesenstr. 8A 35085 Ebsdorfergrund </li>
+        <li>GERMANY</li>
+      </ul>
     </section>
   );
 };

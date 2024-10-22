@@ -4,11 +4,11 @@ import css from './BurgerMenu.module.css';
 import { Link } from 'react-router-dom';
 
 export default function BurgerMenu({ setOpenedModal, openedModal }) {
-  const [activeBlockIndex, setActiveBlockIndex] = useState(0);
+  const [activeBlockIndex, setActiveBlockIndex] = useState(null); // Изначально нет активного блока
   const burgerRoot = document.querySelector('#burger-root');
 
   const toggleBlock = index => {
-    setActiveBlockIndex(activeBlockIndex === index ? null : index);
+    setActiveBlockIndex(prevIndex => (prevIndex === index ? null : index));
   };
 
   const menuItems = [
@@ -27,12 +27,13 @@ export default function BurgerMenu({ setOpenedModal, openedModal }) {
     {
       title: 'Free Tools',
       links: [
-        { to: '/', text: 'Free TikTok Video Downloader' },
-        { to: '/', text: 'Free TikTok Likes' },
-        { to: '/buy-tiktok-views', text: 'Free TikTok Views' },
+        { to: '/', text: 'Free TikTok Video Downloader', soon: true },
+        { to: '/', text: 'Free TikTok Likes', soon: true },
+        { to: '/buy-tiktok-views', text: 'Free TikTok Views', soon: true },
         {
           to: '/buy-tiktok-followers#freeFollowers',
           text: 'Free TikTok Followers',
+          soon: true,
         },
       ],
     },
@@ -45,6 +46,9 @@ export default function BurgerMenu({ setOpenedModal, openedModal }) {
       ],
     },
   ];
+
+  // Проверяем, существует ли элемент #burger-root
+  if (!burgerRoot) return null;
 
   return createPortal(
     <div className={css.BurgerNavWrap}>
@@ -63,24 +67,24 @@ export default function BurgerMenu({ setOpenedModal, openedModal }) {
               <div className={css.burgerBlock}>
                 {item.links.map((link, linkIndex) => (
                   <Link
-                    onClick={() => {
-                      setOpenedModal(false);
-                    }}
+                    onClick={() => setOpenedModal(false)}
                     key={linkIndex}
                     className={css.burgerNavLink}
                     to={link.to}
                   >
-                    <span className={css.whiteText}>{link.text}</span>{' '}
                     <span
-                      className={
-                        link.highlight === 'Likes'
-                          ? css.pinkText
-                          : link.highlight === 'Followers'
-                          ? css.orangeText
-                          : link.highlight === 'Views'
-                          ? css.greenText
-                          : ''
-                      }
+                      className={`${css.whiteText} ${
+                        link.soon ? css.soon : ''
+                      }`}
+                    >
+                      {link.text}
+                    </span>{' '}
+                    <span
+                      className={`${
+                        link.highlight === 'Likes' ? css.pinkText : ''
+                      }${
+                        link.highlight === 'Followers' ? css.orangeText : ''
+                      } ${link.highlight === 'Views' ? css.greenText : ''}`}
                     >
                       {link.highlight}
                     </span>
