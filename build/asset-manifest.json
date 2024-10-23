@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a0591426.css",
-    "main.js": "/static/js/main.3a40677c.js",
+    "main.css": "/static/css/main.5191f313.css",
+    "main.js": "/static/js/main.3cf161fb.js",
     "static/media/sky.jpg": "/static/media/sky.49709337dc0afc56a2a0.jpg",
     "static/media/checkout2.svg": "/static/media/checkout2.bbd46e85191cab8bf455.svg",
     "static/media/TWKLausanne-700.ttf": "/static/media/TWKLausanne-700.c386a7e11bf0ddb59962.ttf",
@@ -78,11 +78,11 @@
     "static/media/close.svg": "/static/media/close.50915a1f0670d03077c8.svg",
     "static/media/checkbox.svg": "/static/media/checkbox.a9e959e5c805efa3d39c.svg",
     "static/media/checkout-unactive.svg": "/static/media/checkout-unactive.15debbb0754ecc38e23a.svg",
-    "main.a0591426.css.map": "/static/css/main.a0591426.css.map",
-    "main.3a40677c.js.map": "/static/js/main.3a40677c.js.map"
+    "main.5191f313.css.map": "/static/css/main.5191f313.css.map",
+    "main.3cf161fb.js.map": "/static/js/main.3cf161fb.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0591426.css",
-    "static/js/main.3a40677c.js"
+    "static/css/main.5191f313.css",
+    "static/js/main.3cf161fb.js"
   ]
 }
