@@ -3,7 +3,7 @@ import axios from 'axios';
 export const GetFreeGoods = async data => {
   try {
     const response = await axios.post(
-      'http://stellarlikestest.test/api.php?action=freeService',
+      'http://stellarlikes.com/api.php?action=freeService',
       data
     );
 
