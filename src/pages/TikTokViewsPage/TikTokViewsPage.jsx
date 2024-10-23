@@ -23,7 +23,7 @@ import ImportansBlock from 'components/Importans/ImportansBlock';
 import importansViews1 from '../../icons/importansViews1.svg';
 import importansViews2 from '../../icons/importansViews2.svg';
 
-const TikTokViewsPage = ({ tiktokViewsData }) => {
+const TikTokViewsPage = ({ tiktokViewsData, tiktokFreeViewsData }) => {
   const navigate = useNavigate();
   const linkRef = useRef(null);
   const decorItemRefs = useRef([]);
@@ -738,7 +738,7 @@ const TikTokViewsPage = ({ tiktokViewsData }) => {
           </button>
         </div>
       </section>
-      <FreeViews />
+      <FreeViews data={tiktokFreeViewsData} />
       <Available />
       <Benefits />
       <Rating />

@@ -3,6 +3,7 @@ import css from './SelectPost.module.css';
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { gsap } from 'gsap';
 import FetchUserTiktokPosts from 'Api/FetchUserTikTokPosts';
+import GetFreeGoodsBtn from 'components/GetFreeGoodsBtn/GetFreeGoodsBtn';
 
 const SelectPost = () => {
   const location = useLocation();
@@ -20,6 +21,9 @@ const SelectPost = () => {
     userEmail,
     customLink,
     shop_name,
+    email,
+    page_link,
+    service_type,
   } = location.state || {};
 
   const [{ full_name, profile_pic_url }] = userInfo;
@@ -30,8 +34,6 @@ const SelectPost = () => {
   const [tiktokPosts, setTikTokPosts] = useState([]);
   const cursorRef = useRef('0');
   const [loading, setLoading] = useState(false);
-
-  // Initialize selectedOption as null
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleOptionChange = event => {
@@ -42,7 +44,7 @@ const SelectPost = () => {
     setLoading(true);
     const newPosts = await FetchUserTiktokPosts(uniqueId, cursorRef.current);
 
-    console.log('Fetched Posts:', newPosts); // For debugging
+    console.log('Fetched Posts:', newPosts);
 
     if (
       newPosts !== 'Error' &&
@@ -170,38 +172,51 @@ const SelectPost = () => {
           />
           <div className={css.selectedName}>{full_name}</div>
         </div>
-
-        <button
-          ref={linkRef}
-          className={css.selectedLink}
-          onClick={() =>
-            navigate('/checkout', {
-              state: {
-                country,
-                price,
-                productService,
-                quantity,
-                productId,
-                userEmail,
-                customLink: `${customLink}/video/${selectedOption}`,
-                shop_name,
-              },
-            })
-          }
-          disabled={!selectedOption}
-        >
-          <span className={css.linkText}>Continue to checkout</span>
-          <span className={css.decor}>
-            <span
-              ref={el => (decorItemRefs.current[0] = el)}
-              className={css.decorItem}
-            ></span>
-            <span
-              ref={el => (decorItemRefs.current[1] = el)}
-              className={css.decorItem}
-            ></span>
-          </span>
-        </button>
+        {!service_type && (
+          <button
+            ref={linkRef}
+            className={css.selectedLink}
+            onClick={() =>
+              navigate('/checkout', {
+                state: {
+                  country,
+                  price,
+                  productService,
+                  quantity,
+                  productId,
+                  userEmail,
+                  customLink: `${customLink}/video/${selectedOption}`,
+                  shop_name,
+                },
+              })
+            }
+            disabled={!selectedOption}
+          >
+            <span className={css.linkText}>Continue to checkout</span>
+            <span className={css.decor}>
+              <span
+                ref={el => (decorItemRefs.current[0] = el)}
+                className={css.decorItem}
+              ></span>
+              <span
+                ref={el => (decorItemRefs.current[1] = el)}
+                className={css.decorItem}
+              ></span>
+            </span>
+          </button>
+        )}
+        {service_type && (
+          <GetFreeGoodsBtn
+            fields={{
+              custom_link: `${customLink}/video/${selectedOption}`,
+              email,
+              product_id: productId,
+              quantity,
+              page_link,
+              service_type,
+            }}
+          />
+        )}
       </div>
     </div>
   );

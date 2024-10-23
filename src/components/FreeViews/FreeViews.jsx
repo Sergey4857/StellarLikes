@@ -3,22 +3,18 @@ import css from './FreeViews.module.css';
 import { gsap } from 'gsap';
 import FreeViewsImage from '../../icons/alien.svg';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import TikTokUserDetails from 'Api/TikTokUserDetails';
 import checkmark from '../../icons/checkmark-getStarted.svg';
 
 const FreeViews = ({ data }) => {
   const navigate = useNavigate();
-  const location = useLocation();
-  console.log(location.state);
-  const { quantity, productId, price, productService } = location.state || {};
 
   const [userEmail, setUserEmail] = useState('');
   const [username, setUsername] = useState('');
   const [errors, setErrors] = useState({});
   const [apiError, setApiError] = useState(null);
-  const pathname = location.pathname;
-  const productPath = pathname.split('/')[1];
+
   const [userInfo, setUserInfo] = useState(null);
 
   const validateEmail = email => {
@@ -212,35 +208,18 @@ const FreeViews = ({ data }) => {
                     <button
                       className={css.getStartedRedirect}
                       onClick={() => {
-                        if (productPath === 'buy-tiktok-followers') {
-                          navigate(`/${productPath}/checkout`, {
-                            state: {
-                              country,
-                              price,
-                              productService,
-                              quantity,
-                              productId,
-                              userEmail,
-                              customLink: `https://www.tiktok.com/${uniqueId}`,
-                              shop_name: 'StellarViews.com',
-                            },
-                          });
-                        } else {
-                          navigate('selectPost', {
-                            state: {
-                              country,
-                              price,
-                              productService,
-                              quantity,
-                              productId,
-                              uniqueId,
-                              userInfo,
-                              userEmail,
-                              customLink: `https://www.tiktok.com/${uniqueId}`,
-                              shop_name: 'StellarViews.com',
-                            },
-                          });
-                        }
+                        navigate('/freeViews/selectPost', {
+                          state: {
+                            quantity: 50,
+                            service_type: 'tiktok_views',
+                            productId: data.id,
+                            email: userEmail,
+                            page_link: 'stellarlikes.com',
+                            customLink: `https://www.tiktok.com/@${uniqueId}`,
+                            userInfo,
+                            uniqueId,
+                          },
+                        });
                       }}
                     >
                       <img src={checkmark} alt="" />

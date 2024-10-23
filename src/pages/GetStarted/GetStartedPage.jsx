@@ -189,7 +189,7 @@ const GetStarted = () => {
                             quantity,
                             productId,
                             userEmail,
-                            customLink: `https://www.tiktok.com/${uniqueId}`,
+                            customLink: `https://www.tiktok.com/@${uniqueId}`,
                             shop_name: 'StellarLikes.com',
                           },
                         });
@@ -204,7 +204,7 @@ const GetStarted = () => {
                             uniqueId,
                             userInfo,
                             userEmail,
-                            customLink: `https://www.tiktok.com/${uniqueId}`,
+                            customLink: `https://www.tiktok.com/@${uniqueId}`,
                             shop_name: 'StellarLikes.com',
                           },
                         });

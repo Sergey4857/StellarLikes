@@ -3,22 +3,18 @@ import css from './FreeLikes.module.css';
 import { gsap } from 'gsap';
 import FreeLikesImage from '../../icons/robot.svg';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import TikTokUserDetails from 'Api/TikTokUserDetails';
 import checkmark from '../../icons/checkmark-getStarted.svg';
 
 const FreeLikes = ({ data }) => {
   const navigate = useNavigate();
-  const location = useLocation();
-  console.log(location.state);
-  const { quantity, productId, price, productService } = location.state || {};
 
   const [userEmail, setUserEmail] = useState('');
   const [username, setUsername] = useState('');
   const [errors, setErrors] = useState({});
   const [apiError, setApiError] = useState(null);
-  const pathname = location.pathname;
-  const productPath = pathname.split('/')[1];
+
   const [userInfo, setUserInfo] = useState(null);
 
   const validateEmail = email => {
@@ -200,47 +196,35 @@ const FreeLikes = ({ data }) => {
             </button>
 
             {userInfo &&
-              userInfo.map(
-                ({ profile_pic_url, full_name, id, uniqueId, country }) => (
-                  <div key={id} className={css.findedUserWrap}>
-                    <img
-                      className={css.findedUserImage}
-                      src={profile_pic_url}
-                      alt="profile"
-                    />
-                    <div className={css.findedUserName}>{full_name}</div>
-                    <button
-                      className={css.getStartedRedirect}
-                      onClick={() => {
-                        if (productPath === 'buy-tiktok-followers') {
-                          navigate(`/${productPath}/checkout`, {
-                            state: {
-                              quantity,
-                              productId,
-                              price,
-                              productService,
-                              custom_link: `https://www.tiktok.com/${uniqueId}`,
-                            },
-                          });
-                        } else {
-                          navigate('selectPost', {
-                            state: {
-                              quantity,
-                              productId,
-                              price,
-                              productService,
-                              customLink: `https://www.tiktok.com/${uniqueId}`,
-                              shop_name: 'StellarLikes.com',
-                            },
-                          });
-                        }
-                      }}
-                    >
-                      <img src={checkmark} alt="" />
-                    </button>
-                  </div>
-                )
-              )}
+              userInfo.map(({ profile_pic_url, full_name, id, uniqueId }) => (
+                <div key={id} className={css.findedUserWrap}>
+                  <img
+                    className={css.findedUserImage}
+                    src={profile_pic_url}
+                    alt="profile"
+                  />
+                  <div className={css.findedUserName}>{full_name}</div>
+                  <button
+                    className={css.getStartedRedirect}
+                    onClick={() => {
+                      navigate('/freeLikes/selectPost', {
+                        state: {
+                          quantity: 10,
+                          service_type: 'tiktok_likes',
+                          productId: data.id,
+                          email: userEmail,
+                          page_link: 'stellarlikes.com',
+                          customLink: `https://www.tiktok.com/@${uniqueId}`,
+                          userInfo,
+                          uniqueId,
+                        },
+                      });
+                    }}
+                  >
+                    <img src={checkmark} alt="" />
+                  </button>
+                </div>
+              ))}
           </form>
           <img
             data-animate

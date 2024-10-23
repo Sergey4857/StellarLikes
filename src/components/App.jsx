@@ -20,12 +20,16 @@ import FetchAllProductData from 'Api/FetchAllProductData';
 import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 import PrivacyPolicy from 'pages/PrivacyPolicy/PrivacyPolicy';
 import TermsOfUse from 'pages/TermsOfUse/TermsOfUse';
-import Component from './Intercom/Intercom';
 
 export default function App() {
   const [tiktokLikesData, setTiktokLikesData] = useState(null);
   const [tiktokViewsData, setTiktokViewsData] = useState(null);
   const [tiktokFollowersData, setTiktokFollowersData] = useState(null);
+  const [tiktokFreeLikesData, setFreeTiktokLikesData] = useState(null);
+  const [tiktokFreeViewsData, setFreeTiktokViewsData] = useState(null);
+  const [tiktokFreeFollowersData, setFreeTiktokFollowersData] = useState(null);
+
+  console.log(tiktokFreeFollowersData);
 
   // request 1 times at week
   const fetchDataIfNeeded = async () => {
@@ -44,7 +48,10 @@ export default function App() {
       await FetchAllProductData(
         setTiktokLikesData,
         setTiktokViewsData,
-        setTiktokFollowersData
+        setTiktokFollowersData,
+        setFreeTiktokLikesData,
+        setFreeTiktokViewsData,
+        setFreeTiktokFollowersData
       );
     };
     fetchData();
@@ -59,7 +66,12 @@ export default function App() {
           {/* TikTok Likes */}
           <Route
             index
-            element={<TikTokLikesPage tiktokLikesData={tiktokLikesData} />}
+            element={
+              <TikTokLikesPage
+                tiktokLikesData={tiktokLikesData}
+                tiktokFreeLikesData={tiktokFreeLikesData}
+              />
+            }
           />
           <Route
             path="/getStarted"
@@ -104,7 +116,10 @@ export default function App() {
           <Route
             path="buy-tiktok-followers"
             element={
-              <TikTokFollowersPage tiktokFollowersData={tiktokFollowersData} />
+              <TikTokFollowersPage
+                tiktokFollowersData={tiktokFollowersData}
+                tiktokFreeFollowersData={tiktokFreeFollowersData}
+              />
             }
           />
           <Route
@@ -145,9 +160,14 @@ export default function App() {
           {/* TikTok Views */}
           <Route
             path="buy-tiktok-views"
-            element={<TikTokViewsPage tiktokViewsData={tiktokViewsData} />}
+            element={
+              <TikTokViewsPage
+                tiktokViewsData={tiktokViewsData}
+                tiktokFreeViewsData={tiktokFreeViewsData}
+              />
+            }
           />
-          <Route path="/chat" element={<Component />} />
+
           <Route
             path="buy-tiktok-views/getStarted"
             element={
@@ -187,20 +207,21 @@ export default function App() {
           />
 
           <Route
-            path="/selectPost"
+            path="freeLikes/selectPost"
             element={
               <ProtectedRoute
                 requiredStateKeys={
                   [
+                    // 'country',
+                    // 'customLink',
+                    // 'quantity',
+                    // 'productId',
                     // 'price',
                     // 'productService',
                     // 'quantity',
                     // 'productId',
                     // 'uniqueId',
-                    // 'userInfo',
                     // 'userEmail',
-                    // 'customLink',
-                    // 'shop_name',
                   ]
                 }
                 redirectTo="/"
@@ -209,6 +230,32 @@ export default function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route
+            path="freeViews/selectPost"
+            element={
+              <ProtectedRoute
+                requiredStateKeys={
+                  [
+                    // 'country',
+                    // 'customLink',
+                    // 'quantity',
+                    // 'productId',
+                    // 'price',
+                    // 'productService',
+                    // 'quantity',
+                    // 'productId',
+                    // 'uniqueId',
+                    // 'userEmail',
+                  ]
+                }
+                redirectTo="/"
+              >
+                <SelectPost />
+              </ProtectedRoute>
+            }
+          />
+
           <Route
             path="/checkout"
             element={

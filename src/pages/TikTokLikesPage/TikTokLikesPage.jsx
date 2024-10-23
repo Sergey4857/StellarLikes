@@ -24,7 +24,7 @@ import ImportansBlock from 'components/Importans/ImportansBlock';
 import importansLikes1 from '../../icons/importansLikes1.svg';
 import importansLikes2 from '../../icons/importansLikes2.svg';
 
-const TikTokLikesPage = ({ tiktokLikesData }) => {
+const TikTokLikesPage = ({ tiktokLikesData, tiktokFreeLikesData }) => {
   const navigate = useNavigate();
   const linkRef = useRef(null);
   const decorItemRefs = useRef([]);
@@ -432,7 +432,7 @@ const TikTokLikesPage = ({ tiktokLikesData }) => {
     <>
       <Outlet />
       <HeroHome />
-      <FreeLikes data={tiktokLikesData} />
+      <FreeLikes data={tiktokFreeLikesData} />
       <section className={css.buyLikes}>
         <h3 className={css.buyLikesTitle}>
           Buy TikTok <span className="pinkText">Likes</span>

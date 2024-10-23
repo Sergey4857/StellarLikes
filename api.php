@@ -6,9 +6,8 @@ error_reporting(E_ALL);
 header('Content-Type: application/json');
 
 // CORS Headers
-header("Access-Control-Allow-Origin: https://stellarlikes.com");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header("Access-Control-Allow-Origin: http://stellarlikes.com");
+header("Access-Control-Allow-Credentials: true");
 
 // Обработка preflight-запросов
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -118,6 +117,25 @@ try {
       $consumer_secret = $_ENV['REACT_APP_TEST_CHECKOUT_CONSUMER_SECRET_KEY'];
 
       $response = $client->request('POST', 'https://testgraming.net/wp-json/wc-graming/pay_checkout', [
+        'query' => [
+          'consumer_key' => $consumer_key,
+          'consumer_secret' => $consumer_secret,
+        ],
+        'json' => $input,
+      ]);
+
+      echo $response->getBody();
+      break;
+
+
+    case 'freeService':
+
+      $input = json_decode(file_get_contents('php://input'), true);
+
+      $consumer_key = $_ENV['REACT_APP_TEST_CHECKOUT_CONSUMER_KEY'];
+      $consumer_secret = $_ENV['REACT_APP_TEST_CHECKOUT_CONSUMER_SECRET_KEY'];
+
+      $response = $client->request('POST', 'https://testgraming.net/wp-json/wc-graming/free_service/', [
         'query' => [
           'consumer_key' => $consumer_key,
           'consumer_secret' => $consumer_secret,

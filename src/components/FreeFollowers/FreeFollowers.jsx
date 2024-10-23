@@ -3,22 +3,21 @@ import css from './FreeFollowers.module.css';
 import { gsap } from 'gsap';
 import FreeFollowersImage from '../../icons/monkey.svg';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import TikTokUserDetails from 'Api/TikTokUserDetails';
+import { GetFreeGoods } from 'Api/GetFreeService';
 import checkmark from '../../icons/checkmark-getStarted.svg';
 
 const FreeFollowers = ({ data }) => {
+  console.log(data);
   const navigate = useNavigate();
-  const location = useLocation();
-  console.log(location.state);
-  const { quantity, productId, price, productService } = location.state || {};
 
   const [userEmail, setUserEmail] = useState('');
   const [username, setUsername] = useState('');
   const [errors, setErrors] = useState({});
   const [apiError, setApiError] = useState(null);
-  const pathname = location.pathname;
-  const productPath = pathname.split('/')[1];
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [userInfo, setUserInfo] = useState(null);
 
   const validateEmail = email => {
@@ -27,8 +26,6 @@ const FreeFollowers = ({ data }) => {
 
   const linkRef = useRef(null);
   const featuresRef = useRef(null);
-
-  console.log(data);
 
   const decorItemRefs = useRef([]);
 
@@ -119,7 +116,7 @@ const FreeFollowers = ({ data }) => {
     if (!userEmail.trim()) {
       newErrors.userEmail = 'Please enter your email';
     } else if (!validateEmail(userEmail)) {
-      newErrors.userEmail = 'Please enter a valid email address..';
+      newErrors.userEmail = 'Please enter a valid email address.';
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -133,11 +130,43 @@ const FreeFollowers = ({ data }) => {
 
     try {
       const userData = await TikTokUserDetails(username);
-      console.log(userData);
-
       setUserInfo(userData);
     } catch (error) {
       setApiError(error.message);
+    }
+  };
+
+  const handleGetFreeGoods = async fields => {
+    const { customLink, email, page_link, productId, quantity, service_type } =
+      fields;
+
+    if (!productId) {
+      setError('Product ID is not available yet. Please try again later.');
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const data = await GetFreeGoods({
+        custom_link: customLink,
+        email,
+        page_link,
+        product_id: productId,
+        quantity,
+        service_type,
+      });
+
+      if (data) {
+        navigate(`/OrderConfirmation?order_id=${data}`);
+      } else {
+        setError('Error retrieving the order ID.');
+      }
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -150,8 +179,8 @@ const FreeFollowers = ({ data }) => {
             Followers
           </h2>
           <p className={css.freeFollowersText}>
-            Receive free TikTok views every 24 hours: just submit your 
-            <span>username</span> and <span>email</span>, select post, verify
+            Receive free TikTok views every 24 hours: just submit your{' '}
+            <span>username</span> and <span>email</span>, select post, verify
             your valid email, and get likes quickly.
           </p>
           <form className={css.getStartedForm} onSubmit={handleSubmit}>
@@ -203,57 +232,38 @@ const FreeFollowers = ({ data }) => {
                 ></span>
               </span>
             </button>
-
-            {userInfo &&
-              userInfo.map(
-                ({ profile_pic_url, full_name, id, uniqueId, country }) => (
-                  <div key={id} className={css.findedUserWrap}>
-                    <img
-                      className={css.findedUserImage}
-                      src={profile_pic_url}
-                      alt="profile"
-                    />
-                    <div className={css.findedUserName}>{full_name}</div>
-                    <button
-                      className={css.getStartedRedirect}
-                      onClick={() => {
-                        if (productPath === 'buy-tiktok-followers') {
-                          navigate(`/${productPath}/checkout`, {
-                            state: {
-                              country,
-                              price,
-                              productService,
-                              quantity,
-                              productId,
-                              userEmail,
-                              customLink: `https://www.tiktok.com/${uniqueId}`,
-                              shop_name: 'StellarFollowers.com',
-                            },
-                          });
-                        } else {
-                          navigate('selectPost', {
-                            state: {
-                              country,
-                              price,
-                              productService,
-                              quantity,
-                              productId,
-                              uniqueId,
-                              userInfo,
-                              userEmail,
-                              customLink: `https://www.tiktok.com/${uniqueId}`,
-                              shop_name: 'StellarFollowers.com',
-                            },
-                          });
-                        }
-                      }}
-                    >
-                      <img src={checkmark} alt="" />
-                    </button>
-                  </div>
-                )
-              )}
           </form>
+
+          {userInfo &&
+            userInfo.map(user => (
+              <div key={user.id} className={css.findedUserWrap}>
+                <img
+                  className={css.findedUserImage}
+                  src={user.profile_pic_url}
+                  alt="profile"
+                />
+                <div className={css.findedUserName}>{user.full_name}</div>
+                <button
+                  className={css.getStartedRedirect}
+                  onClick={() => {
+                    handleGetFreeGoods({
+                      quantity: 50,
+                      service_type: 'tiktok_followers',
+                      productId: 22132,
+                      email: userEmail,
+                      page_link: 'stellarlikes.com',
+                      customLink: `https://www.tiktok.com/@${user.uniqueId}`,
+                    });
+                  }}
+                >
+                  {!loading && <img src={checkmark} alt="" />}
+                  {loading && <div className={css.loader}></div>}
+                </button>
+              </div>
+            ))}
+
+          {error && <p className={css.error}>{error}</p>}
+
           <img
             data-animate
             alt="Followers"

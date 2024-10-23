@@ -17,7 +17,11 @@ import ImportansBlock from 'components/Importans/ImportansBlock';
 import importansFollowers1 from '../../icons/importansFollowers1.svg';
 import importansFollowers2 from '../../icons/importansFollowers2.svg';
 
-const TikTokFollowersPage = ({ tiktokFollowersData }) => {
+const TikTokFollowersPage = ({
+  tiktokFollowersData,
+  tiktokFreeFollowersData,
+}) => {
+  console.log(tiktokFreeFollowersData);
   const navigate = useNavigate();
   const linkRef = useRef(null);
   const decorItemRefs = useRef([]);
@@ -618,7 +622,7 @@ const TikTokFollowersPage = ({ tiktokFollowersData }) => {
           </div>
         </div>
       </section>
-      <FreeFollowers />
+      <FreeFollowers data={tiktokFreeFollowersData} />
       <Available />
       <Benefits />
       <Rating />
