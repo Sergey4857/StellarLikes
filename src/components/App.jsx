@@ -210,20 +210,18 @@ export default function App() {
             path="freeLikes/selectPost"
             element={
               <ProtectedRoute
-                requiredStateKeys={
-                  [
-                    // 'country',
-                    // 'customLink',
-                    // 'quantity',
-                    // 'productId',
-                    // 'price',
-                    // 'productService',
-                    // 'quantity',
-                    // 'productId',
-                    // 'uniqueId',
-                    // 'userEmail',
-                  ]
-                }
+                requiredStateKeys={[
+                  'quantity',
+                  'service_type',
+                  'quantity',
+                  'productId',
+                  'email',
+                  'page_link',
+                  'customLink',
+                  'productId',
+                  'userInfo',
+                  'uniqueId',
+                ]}
                 redirectTo="/"
               >
                 <SelectPost />
@@ -235,20 +233,16 @@ export default function App() {
             path="freeViews/selectPost"
             element={
               <ProtectedRoute
-                requiredStateKeys={
-                  [
-                    // 'country',
-                    // 'customLink',
-                    // 'quantity',
-                    // 'productId',
-                    // 'price',
-                    // 'productService',
-                    // 'quantity',
-                    // 'productId',
-                    // 'uniqueId',
-                    // 'userEmail',
-                  ]
-                }
+                requiredStateKeys={[
+                  'quantity',
+                  'service_type',
+                  'productId',
+                  'email',
+                  'page_link',
+                  'customLink',
+                  'userInfo',
+                  'uniqueId',
+                ]}
                 redirectTo="/"
               >
                 <SelectPost />
