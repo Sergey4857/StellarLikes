@@ -13,11 +13,9 @@ const OrderConfirmation = () => {
   const [isButtonActive, setIsButtonActive] = useState(false);
   const [timeLeft, setTimeLeft] = useState(60);
 
-  // Ref для хранения ID таймера
   const pollingTimeoutRef = useRef(null);
 
   useEffect(() => {
-    // Логика таймера обратного отсчета (остается без изменений)
     const storedStartTime = localStorage.getItem(`startTime_${orderId}`);
 
     let startTime;
@@ -37,7 +35,7 @@ const OrderConfirmation = () => {
         clearInterval(interval);
         setTimeLeft(0);
         setIsButtonActive(true);
-        localStorage.removeItem(`startTime_${orderId}`); // Очистка
+        localStorage.removeItem(`startTime_${orderId}`);
       } else {
         setTimeLeft(remainingTime);
       }
@@ -51,11 +49,10 @@ const OrderConfirmation = () => {
 
     const fetchOrderData = async () => {
       try {
-        console.log('Fetching order data'); // Лог для отладки
+        console.log('Fetching order data');
         const data = await FetchOrderInfo(orderId);
         setOrderData(data);
 
-        // Если статус не является терминальным, запускаем следующий запрос через 15 секунд
         if (
           !['completed', 'failed', 'cancelled', 'refunded', 'on-hold'].includes(
             data.status
@@ -63,7 +60,6 @@ const OrderConfirmation = () => {
         ) {
           pollingTimeoutRef.current = setTimeout(fetchOrderData, 15000);
         } else {
-          // Очищаем таймер, если он существует
           if (pollingTimeoutRef.current) {
             clearTimeout(pollingTimeoutRef.current);
             pollingTimeoutRef.current = null;
@@ -71,15 +67,13 @@ const OrderConfirmation = () => {
         }
       } catch (error) {
         console.log(error.message);
-        // В случае ошибки также запускаем следующий запрос через 15 секунд
-        pollingTimeoutRef.current = setTimeout(fetchOrderData, 15000);
+
+        pollingTimeoutRef.current = setTimeout(fetchOrderData, 10000);
       }
     };
 
-    // Начальный запрос
     fetchOrderData();
 
-    // Очистка таймера при размонтировании компонента
     return () => {
       if (pollingTimeoutRef.current) {
         clearTimeout(pollingTimeoutRef.current);
