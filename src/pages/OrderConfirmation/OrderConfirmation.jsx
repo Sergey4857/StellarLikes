@@ -14,15 +14,30 @@ const OrderConfirmation = () => {
   const [timeLeft, setTimeLeft] = useState(60);
 
   useEffect(() => {
+    // Получаем время начала из localStorage
+    const storedStartTime = localStorage.getItem('startTime');
+
+    let startTime;
+    if (storedStartTime) {
+      startTime = parseInt(storedStartTime, 10);
+    } else {
+      startTime = Date.now();
+      localStorage.setItem('startTime', startTime);
+    }
+
     const interval = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev <= 1) {
-          clearInterval(interval);
-          setIsButtonActive(true);
-          return 0;
-        }
-        return prev - 1;
-      });
+      const currentTime = Date.now();
+      const elapsedTime = Math.floor((currentTime - startTime) / 1000);
+      const remainingTime = 60 - elapsedTime;
+
+      if (remainingTime <= 0) {
+        clearInterval(interval);
+        setTimeLeft(0);
+        setIsButtonActive(true);
+        localStorage.removeItem('startTime'); // Очистка
+      } else {
+        setTimeLeft(remainingTime);
+      }
     }, 1000);
 
     return () => clearInterval(interval);
