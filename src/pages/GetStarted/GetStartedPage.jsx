@@ -8,6 +8,7 @@ import { gsap } from 'gsap';
 const GetStarted = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [loading, setLoading] = useState(false);
   console.log(location.state);
   const { quantity, productId, price, productService } = location.state || {};
 
@@ -98,12 +99,11 @@ const GetStarted = () => {
     setErrors({});
     setApiError(null);
     setUserInfo(null);
-
+    setLoading(true);
     try {
       const userData = await TikTokUserDetails(username);
-      console.log(userData);
-
       setUserInfo(userData);
+      setLoading(false);
     } catch (error) {
       setApiError(error.message);
     }
@@ -152,9 +152,9 @@ const GetStarted = () => {
               )}
             </div>
           </div>
-
           <button type="submit" className={css.getStartedSubmit} ref={linkRef}>
             <span className={css.linkText}>Continue</span>
+            {loading && <div className={css.loader}></div>}
             <span className={css.decor}>
               <span
                 ref={el => (decorItemRefs.current[0] = el)}
@@ -166,7 +166,6 @@ const GetStarted = () => {
               ></span>
             </span>
           </button>
-
           {userInfo &&
             userInfo.map(
               ({ profile_pic_url, full_name, id, uniqueId, country }) => (
