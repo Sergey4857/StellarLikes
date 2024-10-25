@@ -9,7 +9,6 @@ const GetStarted = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [loading, setLoading] = useState(false);
-  console.log(location.state);
   const { quantity, productId, price, productService } = location.state || {};
 
   const [userEmail, setUserEmail] = useState('');

@@ -113,7 +113,7 @@
   color: rgba(22, 22, 22, 0.25);
 }
 .freeViewsButton {
-  display: block;
+  display: flex;
   width: 100%;
   border-radius: 12px;
   background: #00c82f;
@@ -127,6 +127,9 @@
   margin-top: 25px;
   overflow: hidden;
   position: relative;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 .FirstBlock {
   margin-bottom: 10px;
@@ -294,4 +297,19 @@
 }
 .getStartedSpan {
   color: #f6159c;
+}
+.loader {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

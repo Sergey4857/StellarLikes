@@ -14,7 +14,7 @@ const FreeLikes = ({ data }) => {
   const [username, setUsername] = useState('');
   const [errors, setErrors] = useState({});
   const [apiError, setApiError] = useState(null);
-
+  const [loading, setLoading] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
 
   const validateEmail = email => {
@@ -126,14 +126,16 @@ const FreeLikes = ({ data }) => {
     setErrors({});
     setApiError(null);
     setUserInfo(null);
-
+    setLoading(true);
     try {
       const userData = await TikTokUserDetails(username);
       console.log(userData);
 
       setUserInfo(userData);
+      setLoading(false);
     } catch (error) {
       setApiError(error.message);
+      setLoading(false);
     }
   };
 
@@ -183,6 +185,7 @@ const FreeLikes = ({ data }) => {
 
             <button type="submit" className={css.freeLikesButton} ref={linkRef}>
               <span className={css.linkText}>Get Free Likes</span>
+              {loading && <div className={css.loader}></div>}
               <span className={css.decor}>
                 <span
                   ref={el => (decorItemRefs.current[0] = el)}

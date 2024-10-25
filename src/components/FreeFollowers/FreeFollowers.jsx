@@ -127,12 +127,15 @@ const FreeFollowers = ({ data }) => {
     setErrors({});
     setApiError(null);
     setUserInfo(null);
+    setLoading(true);
 
     try {
       const userData = await TikTokUserDetails(username);
       setUserInfo(userData);
+      setLoading(false);
     } catch (error) {
       setApiError(error.message);
+      setLoading(false);
     }
   };
 
@@ -229,6 +232,7 @@ const FreeFollowers = ({ data }) => {
               ref={linkRef}
             >
               <span className={css.linkText}>Get Free Followers</span>
+              {loading && <div className={css.loader}></div>}
               <span className={css.decor}>
                 <span
                   ref={el => (decorItemRefs.current[0] = el)}
@@ -266,7 +270,7 @@ const FreeFollowers = ({ data }) => {
                   }}
                 >
                   {!loading && <img src={checkmark} alt="" />}
-                  {loading && <div className={css.loader}></div>}
+                  {loading && <div className={css.loaderFree}></div>}
                 </button>
               </div>
             ))}
