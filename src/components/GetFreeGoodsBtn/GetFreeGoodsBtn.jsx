@@ -8,7 +8,15 @@ const GetFreeGoodsBtn = ({ fields }) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const { custom_link, email, page_link, quantity, service_type } = fields;
+  const {
+    custom_link,
+    email,
+    product_id,
+    quantity,
+    service_type,
+    page_link,
+    shop_name,
+  } = fields;
 
   const handleClick = async () => {
     console.log(fields);
@@ -23,6 +31,7 @@ const GetFreeGoodsBtn = ({ fields }) => {
         product_id: 179,
         quantity,
         service_type,
+        shop_name,
       });
 
       if (data) {

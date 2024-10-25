@@ -137,8 +137,15 @@ const FreeFollowers = ({ data }) => {
   };
 
   const handleGetFreeGoods = async fields => {
-    const { customLink, email, page_link, productId, quantity, service_type } =
-      fields;
+    const {
+      customLink,
+      email,
+      page_link,
+      productId,
+      quantity,
+      service_type,
+      shop_name,
+    } = fields;
 
     if (!productId) {
       setError('Product ID is not available yet. Please try again later.');
@@ -156,6 +163,7 @@ const FreeFollowers = ({ data }) => {
         product_id: productId,
         quantity,
         service_type,
+        shop_name,
       });
 
       if (data) {
@@ -247,12 +255,13 @@ const FreeFollowers = ({ data }) => {
                   className={css.getStartedRedirect}
                   onClick={() => {
                     handleGetFreeGoods({
-                      quantity: 50,
                       service_type: 'tiktok_followers',
-                      productId: 22132,
                       email: userEmail,
-                      page_link: 'stellarlikes.com',
+                      productId: 22132,
                       customLink: `https://www.tiktok.com/@${user.uniqueId}`,
+                      quantity: 50,
+                      page_link: window.location.href,
+                      shop_name: window.location.hostname,
                     });
                   }}
                 >

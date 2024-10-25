@@ -212,8 +212,9 @@ const SelectPost = () => {
               email,
               product_id: productId,
               quantity,
-              page_link,
               service_type,
+              page_link: window.location.href,
+              shop_name: window.location.hostname,
             }}
           />
         )}
