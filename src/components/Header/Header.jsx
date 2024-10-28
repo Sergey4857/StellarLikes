@@ -47,7 +47,7 @@ const Header = () => {
               About Us
             </Link>
             <span className={css.decorator}></span>
-            <Link className={css.headerNavLink} to="/contactUs">
+            <Link className={css.headerNavLink} to="/contact-us">
               Contact Us
             </Link>
           </nav>

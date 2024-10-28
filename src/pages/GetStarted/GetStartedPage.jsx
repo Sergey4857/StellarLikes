@@ -9,6 +9,7 @@ const GetStarted = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [loading, setLoading] = useState(false);
+
   const { quantity, productId, price, productService } = location.state || {};
 
   const [userEmail, setUserEmail] = useState('');
@@ -192,7 +193,7 @@ const GetStarted = () => {
                           },
                         });
                       } else {
-                        navigate('selectPost', {
+                        navigate('select-post', {
                           state: {
                             country,
                             price,

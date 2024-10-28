@@ -35,7 +35,7 @@ const GetFreeGoodsBtn = ({ fields }) => {
       });
 
       if (data) {
-        navigate(`/OrderConfirmation?order_id=${data}`);
+        navigate(`/order-confirmation?order_id=${data}`);
       } else {
         setError('Error retrieving the order ID.');
       }

@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 768px) {
   .faqSection {
-    padding: 70px 20px;
+    padding: 70px 20px 0px 20px;
   }
 }
 .faqText {
@@ -58,10 +58,47 @@
 }
 .faqImage {
   display: block;
-  width: 60px;
+  max-width: 60px;
+  width: 100%;
   height: 60px;
   object-fit: none;
+  border-radius: 50%;
+  background-color: #161616;
+  position: relative;
+  overflow: hidden; /* Скрываем изображение при старте */
 }
+
+.faqImage img {
+  min-width: 86px;
+  height: 90px;
+  position: absolute;
+  top: -15px;
+  left: 49%;
+  transform: translate(-50%, 34%);
+  transition: transform 300ms ease-in-out;
+}
+
+.faqs .faq.open .faqImage {
+  background-color: #f6159c;
+  animation: revealImage 300ms ease-in-out forwards;
+}
+
+@keyframes revealImage {
+  0% {
+    overflow: hidden;
+  }
+  60% {
+    overflow: hidden; /* Почти вся анимация с обрезкой */
+  }
+  100% {
+    overflow: visible; /* В конце позволяем изображению выйти за контур */
+  }
+}
+
+.faqs .faq.open .faqImage img {
+  transform: translate(-50%, 0%); /* Вылетаем в центр блока */
+}
+
 .faqDesc {
 }
 .faqs {
@@ -105,7 +142,7 @@
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease-in-out;
 }
 
 .faqs .faq.open .faqContent .faqQuestionWrap {

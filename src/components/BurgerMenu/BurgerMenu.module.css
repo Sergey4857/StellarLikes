@@ -1,8 +1,17 @@
+.BurgerBackdrop {
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 60px;
+  width: 100%;
+  background-color: #fff;
+  height: 100%;
+}
+
 .BurgerNavWrap {
   display: flex;
   position: fixed;
   left: 0;
-  top: 69px;
   width: 95%;
   overflow: hidden;
   z-index: 1000;
@@ -115,4 +124,27 @@
   text-align: center;
   font-family: 'TWK600';
   font-size: 10px;
+}
+.burgerOrange .BurgerNavWrap {
+  background-color: #fc5d1f;
+}
+.burgerOrange .BurgerNavWrap span {
+  color: #fff;
+}
+.burgerOrange .BurgerNavWrap .soon::after {
+  content: 'soon';
+  color: #f6571b;
+  background: #fadda0;
+}
+
+.burgerGreen .BurgerNavWrap {
+  background-color: #00c82f;
+}
+.burgerGreen .BurgerNavWrap span {
+  color: #fff;
+}
+.burgerGreen .BurgerNavWrap .soon::after {
+  content: 'soon';
+  color: #00c82f;
+  background: #e8fabf;
 }

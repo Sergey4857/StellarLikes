@@ -25,9 +25,9 @@ const CheckoutButton = ({ fields }) => {
     price,
     quantity,
     custom_link,
-    success_url: `https://stellarlikes.com/OrderConfirmation`,
-    fail_url: `https://stellarlikes.com/orderConfirmation`,
-    cancel_url: `https://stellarlikes.com/orderConfirmation`,
+    success_url: `https://stellarlikes.com/order-confirmation`,
+    fail_url: `https://stellarlikes.com/order-confirmation`,
+    cancel_url: `https://stellarlikes.com/order-confirmation`,
     coupon,
   });
   const handleClick = async () => {
@@ -42,9 +42,9 @@ const CheckoutButton = ({ fields }) => {
         quantity,
         custom_link,
         coupon,
-        success_url: `https://stellarlikes.com/OrderConfirmation`,
-        fail_url: `https://stellarlikes.com/OrderConfirmation`,
-        cancel_url: `https://stellarlikes.com/OrderConfirmation`,
+        success_url: `https://stellarlikes.com/order-confirmation`,
+        fail_url: `https://stellarlikes.com/order-confirmation`,
+        cancel_url: `https://stellarlikes.com/order-confirmation`,
       });
 
       if (data?.message?.link && data.message?.order_id) {

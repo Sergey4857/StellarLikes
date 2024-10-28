@@ -1,149 +1,108 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import css from './Footer.module.css';
-import logo from '../../icons/logo.svg';
-import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
+import footerLogo from '../../icons/footer-logo.svg';
 
 const Footer = () => {
-  const sectionRef = useRef(null);
+  const location = useLocation();
 
-  useEffect(() => {
-    const links = document.querySelectorAll(`.${css.ratingLink}`);
-
-    links.forEach(link => {
-      const decorItems = link.querySelectorAll(`.${css.decorItem}`);
-
-      const handleMouseEnter = () => {
-        gsap.to(link, {
-          scaleX: 1.03,
-          scaleY: 0.98,
-          duration: 1,
-          ease: 'elastic.out(1, 0.3)',
-        });
-
-        gsap.fromTo(
-          decorItems,
-          { translateX: '-100%' },
-          {
-            translateX: 0,
-            duration: 0.4,
-            stagger: 0.08,
-          }
-        );
-      };
-
-      const handleMouseLeave = () => {
-        gsap.to(link, {
-          scaleX: 1,
-          scaleY: 1,
-          duration: 1,
-          ease: 'elastic.out(1, 0.3)',
-        });
-
-        gsap.to(decorItems, {
-          translateX: '100%',
-          duration: 0.4,
-          stagger: 0.08,
-        });
-      };
-
-      link.addEventListener('mouseenter', handleMouseEnter);
-      link.addEventListener('mouseleave', handleMouseLeave);
-
-      // Store handlers for cleanup
-      link._handleMouseEnter = handleMouseEnter;
-      link._handleMouseLeave = handleMouseLeave;
-    });
-
-    return () => {
-      links.forEach(link => {
-        link.removeEventListener('mouseenter', link._handleMouseEnter);
-        link.removeEventListener('mouseleave', link._handleMouseLeave);
-      });
-    };
-  }, []);
+  const footerColorClass = () => {
+    if (location.pathname.includes('/buy-tiktok-followers')) {
+      return css.footerOrange;
+    } else if (location.pathname.includes('/buy-tiktok-views')) {
+      return css.footerGreen;
+    } else {
+      return '';
+    }
+  };
+  const handleLiveSupportClick = e => {
+    e.preventDefault();
+    if (window.Intercom) {
+      window.Intercom('show');
+    } else {
+      console.error('Intercom is not initialized.');
+    }
+  };
 
   return (
-    <footer className={css.footerSection} ref={sectionRef}>
+    <footer className={`${css.footerSection} ${footerColorClass()}`}>
       <div className={css.footer}>
-        <div className={css.footerWrap}>
-          <div className={css.footerBlock}>
-            <div className={css.footerInfo}>
-              <div className={css.footerLogo}>
-                <img className={css.footerImage} src={logo} alt="logo" />
-                stellar<span className={css.FooterTitle}>likes</span>
-              </div>
-              <nav className={css.footerNav}>
-                <Link className={css.footerNavLink} to="/">
-                  Home
-                </Link>
-                <Link className={css.footerNavLink} to="/Reviews">
-                  Reviews
-                </Link>
-                <Link className={css.footerNavLink} to="/">
-                  TikTok Video Downloader
-                </Link>
-                <Link className={css.footerNavLink} to="/">
-                  TikTok Story Viewer
-                </Link>
-                <Link className={css.footerNavLink} to="/">
-                  Live Support
-                </Link>
-                <Link className={css.footerNavLink} to="/PrivacyPolicy">
-                  Privacy Policy
-                </Link>
-                <Link className={css.footerNavLink} to="/TermsOfUse">
-                  Terms of Use
-                </Link>
-              </nav>
-            </div>
+        <div className={css.footerLogo}>
+          <img src={footerLogo} alt="" />
+          stellar<span>likes</span>
+        </div>
 
-            <div className={css.buyBlock}>
-              <div className={css.buyBlockContent}>
-                <Link
-                  className={`${css.ratingLink} ${css.buyBlockLinkPink}`}
-                  to="/"
-                >
-                  <span className={css.linkText}>Buy Likes</span>
-                  <span className={css.decor}>
-                    <span className={css.decorItem}></span>
-                    <span className={css.decorItem}></span>
-                  </span>
-                </Link>
-                <span className={css.buyBlockSpan}>Starting at $0.5</span>
-              </div>
-              <div className={css.buyBlockContent}>
-                <Link
-                  className={`${css.ratingLink} ${css.buyBlockLinkGreen}`}
-                  to="/buy-tiktok-views"
-                >
-                  <span className={css.linkText}>Buy Views</span>
-                  <span className={css.decor}>
-                    <span className={css.decorItem}></span>
-                    <span className={css.decorItem}></span>
-                  </span>
-                </Link>
+        <div className={css.footerBlock}>
+          <nav className={css.footerNav}>
+            <Link className={css.footerNavLink} to="/">
+              Home
+            </Link>
+            <Link className={css.footerNavLink} to="/Reviews">
+              Reviews
+            </Link>
+            <Link className={css.footerNavLink} to="/about">
+              About us
+            </Link>
+            <Link className={css.footerNavLink} to="/contact-us">
+              Contact us
+            </Link>
+            <Link
+              className={css.footerNavLink}
+              to="#"
+              onClick={handleLiveSupportClick}
+            >
+              Live Support
+            </Link>
+          </nav>
 
-                <span className={css.buyBlockSpan}>Starting at $0.89</span>
-              </div>
-              <div className={css.buyBlockContent}>
-                <Link
-                  className={`${css.ratingLink} ${css.buyBlockLinkOrange}`}
-                  to="/buy-tiktok-followers"
-                >
-                  <span className={css.linkText}>Buy Followers</span>
-                  <span className={css.decor}>
-                    <span className={css.decorItem}></span>
-                    <span className={css.decorItem}></span>
-                  </span>
-                </Link>
+          <nav className={css.footerSoonNav}>
+            <Link to="/">
+              TikTok Video Downloader
+              <span className={css.soon}>soon</span>
+            </Link>
+            <Link to="/">
+              TikTok Video Viewer
+              <span className={css.soon}>soon</span>
+            </Link>
+            <Link to="/">
+              TikTok Earning Calculator
+              <span className={css.soon}>soon</span>
+            </Link>
+            <Link to="/">
+              TikTok Counter
+              <span className={css.soon}>soon</span>
+            </Link>
+            <Link to="/">
+              TikTok Link to MP4 Converter
+              <span className={css.soon}>soon</span>
+            </Link>
+          </nav>
 
-                <span className={css.buyBlockSpan}>Starting at $0.5</span>
-              </div>
-            </div>
-          </div>
+          <nav className={css.footerNav}>
+            <Link className={css.footerNavLink} to="/">
+              Buy TikTok Likes
+            </Link>
+            <Link className={css.footerNavLink} to="/buy-tiktok-followers">
+              Buy TikTok Followers
+            </Link>
+            <Link className={css.footerNavLink} to="/buy-tiktok-views">
+              Buy TikTok Views
+            </Link>
+          </nav>
+        </div>
+
+        <div className={css.footerDecor}></div>
+
+        <div className={css.footerPrivacyBlock}>
           <div className={css.footerPrivacy}>
             2024 Stellarlikes — All Rights Reserved
+          </div>
+          <div className={css.footerPrivacyLinks}>
+            <Link className={css.footerNavLink} to="/terms-of-use">
+              Terms of Use
+            </Link>
+            <Link className={css.footerNavLink} to="/privacy-policy">
+              Privacy Policy
+            </Link>
           </div>
         </div>
       </div>

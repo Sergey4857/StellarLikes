@@ -74,7 +74,7 @@ export default function App() {
             }
           />
           <Route
-            path="/getStarted"
+            path="/get-started"
             element={
               <ProtectedRoute
                 requiredStateKeys={[
@@ -91,7 +91,7 @@ export default function App() {
           />
 
           <Route
-            path="/getStarted/selectPost"
+            path="/get-started/select-post"
             element={
               <ProtectedRoute
                 requiredStateKeys={[
@@ -123,7 +123,7 @@ export default function App() {
             }
           />
           <Route
-            path="buy-tiktok-followers/getStarted"
+            path="buy-tiktok-followers/get-started"
             element={
               <ProtectedRoute
                 requiredStateKeys={[
@@ -169,7 +169,7 @@ export default function App() {
           />
 
           <Route
-            path="buy-tiktok-views/getStarted"
+            path="buy-tiktok-views/get-started"
             element={
               <ProtectedRoute
                 requiredStateKeys={[
@@ -185,7 +185,7 @@ export default function App() {
             }
           />
           <Route
-            path="buy-tiktok-views/getStarted/selectPost"
+            path="buy-tiktok-views/get-started/select-post"
             element={
               <ProtectedRoute
                 requiredStateKeys={[
@@ -207,7 +207,7 @@ export default function App() {
           />
 
           <Route
-            path="freeLikes/selectPost"
+            path="freeLikes/select-post"
             element={
               <ProtectedRoute
                 requiredStateKeys={[
@@ -230,7 +230,7 @@ export default function App() {
           />
 
           <Route
-            path="freeViews/selectPost"
+            path="freeViews/select-post"
             element={
               <ProtectedRoute
                 requiredStateKeys={[
@@ -271,11 +271,11 @@ export default function App() {
           />
           {/* AboutUs */}
           <Route path="about" element={<AboutUs />} />
-          <Route path="ContactUs" element={<ContactUs />} />
-          <Route path="Reviews" element={<Reviews />} />
-          <Route path="/OrderConfirmation/" element={<OrderConfirmation />} />
-          <Route path="PrivacyPolicy" element={<PrivacyPolicy />} />
-          <Route path="TermsOfUse" element={<TermsOfUse />} />
+          <Route path="contact-us" element={<ContactUs />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="/order-confirmation/" element={<OrderConfirmation />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="terms-of-use" element={<TermsOfUse />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Route>

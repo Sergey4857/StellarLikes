@@ -210,7 +210,7 @@ const FreeLikes = ({ data }) => {
                   <button
                     className={css.getStartedRedirect}
                     onClick={() => {
-                      navigate('/freeLikes/selectPost', {
+                      navigate('/freeLikes/select-post', {
                         state: {
                           quantity: 10,
                           service_type: 'tiktok_likes',

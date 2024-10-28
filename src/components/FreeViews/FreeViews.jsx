@@ -212,7 +212,7 @@ const FreeViews = ({ data }) => {
                     <button
                       className={css.getStartedRedirect}
                       onClick={() => {
-                        navigate('/freeViews/selectPost', {
+                        navigate('/freeViews/select-post', {
                           state: {
                             quantity: 50,
                             service_type: 'tiktok_views',

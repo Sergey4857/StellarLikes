@@ -595,7 +595,7 @@ const TikTokFollowersPage = ({
               className={css.buyLink}
               ref={linkRef}
               onClick={() =>
-                navigate('getStarted', {
+                navigate('get-started', {
                   state: {
                     quantity: showPackages
                       ? selectedPrice.quantity

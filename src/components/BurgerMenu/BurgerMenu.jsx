@@ -1,14 +1,26 @@
 import { createPortal } from 'react-dom';
 import { useState } from 'react';
 import css from './BurgerMenu.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function BurgerMenu({ setOpenedModal, openedModal }) {
-  const [activeBlockIndex, setActiveBlockIndex] = useState(null); // Изначально нет активного блока
+  const [activeBlockIndex, setActiveBlockIndex] = useState(null);
   const burgerRoot = document.querySelector('#burger-root');
 
   const toggleBlock = index => {
     setActiveBlockIndex(prevIndex => (prevIndex === index ? null : index));
+  };
+
+  const location = useLocation();
+
+  const burgerColorClass = () => {
+    if (location.pathname.includes('/buy-tiktok-followers')) {
+      return css.burgerOrange;
+    } else if (location.pathname.includes('/buy-tiktok-views')) {
+      return css.burgerGreen;
+    } else {
+      return '';
+    }
   };
 
   const menuItems = [
@@ -40,60 +52,61 @@ export default function BurgerMenu({ setOpenedModal, openedModal }) {
     {
       title: 'About',
       links: [
-        { to: '/PrivacyPolicy', text: 'Privacy Policy' },
-        { to: '/TermsOfUse', text: 'Terms of Use' },
+        { to: '/privacy-policy', text: 'Privacy Policy' },
+        { to: '/terms-of-use', text: 'Terms of Use' },
         { to: '/', text: 'Live Support' },
       ],
     },
   ];
 
-  // Проверяем, существует ли элемент #burger-root
   if (!burgerRoot) return null;
 
   return createPortal(
-    <div className={css.BurgerNavWrap}>
-      <div className={css.BurgerNav}>
-        {menuItems.map((item, index) => (
-          <div className={css.burgerWrapper} key={index}>
-            <div
-              className={`${css.blockTitle} ${
-                activeBlockIndex === index ? css.active : ''
-              }`}
-              onClick={() => toggleBlock(index)}
-            >
-              {item.title}
-            </div>
-            {activeBlockIndex === index && (
-              <div className={css.burgerBlock}>
-                {item.links.map((link, linkIndex) => (
-                  <Link
-                    onClick={() => setOpenedModal(false)}
-                    key={linkIndex}
-                    className={css.burgerNavLink}
-                    to={link.to}
-                  >
-                    <span
-                      className={`${css.whiteText} ${
-                        link.soon ? css.soon : ''
-                      }`}
-                    >
-                      {link.text}
-                    </span>{' '}
-                    <span
-                      className={`${
-                        link.highlight === 'Likes' ? css.pinkText : ''
-                      }${
-                        link.highlight === 'Followers' ? css.orangeText : ''
-                      } ${link.highlight === 'Views' ? css.greenText : ''}`}
-                    >
-                      {link.highlight}
-                    </span>
-                  </Link>
-                ))}
+    <div className={`${css.BurgerBackdrop} ${burgerColorClass()}`}>
+      <div className={css.BurgerNavWrap}>
+        <div className={css.BurgerNav}>
+          {menuItems.map((item, index) => (
+            <div className={css.burgerWrapper} key={index}>
+              <div
+                className={`${css.blockTitle} ${
+                  activeBlockIndex === index ? css.active : ''
+                }`}
+                onClick={() => toggleBlock(index)}
+              >
+                {item.title}
               </div>
-            )}
-          </div>
-        ))}
+              {activeBlockIndex === index && (
+                <div className={css.burgerBlock}>
+                  {item.links.map((link, linkIndex) => (
+                    <Link
+                      onClick={() => setOpenedModal(false)}
+                      key={linkIndex}
+                      className={css.burgerNavLink}
+                      to={link.to}
+                    >
+                      <span
+                        className={`${css.whiteText} ${
+                          link.soon ? css.soon : ''
+                        }`}
+                      >
+                        {link.text}
+                      </span>{' '}
+                      <span
+                        className={`${
+                          link.highlight === 'Likes' ? css.pinkText : ''
+                        }${
+                          link.highlight === 'Followers' ? css.orangeText : ''
+                        } ${link.highlight === 'Views' ? css.greenText : ''}`}
+                      >
+                        {link.highlight}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>,
     burgerRoot

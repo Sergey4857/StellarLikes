@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './Faq.module.css';
-import faqIcon from '../../icons/faq-icon.svg';
+import faqIcon from '../../icons/shuttle.svg';
 
 const FAQ = ({ faq, index, toggleFAQ }) => {
   return (
@@ -12,7 +12,10 @@ const FAQ = ({ faq, index, toggleFAQ }) => {
       <div className={css.faqContent}>
         <div className={css.faqQuestionWrap}>
           <h3 className={css.faqTitle}>{faq.question}</h3>
-          <img className={css.faqImage} src={faqIcon} alt="faqIcon" />
+
+          <div className={css.faqImage}>
+            <img src={faqIcon} alt="" />
+          </div>
         </div>
 
         <div className={css.faqAnswer}>{faq.answer}</div>

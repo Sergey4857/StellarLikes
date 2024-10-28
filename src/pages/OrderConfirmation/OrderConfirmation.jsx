@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { FetchOrderInfo } from '../../Api/FetchOrderInfo';
 import css from '../OrderConfirmation/OrderConfirmation.module.css';
 import Loader from 'components/Loader/Loader';
@@ -13,17 +13,16 @@ const OrderConfirmation = () => {
   const [isButtonActive, setIsButtonActive] = useState(false);
   const [timeLeft, setTimeLeft] = useState(60);
 
-  const pollingTimeoutRef = useRef(null);
-
   useEffect(() => {
-    const storedStartTime = localStorage.getItem(`startTime_${orderId}`);
+    // Получаем время начала из localStorage
+    const storedStartTime = localStorage.getItem('startTime');
 
     let startTime;
     if (storedStartTime) {
       startTime = parseInt(storedStartTime, 10);
     } else {
       startTime = Date.now();
-      localStorage.setItem(`startTime_${orderId}`, startTime);
+      localStorage.setItem('startTime', startTime);
     }
 
     const interval = setInterval(() => {
@@ -35,50 +34,26 @@ const OrderConfirmation = () => {
         clearInterval(interval);
         setTimeLeft(0);
         setIsButtonActive(true);
-        localStorage.removeItem(`startTime_${orderId}`);
+        localStorage.removeItem('startTime'); // Очистка
       } else {
         setTimeLeft(remainingTime);
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [orderId]);
+  }, []);
 
   useEffect(() => {
     if (!orderId) return navigate('/');
-
     const fetchOrderData = async () => {
       try {
-        console.log('Fetching order data');
         const data = await FetchOrderInfo(orderId);
         setOrderData(data);
-
-        if (
-          !['completed', 'failed', 'cancelled', 'refunded', 'on-hold'].includes(
-            data.status
-          )
-        ) {
-          pollingTimeoutRef.current = setTimeout(fetchOrderData, 15000);
-        } else {
-          if (pollingTimeoutRef.current) {
-            clearTimeout(pollingTimeoutRef.current);
-            pollingTimeoutRef.current = null;
-          }
-        }
       } catch (error) {
         console.log(error.message);
-
-        pollingTimeoutRef.current = setTimeout(fetchOrderData, 10000);
       }
     };
-
     fetchOrderData();
-
-    return () => {
-      if (pollingTimeoutRef.current) {
-        clearTimeout(pollingTimeoutRef.current);
-      }
-    };
   }, [navigate, orderId]);
 
   if (!orderData) return <Loader />;
