@@ -251,3 +251,12 @@ body {
   transform: translateX(-100%);
   transition: transform 300ms ease-in-out;
 }
+
+main {
+  flex: 1;
+}
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
