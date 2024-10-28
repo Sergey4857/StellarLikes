@@ -10,7 +10,7 @@ import { gsap } from 'gsap';
 import Benefits from 'components/Benefits/Benefits';
 import Rating from 'components/Rating/Rating';
 import Features from 'components/Features/Features';
-import Customers from 'components/Customers/Customers';
+
 import FaqBlock from 'components/Faq/FaqBlock';
 import TikTokLikes from './TikTokLikes';
 import CustomQuantity from 'components/CustomQuantiy/CustomQuantity';
