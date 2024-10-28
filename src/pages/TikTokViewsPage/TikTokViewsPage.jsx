@@ -743,7 +743,7 @@ const TikTokViewsPage = ({ tiktokViewsData, tiktokFreeViewsData }) => {
       <Benefits />
       <Rating />
       <Features />
-      <Customers />
+
       <ImportansBlock importansData={importansData} />
       <FaqBlock faqsData={faqsData} />
     </>

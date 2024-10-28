@@ -553,7 +553,6 @@ const TikTokLikesPage = ({ tiktokLikesData, tiktokFreeLikesData }) => {
       <Benefits />
       <Rating />
       <Features />
-      <Customers />
       <ImportansBlock importansData={importansData} />;
       <FaqBlock faqsData={faqsData} />
     </>
