@@ -1,4 +1,3 @@
-import Customers from 'components/Customers/Customers';
 import css from './Reviews.module.css';
 import star from '../../icons/rating-star.svg';
 
@@ -37,7 +36,6 @@ export default function Reviews() {
           </div>
         </div>
       </section>
-      <Customers />
     </>
   );
 }
