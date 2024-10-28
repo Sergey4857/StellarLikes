@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.12167c3b.css",
-    "main.js": "/static/js/main.91b793c3.js",
+    "main.css": "/static/css/main.e519449a.css",
+    "main.js": "/static/js/main.9e2ae489.js",
     "static/media/sky.jpg": "/static/media/sky.49709337dc0afc56a2a0.jpg",
     "static/media/checkout2.svg": "/static/media/checkout2.bbd46e85191cab8bf455.svg",
     "static/media/TWKLausanne-700.ttf": "/static/media/TWKLausanne-700.c386a7e11bf0ddb59962.ttf",
@@ -13,9 +13,7 @@
     "static/media/rating-mob.svg": "/static/media/rating-mob.119b82a180dbe8233904.svg",
     "static/media/cryptomus.svg": "/static/media/cryptomus.743edffe3d32c4a86a94.svg",
     "static/media/importansFollowers2.svg": "/static/media/importansFollowers2.c4dd7b9b174e099115d284cf0b0a0c36.svg",
-    "static/media/footer-bcg.svg": "/static/media/footer-bcg.989d80d35e1b79c089fe.svg",
     "static/media/features4.svg": "/static/media/features4.32ba46ab8816c1b680ffb7f2767551e9.svg",
-    "static/media/footer-mob.svg": "/static/media/footer-mob.4aa1af738e77b7e1938c.svg",
     "static/media/tiktokLikesHover.svg": "/static/media/tiktokLikesHover.2c245d21f4881221558d4d6862f29023.svg",
     "static/media/tiktokLikes.svg": "/static/media/tiktokLikes.ca39c71dc3ba6618ace64c0dab1f93fc.svg",
     "static/media/features2.svg": "/static/media/features2.87be453166517b07ed9329b78120d88d.svg",
@@ -27,7 +25,6 @@
     "static/media/team-monkey.svg": "/static/media/team-monkey.b7f39301d4f2455b1c48e9a34e043d7d.svg",
     "static/media/monkey.svg": "/static/media/monkey.d67c9992e0d47ca8b6079df5d6f9f214.svg",
     "static/media/teamCompoundMansvg.svg": "/static/media/teamCompoundMansvg.088496bfa99cc6a34e89.svg",
-    "static/media/spaceship.svg": "/static/media/spaceship.4f310deb59171288d7bd.svg",
     "static/media/tiktokFolowersHover.svg": "/static/media/tiktokFolowersHover.a3dcb9a8a53be262a6c6ac003f53fa06.svg",
     "static/media/tiktokFolowers.svg": "/static/media/tiktokFolowers.0ee245c6d97ce59d4695fdfa196ba7ed.svg",
     "static/media/alien.svg": "/static/media/alien.056d92e30ff8bbbec42a9a93fe49dbbc.svg",
@@ -50,7 +47,9 @@
     "static/media/importansLikes2.svg": "/static/media/importansLikes2.609a491ef5b24d5f01b00162a0378560.svg",
     "static/media/benefit1.svg": "/static/media/benefit1.699032499ad11be5f5960dd997ac08d3.svg",
     "static/media/importansViews1.svg": "/static/media/importansViews1.0c0dab2abe3f7034d89d795ac8334732.svg",
-    "static/media/faq-icon.svg": "/static/media/faq-icon.8f521e1c1c07dbe922f5798c7a4c3583.svg",
+    "static/media/shuttle.svg": "/static/media/shuttle.aa958e78004d5386234b18860920f972.svg",
+    "static/media/spaceship.svg": "/static/media/spaceship.09303765a7c6a7d8e291.svg",
+    "static/media/footer-logo.svg": "/static/media/footer-logo.72f85c9e9590515d79025f1e9d48e9b3.svg",
     "static/media/logo.svg": "/static/media/logo.759d2903df61e3ec2d090a9975be1c4e.svg",
     "static/media/stars-blue.svg": "/static/media/stars-blue.822d92f6701eac57b9e8e4dcb9508ebd.svg",
     "static/media/stars-orange.svg": "/static/media/stars-orange.d592a40ce8684cba2cab8822c6a7ba6b.svg",
@@ -78,11 +77,11 @@
     "static/media/close.svg": "/static/media/close.50915a1f0670d03077c8.svg",
     "static/media/checkbox.svg": "/static/media/checkbox.a9e959e5c805efa3d39c.svg",
     "static/media/checkout-unactive.svg": "/static/media/checkout-unactive.15debbb0754ecc38e23a.svg",
-    "main.12167c3b.css.map": "/static/css/main.12167c3b.css.map",
-    "main.91b793c3.js.map": "/static/js/main.91b793c3.js.map"
+    "main.e519449a.css.map": "/static/css/main.e519449a.css.map",
+    "main.9e2ae489.js.map": "/static/js/main.9e2ae489.js.map"
   },
   "entrypoints": [
-    "static/css/main.12167c3b.css",
-    "static/js/main.91b793c3.js"
+    "static/css/main.e519449a.css",
+    "static/js/main.9e2ae489.js"
   ]
 }
