@@ -3,7 +3,7 @@ import axios from 'axios';
 export const payCheckout = async data => {
   try {
     const response = await axios.post(
-      'http://stellarlikes.com/api.php?action=payCheckout',
+      'https://stellarlikes.com/api.php?action=payCheckout',
       data
     );
 

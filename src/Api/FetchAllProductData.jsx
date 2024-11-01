@@ -9,7 +9,7 @@ const FetchAllProductData = async (
   setFreeTiktokFollowersData
 ) => {
   try {
-    const response = await axios.get('http://stellarlikes.com/api.php', {
+    const response = await axios.get('https://stellarlikes.com/api.php', {
       params: { action: 'FetchAllProductData' },
     });
 

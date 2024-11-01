@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 header('Content-Type: application/json');
 
 // CORS Headers
-header("Access-Control-Allow-Origin: http://stellarlikes.com");
+header("Access-Control-Allow-Origin: https://stellarlikes.com");
 header("Access-Control-Allow-Credentials: true");
 
 // Обработка preflight-запросов
